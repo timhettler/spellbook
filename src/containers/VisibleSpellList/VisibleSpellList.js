@@ -6,6 +6,7 @@ import SpellList from '../../components/SpellList';
 
 function mapStateToProps(state) {
   return {
+    sorting: state.sorting,
     spells: selectSortedResults(state),
   };
 }

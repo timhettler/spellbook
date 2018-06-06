@@ -1,13 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
 
-const Button = ({ children, onClick }) => (
-  <button onClick={onClick}>{children}</button>
+import './Button.css';
+
+const Button = ({ children, className, onClick, ...rest }) => (
+  <button
+    className={classNames('button', className)}
+    onClick={onClick}
+    {...rest}
+  >
+    {children}
+  </button>
 );
 
 Button.propTypes = {
-  active: PropTypes.bool,
   children: PropTypes.node.isRequired,
+  className: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string),
+  ]),
   onClick: PropTypes.func.isRequired,
 };
 

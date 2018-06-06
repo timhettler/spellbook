@@ -1,0 +1,64 @@
+@mixin disable-callout() {
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+@mixin reset-button() {
+  @include disable-callout();
+
+  background-color: transparent;
+  border: 0;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  -webkit-font-smoothing: inherit;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  display: block;
+  text-align: inherit;
+
+  &:not([disabled]) {
+    cursor: pointer;
+  }
+}
+
+@mixin reset-input {
+  background: none transparent;
+  border: none;
+  box-shadow: none;
+  display: block;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  outline: none;
+  -webkit-appearance: none;
+  width: 100%;
+}
+
+@mixin _breakpoint($media-queries) {
+  $query-list: ();
+  $keys: map-keys($media-queries);
+  $values: map-values($media-queries);
+  @for $i from 1 through length($keys) {
+    $string: '(' + nth($keys, $i) + ':' + nth($values, $i) + ')';
+    @if (length($query-list) != 0) {
+      $string: 'and ' + $string;
+    }
+    $query-list: append($query-list, unquote($string));
+  }
+
+  @media #{$query-list} {
+    @content;
+  }
+}
+
+// https://a11yproject.com/posts/how-to-hide-content/
+// https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+@mixin visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}

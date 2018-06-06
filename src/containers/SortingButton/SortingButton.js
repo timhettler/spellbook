@@ -1,10 +1,12 @@
+import React from 'react';
 import { connect } from 'react-redux';
+
 import { setSorting } from '../../actions';
 import Button from '../../components/Button';
 
-const mapStateToProps = (state, ownProps) => ({
-  active: ownProps.field === state.sorting.field,
-});
+import './SortingButton.css';
+
+const mapStateToProps = (state, ownProps) => ({});
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   onClick: () => {
@@ -12,7 +14,9 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
 });
 
+const SortingButton = props => <Button className="sorting-button" {...props} />;
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Button);
+)(SortingButton);

@@ -8,18 +8,20 @@ function handleChange(callback, type) {
 }
 
 const Select = ({ options, value, type, onChange }) => {
-  return (<select value={value} onChange={handleChange(onChange, type)}>
-    {options.map(o => {
-      const oLabel = (typeof o === 'string') ? o : o.label;
-      const oValue = (typeof o === 'string') ? o : o.value;
+  return (
+    <select value={value} onChange={handleChange(onChange, type)}>
+      {options.map(o => {
+        const oLabel = typeof o === 'string' ? o : o.label;
+        const oValue = typeof o === 'string' ? o : o.value;
 
-      return (
-        <option key={oValue} value={oValue}>
-          {oLabel}
-        </option>
-      );
-    })}
-  </select>)
+        return (
+          <option key={oValue} value={oValue}>
+            {oLabel}
+          </option>
+        );
+      })}
+    </select>
+  );
 };
 
 Select.propTypes = {

@@ -27,11 +27,11 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Spellbook</h1>
         </header>
-        <nav>
-          <Controls />
-        </nav>
         <main className="App-main">
           <div>
+            <nav>
+              <Controls />
+            </nav>
             <VisibleSpellList />
           </div>
           <div>

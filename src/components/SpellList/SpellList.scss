@@ -1,0 +1,15 @@
+.spell-list-container {
+  overflow-x: auto;
+}
+
+.spell-list {
+  width: 100%;
+
+  &__header {
+    text-align: left;
+
+    &--level {
+      text-align: right;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.spell-list-item {
+  &:nth-child(odd) {
+    background-color: #eee;
+  }
+
+  > * {
+    padding: 0.75em;
+  }
+
+  &__name {
+    text-align: left;
+  }
+
+  &__level {
+    color: #666;
+    text-align: right;
+  }
+}

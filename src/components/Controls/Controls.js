@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 
-import SortingButton from '../../containers/SortingButton';
 import ResetButton from '../../containers/ResetButton';
 import Filter from '../../containers/Filter';
 import SubClassFilter from '../../containers/SubClassFilter';
@@ -21,10 +20,6 @@ const Controls = () => (
     </div>
     <div>
       <Filter type="school" />
-    </div>
-    <div>
-      <SortingButton field="name">Name</SortingButton>
-      <SortingButton field="level">Level</SortingButton>
     </div>
     <div>
       <BinaryFilter type="ritual" label="Ritual" />
