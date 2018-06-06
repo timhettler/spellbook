@@ -1,5 +1,5 @@
 @import 'utilities/scss/_mixins';
 
 .button {
-  @import reset-input;
+  @include reset-button;
 }

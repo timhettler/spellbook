@@ -5,7 +5,7 @@ import { loadSpells, loadClasses, loadSchools, addSubclass } from './actions';
 import * as data from './data';
 import VisibleSpellList from './containers/VisibleSpellList';
 import SelectedSpellDetail from './containers/SelectedSpellDetail';
-import Controls from './components/Controls';
+import VisibleControls from './containers/VisibleControls';
 
 import './App.css';
 
@@ -30,7 +30,7 @@ class App extends Component {
         <main className="App-main">
           <div>
             <nav>
-              <Controls />
+              <VisibleControls />
             </nav>
             <VisibleSpellList />
           </div>

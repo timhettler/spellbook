@@ -16,7 +16,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     type: filter.type,
     value: selectValue(ownProps.type)(state),
-    options: [{label:'', value: null}].concat(filter.options),
+    options: [{ label: filter.label, value: '' }].concat(filter.options),
   };
 };
 
@@ -32,8 +32,8 @@ class SubClassFilter extends Component {
       return;
     }
 
-    if(this.props.type !== prevProps.type) {
-      this.props.onChange(null, prevProps.type);
+    if (this.props.type !== prevProps.type) {
+      this.props.dispatch(toggleFilter({ type: prevProps.type }));
     }
   }
 

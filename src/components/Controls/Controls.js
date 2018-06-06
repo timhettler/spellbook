@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import ResetButton from '../../containers/ResetButton';
 import Filter from '../../containers/Filter';
@@ -6,26 +7,44 @@ import SubClassFilter from '../../containers/SubClassFilter';
 import TextFilter from '../../containers/TextFilter';
 import BinaryFilter from '../../containers/BinaryFilter';
 
-const Controls = () => (
-  <Fragment>
-    <div>
-      <ResetButton>Reset</ResetButton>
+import './Controls.css';
+
+const Controls = ({ showSubClassFilter }) => (
+  <div className="control-container">
+    <div className="control-section">
+      <div className="control-item">
+        <Filter type="classes" defaultLabel="All Classes" />
+      </div>
+      <div className="control-item">
+        <TextFilter type="name" placeholder="Spell Name" />
+      </div>
+      <div className="control-item control-item--reset">
+        <ResetButton className="reset-button" aria-label="Reset Filters">
+          ×
+        </ResetButton>
+      </div>
     </div>
-    <div>
-      <TextFilter type="name" />
-    </div>
-    <div>
-      <Filter type="classes" />
-      <SubClassFilter />
-    </div>
-    <div>
-      <Filter type="school" />
+    {showSubClassFilter && (
+      <div className="control-section">
+        <div className="control-item">
+          <SubClassFilter />
+        </div>
+      </div>
+    )}
+    <div className="control-section">
+      <div className="control-item">
+        <Filter type="school" defaultLabel="All Schools" />
+      </div>
     </div>
     <div>
       <BinaryFilter type="ritual" label="Ritual" />
       <BinaryFilter type="concentration" label="Concentration" />
     </div>
-  </Fragment>
+  </div>
 );
+
+Controls.propTypes = {
+  showSubClassFilter: PropTypes.bool,
+};
 
 export default Controls;
