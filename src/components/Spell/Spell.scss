@@ -1,6 +1,7 @@
 .spell-list-item {
   cursor: pointer;
   border-left: 5px solid transparent;
+  -webkit-tap-highlight-color: initial;
 
   &:focus,
   &.is-active {

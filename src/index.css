@@ -168,3 +168,6 @@ body {
 .content-area ul {
   list-style-type: disc;
   margin-left: 1.2em; }
+
+[tabindex] {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }

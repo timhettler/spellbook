@@ -2,6 +2,7 @@ $size--medium-viewport-start: 768px;
 $size--large-viewport-start: 1100px;
 
 @mixin disable-callout() {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-touch-callout: none;
   user-select: none;
 }
