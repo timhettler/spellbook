@@ -130,6 +130,13 @@ table {
 
 // global styles
 
+html,
+body,
+#root {
+  height: 100%;
+  overflow: hidden;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -157,4 +164,24 @@ body {
   display: block;
   fill: currentColor;
   user-select: none;
+}
+
+.content-area {
+  i {
+    font-style: italic;
+  }
+
+  b {
+    font-weight: bold;
+  }
+
+  p:not(:first-child),
+  ul:not(:first-child) {
+    margin-top: 1.2em;
+  }
+
+  ul {
+    list-style-type: disc;
+    margin-left: 1.2em;
+  }
 }

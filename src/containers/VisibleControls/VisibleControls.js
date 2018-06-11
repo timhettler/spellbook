@@ -6,6 +6,7 @@ import Controls from '../../components/Controls';
 
 function mapStateToProps(state) {
   return {
+    sorting: state.sorting,
     showSubClassFilter: !!selectSubClassFilter(state),
   };
 }

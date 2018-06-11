@@ -1,3 +1,6 @@
+$size--medium-viewport-start: 768px;
+$size--large-viewport-start: 1100px;
+
 @mixin disable-callout() {
   -webkit-touch-callout: none;
   user-select: none;
@@ -14,7 +17,7 @@
   -webkit-font-smoothing: inherit;
   margin: 0;
   padding: 0;
-  outline: none;
+  //outline: none;
   display: block;
   text-align: inherit;
 
@@ -31,7 +34,7 @@
   font-family: inherit;
   font-size: inherit;
   margin: 0;
-  outline: none;
+  //outline: none;
   -webkit-appearance: none;
   width: 100%;
 }
@@ -49,6 +52,63 @@
   }
 
   @media #{$query-list} {
+    @content;
+  }
+}
+
+@mixin small() {
+  @include _breakpoint(
+    (
+      max-width: (
+        $size--medium-viewport-start - 1px,
+      ),
+    )
+  ) {
+    @content;
+  }
+}
+
+@mixin smallAndMedium() {
+  @include _breakpoint(
+    (
+      max-width: (
+        $size--large-viewport-start - 1px,
+      ),
+    )
+  ) {
+    @content;
+  }
+}
+
+@mixin medium() {
+  @include _breakpoint(
+    (
+      min-width: $size--medium-viewport-start,
+      max-width: (
+        $size--large-viewport-start - 1px,
+      ),
+    )
+  ) {
+    @content;
+  }
+}
+
+@mixin mediumAndLarge() {
+  @include _breakpoint(
+    (
+      min-width: $size--medium-viewport-start,
+    )
+  ) {
+    @content;
+  }
+}
+
+@mixin large() {
+  @include _breakpoint(
+    (
+      min-width: $size--large-viewport-start,
+    )
+  ) {
     @content;
   }
 }

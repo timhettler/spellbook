@@ -126,6 +126,12 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+html,
+body,
+#root {
+  height: 100%;
+  overflow: hidden; }
+
 html {
   box-sizing: border-box; }
 
@@ -148,3 +154,17 @@ body {
   display: block;
   fill: currentColor;
   user-select: none; }
+
+.content-area i {
+  font-style: italic; }
+
+.content-area b {
+  font-weight: bold; }
+
+.content-area p:not(:first-child),
+.content-area ul:not(:first-child) {
+  margin-top: 1.2em; }
+
+.content-area ul {
+  list-style-type: disc;
+  margin-left: 1.2em; }

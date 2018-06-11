@@ -20,9 +20,36 @@ class SpellList extends Component {
   }
 
   componentDidMount() {
-    const { scrollWidth, clientWidth } = this.container;
+    this._setTabIndex(this.container.current);
+  }
 
-    let scrollable = scrollWidth > clientWidth;
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    return {
+      focusSpell:
+        prevProps.currentSpellId !== null && this.props.currentSpellId === null,
+      spellListChanged: prevProps.spells.length !== this.props.spells.length,
+    };
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (snapshot.spellListChanged) {
+      this._setTabIndex(this.container.current);
+    }
+
+    if (snapshot.focusSpell) {
+      const listItem = this._getCurrentItem(prevProps.currentSpellId);
+      listItem.focus();
+    }
+  }
+
+  _getCurrentItem(id) {
+    return this.container.current.querySelector(`tbody > tr[data-id="${id}"]`);
+  }
+
+  _setTabIndex(node) {
+    let scrollable =
+      node.scrollWidth > node.clientWidth ||
+      node.scrollHeight > node.clientHeight;
 
     this.setState({
       tabindex: scrollable ? '0' : null,
@@ -57,21 +84,27 @@ class SpellList extends Component {
   }
 
   render() {
-    const { spells, sorting, onSpellClick } = this.props;
+    const { spells, sorting, currentSpellId, onSpellClick } = this.props;
 
     return (
       <div
         ref={this.container}
         className="spell-list-container"
         tabIndex={this.state.tabindex}
+        data-can-scroll="true"
         role="group"
         aria-labelledby={this.captionId}
       >
         <table className="spell-list">
           <caption id={this.captionId} className="visuallyHidden">
             <h2>Spells</h2>
+            {this.state.tabindex && (
+              <div>
+                <small>(scroll to see more)</small>
+              </div>
+            )}
           </caption>
-          <thead>
+          <thead className="visuallyHidden">
             <tr>
               {this._renderHeader('name', 'Name', sorting)}
               {this._renderHeader('level', 'Level', sorting)}
@@ -82,6 +115,7 @@ class SpellList extends Component {
               <Spell
                 key={spell.id}
                 {...spell}
+                isActive={currentSpellId === spell.id}
                 onClick={() => onSpellClick(spell.id)}
               />
             ))}
@@ -102,6 +136,7 @@ SpellList.propTypes = {
     field: PropTypes.string,
     reverse: PropTypes.bool,
   }).isRequired,
+  currentSpellId: PropTypes.number,
   onSpellClick: PropTypes.func.isRequired,
 };
 

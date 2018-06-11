@@ -1,15 +1,9 @@
 .spell-list-container {
-  overflow-x: auto;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
 }
 
 .spell-list {
   width: 100%;
-
-  &__header {
-    text-align: left;
-
-    &--level {
-      text-align: right;
-    }
-  }
 }

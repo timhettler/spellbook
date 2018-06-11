@@ -1206,7 +1206,7 @@ export const SPELLS = [
     casting_time: '1 action',
     level: 4,
     school: 'Enchantment',
-    classes: 'Bard',
+    classes: ['Bard'],
   },
   {
     name: 'Cone of Cold',
@@ -1294,7 +1294,7 @@ export const SPELLS = [
     casting_time: '1 action',
     level: 3,
     school: 'Conjuration',
-    classes: 'Ranger',
+    classes: ['Ranger'],
   },
   {
     name: 'Conjure Celestial',
@@ -1433,7 +1433,7 @@ export const SPELLS = [
     casting_time: '1 action',
     level: 5,
     school: 'Conjuration',
-    classes: 'Ranger',
+    classes: ['Ranger'],
   },
   {
     name: 'Conjure Vrock',
@@ -1612,7 +1612,7 @@ export const SPELLS = [
     casting_time: '1 action',
     level: 2,
     school: 'Transmutation',
-    classes: 'Ranger',
+    classes: ['Ranger'],
   },
   {
     name: 'Counterspell',
@@ -3003,7 +3003,7 @@ export const SPELLS = [
       '<p>For the duration, you have advantage on all Charisma checks directed at one creature of your choice that isn’t hostile toward you. When the spell ends, the creature realizes that you have used magic to influence its mood and becomes hostile toward you. A creature prone to violence might attack you. Another creature might seek retribution in other ways (at the DM’s discretion), depending on the nature of your interaction with it.</p>',
     page: 'phb 244',
     range: 'Self',
-    components: 'S, M',
+    components: ['S', 'M'],
     material:
       'A small amount of makeup applied to the face as this spell is cast.',
     ritual: false,
@@ -3378,7 +3378,7 @@ export const SPELLS = [
     casting_time: '1 bonus action',
     level: 1,
     school: 'Conjuration',
-    classes: 'Ranger',
+    classes: ['Ranger'],
   },
   {
     name: 'Hallow',
@@ -3402,12 +3402,11 @@ export const SPELLS = [
   {
     name: 'Hallucinatory Terrain',
     desc:
-      '<p>The tactile characteristics of the terrain are unchanged, so creatures entering the area are likely to see through the illusion. If the difference isn’t obvious by touch, a creature carefully examining the illusion can attempt an Intelligence (Investigation) check against your spell save DC to disbelieve it. A creature who discerns the illusion for what it is, sees it as a vague image superimposed on the terrain.</p>',
+      '<p>You make natural terrain in a 150-foot cube in range look, sound, and smell like some other sort of natural terrain. Thus, open fields or a road can be made to resemble a swamp, hill, crevasse, or some other difficult or impassable terrain. A pond can be made to seem like a grassy meadow, a precipice like a gentle slope, or a rock-strewn gully like a wide and smooth road. Manufactured structures, equipment, and creatures within the area aren’t changed in appearance.</p><p>The tactile characteristics of the terrain are unchanged, so creatures entering the area are likely to see through the illusion. If the difference isn’t obvious by touch, a creature carefully examining the illusion can attempt an Intelligence (Investigation) check against your spell save DC to disbelieve it. A creature who discerns the illusion for what it is, sees it as a vague image superimposed on the terrain.</p>',
     page: 'phb 249',
     range: '300 feet',
     components: ['V', 'S', 'M'],
-    material:
-      'A stone, a twig, and a bit of green plant.</p><p>You make natural terrain in a 150-foot cube in range look, sound, and smell like some other sort of natural terrain. Thus, open fields or a road can be made to resemble a swamp, hill, crevasse, or some other difficult or impassable terrain. A pond can be made to seem like a grassy meadow, a precipice like a gentle slope, or a rock-strewn gully like a wide and smooth road. Manufactured structures, equipment, and creatures within the area aren’t changed in appearance.',
+    material: 'A stone, a twig, and a bit of green plant.',
     ritual: false,
     duration: '24 hours',
     concentration: false,
@@ -3680,7 +3679,7 @@ export const SPELLS = [
       '<p>You create a twisting pattern of colors that weaves through the air inside a 30-foot cube within range. The pattern appears for a moment and vanishes. Each creature in the area who sees the pattern must make a Wisdom saving throw. On a failed save, the creature becomes charmed for the duration. While charmed by this spell, the creature is incapacitated and has a speed of 0.</p><p>The spell ends for an affected creature if it takes any damage or if someone else uses an action to shake the creature out of its stupor.</p>',
     page: 'phb 252',
     range: '120 feet',
-    components: 'S, M',
+    components: ['S', 'M'],
     material:
       'A glowing stick of incense or a crystal vial filled with phosphorescent material.',
     ritual: false,
@@ -3699,7 +3698,7 @@ export const SPELLS = [
       '<p>When you cast this spell using a spell slot of 2nd level or higher, the cold damage increases by 1d6 for each slot level above 1st.</p>',
     page: 'ee pc 19',
     range: '60 feet',
-    components: 'S, M',
+    components: ['S', 'M'],
     material: 'A drop of water or piece of ice.',
     ritual: false,
     duration: 'Instantaneous',
@@ -3755,7 +3754,7 @@ export const SPELLS = [
       '<p>You write on parchment, paper, or some other suitable writing material and imbue it with a potent illusion that lasts for the duration.</p><p>To you and any creatures you designate when you cast the spell, the writing appears normal, written in your hand, and conveys whatever meaning you intended when you wrote the text. To all others, the writing appears as if it were written in an unknown or magical script that is unintelligible. Alternatively, you can cause the writing to appear to be an entirely different message, written in a different hand and language, though the language must be one you know.</p><p>Should the spell be dispelled, the original script and the illusion both disappear.</p><p>A creature with truesight can read the hidden message.</p>',
     page: 'phb 252',
     range: 'Touch',
-    components: 'S, M',
+    components: ['S', 'M'],
     material:
       'A lead-based ink worth at least 10gp, which this spell consumes.',
     ritual: true,
@@ -4079,7 +4078,7 @@ export const SPELLS = [
     casting_time: '1 bonus action',
     level: 3,
     school: 'Transmutation',
-    classes: 'Ranger',
+    classes: ['Ranger'],
   },
   {
     name: 'Lightning Bolt',
@@ -4575,7 +4574,7 @@ export const SPELLS = [
       '<p>You create a sound or an image of an object within range that lasts for the duration. The illusion also ends if you dismiss it as an action or cast this spell again.</p><p>If you create a sound, its volume can range from a whisper to a scream. It can be your voice, someone else’s voice, a lion’s roar, a beating of drums, or any other sound you choose. The sound continues unabated throughout the duration, or you can make discrete sounds at different times before the spell ends.</p><p>If you create an image of an object—such as a chair, muddy footprints, or a small chest—it must be no larger than a 5-foot cube. The image can’t create sound, light, smell, or any other sensory effect. Physical interaction with the image reveals it to be an illusion, because things can pass through it.</p><p>If a creature uses its action to examine the sound or image, the creature can determine that it is an illusion with a successful Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, the illusion becomes faint to the creature.</p>',
     page: 'phb 260',
     range: '30 feet',
-    components: 'S, M',
+    components: ['S', 'M'],
     material: 'A bit of fleece.',
     ritual: false,
     duration: '1 minute',
@@ -5097,7 +5096,7 @@ export const SPELLS = [
     casting_time: '1 action',
     level: 9,
     school: 'Evocation',
-    classes: 'Bard',
+    classes: ['Bard'],
   },
   {
     name: 'Power Word Kill',
@@ -6267,7 +6266,7 @@ export const SPELLS = [
     casting_time: '1 bonus action',
     level: 5,
     school: 'Transmutation',
-    classes: 'Ranger',
+    classes: ['Ranger'],
   },
   {
     name: 'Sword Burst',
@@ -6720,7 +6719,7 @@ export const SPELLS = [
     casting_time: '1 action',
     level: 0,
     school: 'Enchantment',
-    classes: 'Bard',
+    classes: ['Bard'],
   },
   {
     name: 'Vitriolic Sphere',
@@ -7030,7 +7029,7 @@ export const SPELLS = [
   {
     name: 'Wish',
     desc:
-      '<p>Desire is the most powerful spell a deadly creature can throw. Simply by speaking aloud, you can alter the very foundations of reality as you wish.</p><p>The most basic use of this spell is to duplicate any other out of 8th level or lower. You only need to fill out any conditions for that, not even the need for costly components. The fate simply takes effect. You can also create one of the following effects of your choice:</p><p>- You create one object of up to 25,000 gp in value that isn’t a magic item. The object can be no more than 300 feet in any dimension, and it appears in an unoccupied space you can see on the ground.</p><p>- You allow a maximum of twenty creatures you can see to get all their points and you dispel all effects affecting them, as described in greater restoration spell.</p><p>- You grant to a maximum of ten creatures you can see resistance to a damage type you choose.</p><p>- You grant to a maximum of ten creatures you can see immunity to a single spell or other magical effect for 8 hours. For example, you can immunize yourself and your companions against the attack of the Lich draining.</p><p>- You cancel a recent event unique by requiring a new replacement jet diced any jet made during the last round (including your last turn). The reality is transformed to match the new launch. For example, a wish spell can cancel a successful saving throw enemy critical strike an opponent or ally saving throw missed. You can impose a jet with advantage or disadvantage, and you can choose to use the new result of the start or the old.</p><p>You can also do other things than the above examples. Describe your wishes to your MD in the most accurate way possible. The DM is free to determine what happens in this case; more desire, the more likely it is that something goes wrong. This spell may simply fail, the effect you want might be only partially executed, or you may suffer from unpredictable consequences depending on your formulation wish. For example, want an enemy died could propel you to a future time when your enemy is no longer alive, you effectively eliminating the game. Similarly, desiring a legendary magical object or artifact could carry you instantaneously in the presence of the current owner of the object.</p><p>Stress to cast this spell to produce an effect other than the reproduction of another spell weakens you. After undergoing this tension every time you cast a spell, and this until your next extended rest, you suffer 1d10 necrotic damage per spell level. This damage can not be reduced or avoided in any way. In addition, your Force falls to 3, if it is not already less than 3, for 2d4 days. For each day spent resting or practicing a minor activity, your recovery time decreases by 2 days. Finally, you have a 33% chance of never being able to cast the spell if you wish undergoes stress.</p>',
+      "<p>Wish is the mightiest spell a mortal creature can cast. By simply speaking aloud, you can alter the very foundations of reality in accord with your desires.</p><p>The basic use of this spell is to duplicate any other spell of 8th level or lower. You don't need to meet any requirements in that spell, including costly components. The spell simply takes effect.</p><p>Alternatively, you can create one of the following effects of your choice:</p><ul><li>You create one object of up to 25,000 gp in value that isn’t a magic item. The object can be no more than 300 feet in any dimension, and it appears in an unoccupied space you can see on the ground.</li><li>You allow up to twenty creatures that you can see to regain all hit points, and you end all effects on them described in the greater restoration spell.</li><li>You grant to a maximum of ten creatures you can see resistance to a damage type you choose.</li><li>You grant to a maximum of ten creatures you can see immunity to a single spell or other magical effect for 8 hours. For example, you can immunize yourself and your companions against the attack of the Lich draining.</li><li>You undo a single recent event by forcing a reroll of any roll made within the last round (including your last turn). Reality reshapes itself to accommodate the new result. For example, a wish spell could undo an opponent's successful save, a foe's critical hit, or a friend's failed save. You can force the reroll to be made with advantage or disadvantage, and you can choose whether to use the reroll or the original roll.</li></ul><p>You might be able to achieve something beyond the scope of the above examples. State your wish to the GM as precisely as possible. The GM has great latitude in ruling what occurs in such an instance; the greater the wish, the greater the likelihood that something goes wrong. This spell might simply fail, the effect you desire might only be partly achieved, or you might suffer some unforeseen consequence as a result of how you worded the wish. For example, wishing that a villain were dead might propel you forward in time to a period when that villain is no longer alive, effectively removing you from the game. Similarly, wishing for a legendary magic item or artifact might instantly transport you to the presence of the item's current owner.</p><p>The stress of casting this spell to produce any effect other than duplicating another spell weakens you. After enduring that stress, each time you cast a spell until you finish a long rest, you take 1d10 necrotic damage per level of that spell. This damage can't be reduced or prevented in any way. In addition, your Strength drops to 3, if it isn't 3 or lower already, for 2d4 days. For each of those days that you spend resting and doing nothing more than light activity, your remaining recovery time decreases by 2 days. Finally, there is a 33 percent chance that you are unable to cast wish ever again if you suffer this stress.</p>",
     page: 'phb 288',
     range: 'Self',
     components: ['V'],

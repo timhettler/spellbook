@@ -1,10 +1,32 @@
 .spell-list-item {
+  cursor: pointer;
+  border-left: 5px solid transparent;
+
+  &:focus,
+  &.is-active {
+    outline: none;
+    border-left-color: currentColor;
+  }
+
+  .no-touch &:hover {
+    background-color: #ccc !important;
+  }
+
   &:nth-child(odd) {
     background-color: #eee;
   }
 
   > * {
-    padding: 0.75em;
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
+  }
+
+  > *:first-child {
+    padding-left: 0.75em;
+  }
+
+  > *:last-child {
+    padding-right: 0.75em;
   }
 
   &__name {
@@ -14,5 +36,6 @@
   &__level {
     color: #666;
     text-align: right;
+    white-space: nowrap;
   }
 }

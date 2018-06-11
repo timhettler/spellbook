@@ -1,10 +1,11 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { CIRCLES, CLASSES, DOMAINS, OATHS, PATRONS, SCHOOLS } from '../../data';
 
 import getSpellLevel from '../../utilities/getSpellLevel';
-import yesNo from '../../utilities/yesNo';
+
+import './SpellDetail.css';
 
 function getAvailableClasses(classes, domains, circles, oaths, patrons) {
   let availableClasses = [].concat(classes);
@@ -28,10 +29,10 @@ function getAvailableClasses(classes, domains, circles, oaths, patrons) {
   return availableClasses.sort().join(', ');
 }
 
-function _renderComponents(components, material) {
+function _renderSpellComponents(components, material) {
   return (
     <Fragment>
-      <span>
+      <span className="spell-components">
         {components.map(c => {
           let desc = '';
 
@@ -56,8 +57,13 @@ function _renderComponents(components, material) {
             </abbr>
           );
         })}
+        {material && (
+          <a href="#material">
+            <span role="presentation">*</span>
+            <span className="visuallyHidden">Material components</span>
+          </a>
+        )}
       </span>
-      {material && <a href="#material">*</a>}
     </Fragment>
   );
 }
@@ -66,109 +72,200 @@ function _renderCastingTime(time, modifier) {
   return (
     <div>
       {time}
-      {modifier && <a href="#casting_condition">*</a>}
+      {modifier && (
+        <a href="#casting_condition">
+          <span role="presentation">*</span>
+          <span className="visuallyHidden">Casting condition</span>
+        </a>
+      )}
     </div>
-  )
+  );
 }
 
-const Spell = (props) => {
-  const {
-    name,
-    desc,
-    higher_level,
-    range,
-    components,
-    material,
-    ritual,
-    duration,
-    concentration,
-    casting_time,
-    casting_time_modifier,
-    level,
-    school,
-    classes,
-    domains,
-    circles,
-    oaths,
-    patrons,
-  } = props;
+class Spell extends Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <article>
-      <header>
-        <h1>{name}</h1>
-        <div>{`${getSpellLevel(level)} ${school}`}</div>
-      </header>
-      <section>
-        <h2>Stats</h2>
-        <div>
-          <h3>Casting Time</h3>
-          <div>{_renderCastingTime(casting_time, casting_time_modifier)}</div>
-        </div>
-        <div>
-          <h3>Range</h3>
-          <div>{range}</div>
-        </div>
-        <div>
-          <h3>Components</h3>
-          <div>{_renderComponents(components, material)}</div>
-        </div>
-        <div>
-          <h3>Duration</h3>
-          <div>{duration}</div>
-        </div>
-      </section>
-      <section>
-        <h2>Description</h2>
-        <div dangerouslySetInnerHTML={{ __html: desc }} />
-        {higher_level && (
-          <Fragment>
-            <h3>At Higher Levels</h3>
-            <div dangerouslySetInnerHTML={{ __html: higher_level }} />
-          </Fragment>
-        )}
-      </section>
-      <section>
-        <div>
-          <h3>Concentration</h3>
-          <div>{yesNo(concentration)}</div>
-        </div>
-        <div>
-          <h3>Ritual</h3>
-          <div>{yesNo(ritual)}</div>
-        </div>
-      </section>
-      <section>
-        <h2>Available To</h2>
-        <div>
-          {getAvailableClasses(classes, domains, circles, oaths, patrons)}
-        </div>
-      </section>
-      <footer>
-        {material && (
-          <Fragment>
-            <h2 id="material">Material</h2>
-            <div>
-              <i>{material}</i>
+    this.state = {
+      tabindex: null,
+    };
+
+    this.container = React.createRef();
+    this.description = React.createRef();
+  }
+
+  componentDidMount() {
+    this._setTabIndex(this.description.current);
+    //this.container.current.focus({ preventScroll: true });
+  }
+
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    if (prevProps.id !== this.props.id) {
+      return true;
+    }
+
+    return null;
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (snapshot === null) {
+      return;
+    }
+
+    this._setTabIndex(this.description.current);
+    //this.container.current.focus({ preventScroll: true });
+  }
+
+  _setTabIndex(node) {
+    let scrollable =
+      node.scrollWidth > node.clientWidth ||
+      node.scrollHeight > node.clientHeight;
+
+    this.setState({
+      tabindex: scrollable ? '0' : null,
+    });
+  }
+
+  render() {
+    const {
+      name,
+      desc,
+      page,
+      higher_level,
+      range,
+      components,
+      material,
+      ritual,
+      duration,
+      concentration,
+      casting_time,
+      casting_time_modifier,
+      level,
+      school,
+      classes,
+      domains,
+      circles,
+      oaths,
+      patrons,
+      onClose,
+    } = this.props;
+
+    return (
+      <article ref={this.container} className="spell" tabIndex="-1">
+        <div className="spell__container">
+          <header className="spell-section spell-section--with-padding">
+            <div className="spell-header">
+              <div className="spell-header__section">
+                <h1 className="spell__heading">{name}</h1>
+                <div className="spell-category">
+                  {`${getSpellLevel(level)} ${school}`}
+                  {ritual && <span> (ritual)</span>}
+                </div>
+              </div>
+              <div className="spell-header__section spell-header__section--cta">
+                <button className="spell-close-button" onClick={onClose}>
+                  <span role="presentation">×</span>
+                  <span className="visuallyHidden">Return to Spell List</span>
+                </button>
+              </div>
             </div>
-          </Fragment>
-        )}
-        {casting_time_modifier && (
-          <Fragment>
-            <h2 id="casting_condition">Casting Condition</h2>
-            <div>
-              <i>{casting_time_modifier}</i>
+          </header>
+          <section className="spell-section">
+            <div className="spell-detail">
+              <div className="spell-detail__item">
+                <h3 className="spell-detail__heading">Casting Time</h3>
+                <div className="spell-detail__value">
+                  {_renderCastingTime(casting_time, casting_time_modifier)}
+                </div>
+              </div>
+              <div className="spell-detail__item">
+                <h3 className="spell-detail__heading">Range</h3>
+                <div className="spell-detail__value">{range}</div>
+              </div>
+              <div className="spell-detail__item">
+                <h3 className="spell-detail__heading">Components</h3>
+                <div className="spell-detail__value">
+                  {_renderSpellComponents(components, material)}
+                </div>
+              </div>
+              <div className="spell-detail__item">
+                <h3 className="spell-detail__heading">Duration</h3>
+                <div className="spell-detail__value">
+                  {concentration && <div>Concentration, </div>}
+                  {duration}
+                </div>
+              </div>
             </div>
-          </Fragment>
-        )}
-      </footer>
-    </article>
-  );
-};
+          </section>
+          <section
+            ref={this.description}
+            className="spell-section spell-section--content spell-section--with-padding spell-section--scroll"
+            tabIndex={this.state.tabindex}
+            data-can-scroll="true"
+            role="group"
+            aria-labelledby="description"
+          >
+            <h2 className="spell__subheading" id="description">
+              Description
+            </h2>
+            <div
+              className="spell__description content-area"
+              dangerouslySetInnerHTML={{ __html: desc }}
+            />
+            {higher_level && (
+              <div className="spell__description">
+                <h3 className="spell__minor-heading">At Higher Levels.</h3>
+                <div
+                  className="content-area"
+                  dangerouslySetInnerHTML={{ __html: higher_level }}
+                />
+              </div>
+            )}
+            <div className="spell__page spell__minor-info">
+              <i>({page})</i>
+            </div>
+          </section>
+          <section className="spell-section spell-section--content spell-section--with-padding">
+            <h2 className="spell__subheading">Available To</h2>
+            <div>
+              {getAvailableClasses(classes, domains, circles, oaths, patrons)}
+            </div>
+          </section>
+          {(material || casting_time_modifier) && (
+            <footer className="spell-section spell-section--content spell-section--with-padding">
+              {material && (
+                <Fragment>
+                  <h2 className="spell__subheading" id="material">
+                    Material
+                  </h2>
+                  <div className="spell__minor-info">
+                    <i>{material}</i>
+                  </div>
+                </Fragment>
+              )}
+              {casting_time_modifier && (
+                <Fragment>
+                  <h2 className="spell__subheading" id="casting_condition">
+                    Casting Condition
+                  </h2>
+                  <div className="spell__minor-info">
+                    <i>{casting_time_modifier}</i>
+                  </div>
+                </Fragment>
+              )}
+            </footer>
+          )}
+        </div>
+      </article>
+    );
+  }
+}
 
 Spell.propTypes = {
+  id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   desc: PropTypes.string.isRequired,
+  page: PropTypes.string.isRequired,
   higher_level: PropTypes.string,
   range: PropTypes.string.isRequired,
   components: PropTypes.arrayOf(PropTypes.oneOf(['V', 'S', 'M'])).isRequired,
@@ -185,6 +282,7 @@ Spell.propTypes = {
   circles: PropTypes.arrayOf(PropTypes.oneOf(CIRCLES)),
   oaths: PropTypes.arrayOf(PropTypes.oneOf(OATHS)),
   patrons: PropTypes.arrayOf(PropTypes.oneOf(PATRONS)),
+  onClose: PropTypes.func.isRequired,
 };
 
 export default Spell;

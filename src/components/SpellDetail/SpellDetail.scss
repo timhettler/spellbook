@@ -1,0 +1,147 @@
+@import 'utilities/scss/_mixins';
+
+.spell {
+  position: relative;
+  height: 100%;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &__container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__heading {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: larger;
+  }
+
+  &__subheading {
+    text-transform: uppercase;
+    color: #666;
+    padding-bottom: 0.1em;
+    border-bottom: 2px solid;
+    margin-bottom: 0.5em;
+  }
+
+  &__minor-heading {
+    font-weight: bold;
+    font-style: italic;
+    float: left;
+  }
+
+  &__description {
+    line-height: 1.2;
+
+    & + & {
+      margin-top: 1.2em;
+    }
+  }
+
+  &__page {
+    margin-top: 1.2em;
+  }
+
+  &__minor-info {
+    font-size: smaller;
+
+    > i {
+      font-style: italic;
+    }
+  }
+}
+
+.spell-header {
+  display: flex;
+  width: 100%;
+
+  &__section {
+    flex: 1 1 auto;
+
+    &--cta {
+      flex: 0 0 auto;
+      margin-left: 1.5em;
+    }
+  }
+}
+
+.spell-close-button {
+  @include reset-button;
+  font-size: 2em;
+}
+
+.spell-section {
+  flex: 0 0 auto;
+  width: 100%;
+
+  &--content {
+    margin: 0 auto;
+    max-width: 60em;
+  }
+
+  &--with-padding {
+    @include small {
+      padding: 0.75em;
+    }
+
+    @include mediumAndLarge {
+      padding: 1.5em;
+    }
+  }
+
+  &--scroll {
+    flex: 1 1;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+}
+
+.spell-category {
+  margin-top: 0.5em;
+  font-style: italic;
+}
+
+.spell-detail {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  border-top: 2px solid #666;
+  background-color: #eee;
+
+  &__item {
+    flex: 0 0 50%;
+    padding: 0.75em;
+  }
+
+  &__heading {
+    text-transform: uppercase;
+    color: #666;
+  }
+
+  &__value {
+    margin-top: 0.5em;
+  }
+}
+
+.spell-components {
+  > abbr {
+    text-decoration: none;
+    cursor: help;
+
+    &:not(:first-child) {
+      &::before {
+        content: ', ';
+      }
+    }
+  }
+}
