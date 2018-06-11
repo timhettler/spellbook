@@ -1,14 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import store from './store';
+import { PersistGate } from 'redux-persist/integration/react';
+import { store, persistor } from './store';
 import './index.css';
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <PersistGate loading={null} persistor={persistor}>
+      <App />
+    </PersistGate>
   </Provider>,
   document.getElementById('root')
 );
@@ -21,7 +24,7 @@ document.body.addEventListener(
     var p = event.target;
 
     while (p != null) {
-      if (p && p.getAttribute && p.getAttribute('data-can-scroll') === 'true') {
+      if (p && p.getAttribute && p.getAttribute('data-can-scroll')) {
         isTouchMoveAllowed = p.getAttribute('data-can-scroll');
         break;
       }
@@ -38,6 +41,7 @@ document.body.addEventListener(
   }
 );
 
+// https://stackoverflow.com/questions/4817029/whats-the-best-way-to-detect-a-touch-screen-device-using-javascript#4819886
 function is_touch_device() {
   var prefixes = ' -webkit- -moz- -o- -ms- '.split(' ');
   var mq = function(query) {

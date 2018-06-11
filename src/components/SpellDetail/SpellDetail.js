@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { CIRCLES, CLASSES, DOMAINS, OATHS, PATRONS, SCHOOLS } from '../../data';
 
+import setTabIndex from '../../utilities/setTabIndex';
 import getSpellLevel from '../../utilities/getSpellLevel';
 
 import './SpellDetail.css';
@@ -86,16 +87,13 @@ class Spell extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      tabindex: null,
-    };
-
     this.container = React.createRef();
     this.description = React.createRef();
+    this.setTabIndex = setTabIndex.bind(this);
   }
 
   componentDidMount() {
-    this._setTabIndex(this.description.current);
+    this.setTabIndex(this.description.current);
     //this.container.current.focus({ preventScroll: true });
   }
 
@@ -112,18 +110,8 @@ class Spell extends Component {
       return;
     }
 
-    this._setTabIndex(this.description.current);
+    this.setTabIndex(this.description.current);
     //this.container.current.focus({ preventScroll: true });
-  }
-
-  _setTabIndex(node) {
-    let scrollable =
-      node.scrollWidth > node.clientWidth ||
-      node.scrollHeight > node.clientHeight;
-
-    this.setState({
-      tabindex: scrollable ? '0' : null,
-    });
   }
 
   render() {
@@ -200,8 +188,6 @@ class Spell extends Component {
           <section
             ref={this.description}
             className="spell-section spell-section--content spell-section--with-padding spell-section--scroll"
-            tabIndex={this.state.tabindex}
-            data-can-scroll="true"
             role="group"
             aria-labelledby="description"
           >

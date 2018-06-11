@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import setTabIndex from '../../utilities/setTabIndex';
 import uuidv4 from '../../utilities/uuidv4';
 import SortingButton from '../../containers/SortingButton';
 import Spell from '../Spell';
@@ -17,10 +18,11 @@ class SpellList extends Component {
 
     this.captionId = uuidv4();
     this.container = React.createRef();
+    this.setTabIndex = setTabIndex.bind(this);
   }
 
   componentDidMount() {
-    this._setTabIndex(this.container.current);
+    this.setTabIndex(this.container.current);
   }
 
   getSnapshotBeforeUpdate(prevProps, prevState) {
@@ -33,7 +35,7 @@ class SpellList extends Component {
 
   componentDidUpdate(prevProps, prevState, snapshot) {
     if (snapshot.spellListChanged) {
-      this._setTabIndex(this.container.current);
+      this.setTabIndex(this.container.current);
     }
 
     if (snapshot.focusSpell) {
@@ -44,16 +46,6 @@ class SpellList extends Component {
 
   _getCurrentItem(id) {
     return this.container.current.querySelector(`tbody > tr[data-id="${id}"]`);
-  }
-
-  _setTabIndex(node) {
-    let scrollable =
-      node.scrollWidth > node.clientWidth ||
-      node.scrollHeight > node.clientHeight;
-
-    this.setState({
-      tabindex: scrollable ? '0' : null,
-    });
   }
 
   _getAriaSort(field, sorting) {
@@ -90,8 +82,6 @@ class SpellList extends Component {
       <div
         ref={this.container}
         className="spell-list-container"
-        tabIndex={this.state.tabindex}
-        data-can-scroll="true"
         role="group"
         aria-labelledby={this.captionId}
       >
