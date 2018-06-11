@@ -15,7 +15,7 @@ const mapStateToProps = (state, ownProps) => {
 
   return {
     type: filter.type,
-    value: selectValue(ownProps.type)(state),
+    value: selectValue(filter.type)(state),
     options: [{ label: filter.label, value: '' }].concat(filter.options),
   };
 };
