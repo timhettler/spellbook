@@ -5,6 +5,7 @@ import { CIRCLES, CLASSES, DOMAINS, OATHS, PATRONS, SCHOOLS } from '../../data';
 
 import setTabIndex from '../../utilities/setTabIndex';
 import getSpellLevel from '../../utilities/getSpellLevel';
+import PropIcon from '../PropIcon';
 
 import './SpellDetail.css';
 
@@ -71,7 +72,7 @@ function _renderSpellComponents(components, material) {
 
 function _renderCastingTime(time, modifier) {
   return (
-    <div>
+    <Fragment>
       {time}
       {modifier && (
         <a href="#casting_condition">
@@ -79,7 +80,7 @@ function _renderCastingTime(time, modifier) {
           <span className="visuallyHidden">Casting condition</span>
         </a>
       )}
-    </div>
+    </Fragment>
   );
 }
 
@@ -94,7 +95,7 @@ class Spell extends Component {
 
   componentDidMount() {
     this.setTabIndex(this.description.current);
-    //this.container.current.focus({ preventScroll: true });
+    this.container.current.focus({ preventScroll: true });
   }
 
   getSnapshotBeforeUpdate(prevProps, prevState) {
@@ -111,7 +112,7 @@ class Spell extends Component {
     }
 
     this.setTabIndex(this.description.current);
-    //this.container.current.focus({ preventScroll: true });
+    this.container.current.focus({ preventScroll: true });
   }
 
   render() {
@@ -147,7 +148,6 @@ class Spell extends Component {
                 <h1 className="spell__heading">{name}</h1>
                 <div className="spell-category">
                   {`${getSpellLevel(level)} ${school}`}
-                  {ritual && <span> (ritual)</span>}
                 </div>
               </div>
               <div className="spell-header__section spell-header__section--cta">
@@ -164,6 +164,11 @@ class Spell extends Component {
                 <h3 className="spell-detail__heading">Casting Time</h3>
                 <div className="spell-detail__value">
                   {_renderCastingTime(casting_time, casting_time_modifier)}
+                  {ritual && (
+                    <span className="spell-detail__icon">
+                      <PropIcon type="ritual" />
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="spell-detail__item">
@@ -179,8 +184,12 @@ class Spell extends Component {
               <div className="spell-detail__item">
                 <h3 className="spell-detail__heading">Duration</h3>
                 <div className="spell-detail__value">
-                  {concentration && <div>Concentration, </div>}
                   {duration}
+                  {concentration && (
+                    <span className="spell-detail__icon">
+                      <PropIcon type="concentration" />
+                    </span>
+                  )}
                 </div>
               </div>
             </div>

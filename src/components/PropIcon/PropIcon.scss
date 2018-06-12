@@ -1,0 +1,7 @@
+.prop-icon {
+  display: inline-flex;
+
+  > * + * {
+    margin-left: 1ex;
+  }
+}

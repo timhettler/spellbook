@@ -131,6 +131,11 @@
   &__value {
     margin-top: 0.5em;
   }
+
+  &__icon {
+    display: inline-flex;
+    margin-left: 1ex;
+  }
 }
 
 .spell-components {

@@ -189,3 +189,7 @@ body {
 [tabindex] {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+
+[tabindex='-1'] {
+  outline: none;
+}

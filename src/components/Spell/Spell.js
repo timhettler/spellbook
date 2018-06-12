@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
 import getSpellLevel from '../../utilities/getSpellLevel';
+import PropIcon from '../PropIcon';
 
 import './Spell.css';
 
@@ -34,7 +35,15 @@ export class Spell extends Component {
   }
 
   render() {
-    const { onClick, id, name, level, isActive } = this.props;
+    const {
+      onClick,
+      id,
+      name,
+      ritual,
+      concentration,
+      level,
+      isActive,
+    } = this.props;
 
     return (
       <tr
@@ -47,6 +56,12 @@ export class Spell extends Component {
       >
         <th scope="row" className="spell-list-item__name">
           {name}
+          {(ritual || concentration) && (
+            <div className="spell-icons">
+              {ritual && <PropIcon type="ritual" />}
+              {concentration && <PropIcon type="concentration" />}
+            </div>
+          )}
         </th>
         <td className="spell-list-item__level">{getSpellLevel(level)}</td>
       </tr>
@@ -58,6 +73,8 @@ Spell.propTypes = {
   onClick: PropTypes.func.isRequired,
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
+  ritual: PropTypes.bool,
+  concentration: PropTypes.bool,
   level: PropTypes.number.isRequired,
   isActive: PropTypes.bool,
 };
