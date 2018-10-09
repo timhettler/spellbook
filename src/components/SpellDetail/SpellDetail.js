@@ -6,6 +6,7 @@ import { CIRCLES, CLASSES, DOMAINS, OATHS, PATRONS, SCHOOLS } from '../../data';
 import setTabIndex from '../../utilities/setTabIndex';
 import getSpellLevel from '../../utilities/getSpellLevel';
 import PropIcon from '../PropIcon';
+import VisuallyHidden from '../VisuallyHidden';
 
 import './SpellDetail.scss';
 
@@ -62,7 +63,7 @@ function _renderSpellComponents(components, material) {
         {material && (
           <a href="#material">
             <span role="presentation">*</span>
-            <span className="visuallyHidden">Material components</span>
+            <VisuallyHidden>Material components</VisuallyHidden>
           </a>
         )}
       </span>
@@ -77,7 +78,7 @@ function _renderCastingTime(time, modifier) {
       {modifier && (
         <a href="#casting_condition">
           <span role="presentation">*</span>
-          <span className="visuallyHidden">Casting condition</span>
+          <VisuallyHidden>Casting condition</VisuallyHidden>
         </a>
       )}
     </Fragment>
@@ -153,7 +154,7 @@ class Spell extends Component {
               <div className="spell-header__section spell-header__section--cta">
                 <button className="spell-close-button" onClick={onClose}>
                   <span role="presentation">×</span>
-                  <span className="visuallyHidden">Return to Spell List</span>
+                  <VisuallyHidden>Return to Spell List</VisuallyHidden>
                 </button>
               </div>
             </div>

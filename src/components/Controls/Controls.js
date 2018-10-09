@@ -7,6 +7,7 @@ import SubClassFilter from '../../containers/SubClassFilter';
 import TextFilter from '../../containers/TextFilter';
 import BinaryFilter from '../../containers/BinaryFilter';
 import SortingButton from '../../containers/SortingButton';
+import VisuallyHidden from '../VisuallyHidden';
 
 import './Controls.scss';
 
@@ -34,7 +35,7 @@ const Controls = ({ sorting, showSubClassFilter }) => (
       <div className="control-item control-item--input control-item--reset">
         <ResetButton className="reset-button">
           <span role="presentation">×</span>
-          <span className="visuallyHidden">Reset Filters</span>
+          <VisuallyHidden>Reset Filters</VisuallyHidden>
         </ResetButton>
       </div>
     </div>
