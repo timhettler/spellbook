@@ -1,10 +1,11 @@
 {
   "name": "spellbook",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "classnames": "^2.2.5",
     "eslint-plugin-prettier": "^2.6.0",
+    "history": "^4.7.2",
     "husky": "^1.0.0-rc.8",
     "lint-staged": "^7.1.2",
     "node-sass": "^4.9.3",
@@ -44,10 +45,5 @@
       "pre-push": "lint-staged"
     }
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"]
 }
