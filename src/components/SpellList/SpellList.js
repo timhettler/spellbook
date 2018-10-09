@@ -6,7 +6,7 @@ import uuidv4 from '../../utilities/uuidv4';
 import SortingButton from '../../containers/SortingButton';
 import Spell from '../Spell';
 
-import './SpellList.css';
+import './SpellList.scss';
 
 class SpellList extends Component {
   constructor(props) {

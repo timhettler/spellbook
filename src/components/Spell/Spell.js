@@ -5,7 +5,7 @@ import classNames from 'classnames/bind';
 import getSpellLevel from '../../utilities/getSpellLevel';
 import PropIcon from '../PropIcon';
 
-import './Spell.css';
+import './Spell.scss';
 
 export class Spell extends Component {
   constructor(props) {

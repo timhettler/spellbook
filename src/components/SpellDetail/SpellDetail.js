@@ -7,7 +7,7 @@ import setTabIndex from '../../utilities/setTabIndex';
 import getSpellLevel from '../../utilities/getSpellLevel';
 import PropIcon from '../PropIcon';
 
-import './SpellDetail.css';
+import './SpellDetail.scss';
 
 function getAvailableClasses(classes, domains, circles, oaths, patrons) {
   let availableClasses = [].concat(classes);

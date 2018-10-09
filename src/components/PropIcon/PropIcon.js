@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import uuidv4 from '../../utilities/uuidv4';
 
-import './PropIcon.css';
+import './PropIcon.scss';
 
 export default function PropIcon({ type }) {
   let id;

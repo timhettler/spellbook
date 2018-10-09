@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
-import './TextInput.css';
+import './TextInput.scss';
 
 function handleChange(callback) {
   return e => {

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
 import Chevron from '../Chevron';
-import './Select.css';
+import './Select.scss';
 
 function handleChange(callback, type) {
   return e => {

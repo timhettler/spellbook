@@ -8,7 +8,7 @@ import TextFilter from '../../containers/TextFilter';
 import BinaryFilter from '../../containers/BinaryFilter';
 import SortingButton from '../../containers/SortingButton';
 
-import './Controls.css';
+import './Controls.scss';
 
 function _getSortIcon(field, sorting) {
   if (field !== sorting.field) {

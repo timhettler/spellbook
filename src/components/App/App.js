@@ -13,7 +13,7 @@ import VisibleSpellList from '../../containers/VisibleSpellList';
 import SelectedSpellDetail from '../../containers/SelectedSpellDetail';
 import VisibleControls from '../../containers/VisibleControls';
 
-import './App.css';
+import './App.scss';
 
 class App extends Component {
   componentDidMount() {
