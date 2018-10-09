@@ -12,6 +12,7 @@ import * as data from '../../data';
 import VisibleSpellList from '../../containers/VisibleSpellList';
 import SelectedSpellDetail from '../../containers/SelectedSpellDetail';
 import VisibleControls from '../../containers/VisibleControls';
+import history from '../../utilities/history';
 
 import './App.scss';
 
@@ -25,6 +26,21 @@ class App extends Component {
     this.props.dispatch(addSubclass('Cleric', 'domains', data.DOMAINS));
     this.props.dispatch(addSubclass('Paladin', 'oaths', data.OATHS));
     this.props.dispatch(addSubclass('Warlock', 'patrons', data.PATRONS));
+
+    this.updateHistory();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    this.updateHistory();
+  }
+
+  updateHistory() {
+    if (this.props.currentSpellId === null) {
+      history.push('');
+      return;
+    }
+
+    history.push(`/spell/${this.props.currentSpellId}`);
   }
 
   render() {
