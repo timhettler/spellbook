@@ -47,7 +47,7 @@ Select.propTypes = {
       }),
     ])
   ).isRequired,
-  value: PropTypes.any.isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
   type: PropTypes.string,
   className: PropTypes.oneOfType([
     PropTypes.string,

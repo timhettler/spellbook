@@ -95,7 +95,7 @@ class Spell extends Component {
 
   componentDidMount() {
     this.setTabIndex(this.description.current);
-    this.container.current.focus({ preventScroll: true });
+    //this.container.current.focus({ preventScroll: true });
   }
 
   getSnapshotBeforeUpdate(prevProps, prevState) {
@@ -112,7 +112,7 @@ class Spell extends Component {
     }
 
     this.setTabIndex(this.description.current);
-    this.container.current.focus({ preventScroll: true });
+    //this.container.current.focus({ preventScroll: true });
   }
 
   render() {
