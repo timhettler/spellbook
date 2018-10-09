@@ -7,6 +7,7 @@ import {
   loadClasses,
   loadSchools,
   addSubclass,
+  viewSpell,
 } from '../../actions';
 import * as data from '../../data';
 import VisibleSpellList from '../../containers/VisibleSpellList';
@@ -27,7 +28,10 @@ class App extends Component {
     this.props.dispatch(addSubclass('Paladin', 'oaths', data.OATHS));
     this.props.dispatch(addSubclass('Warlock', 'patrons', data.PATRONS));
 
-    this.updateHistory();
+    const loc = history.location.pathname.split('/').filter(x => x);
+    if (loc[0] === 'spell') {
+      this.props.dispatch(viewSpell(parseInt(loc[1], 10)));
+    }
   }
 
   componentDidUpdate(prevProps, prevState) {

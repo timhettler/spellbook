@@ -9,8 +9,8 @@
 # production
 /build
 
-# processed css files
-src/**/*.css
+# firebase
+/.firebase
 
 # misc
 .DS_Store

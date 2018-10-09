@@ -6,6 +6,7 @@ import spellbookApp from './reducers';
 const persistConfig = {
   key: 'root',
   storage,
+  blacklist: ['currentSpellId'],
 };
 
 const persistedReducer = persistReducer(persistConfig, spellbookApp);
