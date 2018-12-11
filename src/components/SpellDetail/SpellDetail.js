@@ -160,6 +160,8 @@ class Spell extends Component {
       onClose,
     } = this.props;
 
+    const cost = material && material.search(/[\d\s][csegp]p/g) > -1;
+
     return (
       <article ref={this.container} className="spell" tabIndex="-1">
         <div className="spell__container">
@@ -259,7 +261,7 @@ class Spell extends Component {
               {material && (
                 <Fragment>
                   <h2 className="spell__subheading" id="material">
-                    Material
+                    Material {cost && <PropIcon type="cost" />}
                   </h2>
                   <div className="spell__minor-info">
                     <i>{material}</i>
