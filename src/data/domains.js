@@ -1,4 +1,8 @@
 export const DOMAINS = [
+  'Arcana',
+  'Death',
+  'Forge',
+  'Grave',
   'Knowledge',
   'Life',
   'Light',
