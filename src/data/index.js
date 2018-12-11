@@ -1,3 +1,4 @@
+export { ARCHETYPES } from './archetypes';
 export { CIRCLES } from './circles';
 export { CLASSES } from './classes';
 export { DOMAINS } from './domains';

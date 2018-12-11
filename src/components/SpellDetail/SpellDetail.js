@@ -1,7 +1,15 @@
 import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { CIRCLES, CLASSES, DOMAINS, OATHS, PATRONS, SCHOOLS } from '../../data';
+import {
+  ARCHETYPES,
+  CIRCLES,
+  CLASSES,
+  DOMAINS,
+  OATHS,
+  PATRONS,
+  SCHOOLS,
+} from '../../data';
 
 import setTabIndex from '../../utilities/setTabIndex';
 import getSpellLevel from '../../utilities/getSpellLevel';
@@ -10,8 +18,19 @@ import VisuallyHidden from '../VisuallyHidden';
 
 import './SpellDetail.scss';
 
-function getAvailableClasses(classes, domains, circles, oaths, patrons) {
+function getAvailableClasses(
+  classes,
+  archetypes,
+  domains,
+  circles,
+  oaths,
+  patrons
+) {
   let availableClasses = [].concat(classes);
+
+  if (archetypes) {
+    availableClasses.push(`Ranger: ${archetypes.join(', ')}`);
+  }
 
   if (domains) {
     availableClasses.push(`Cleric: ${domains.join(', ')}`);
@@ -133,6 +152,7 @@ class Spell extends Component {
       level,
       school,
       classes,
+      archetypes,
       domains,
       circles,
       oaths,
@@ -224,7 +244,14 @@ class Spell extends Component {
           <section className="spell-section spell-section--content spell-section--with-padding">
             <h2 className="spell__subheading">Available To</h2>
             <div>
-              {getAvailableClasses(classes, domains, circles, oaths, patrons)}
+              {getAvailableClasses(
+                classes,
+                archetypes,
+                domains,
+                circles,
+                oaths,
+                patrons
+              )}
             </div>
           </section>
           {(material || casting_time_modifier) && (
@@ -274,6 +301,7 @@ Spell.propTypes = {
   level: PropTypes.number.isRequired,
   school: PropTypes.oneOf(SCHOOLS).isRequired,
   classes: PropTypes.arrayOf(PropTypes.oneOf(CLASSES)).isRequired,
+  archetypes: PropTypes.arrayOf(PropTypes.oneOf(ARCHETYPES)),
   domains: PropTypes.arrayOf(PropTypes.oneOf(DOMAINS)),
   circles: PropTypes.arrayOf(PropTypes.oneOf(CIRCLES)),
   oaths: PropTypes.arrayOf(PropTypes.oneOf(OATHS)),

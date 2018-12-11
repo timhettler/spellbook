@@ -23,6 +23,7 @@ class App extends Component {
     this.props.dispatch(loadClasses(data.CLASSES));
     this.props.dispatch(loadSchools(data.SCHOOLS));
 
+    this.props.dispatch(addSubclass('Ranger', 'archetypes', data.ARCHETYPES));
     this.props.dispatch(addSubclass('Druid', 'circles', data.CIRCLES));
     this.props.dispatch(addSubclass('Cleric', 'domains', data.DOMAINS));
     this.props.dispatch(addSubclass('Paladin', 'oaths', data.OATHS));
