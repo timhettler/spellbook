@@ -41,12 +41,10 @@ export class Spell extends Component {
       name,
       ritual,
       concentration,
-      material,
+      cost,
       level,
       isActive,
     } = this.props;
-
-    const cost = material && material.search(/[\d\s][csegp]p/g) > -1;
 
     return (
       <tr
@@ -79,7 +77,7 @@ Spell.propTypes = {
   name: PropTypes.string.isRequired,
   ritual: PropTypes.bool,
   concentration: PropTypes.bool,
-  material: PropTypes.string,
+  cost: PropTypes.bool,
   level: PropTypes.number.isRequired,
   isActive: PropTypes.bool,
 };
