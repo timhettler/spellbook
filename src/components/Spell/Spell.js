@@ -41,6 +41,7 @@ export class Spell extends Component {
       name,
       ritual,
       concentration,
+      cost,
       level,
       isActive,
     } = this.props;
@@ -60,6 +61,7 @@ export class Spell extends Component {
             <div className="spell-icons">
               {ritual && <PropIcon type="ritual" />}
               {concentration && <PropIcon type="concentration" />}
+              {cost && <PropIcon type="cost" />}
             </div>
           )}
         </th>
@@ -75,6 +77,7 @@ Spell.propTypes = {
   name: PropTypes.string.isRequired,
   ritual: PropTypes.bool,
   concentration: PropTypes.bool,
+  cost: PropTypes.bool,
   level: PropTypes.number.isRequired,
   isActive: PropTypes.bool,
 };

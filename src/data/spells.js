@@ -2214,7 +2214,7 @@ export const SPELLS = [
     range: 'Self',
     components: ['V', 'S', 'M'],
     material:
-      'Incense and a sacrificial offering appropriate to your religion, together worth at least 25gp, which the spell consumes.',
+      'Incense and a sacrificial offering appropriate to your religion, together worth at least 25 gp, which the spell consumes.',
     ritual: true,
     duration: 'Instantaneous',
     concentration: false,
@@ -4129,7 +4129,7 @@ export const SPELLS = [
     page: 'phb 252',
     range: 'Touch',
     components: ['V', 'S', 'M'],
-    material: 'A pearl worth at least 100gp and an owl feather.',
+    material: 'A pearl worth at least 100 gp and an owl feather.',
     ritual: true,
     duration: 'Instantaneous',
     concentration: false,

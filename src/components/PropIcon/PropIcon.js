@@ -32,11 +32,23 @@ export default function PropIcon({ type }) {
           </span>
         </div>
       );
+    case 'cost':
+      id = uuidv4();
+      return (
+        <div className="prop-icon">
+          <span role="img" aria-labelledby={id}>
+            💰
+          </span>
+          <span id={id} className="visuallyHidden">
+            has material cost
+          </span>
+        </div>
+      );
     default:
       return null;
   }
 }
 
 PropIcon.propTypes = {
-  type: PropTypes.oneOf(['ritual', 'concentration']).isRequired,
+  type: PropTypes.oneOf(['ritual', 'concentration', 'cost']).isRequired,
 };

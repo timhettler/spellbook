@@ -144,6 +144,7 @@ class Spell extends Component {
       range,
       components,
       material,
+      cost,
       ritual,
       duration,
       concentration,
@@ -259,7 +260,7 @@ class Spell extends Component {
               {material && (
                 <Fragment>
                   <h2 className="spell__subheading" id="material">
-                    Material
+                    Material {cost && <PropIcon type="cost" />}
                   </h2>
                   <div className="spell__minor-info">
                     <i>{material}</i>
@@ -293,6 +294,7 @@ Spell.propTypes = {
   range: PropTypes.string.isRequired,
   components: PropTypes.arrayOf(PropTypes.oneOf(['V', 'S', 'M'])).isRequired,
   material: PropTypes.string,
+  cost: PropTypes.bool,
   ritual: PropTypes.bool.isRequired,
   duration: PropTypes.string.isRequired,
   concentration: PropTypes.bool.isRequired,
