@@ -2406,7 +2406,7 @@ export const SPELLS = [
       "<p>Choose an unoccupied 5-foot cube of air that you can see within range. An elemental force that resembles a dust devil appears in the cube and lasts for the spell's duration.</p><p>Any creature that ends its turn within 5 feet of the dust devil must make a Strength saving throw. On a failed save, the creature takes 1d8 bludgeoning damage and is pushed 10 feet away. On a successful save, the creature takes half as much damage and isn't pushed.</p><p>As a bonus action, you can move the dust devil up to 30 feet in any direction. If the dust devil moves over sand, dust, loose dirt, or small gravel, it sucks up the material and forms a 10-foot-radius cloud of debris around itself that lasts until the start of your next turn. The cloud heavily obscures its area.</p>",
     higher_level:
       '<p>When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd.</p>',
-    page: 'ee pc 17',
+    page: 'xge 154',
     range: '60 feet',
     components: ['V', 'S', 'M'],
     material: 'A pinch of dust.',
@@ -2424,7 +2424,7 @@ export const SPELLS = [
       '<p>You cause a tremor in the ground in a 10-foot radius. Each creature other than you in that area must make a Dexterity saving throw. On a failed save, a creature takes 1d6 bludgeoning damage and is knocked <b>prone</b>. If the ground in that area is loose earth or stone, it becomes difficult terrain until cleared.</p>',
     higher_level:
       '<p>When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.</p>',
-    page: 'ee pc 17',
+    page: 'xge 155',
     range: 'Self (10-foot radius)',
     components: ['V', 'S'],
     ritual: false,
@@ -2440,7 +2440,7 @@ export const SPELLS = [
     name: 'Earthbind',
     desc:
       "<p>Choose one creature you can see within range. Yellow strips of magical energy loop around the creature. The target must succeed on a Strength saving throw or its flying speed (if any) is reduced to 0 feet for the spell's duration. An airborne creature affected by this spell descends at 60 feet per round until it reaches the ground or the spell ends.</p>",
-    page: 'ee pc 17',
+    page: 'xge 154',
     range: '300 feet',
     components: ['V'],
     ritual: false,
@@ -3307,7 +3307,7 @@ export const SPELLS = [
     name: 'Frostbite',
     desc:
       "<p>You cause numbing frost to form on one creature that you can see within range. The target must make a Constitution saving throw. On a failed save, the target takes 1d6 cold damage, and it has disadvantage on the next weapon attack roll it makes before the end of its next turn.</p><p>The spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).</p>",
-    page: 'ee pc 18',
+    page: 'xge 156',
     range: '60 feet',
     components: ['V', 'S'],
     ritual: false,
@@ -3679,7 +3679,7 @@ export const SPELLS = [
     name: 'Gust',
     desc:
       "<p>You seize the air and compel it to create one of the following effects at a point you can see within 'range':</p><ul><li><li>One Medium or smaller creature that you choose must succeed on a Strength saving throw or be pushed up to 5 feet away from you.</li><li>You create a small blast of air capable of moving one object that is neither held nor carried and that weighs no more than 5 pounds. The object is pushed up to 10 feet away from you. It isn't pushed with enough force to cause damage.</li><li>You create a harmless sensory affect using air, such as causing leaves to rustle, wind to slam shutters shut, or your clothing to ripple in a breeze.</li></ul>",
-    page: 'ee pc 19',
+    page: 'xge 157',
     range: '30 feet',
     components: ['V', 'S'],
     ritual: false,
@@ -4088,7 +4088,7 @@ export const SPELLS = [
       '<p>You create a shard of ice and fling it at one creature within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 piercing damage. Hit or miss, the shard then explodes. The target and each creature within 5 feet of the point where the ice exploded must succeed on a Dexterity saving throw or take 2d6 cold damage.</p>',
     higher_level:
       '<p>When you cast this spell using a spell slot of 2nd level or higher, the cold damage increases by 1d6 for each slot level above 1st.</p>',
-    page: 'ee pc 19',
+    page: 'xge 157',
     range: '60 feet',
     components: ['S', 'M'],
     material: 'a drop of water or piece of ice',
@@ -4823,7 +4823,7 @@ export const SPELLS = [
     name: 'Magic Stone',
     desc:
       "<p>You touch one to three pebbles and imbue them with magic. You or someone else can make a ranged spell attack with one of the pebbles by throwing it or hurling it with a sling. If thrown, it has a range of 60 feet. If someone else attacks with the pebble, that attacker adds your spellcasting ability modifier, not the attacker's, to the attack roll. On a hit, the target takes bludgeoning damage equal to 1d6 + your spellcasting ability modifier. Hit or miss, the spell then ends on the stone.</p><p>If you cast this spell again, the spell ends early on any pebbles still affected by it.</p>",
-    page: 'ee pc 20',
+    page: 'xge 160',
     range: 'Touch',
     components: ['V', 'S'],
     ritual: false,
@@ -4978,7 +4978,7 @@ export const SPELLS = [
     name: "Maximilian's Earthen Grasp",
     desc:
       "<p>You choose a 5-foot-square unoccupied space on the ground that you can see within range. A Medium hand made from compacted soil rises there and reaches for one creature you can see within 5 feet of it. The target must make a Strength saving throw. On a failed save, the target takes 2d6 bludgeoning damage and is <b>restrained</b> for the spell's duration.</p><p>As an action, you can cause the hand to crush the restrained target, who must make a Strength saving throw. It takes 2d6 bludgeoning damage on a failed save, or half as much damage on a successful one. To break out, the restrained target can make a Strength check against your spell save DC. On a success, the target escapes and is no longer restrained by the hand.</p><p>As an action, you can cause the hand to reach for a different creature or to move to a different unoccupied space within range. The hand releases a restrained target if you do either.</p>",
-    page: 'ee pc 20',
+    page: 'xge 161',
     range: '30 feet',
     components: ['V', 'S', 'M'],
     material: 'A miniature hand sculpted from clay.',
@@ -5047,7 +5047,7 @@ export const SPELLS = [
       "<p>You create six tiny meteors in your space. They float in the air and orbit you for the spell's duration. When you cast the spell - and as a bonus action on each of your turns thereafter-you can expend one or two of the meteors, sending them streaking toward a point or points you choose within 120 feet of you. Once a meteor reaches its destination or impacts against a solid surface, the meteor explodes. Each creature within 5 feet of the point where the meteor explodes must make a Dexterity saving throw. A creature takes 2d6 fire damage on a failed save, or half as much damage on a successful one.</p>",
     higher_level:
       '<p>When you cast this spell using a spell slot of 4th level or higher, the number of meteors created increases by two for each slot level above 3rd.</p>',
-    page: 'ee pc 20',
+    page: 'xge 161',
     range: 'Self',
     components: ['V', 'S', 'M'],
     material: 'Niter, sulfur, and pine tar formed into a bead.',
@@ -5277,7 +5277,7 @@ export const SPELLS = [
     name: 'Mold Earth',
     desc:
       "<p>You choose a portion of dirt or stone that you can see within range and that fits within a 5-foot cube. You manipulate it in one of the following ways:</p><ul><li>If you target an area of loose earth, you can instantaneously excavate it, move it along the ground, and deposit it up to 5 feet away. This movement doesn't have enough force to cause damage.</li><li>You cause shapes, colors, or both to appear on the dirt or stone, spelling out words, creating images, or shaping patterns. The changes last for 1 hour.</li><li>If the dirt or stone you target is on the ground, you cause it to become difficult terrain. Alternatively, you can cause the ground to become normal terrain if it is already difficult terrain. This change lasts for 1 hour.</li></ul><p>If you cast this spell multiple times, you can have no more than two of its non-instantaneous effects active at a time, and you can dismiss such an effect as an action.</p>",
-    page: 'ee pc 21',
+    page: 'xge 162',
     range: '30 feet',
     components: ['S'],
     ritual: false,
@@ -6760,7 +6760,7 @@ export const SPELLS = [
       '<p>A flurry of magic snowballs erupts from a point you choose within range. Each creature in a 5-foot-radius sphere centered on that point must make a Dexterity saving throw. A creature takes 3d6 cold damage on a failed save, or half as much damage on a successful one.</p>',
     higher_level:
       '<p>When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 2nd.</p>',
-    page: 'ee pc 22',
+    page: 'xge 165',
     range: '90 feet',
     components: ['V', 'S', 'M'],
     material: 'a piece of ice or a small white rock chip',
@@ -7039,7 +7039,7 @@ export const SPELLS = [
       "<p>A 20-foot-radius sphere of whirling air springs into existence centered on a point you choose within range. The sphere remains for the spell's duration. Each creature in the sphere when it appears or that ends its turn there must succeed on a Strength saving throw or take 2d6 bludgeoning damage. The sphere's space is difficult terrain.</p><p>Until the spell ends, you can use a bonus action on each of your turns to cause a bolt of lightning to leap from the center of the sphere toward one creature you choose within 60 feet of the center. Make a ranged spell attack. You have advantage on the attack roll if the target is in the sphere. On a hit, the target takes 4d6 lightning damage.</p><p>Creatures within 30 feet of the sphere have disadvantage on Wisdom (Perception) checks made to listen.</p>",
     higher_level:
       '<p>When you cast this spell using a spell slot of 5th level or higher, the damage increases for each of its effects by 1d6 for each slot level above 4th.</p>',
-    page: 'ee pc 22',
+    page: 'xge 166',
     range: '150 feet',
     components: ['V', 'S'],
     ritual: false,
