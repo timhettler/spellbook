@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import uuidv4 from '../../utilities/uuidv4';
 
+import VisuallyHidden from '../VisuallyHidden';
+
 import './PropIcon.scss';
 
 const icon = {
@@ -28,9 +30,7 @@ export default function PropIcon({ type }) {
       <span role="img" title={label[type]} aria-hidden={true}>
         {icon[type]}
       </span>
-      <span id={id} className="visuallyHidden">
-        {label[type]}
-      </span>
+      <VisuallyHidden id={id}>{label[type]}</VisuallyHidden>
     </div>
   );
 }

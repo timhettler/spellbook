@@ -23,7 +23,7 @@ export const SPELLS = [
     desc:
       '<p>The spell captures some of the incoming energy, lessening its effect on you and storing it for your next melee attack. You have resistance to the triggering damage type until the start of your next turn. Also, the first time you hit with a melee attack on your next turn, the target takes an extra 1d6 damage of the triggering type, and the spell ends.</p>',
     higher_level:
-      'At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the extra damage increases by 1d6 for each slot level above 1st.',
+      '<p>When you cast this spell using a spell slot of 2nd level or higher, the extra damage increases by 1d6 for each slot level above 1st.<p>',
     page: 'xge 150',
     range: 'Self',
     components: ['S'],
@@ -186,7 +186,7 @@ export const SPELLS = [
     range: '30 feet',
     components: ['V', 'S'],
     ritual: false,
-    duration: 'Up to 24 hours',
+    duration: '24 hours',
     concentration: true,
     casting_time: '1 action',
     level: 8,
@@ -1620,7 +1620,7 @@ export const SPELLS = [
     components: ['V', 'S', 'M'],
     material: 'Burning incense and bits of earth and wood mixed in water.',
     ritual: false,
-    duration: 'Up to 8 hours',
+    duration: '8 hours',
     concentration: true,
     casting_time: '10 minutes',
     level: 8,
@@ -2936,7 +2936,7 @@ export const SPELLS = [
     material:
       'A set of divinatory tools–such as bones, ivory sticks, cards, teeth, or carved runes–worth 100 gp and an object from the location you wish to find.',
     ritual: false,
-    duration: 'Up to 24 hours',
+    duration: '24 hours',
     concentration: true,
     casting_time: '1 minute',
     level: 6,
@@ -4195,7 +4195,7 @@ export const SPELLS = [
   {
     name: 'Imprisonment',
     desc:
-      "<p>You create a magical restraint to hold a creature that you can see within range. The target must succeed on a Wisdom saving throw or be bound by the spell; if it succeeds, it is immune to this spell if you cast it again. While affected by this spell, the creature doesn't need to breathe, eat, or drink, and it doesn't age. Divination spells can't locate or perceive the target.</p><p>When you cast the spell, you choose one of the following forms of imprisonment.</p><p><b>Burial.<b/> The target is entombed far beneath the earth in a sphere of magical force that is just large enough to contain the target. Nothing can pass through the sphere, nor can any creature teleport or use planar travel to get into or out of it.</p><p>The special component for this version of the spell is a small mithral orb.</p><p><b>Chaining.</b> Heavy chains, firmly rooted in the ground, hold the target in place. The target is <b>restrained</b> until the spell ends, and it can't move or be moved by any means until then.</p><p>The special component for this version of the spell is a fine chain of precious metal.</p><p><b>Hedged Prison.</b> The spell transports the target into a tiny demiplane that is warded against teleportation and planar travel. The demiplane can be a labyrinth, a cage, a tower, or any similar confined structure or area of your choice.</p><p>The special component for this version of the spell is a miniature representation of the prison made from jade.</p><p><b>Minimus Containment.</b> The target shrinks to a height of 1 inch and is imprisoned inside a gemstone or similar object. Light can pass through the gemstone normally (allowing the target to see out and other creatures to see in), but nothing else can pass through, even by means of teleportation or planar travel. The gemstone can't be cut or broken while the spell remains in effect.</p><p>The special component for this version of the spell is a large, transparent gemstone, such as a corundum, diamond, or ruby.</p><p><b>Slumber.</b> The target falls asleep and can't be awoken.</p><p>The special component for this version of the spell consists of rare soporific herbs.</p><p><b>Ending the Spell.</b> During the casting of the spell, in any of its versions, you can specify a condition that will cause the spell to end and release the target. The condition can be as specific or as elaborate as you choose, but the DM must agree that the condition is reasonable and has a likelihood of coming to pass. The conditions can be based on a creature's name, identity, or deity but otherwise must be based on observable actions or qualities and not based on intangibles such as level, class, or hit points.</p><p>A <i>dispel magic</i> spell can end the spell only if it is cast as a 9th-level spell, targeting either the prison or the special component used to create it.</p><p>You can use a particular special component to create only one prison at a time. If you cast the spell again using the same component, the target of the first casting is immediately freed from its binding.</p>",
+      "<p>You create a magical restraint to hold a creature that you can see within range. The target must succeed on a Wisdom saving throw or be bound by the spell; if it succeeds, it is immune to this spell if you cast it again. While affected by this spell, the creature doesn't need to breathe, eat, or drink, and it doesn't age. Divination spells can't locate or perceive the target.</p><p>When you cast the spell, you choose one of the following forms of imprisonment.</p><p><b>Burial.</b> The target is entombed far beneath the earth in a sphere of magical force that is just large enough to contain the target. Nothing can pass through the sphere, nor can any creature teleport or use planar travel to get into or out of it.</p><p>The special component for this version of the spell is a small mithral orb.</p><p><b>Chaining.</b> Heavy chains, firmly rooted in the ground, hold the target in place. The target is <b>restrained</b> until the spell ends, and it can't move or be moved by any means until then.</p><p>The special component for this version of the spell is a fine chain of precious metal.</p><p><b>Hedged Prison.</b> The spell transports the target into a tiny demiplane that is warded against teleportation and planar travel. The demiplane can be a labyrinth, a cage, a tower, or any similar confined structure or area of your choice.</p><p>The special component for this version of the spell is a miniature representation of the prison made from jade.</p><p><b>Minimus Containment.</b> The target shrinks to a height of 1 inch and is imprisoned inside a gemstone or similar object. Light can pass through the gemstone normally (allowing the target to see out and other creatures to see in), but nothing else can pass through, even by means of teleportation or planar travel. The gemstone can't be cut or broken while the spell remains in effect.</p><p>The special component for this version of the spell is a large, transparent gemstone, such as a corundum, diamond, or ruby.</p><p><b>Slumber.</b> The target falls asleep and can't be awoken.</p><p>The special component for this version of the spell consists of rare soporific herbs.</p><p><b>Ending the Spell.</b> During the casting of the spell, in any of its versions, you can specify a condition that will cause the spell to end and release the target. The condition can be as specific or as elaborate as you choose, but the DM must agree that the condition is reasonable and has a likelihood of coming to pass. The conditions can be based on a creature's name, identity, or deity but otherwise must be based on observable actions or qualities and not based on intangibles such as level, class, or hit points.</p><p>A <i>dispel magic</i> spell can end the spell only if it is cast as a 9th-level spell, targeting either the prison or the special component used to create it.</p><p>You can use a particular special component to create only one prison at a time. If you cast the spell again using the same component, the target of the first casting is immediately freed from its binding.</p>",
     page: 'phb 252',
     range: '30 feet',
     components: ['V', 'S', 'M'],
@@ -5392,7 +5392,7 @@ export const SPELLS = [
     material:
       'an iron blade and a small bag containing a mixture of soils—clay, loam, and sand',
     ritual: false,
-    duration: 'Up to 2 hours',
+    duration: '2 hours',
     concentration: true,
     casting_time: '1 action',
     level: 6,
@@ -7065,7 +7065,7 @@ export const SPELLS = [
     material:
       "a snake's tongue and either a bit of honeycomb or a drop of sweet oil",
     ritual: false,
-    duration: 'Up to 8 hours',
+    duration: '8 hours',
     concentration: true,
     casting_time: '1 action',
     level: 2,
@@ -7680,7 +7680,7 @@ export const SPELLS = [
     range: 'Sight',
     components: ['V', 'S'],
     ritual: false,
-    duration: 'Up to 6 rounds',
+    duration: '6 rounds',
     concentration: true,
     casting_time: '1 minute',
     level: 8,

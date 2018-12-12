@@ -9,6 +9,7 @@ import {
   OATHS,
   PATRONS,
   SCHOOLS,
+  SUBCLASSES,
 } from '../../data';
 
 import setTabIndex from '../../utilities/setTabIndex';
@@ -18,35 +19,24 @@ import VisuallyHidden from '../VisuallyHidden';
 
 import './SpellDetail.scss';
 
-function getAvailableClasses(
-  classes,
-  archetypes,
-  domains,
-  circles,
-  oaths,
-  patrons
-) {
+const parentClass = {
+  archetypes: 'Ranger',
+  domains: 'Cleric',
+  circles: 'Druid',
+  oaths: 'Paladin',
+  patrons: 'Warlock',
+};
+
+function getAvailableClasses(classes, subclasses) {
   let availableClasses = [].concat(classes);
 
-  if (archetypes) {
-    availableClasses.push(`Ranger: ${archetypes.join(', ')}`);
-  }
-
-  if (domains) {
-    availableClasses.push(`Cleric: ${domains.join(', ')}`);
-  }
-
-  if (circles) {
-    availableClasses.push(`Druid: Circle of the Land (${circles.join(', ')})`);
-  }
-
-  if (oaths) {
-    availableClasses.push(`Paladin: ${oaths.join(', ')}`);
-  }
-
-  if (patrons) {
-    availableClasses.push(`Warlock: ${patrons.join(', ')}`);
-  }
+  SUBCLASSES.forEach(subclass => {
+    if (subclasses[subclass]) {
+      availableClasses = availableClasses.concat(
+        subclasses[subclass].map(type => `${parentClass[subclass]}: ${type}`)
+      );
+    }
+  });
 
   return availableClasses.sort().join(', ');
 }
@@ -244,15 +234,16 @@ class Spell extends Component {
           </section>
           <section className="spell-section spell-section--content spell-section--with-padding">
             <h2 className="spell__subheading">Available To</h2>
-            <div>
-              {getAvailableClasses(
-                classes,
-                archetypes,
-                domains,
-                circles,
-                oaths,
-                patrons
-              )}
+            <div className="spell__minor-info content-area">
+              <p>
+                {getAvailableClasses(classes, {
+                  archetypes,
+                  domains,
+                  circles,
+                  oaths,
+                  patrons,
+                })}
+              </p>
             </div>
           </section>
           {(material || casting_time_modifier) && (
@@ -262,7 +253,7 @@ class Spell extends Component {
                   <h2 className="spell__subheading" id="material">
                     Material {cost && <PropIcon type="cost" />}
                   </h2>
-                  <div className="spell__minor-info">
+                  <div className="spell__minor-info content-area">
                     <i>{material}</i>
                   </div>
                 </Fragment>
