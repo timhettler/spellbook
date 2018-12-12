@@ -9,10 +9,7 @@ export default function setTabIndex(node) {
     new ScrollFix(node);
   }
 
-  node.setAttribute('tabindex', scrollable ? '0' : null);
-  node.setAttribute('data-can-scroll', scrollable);
-
   this.setState({
-    tabindex: scrollable ? '0' : null,
+    canScroll: scrollable,
   });
 }

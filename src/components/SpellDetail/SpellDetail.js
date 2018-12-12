@@ -98,7 +98,11 @@ class Spell extends Component {
   constructor(props) {
     super(props);
 
-    this.container = React.createRef();
+    this.state = {
+      canScroll: null,
+    };
+
+    //this.container = React.createRef();
     this.description = React.createRef();
     this.setTabIndex = setTabIndex.bind(this);
   }
@@ -150,6 +154,8 @@ class Spell extends Component {
       patrons,
       onClose,
     } = this.props;
+
+    const { canScroll } = this.state;
 
     return (
       <article ref={this.container} className="spell" tabIndex="-1">
@@ -211,6 +217,8 @@ class Spell extends Component {
             className="spell-section spell-section--content spell-section--with-padding spell-section--scroll"
             role="group"
             aria-labelledby="description"
+            tabIndex={canScroll ? 0 : null}
+            data-can-scroll={canScroll ? true : null}
           >
             <h2 className="spell__subheading" id="description">
               Description
