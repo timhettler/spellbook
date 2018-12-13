@@ -7,6 +7,9 @@ function getSubClassLabel(selectedClass) {
   let subclass = '';
 
   switch (selectedClass) {
+    case 'Ranger':
+      subclass = 'Archetypes';
+      break;
     case 'Druid':
       subclass = 'Circles';
       break;

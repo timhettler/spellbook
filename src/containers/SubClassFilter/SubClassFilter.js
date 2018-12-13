@@ -27,15 +27,15 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 });
 
 class SubClassFilter extends Component {
-  componentDidUpdate(prevProps, prevState) {
-    if (!prevProps.type) {
-      return;
-    }
+  // componentDidUpdate(prevProps, prevState) {
+  //   if (!prevProps.type) {
+  //     return;
+  //   }
 
-    if (this.props.type !== prevProps.type) {
-      this.props.dispatch(toggleFilter({ type: prevProps.type }));
-    }
-  }
+  //   if (this.props.type !== prevProps.type) {
+  //     this.props.dispatch(toggleFilter({ type: prevProps.type }));
+  //   }
+  // }
 
   render() {
     if (!this.props.options) {

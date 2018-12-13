@@ -1,1 +1,7 @@
-export const PATRONS = ['Archfey', 'Fiend', 'Great Old One'];
+export const PATRONS = [
+  'Archfey',
+  'Celestial',
+  'Fiend',
+  'Great Old One',
+  'Hexblade',
+];

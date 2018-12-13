@@ -185,3 +185,7 @@ body {
 [tabindex='-1'] {
   outline: none;
 }
+
+[title] {
+  cursor: help;
+}

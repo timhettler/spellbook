@@ -16,6 +16,7 @@ const TextInput = ({ value, className, onChange, ...rest }) => (
     type="text"
     value={value}
     onChange={handleChange(onChange)}
+    autoComplete="off"
     {...rest}
   />
 );

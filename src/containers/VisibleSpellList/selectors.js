@@ -1,35 +1,90 @@
 import { createSelector } from 'reselect';
 import firstBy from 'thenby';
 
+import { SUBCLASSES } from '../../data';
+
 const selectSpellState = state => state.spells;
 const selectFiltersState = state => state.filters;
 const selectSortingState = state => state.sorting;
 
+function checkForSubClassFilter(filters, subClassList) {
+  return subClassList.some(subClass => {
+    return !!filters[subClass];
+  });
+}
+
+function getSpellsSubClasses(spell, subClassList) {
+  return subClassList.filter(subClass => !!spell[subClass]);
+}
+
 export const selectSortedResults = createSelector(
   [selectSpellState, selectFiltersState, selectSortingState],
   (spells, filters, sorting) => {
+    let filtersCopy = { ...filters };
     let newSpells = spells.slice();
     let direction = sorting.reverse === true ? -1 : null;
+    const hasSubClassFilter = checkForSubClassFilter(filtersCopy, SUBCLASSES);
 
-    Object.keys(filters).forEach(
-      prop =>
-        (newSpells = newSpells.filter(spell => {
-          if (spell[prop] === undefined) {
+    // First filter by class & subclass (if any are selected), since they're inclusive
+    if (!!filtersCopy.classes || hasSubClassFilter) {
+      const classFilters = filtersCopy.classes;
+      let subClassFilters = undefined;
+      // Remove class and subclasses from filters so that they aren't checked in the next phase
+      delete filtersCopy.classes;
+      Object.keys(filtersCopy).forEach(prop => {
+        if (SUBCLASSES.includes(prop)) {
+          // TODO assumes only one subclass type can be selected
+          subClassFilters = filtersCopy[prop];
+          delete filtersCopy[prop];
+        }
+      });
+
+      newSpells = newSpells.filter(spell => {
+        // If the spell is in the selected class list, add it to the list
+        if (spell.classes.includes(classFilters)) {
+          return true;
+          // If we're filtering by a subclass, continue
+        } else if (hasSubClassFilter) {
+          // Get all subclasses that the spell belongs to
+          const spellsSubClasses = getSpellsSubClasses(spell, SUBCLASSES);
+          // If it's zero, return early
+          if (!spellsSubClasses.length) {
             return false;
           }
+          // Go through each subclass and check if the subclass matches the filter
+          return spellsSubClasses.reduce(
+            (accumulator, subclass) =>
+              spell[subclass].includes(subClassFilters) || accumulator,
+            false
+          );
+        }
 
-          switch (typeof spell[prop]) {
-            case 'string':
-              return spell[prop]
-                .toLowerCase()
-                .includes(filters[prop].toLowerCase());
-            case 'object':
-              return spell[prop].includes(filters[prop]);
-            default:
-              return spell[prop] === filters[prop];
-          }
-        }))
-    );
+        return false;
+      });
+    }
+
+    // Next, do exclusive filtering
+    if (Object.keys(filtersCopy).length) {
+      Object.keys(filtersCopy).forEach(
+        prop =>
+          (newSpells = newSpells.filter(spell => {
+            if (spell[prop] === undefined) {
+              return false;
+            }
+
+            switch (typeof spell[prop]) {
+              case 'string':
+                return spell[prop]
+                  .toLowerCase()
+                  .includes(filtersCopy[prop].toLowerCase());
+              case 'object':
+                return spell[prop].includes(filtersCopy[prop]);
+              default:
+                return spell[prop] === filtersCopy[prop];
+            }
+          }))
+      );
+    }
 
     if (sorting.field === 'name') {
       return newSpells.sort(

@@ -17,6 +17,11 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+
+    @include small {
+      // Extra padding to account for iPhone X
+      padding-bottom: 0.75em;
+    }
   }
 
   &__heading {
@@ -52,11 +57,8 @@
   }
 
   &__minor-info {
+    line-height: 1.2;
     font-size: smaller;
-
-    > i {
-      font-style: italic;
-    }
   }
 }
 
@@ -90,11 +92,21 @@
 
   &--with-padding {
     @include small {
-      padding: 0.75em;
+      padding-right: 0.75em;
+      padding-left: 0.75em;
+      margin-top: 0.75em;
+      margin-bottom: 0.75em;
     }
 
     @include mediumAndLarge {
-      padding: 1.5em;
+      padding-right: 1.5em;
+      padding-left: 1.5em;
+      margin-top: 1.5em;
+      margin-bottom: 1.5em;
+    }
+
+    & + & {
+      margin-top: 0;
     }
   }
 
@@ -141,7 +153,6 @@
 .spell-components {
   > abbr {
     text-decoration: none;
-    cursor: help;
 
     &:not(:first-child) {
       &::before {

@@ -41,13 +41,20 @@ function sorting(state = { field: 'name', reverse: false }, action) {
   }
 }
 
+function transformSpell(spell, index) {
+  return {
+    ...spell,
+    id: index,
+    cost:
+      spell.material &&
+      spell.material.search(/[\d\s][csegp]p(?![a-zA-Z])/g) > -1,
+  };
+}
+
 function spells(state = [], action) {
   switch (action.type) {
     case LOAD_SPELLS:
-      return action.spells.map((spell, index) => {
-        spell['id'] = index;
-        return spell;
-      });
+      return action.spells.map(transformSpell);
     default:
       return state;
   }

@@ -1,7 +1,16 @@
 import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { CIRCLES, CLASSES, DOMAINS, OATHS, PATRONS, SCHOOLS } from '../../data';
+import {
+  ARCHETYPES,
+  CIRCLES,
+  CLASSES,
+  DOMAINS,
+  OATHS,
+  PATRONS,
+  SCHOOLS,
+  SUBCLASSES,
+} from '../../data';
 
 import setTabIndex from '../../utilities/setTabIndex';
 import getSpellLevel from '../../utilities/getSpellLevel';
@@ -10,24 +19,24 @@ import VisuallyHidden from '../VisuallyHidden';
 
 import './SpellDetail.scss';
 
-function getAvailableClasses(classes, domains, circles, oaths, patrons) {
+const parentClass = {
+  archetypes: 'Ranger',
+  domains: 'Cleric',
+  circles: 'Druid',
+  oaths: 'Paladin',
+  patrons: 'Warlock',
+};
+
+function getAvailableClasses(classes, subclasses) {
   let availableClasses = [].concat(classes);
 
-  if (domains) {
-    availableClasses.push(`Cleric: ${domains.join(', ')}`);
-  }
-
-  if (circles) {
-    availableClasses.push(`Druid: Circle of the Land (${circles.join(', ')})`);
-  }
-
-  if (oaths) {
-    availableClasses.push(`Paladin: ${oaths.join(', ')}`);
-  }
-
-  if (patrons) {
-    availableClasses.push(`Warlock: ${patrons.join(', ')}`);
-  }
+  SUBCLASSES.forEach(subclass => {
+    if (subclasses[subclass]) {
+      availableClasses = availableClasses.concat(
+        subclasses[subclass].map(type => `${parentClass[subclass]}: ${type}`)
+      );
+    }
+  });
 
   return availableClasses.sort().join(', ');
 }
@@ -89,7 +98,11 @@ class Spell extends Component {
   constructor(props) {
     super(props);
 
-    this.container = React.createRef();
+    this.state = {
+      canScroll: null,
+    };
+
+    //this.container = React.createRef();
     this.description = React.createRef();
     this.setTabIndex = setTabIndex.bind(this);
   }
@@ -125,6 +138,7 @@ class Spell extends Component {
       range,
       components,
       material,
+      cost,
       ritual,
       duration,
       concentration,
@@ -133,12 +147,15 @@ class Spell extends Component {
       level,
       school,
       classes,
+      archetypes,
       domains,
       circles,
       oaths,
       patrons,
       onClose,
     } = this.props;
+
+    const { canScroll } = this.state;
 
     return (
       <article ref={this.container} className="spell" tabIndex="-1">
@@ -200,6 +217,8 @@ class Spell extends Component {
             className="spell-section spell-section--content spell-section--with-padding spell-section--scroll"
             role="group"
             aria-labelledby="description"
+            tabIndex={canScroll ? 0 : null}
+            data-can-scroll={canScroll ? true : null}
           >
             <h2 className="spell__subheading" id="description">
               Description
@@ -223,8 +242,16 @@ class Spell extends Component {
           </section>
           <section className="spell-section spell-section--content spell-section--with-padding">
             <h2 className="spell__subheading">Available To</h2>
-            <div>
-              {getAvailableClasses(classes, domains, circles, oaths, patrons)}
+            <div className="spell__minor-info content-area">
+              <p>
+                {getAvailableClasses(classes, {
+                  archetypes,
+                  domains,
+                  circles,
+                  oaths,
+                  patrons,
+                })}
+              </p>
             </div>
           </section>
           {(material || casting_time_modifier) && (
@@ -232,9 +259,9 @@ class Spell extends Component {
               {material && (
                 <Fragment>
                   <h2 className="spell__subheading" id="material">
-                    Material
+                    Material {cost && <PropIcon type="cost" />}
                   </h2>
-                  <div className="spell__minor-info">
+                  <div className="spell__minor-info content-area">
                     <i>{material}</i>
                   </div>
                 </Fragment>
@@ -266,6 +293,7 @@ Spell.propTypes = {
   range: PropTypes.string.isRequired,
   components: PropTypes.arrayOf(PropTypes.oneOf(['V', 'S', 'M'])).isRequired,
   material: PropTypes.string,
+  cost: PropTypes.bool,
   ritual: PropTypes.bool.isRequired,
   duration: PropTypes.string.isRequired,
   concentration: PropTypes.bool.isRequired,
@@ -274,6 +302,7 @@ Spell.propTypes = {
   level: PropTypes.number.isRequired,
   school: PropTypes.oneOf(SCHOOLS).isRequired,
   classes: PropTypes.arrayOf(PropTypes.oneOf(CLASSES)).isRequired,
+  archetypes: PropTypes.arrayOf(PropTypes.oneOf(ARCHETYPES)),
   domains: PropTypes.arrayOf(PropTypes.oneOf(DOMAINS)),
   circles: PropTypes.arrayOf(PropTypes.oneOf(CIRCLES)),
   oaths: PropTypes.arrayOf(PropTypes.oneOf(OATHS)),

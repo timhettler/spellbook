@@ -13,7 +13,7 @@ class SpellList extends Component {
     super(props);
 
     this.state = {
-      tabindex: null,
+      canScroll: null,
     };
 
     this.captionId = uuidv4();
@@ -77,6 +77,7 @@ class SpellList extends Component {
 
   render() {
     const { spells, sorting, currentSpellId, onSpellClick } = this.props;
+    const { canScroll } = this.state;
 
     return (
       <div
@@ -84,11 +85,13 @@ class SpellList extends Component {
         className="spell-list-container"
         role="group"
         aria-labelledby={this.captionId}
+        tabIndex={canScroll ? 0 : null}
+        data-can-scroll={canScroll ? true : null}
       >
         <table className="spell-list">
           <caption id={this.captionId} className="visuallyHidden">
             <h2>Spells</h2>
-            {this.state.tabindex && (
+            {canScroll && (
               <div>
                 <small>(scroll to see more)</small>
               </div>

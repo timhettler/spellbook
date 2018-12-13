@@ -1,1 +1,8 @@
-export const OATHS = ['Devotion', 'Ancients', 'Vengeance'];
+export const OATHS = [
+  'Ancients',
+  'Conquest',
+  'Devotion',
+  'Oathbreaker',
+  'Redemption',
+  'Vengeance',
+];
