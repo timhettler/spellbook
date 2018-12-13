@@ -17,6 +17,17 @@ import history from '../../utilities/history';
 
 import './App.scss';
 
+function _renderNoSpellSelected() {
+  return (
+    <div className="no-spell-selected">
+      <h2 className="no-spell-selected__header">No Spell Selected</h2>
+      <p className="no-spell-selected__copy">
+        Select a spell from the list to see its details
+      </p>
+    </div>
+  );
+}
+
 class App extends Component {
   componentDidMount() {
     this.props.dispatch(loadSpells(data.SPELLS));
@@ -73,7 +84,8 @@ class App extends Component {
                 'is-active': isSpellDetailActive,
               })}
             >
-              <SelectedSpellDetail />
+              {isSpellDetailActive && <SelectedSpellDetail />}
+              {!isSpellDetailActive && _renderNoSpellSelected()}
             </section>
           </div>
         </main>
