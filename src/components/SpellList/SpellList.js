@@ -75,6 +75,14 @@ class SpellList extends Component {
     );
   }
 
+  _renderNoResults() {
+    return (
+      <div className="no-results">
+        <h2 className="no-results__header">No Spells Found</h2>
+      </div>
+    );
+  }
+
   render() {
     const { spells, sorting, currentSpellId, onSpellClick } = this.props;
     const { canScroll } = this.state;
@@ -88,32 +96,35 @@ class SpellList extends Component {
         tabIndex={canScroll ? 0 : null}
         data-can-scroll={canScroll ? true : null}
       >
-        <table className="spell-list">
-          <caption id={this.captionId} className="visuallyHidden">
-            <h2>Spells</h2>
-            {canScroll && (
-              <div>
-                <small>(scroll to see more)</small>
-              </div>
-            )}
-          </caption>
-          <thead className="visuallyHidden">
-            <tr>
-              {this._renderHeader('name', 'Name', sorting)}
-              {this._renderHeader('level', 'Level', sorting)}
-            </tr>
-          </thead>
-          <tbody>
-            {spells.map((spell, index) => (
-              <Spell
-                key={spell.id}
-                {...spell}
-                isActive={currentSpellId === spell.id}
-                onClick={() => onSpellClick(spell.id)}
-              />
-            ))}
-          </tbody>
-        </table>
+        {!spells.length && this._renderNoResults()}
+        {!!spells.length && (
+          <table className="spell-list">
+            <caption id={this.captionId} className="visuallyHidden">
+              <h2>Spells</h2>
+              {canScroll && (
+                <div>
+                  <small>(scroll to see more)</small>
+                </div>
+              )}
+            </caption>
+            <thead className="visuallyHidden">
+              <tr>
+                {this._renderHeader('name', 'Name', sorting)}
+                {this._renderHeader('level', 'Level', sorting)}
+              </tr>
+            </thead>
+            <tbody>
+              {spells.map((spell, index) => (
+                <Spell
+                  key={spell.id}
+                  {...spell}
+                  isActive={currentSpellId === spell.id}
+                  onClick={() => onSpellClick(spell.id)}
+                />
+              ))}
+            </tbody>
+          </table>
+        )}
       </div>
     );
   }
