@@ -21,6 +21,7 @@ $size--large-viewport-start: 1100px;
   //outline: none;
   display: block;
   text-align: inherit;
+  overflow: hidden;
 
   &:not([disabled]) {
     cursor: pointer;
