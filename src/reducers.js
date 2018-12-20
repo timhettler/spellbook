@@ -10,6 +10,8 @@ import {
   VIEW_SPELL,
 } from './actions';
 
+import toKebabCase from './utilities/toKebabCase';
+
 function filters(state = {}, action) {
   switch (action.type) {
     case TOGGLE_FILTER:
@@ -44,7 +46,7 @@ function sorting(state = { field: 'name', reverse: false }, action) {
 function transformSpell(spell, index) {
   return {
     ...spell,
-    id: index,
+    id: toKebabCase(spell.name),
     cost:
       spell.material &&
       spell.material.search(/[\d\s][csegp]p(?![a-zA-Z])/g) > -1,
@@ -60,7 +62,7 @@ function spells(state = [], action) {
   }
 }
 
-function currentSpellId(state = null, action) {
+function currentSpellId(state = '', action) {
   switch (action.type) {
     case VIEW_SPELL:
       return action.id;

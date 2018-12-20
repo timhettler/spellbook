@@ -140,7 +140,7 @@ SpellList.propTypes = {
     field: PropTypes.string,
     reverse: PropTypes.bool,
   }).isRequired,
-  currentSpellId: PropTypes.number,
+  currentSpellId: PropTypes.string,
   onSpellClick: PropTypes.func.isRequired,
 };
 

@@ -36,8 +36,9 @@ export const selectSubClassFilter = createSelector(
       return null;
     }
 
-    return Object.assign(subClasses[selectedClass], {
+    return {
+      ...subClasses[selectedClass],
       label: getSubClassLabel(selectedClass),
-    });
+    };
   }
 );

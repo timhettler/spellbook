@@ -1,18 +1,23 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
 import './Button.scss';
 
-const Button = ({ children, className, onClick, ...rest }) => (
-  <button
-    className={classNames('button', className)}
-    onClick={onClick}
-    {...rest}
-  >
-    {children}
-  </button>
-);
+class Button extends PureComponent {
+  render() {
+    const { children, className, onClick, ...rest } = this.props;
+    return (
+      <button
+        className={classNames('button', className)}
+        onClick={onClick}
+        {...rest}
+      >
+        {children}
+      </button>
+    );
+  }
+}
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import uuidv4 from '../../utilities/uuidv4';
 
@@ -18,21 +18,28 @@ const label = {
   cost: 'Has a material cost',
 };
 
-export default function PropIcon({ type }) {
-  const id = uuidv4();
+export default class PropIcon extends PureComponent {
+  constructor(props) {
+    super(props);
 
-  if (!type) {
-    return null;
+    this.state = {
+      id: uuidv4(),
+    };
   }
 
-  return (
-    <div className="prop-icon">
-      <span role="img" title={label[type]} aria-hidden={true}>
-        {icon[type]}
-      </span>
-      <VisuallyHidden id={id}>{label[type]}</VisuallyHidden>
-    </div>
-  );
+  render() {
+    const { type } = this.props;
+    const id = uuidv4();
+
+    return (
+      <div className="prop-icon">
+        <span title={label[type]} aria-hidden={true}>
+          {icon[type]}
+        </span>
+        <VisuallyHidden id={id}>{label[type]}</VisuallyHidden>
+      </div>
+    );
+  }
 }
 
 PropIcon.propTypes = {

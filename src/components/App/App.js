@@ -42,7 +42,7 @@ class App extends Component {
 
     const loc = history.location.pathname.split('/').filter(x => x);
     if (loc[0] === 'spell') {
-      this.props.dispatch(viewSpell(parseInt(loc[1], 10)));
+      this.props.dispatch(viewSpell(loc[1]));
     }
   }
 
@@ -51,7 +51,7 @@ class App extends Component {
   }
 
   updateHistory() {
-    if (this.props.currentSpellId === null) {
+    if (!this.props.currentSpellId) {
       history.push('');
       return;
     }
@@ -60,7 +60,7 @@ class App extends Component {
   }
 
   render() {
-    let isSpellDetailActive = this.props.currentSpellId !== null;
+    let isSpellDetailActive = !!this.props.currentSpellId;
 
     return (
       <div className="App">

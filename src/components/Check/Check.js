@@ -9,7 +9,11 @@ function handleChange(callback, type) {
 
 const Check = ({ label, checked, type, onChange }) => (
   <label>
-    <input type="checkbox" checked={checked} onChange={handleChange(onChange, type)} />
+    <input
+      type="checkbox"
+      checked={checked}
+      onChange={handleChange(onChange, type)}
+    />
     <span>{label}</span>
   </label>
 );

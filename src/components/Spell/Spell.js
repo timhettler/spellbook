@@ -12,14 +12,15 @@ export class Spell extends Component {
     super(props);
 
     this.button = React.createRef();
+    this._keyboardEvents = this._keyboardEvents.bind(this);
   }
 
   componentDidMount() {
-    this._createEventListeners(this.button.current);
+    this.button.current.addEventListener('keydown', this._keyboardEvents);
   }
 
-  _createEventListeners(node) {
-    node.addEventListener('keydown', this._keyboardEvents.bind(this));
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.props.isActive !== nextProps.isActive;
   }
 
   _keyboardEvents(e) {
@@ -73,7 +74,7 @@ export class Spell extends Component {
 
 Spell.propTypes = {
   onClick: PropTypes.func.isRequired,
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   ritual: PropTypes.bool,
   concentration: PropTypes.bool,

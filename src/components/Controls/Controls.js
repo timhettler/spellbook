@@ -27,7 +27,7 @@ const Controls = ({ sorting, showSubClassFilter }) => (
   <div className="control-container">
     <div className="control-section">
       <div className="control-item control-item--input">
-        <Filter type="classes" defaultLabel="All Classes" />
+        <Filter type="classes" label="All Classes" />
       </div>
       <div className="control-item control-item--input">
         <TextFilter type="name" placeholder="Spell Name" />
@@ -41,7 +41,7 @@ const Controls = ({ sorting, showSubClassFilter }) => (
     </div>
     <div className="control-section">
       <div className="control-item control-item--input">
-        <Filter type="school" defaultLabel="All Schools" />
+        <Filter type="school" label="All Schools" />
       </div>
       {showSubClassFilter && (
         <div className="control-item control-item--input">
