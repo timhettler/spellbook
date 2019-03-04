@@ -6,13 +6,9 @@ import './Button.scss';
 
 class Button extends PureComponent {
   render() {
-    const { children, className, onClick, ...rest } = this.props;
+    const { children, className, ...rest } = this.props;
     return (
-      <button
-        className={classNames('button', className)}
-        onClick={onClick}
-        {...rest}
-      >
+      <button className={classNames('button', className)} {...rest}>
         {children}
       </button>
     );
@@ -25,7 +21,6 @@ Button.propTypes = {
     PropTypes.string,
     PropTypes.arrayOf(PropTypes.string),
   ]),
-  onClick: PropTypes.func.isRequired,
 };
 
 export default Button;

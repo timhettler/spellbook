@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
 import getSpellLevel from '../../utilities/getSpellLevel';
+import FavoriteButton from '../../containers/FavoriteButton';
 import PropIcon from '../PropIcon';
 
 import './Spell.scss';
@@ -56,6 +57,7 @@ export class Spell extends Component {
         data-id={id}
         onClick={onClick}
       >
+        <td>{<FavoriteButton spellId={id} />}</td>
         <th scope="row" className="spell-list-item__name">
           {name}
           {(ritual || concentration) && (

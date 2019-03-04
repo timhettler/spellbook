@@ -8,6 +8,8 @@ import {
   RESET_FILTERS,
   SET_SORTING,
   VIEW_SPELL,
+  TOGGLE_FAVORITE,
+  RESET_FAVORITES,
 } from './actions';
 
 import toKebabCase from './utilities/toKebabCase';
@@ -104,6 +106,22 @@ function schools(state = [], action) {
   }
 }
 
+function favorites(state = [], action) {
+  switch (action.type) {
+    case TOGGLE_FAVORITE:
+      if (state.includes(action.id)) {
+        const idIndex = state.indexOf(action.id);
+        return state.slice(0, idIndex).concat(state.slice(idIndex + 1));
+      } else {
+        return state.concat(action.id);
+      }
+    case RESET_FAVORITES:
+      return [];
+    default:
+      return state;
+  }
+}
+
 const spellbookApp = combineReducers({
   filters,
   sorting,
@@ -112,6 +130,7 @@ const spellbookApp = combineReducers({
   classes,
   subClasses,
   schools,
+  favorites,
 });
 
 export default spellbookApp;

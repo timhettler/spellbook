@@ -52,6 +52,7 @@ const Controls = ({ sorting, showSubClassFilter }) => (
     <div className="control-section">
       <BinaryFilter type="ritual" label="Rituals Only" />
       <BinaryFilter type="concentration" label="Requires Concentration" />
+      <BinaryFilter type="favorites" label="Favorites Only" />
     </div>
     <div className="control-section control-section--full">
       <div className="control-item control-item--sort">

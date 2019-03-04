@@ -6,6 +6,7 @@ import { SUBCLASSES } from '../../data';
 const selectSpellState = state => state.spells;
 const selectFiltersState = state => state.filters;
 const selectSortingState = state => state.sorting;
+const selectFavoritesState = state => state.favorites;
 
 function checkForSubClassFilter(filters, subClassList) {
   return subClassList.some(subClass => {
@@ -18,8 +19,13 @@ function getSpellsSubClasses(spell, subClassList) {
 }
 
 export const selectSortedResults = createSelector(
-  [selectSpellState, selectFiltersState, selectSortingState],
-  (spells, filters, sorting) => {
+  [
+    selectSpellState,
+    selectFiltersState,
+    selectSortingState,
+    selectFavoritesState,
+  ],
+  (spells, filters, sorting, favorites) => {
     let filtersCopy = { ...filters };
     let newSpells = spells.slice();
     let direction = sorting.reverse === true ? -1 : null;
@@ -65,9 +71,15 @@ export const selectSortedResults = createSelector(
 
     // Next, do exclusive filtering
     if (Object.keys(filtersCopy).length) {
-      Object.keys(filtersCopy).forEach(
-        prop =>
-          (newSpells = newSpells.filter(spell => {
+      Object.keys(filtersCopy).forEach(prop => {
+        // The favorites filter checks if the spell id is i nthe favorites list
+        if (prop === 'favorites') {
+          return (newSpells = newSpells.filter(spell => {
+            return favorites.includes(spell.id);
+          }));
+        } else {
+          // All other filters check against props in the spell object
+          return (newSpells = newSpells.filter(spell => {
             if (spell[prop] === undefined) {
               return false;
             }
@@ -77,13 +89,14 @@ export const selectSortedResults = createSelector(
                 return spell[prop]
                   .toLowerCase()
                   .includes(filtersCopy[prop].toLowerCase());
-              case 'object':
+              case 'object': // (Really an array)
                 return spell[prop].includes(filtersCopy[prop]);
               default:
                 return spell[prop] === filtersCopy[prop];
             }
-          }))
-      );
+          }));
+        }
+      });
     }
 
     if (sorting.field === 'name') {
