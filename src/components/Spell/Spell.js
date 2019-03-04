@@ -60,7 +60,7 @@ export class Spell extends Component {
         <td>{<FavoriteButton spellId={id} />}</td>
         <th scope="row" className="spell-list-item__name">
           {name}
-          {(ritual || concentration) && (
+          {(ritual || concentration || cost) && (
             <div className="spell-icons">
               {ritual && <PropIcon type="ritual" />}
               {concentration && <PropIcon type="concentration" />}
