@@ -10,6 +10,8 @@ export const TOGGLE_FILTER = 'TOGGLE_FILTER';
 export const RESET_FILTERS = 'RESET_FILTERS';
 export const SET_SORTING = 'SET_SORTING';
 export const VIEW_SPELL = 'VIEW_SPELL';
+export const TOGGLE_FAVORITE = 'TOGGLE_FAVORITE';
+export const RESET_FAVORITES = 'RESET_FAVORITES';
 
 export function loadSpells(spells) {
   return { type: LOAD_SPELLS, spells };
@@ -41,4 +43,12 @@ export function setSorting(sorting) {
 
 export function viewSpell(id) {
   return { type: VIEW_SPELL, id };
+}
+
+export function toggleFavorite(id) {
+  return { type: TOGGLE_FAVORITE, id };
+}
+
+export function resetFavorites() {
+  return { type: RESET_FAVORITES };
 }

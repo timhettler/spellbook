@@ -8,6 +8,7 @@ import TextFilter from '../../containers/TextFilter';
 import BinaryFilter from '../../containers/BinaryFilter';
 import SortingButton from '../../containers/SortingButton';
 import VisuallyHidden from '../VisuallyHidden';
+import getIcon from '../../utilities/getIcon';
 
 import './Controls.scss';
 
@@ -50,8 +51,26 @@ const Controls = ({ sorting, showSubClassFilter }) => (
       )}
     </div>
     <div className="control-section">
-      <BinaryFilter type="ritual" label="Rituals Only" />
-      <BinaryFilter type="concentration" label="Requires Concentration" />
+      <BinaryFilter
+        type="ritual"
+        label={getIcon['ritual']}
+        title="Rituals Only"
+      />
+      <BinaryFilter
+        type="concentration"
+        label={getIcon['concentration']}
+        title="Concentraton Only"
+      />
+      <BinaryFilter
+        type="cost"
+        label={getIcon['cost']}
+        title="Material Cost Only"
+      />
+      <BinaryFilter
+        type="favorites"
+        label={getIcon['favorites']}
+        title="Favorites Only"
+      />
     </div>
     <div className="control-section control-section--full">
       <div className="control-item control-item--sort">

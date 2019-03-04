@@ -1,16 +1,11 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import uuidv4 from '../../utilities/uuidv4';
+import getIcon from '../../utilities/getIcon';
 
 import VisuallyHidden from '../VisuallyHidden';
 
 import './PropIcon.scss';
-
-const icon = {
-  ritual: '🕯',
-  concentration: '🌀',
-  cost: '💰',
-};
 
 const label = {
   ritual: 'Can be cast as a ritual',
@@ -33,8 +28,8 @@ export default class PropIcon extends PureComponent {
 
     return (
       <div className="prop-icon">
-        <span title={label[type]} aria-hidden={true}>
-          {icon[type]}
+        <span aria-hidden={true}>
+          <span title={label[type]}>{getIcon[type]}</span>
         </span>
         <VisuallyHidden id={id}>{label[type]}</VisuallyHidden>
       </div>

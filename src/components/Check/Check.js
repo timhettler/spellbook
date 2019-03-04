@@ -7,8 +7,8 @@ function handleChange(callback, type) {
   };
 }
 
-const Check = ({ label, checked, type, onChange }) => (
-  <label>
+const Check = ({ label, checked, type, onChange, ...rest }) => (
+  <label {...rest}>
     <input
       type="checkbox"
       checked={checked}
