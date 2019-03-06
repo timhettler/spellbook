@@ -8,7 +8,11 @@ import {
   RESET_FILTERS,
   SET_SORTING,
   VIEW_SPELL,
+  TOGGLE_FAVORITE,
+  RESET_FAVORITES,
 } from './actions';
+
+import toKebabCase from './utilities/toKebabCase';
 
 function filters(state = {}, action) {
   switch (action.type) {
@@ -44,7 +48,7 @@ function sorting(state = { field: 'name', reverse: false }, action) {
 function transformSpell(spell, index) {
   return {
     ...spell,
-    id: index,
+    id: toKebabCase(spell.name),
     cost:
       spell.material &&
       spell.material.search(/[\d\s][csegp]p(?![a-zA-Z])/g) > -1,
@@ -60,7 +64,7 @@ function spells(state = [], action) {
   }
 }
 
-function currentSpellId(state = null, action) {
+function currentSpellId(state = '', action) {
   switch (action.type) {
     case VIEW_SPELL:
       return action.id;
@@ -102,6 +106,22 @@ function schools(state = [], action) {
   }
 }
 
+function favorites(state = [], action) {
+  switch (action.type) {
+    case TOGGLE_FAVORITE:
+      if (state.includes(action.id)) {
+        const idIndex = state.indexOf(action.id);
+        return state.slice(0, idIndex).concat(state.slice(idIndex + 1));
+      } else {
+        return state.concat(action.id);
+      }
+    case RESET_FAVORITES:
+      return [];
+    default:
+      return state;
+  }
+}
+
 const spellbookApp = combineReducers({
   filters,
   sorting,
@@ -110,6 +130,7 @@ const spellbookApp = combineReducers({
   classes,
   subClasses,
   schools,
+  favorites,
 });
 
 export default spellbookApp;

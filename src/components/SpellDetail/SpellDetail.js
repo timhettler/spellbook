@@ -236,8 +236,10 @@ class Spell extends Component {
                 />
               </div>
             )}
-            <div className="spell__page spell__minor-info">
-              <i>({page})</i>
+            <div className="spell__page spell__minor-info content-area">
+              <small>
+                <i>({page})</i>
+              </small>
             </div>
           </section>
           <section className="spell-section spell-section--content spell-section--with-padding">
@@ -285,7 +287,7 @@ class Spell extends Component {
 }
 
 Spell.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   desc: PropTypes.string.isRequired,
   page: PropTypes.string.isRequired,

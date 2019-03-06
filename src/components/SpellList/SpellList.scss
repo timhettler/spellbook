@@ -7,3 +7,23 @@
 .spell-list {
   width: 100%;
 }
+
+.no-results {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #666;
+
+  &__header {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: larger;
+    margin-bottom: 0.5em;
+  }
+}

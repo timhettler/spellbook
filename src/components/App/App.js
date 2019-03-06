@@ -17,6 +17,17 @@ import history from '../../utilities/history';
 
 import './App.scss';
 
+function _renderNoSpellSelected() {
+  return (
+    <div className="no-spell-selected">
+      <h2 className="no-spell-selected__header">No Spell Selected</h2>
+      <p className="no-spell-selected__copy">
+        Select a spell from the list to see its details
+      </p>
+    </div>
+  );
+}
+
 class App extends Component {
   componentDidMount() {
     this.props.dispatch(loadSpells(data.SPELLS));
@@ -31,7 +42,7 @@ class App extends Component {
 
     const loc = history.location.pathname.split('/').filter(x => x);
     if (loc[0] === 'spell') {
-      this.props.dispatch(viewSpell(parseInt(loc[1], 10)));
+      this.props.dispatch(viewSpell(loc[1]));
     }
   }
 
@@ -40,7 +51,7 @@ class App extends Component {
   }
 
   updateHistory() {
-    if (this.props.currentSpellId === null) {
+    if (!this.props.currentSpellId) {
       history.push('');
       return;
     }
@@ -49,7 +60,7 @@ class App extends Component {
   }
 
   render() {
-    let isSpellDetailActive = this.props.currentSpellId !== null;
+    let isSpellDetailActive = !!this.props.currentSpellId;
 
     return (
       <div className="App">
@@ -73,7 +84,8 @@ class App extends Component {
                 'is-active': isSpellDetailActive,
               })}
             >
-              <SelectedSpellDetail />
+              {isSpellDetailActive && <SelectedSpellDetail />}
+              {!isSpellDetailActive && _renderNoSpellSelected()}
             </section>
           </div>
         </main>

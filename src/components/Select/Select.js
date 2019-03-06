@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
@@ -11,31 +11,38 @@ function handleChange(callback, type) {
   };
 }
 
-const Select = ({ options, value, type, className, onChange }) => {
-  return (
-    <label className="select-container">
-      <select
-        className={classNames('select', className)}
-        value={value}
-        onChange={handleChange(onChange, type)}
-      >
-        {options.map(o => {
-          const oLabel = typeof o === 'string' ? o : o.label;
-          const oValue = typeof o === 'string' ? o : o.value;
+class Select extends PureComponent {
+  render() {
+    const { value, type, className, onChange } = this.props;
 
-          return (
-            <option key={oValue} value={oValue}>
-              {oLabel}
-            </option>
-          );
-        })}
-      </select>
-      <span className="select-icon-container">
-        <Chevron className="svg-icon" />
-      </span>
-    </label>
-  );
-};
+    const displayOptions = [{ label: this.props.label, value: '' }].concat(
+      this.props.options
+    );
+    return (
+      <label className="select-container">
+        <select
+          className={classNames('select', className)}
+          value={value}
+          onChange={handleChange(onChange, type)}
+        >
+          {displayOptions.map(o => {
+            const oLabel = typeof o === 'string' ? o : o.label;
+            const oValue = typeof o === 'string' ? o : o.value;
+
+            return (
+              <option key={oValue} value={oValue}>
+                {oLabel}
+              </option>
+            );
+          })}
+        </select>
+        <span className="select-icon-container">
+          <Chevron className="svg-icon" />
+        </span>
+      </label>
+    );
+  }
+}
 
 Select.propTypes = {
   options: PropTypes.arrayOf(

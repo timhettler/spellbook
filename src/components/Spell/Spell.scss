@@ -1,6 +1,7 @@
 .spell-list-item {
   cursor: pointer;
   border-left: 5px solid transparent;
+  line-height: 1.2;
   -webkit-tap-highlight-color: initial;
 
   &:focus,
@@ -20,9 +21,6 @@
   > * {
     padding-top: 0.75em;
     padding-bottom: 0.75em;
-  }
-
-  > *:first-child {
     padding-left: 0.75em;
   }
 
@@ -32,6 +30,7 @@
 
   &__name {
     text-align: left;
+    width: 100%;
   }
 
   &__level {

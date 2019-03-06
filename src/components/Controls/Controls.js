@@ -8,6 +8,7 @@ import TextFilter from '../../containers/TextFilter';
 import BinaryFilter from '../../containers/BinaryFilter';
 import SortingButton from '../../containers/SortingButton';
 import VisuallyHidden from '../VisuallyHidden';
+import getIcon from '../../utilities/getIcon';
 
 import './Controls.scss';
 
@@ -27,7 +28,7 @@ const Controls = ({ sorting, showSubClassFilter }) => (
   <div className="control-container">
     <div className="control-section">
       <div className="control-item control-item--input">
-        <Filter type="classes" defaultLabel="All Classes" />
+        <Filter type="classes" label="All Classes" />
       </div>
       <div className="control-item control-item--input">
         <TextFilter type="name" placeholder="Spell Name" />
@@ -41,7 +42,7 @@ const Controls = ({ sorting, showSubClassFilter }) => (
     </div>
     <div className="control-section">
       <div className="control-item control-item--input">
-        <Filter type="school" defaultLabel="All Schools" />
+        <Filter type="school" label="All Schools" />
       </div>
       {showSubClassFilter && (
         <div className="control-item control-item--input">
@@ -50,8 +51,26 @@ const Controls = ({ sorting, showSubClassFilter }) => (
       )}
     </div>
     <div className="control-section">
-      <BinaryFilter type="ritual" label="Rituals Only" />
-      <BinaryFilter type="concentration" label="Requires Concentration" />
+      <BinaryFilter
+        type="ritual"
+        label={getIcon['ritual']}
+        title="Rituals Only"
+      />
+      <BinaryFilter
+        type="concentration"
+        label={getIcon['concentration']}
+        title="Concentraton Only"
+      />
+      <BinaryFilter
+        type="cost"
+        label={getIcon['cost']}
+        title="Material Cost Only"
+      />
+      <BinaryFilter
+        type="favorites"
+        label={getIcon['favorites']}
+        title="Favorites Only"
+      />
     </div>
     <div className="control-section control-section--full">
       <div className="control-item control-item--sort">

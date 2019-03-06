@@ -8,9 +8,7 @@ import Select from '../../components/Select';
 
 const mapStateToProps = (state, ownProps) => ({
   value: selectValue(ownProps.type)(state),
-  options: [{ label: ownProps.defaultLabel, value: '' }].concat(
-    selectSortedFilter(ownProps.type)(state)
-  ),
+  options: selectSortedFilter(ownProps.type)(state),
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
