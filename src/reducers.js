@@ -10,11 +10,11 @@ import {
   VIEW_SPELL,
   TOGGLE_FAVORITE,
   RESET_FAVORITES,
-} from './actions';
+} from './actionTypes';
 
 import toKebabCase from './utilities/toKebabCase';
 
-function filters(state = {}, action) {
+export function filters(state = {}, action) {
   switch (action.type) {
     case TOGGLE_FILTER:
       const newState = Object.assign({}, state);
@@ -33,7 +33,7 @@ function filters(state = {}, action) {
   }
 }
 
-function sorting(state = { field: 'name', reverse: false }, action) {
+export function sorting(state = { field: 'name', reverse: false }, action) {
   switch (action.type) {
     case SET_SORTING:
       return {
@@ -45,7 +45,7 @@ function sorting(state = { field: 'name', reverse: false }, action) {
   }
 }
 
-function transformSpell(spell, index) {
+export function transformSpell(spell) {
   return {
     ...spell,
     id: toKebabCase(spell.name),
@@ -55,7 +55,7 @@ function transformSpell(spell, index) {
   };
 }
 
-function spells(state = [], action) {
+export function spells(state = [], action) {
   switch (action.type) {
     case LOAD_SPELLS:
       return action.spells.map(transformSpell);
@@ -64,7 +64,7 @@ function spells(state = [], action) {
   }
 }
 
-function currentSpellId(state = '', action) {
+export function currentSpellId(state = '', action) {
   switch (action.type) {
     case VIEW_SPELL:
       return action.id;
@@ -73,7 +73,7 @@ function currentSpellId(state = '', action) {
   }
 }
 
-function classes(state = [], action) {
+export function classes(state = [], action) {
   switch (action.type) {
     case LOAD_CLASSES:
       return action.classes;
@@ -82,7 +82,7 @@ function classes(state = [], action) {
   }
 }
 
-function subClasses(state = {}, action) {
+export function subClasses(state = {}, action) {
   switch (action.type) {
     case ADD_SUBCLASS:
       return {
@@ -97,7 +97,7 @@ function subClasses(state = {}, action) {
   }
 }
 
-function schools(state = [], action) {
+export function schools(state = [], action) {
   switch (action.type) {
     case LOAD_SCHOOLS:
       return action.schools;
@@ -106,7 +106,7 @@ function schools(state = [], action) {
   }
 }
 
-function favorites(state = [], action) {
+export function favorites(state = [], action) {
   switch (action.type) {
     case TOGGLE_FAVORITE:
       if (state.includes(action.id)) {

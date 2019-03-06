@@ -1,54 +1,41 @@
-/*
- * action types
- */
-
-export const LOAD_SPELLS = 'LOAD_SPELLS';
-export const LOAD_CLASSES = 'LOAD_CLASSES';
-export const LOAD_SCHOOLS = 'LOAD_SCHOOLS';
-export const ADD_SUBCLASS = 'ADD_SUBCLASS';
-export const TOGGLE_FILTER = 'TOGGLE_FILTER';
-export const RESET_FILTERS = 'RESET_FILTERS';
-export const SET_SORTING = 'SET_SORTING';
-export const VIEW_SPELL = 'VIEW_SPELL';
-export const TOGGLE_FAVORITE = 'TOGGLE_FAVORITE';
-export const RESET_FAVORITES = 'RESET_FAVORITES';
+import * as types from './actionTypes.js';
 
 export function loadSpells(spells) {
-  return { type: LOAD_SPELLS, spells };
+  return { type: types.LOAD_SPELLS, spells };
 }
 
 export function loadClasses(classes) {
-  return { type: LOAD_CLASSES, classes };
+  return { type: types.LOAD_CLASSES, classes };
 }
 
 export function loadSchools(schools) {
-  return { type: LOAD_SCHOOLS, schools };
+  return { type: types.LOAD_SCHOOLS, schools };
 }
 
 export function addSubclass(parent, type, options) {
-  return { type: ADD_SUBCLASS, payload: { parent, type, options } };
+  return { type: types.ADD_SUBCLASS, payload: { parent, type, options } };
 }
 
 export function toggleFilter(filter) {
-  return { type: TOGGLE_FILTER, filter };
+  return { type: types.TOGGLE_FILTER, filter };
 }
 
 export function resetFilters() {
-  return { type: RESET_FILTERS };
+  return { type: types.RESET_FILTERS };
 }
 
 export function setSorting(sorting) {
-  return { type: SET_SORTING, sorting };
+  return { type: types.SET_SORTING, sorting };
 }
 
 export function viewSpell(id) {
-  return { type: VIEW_SPELL, id };
+  return { type: types.VIEW_SPELL, id };
 }
 
 export function toggleFavorite(id) {
-  return { type: TOGGLE_FAVORITE, id };
+  return { type: types.TOGGLE_FAVORITE, id };
 }
 
 export function resetFavorites() {
-  return { type: RESET_FAVORITES };
+  return { type: types.RESET_FAVORITES };
 }
