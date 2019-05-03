@@ -28,10 +28,14 @@ const Controls = ({ sorting, showSubClassFilter }) => (
   <div className="control-container">
     <div className="control-section">
       <div className="control-item control-item--input">
-        <Filter type="classes" label="All Classes" />
+        <Filter type="classes" label="Class Filter" allLabel="All Classes" />
       </div>
       <div className="control-item control-item--input">
-        <TextFilter type="name" placeholder="Spell Name" />
+        <TextFilter
+          type="name"
+          label="Search by Spell Name"
+          placeholder="Spell Name"
+        />
       </div>
       <div className="control-item control-item--input control-item--reset">
         <ResetButton className="reset-button">
@@ -42,7 +46,7 @@ const Controls = ({ sorting, showSubClassFilter }) => (
     </div>
     <div className="control-section">
       <div className="control-item control-item--input">
-        <Filter type="school" label="All Schools" />
+        <Filter type="school" label="School Filter" allLabel="All Schools" />
       </div>
       {showSubClassFilter && (
         <div className="control-item control-item--input">

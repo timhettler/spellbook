@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
+import VisuallyHidden from '../VisuallyHidden';
 import './TextInput.scss';
 
 function handleChange(callback) {
@@ -10,15 +11,18 @@ function handleChange(callback) {
   };
 }
 
-const TextInput = ({ value, className, onChange, ...rest }) => (
-  <input
-    className={classNames('text-input', className)}
-    type="text"
-    value={value}
-    onChange={handleChange(onChange)}
-    autoComplete="off"
-    {...rest}
-  />
+const TextInput = ({ value, className, onChange, label, ...rest }) => (
+  <label>
+    <VisuallyHidden>{label}</VisuallyHidden>
+    <input
+      className={classNames('text-input', className)}
+      type="text"
+      value={value}
+      onChange={handleChange(onChange)}
+      autoComplete="off"
+      {...rest}
+    />
+  </label>
 );
 
 TextInput.propTypes = {
@@ -28,6 +32,7 @@ TextInput.propTypes = {
     PropTypes.arrayOf(PropTypes.string),
   ]),
   onChange: PropTypes.func.isRequired,
+  label: PropTypes.string.isRequired,
 };
 
 export default TextInput;

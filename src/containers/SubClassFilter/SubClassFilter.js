@@ -18,6 +18,7 @@ const mapStateToProps = (state, ownProps) => {
     value: selectValue(filter.type)(state),
     options: filter.options,
     label: filter.label,
+    allLabel: filter.allLabel,
   };
 };
 

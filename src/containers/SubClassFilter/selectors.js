@@ -3,7 +3,7 @@ import { createSelector } from 'reselect';
 const selectClassFiltersState = state => state.filters.classes;
 const selectSubclassesState = state => state.subClasses;
 
-function getSubClassLabel(selectedClass) {
+function getSubClassLabels(selectedClass) {
   let subclass = '';
 
   switch (selectedClass) {
@@ -26,7 +26,10 @@ function getSubClassLabel(selectedClass) {
       break;
   }
 
-  return `All ${subclass}`;
+  return {
+    label: `Select ${subclass}`,
+    allLabel: `All ${subclass}`,
+  };
 }
 
 export const selectSubClassFilter = createSelector(
@@ -38,7 +41,7 @@ export const selectSubClassFilter = createSelector(
 
     return {
       ...subClasses[selectedClass],
-      label: getSubClassLabel(selectedClass),
+      ...getSubClassLabels(selectedClass),
     };
   }
 );

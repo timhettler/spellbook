@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
 import Chevron from '../Chevron';
+import VisuallyHidden from '../VisuallyHidden';
 import './Select.scss';
 
 function handleChange(callback, type) {
@@ -13,13 +14,14 @@ function handleChange(callback, type) {
 
 class Select extends PureComponent {
   render() {
-    const { value, type, className, onChange } = this.props;
+    const { value, type, className, onChange, label, allLabel } = this.props;
 
-    const displayOptions = [{ label: this.props.label, value: '' }].concat(
+    const displayOptions = [{ label: allLabel, value: '' }].concat(
       this.props.options
     );
     return (
       <label className="select-container">
+        <VisuallyHidden>{label}</VisuallyHidden>
         <select
           className={classNames('select', className)}
           value={value}
@@ -61,6 +63,8 @@ Select.propTypes = {
     PropTypes.arrayOf(PropTypes.string),
   ]),
   onChange: PropTypes.func.isRequired,
+  allLabel: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
 };
 
 export default Select;
