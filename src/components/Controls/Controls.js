@@ -76,7 +76,7 @@ const Controls = ({ sorting, showSubClassFilter }) => (
         title="Favorites Only"
       />
     </div>
-    <div className="control-section control-section--full">
+    <div className="control-section control-section--full" aria-hidden={true}>
       <div className="control-item control-item--sort">
         <SortingButton
           role="presentation"

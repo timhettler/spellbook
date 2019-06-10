@@ -64,7 +64,6 @@ class SpellList extends Component {
     return (
       <th
         scope="col"
-        role="columnheader"
         aria-sort={this._getAriaSort(field, sorting)}
         className={`spell-list__header spell-list__header--${field}`}
       >
