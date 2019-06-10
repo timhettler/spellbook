@@ -1,3 +1,5 @@
+@import '../../utilities/scss/_mixins';
+
 .spell-list-item {
   cursor: pointer;
   border-left: 5px solid transparent;
@@ -37,6 +39,10 @@
     color: #666;
     text-align: right;
     white-space: nowrap;
+
+    @include small {
+      font-size: smaller;
+    }
   }
 }
 
