@@ -72,7 +72,7 @@ export const selectSortedResults = createSelector(
     // Next, do exclusive filtering
     if (Object.keys(filtersCopy).length) {
       Object.keys(filtersCopy).forEach(prop => {
-        // The favorites filter checks if the spell id is i nthe favorites list
+        // The favorites filter checks if the spell id is in the favorites list
         if (prop === 'favorites') {
           return (newSpells = newSpells.filter(spell => {
             return favorites.includes(spell.id);
