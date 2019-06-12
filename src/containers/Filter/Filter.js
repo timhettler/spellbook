@@ -1,31 +1,32 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React, { useCallback } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { toggleFilter } from '../../actions';
 import { selectSortedFilter } from './selectors';
 import { selectValue } from '../../utilities/selectValue';
 import Select from '../../components/Select';
 
-const mapStateToProps = (state, ownProps) => ({
-  value: selectValue(ownProps.type)(state),
-  options: selectSortedFilter(ownProps.type)(state),
-});
-
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  onChange: value => {
-    dispatch(toggleFilter({ type: ownProps.type, value: value }));
-  },
-});
-
 const Filter = props => {
-  if (!props.options) {
+  const value = useSelector(state => selectValue(props.type)(state));
+  const options = useSelector(state => selectSortedFilter(props.type)(state));
+  const dispatch = useDispatch();
+  const handleChange = useCallback(
+    value => dispatch(toggleFilter({ type: props.type, value: value })),
+    [dispatch, props.type]
+  );
+
+  if (!options) {
     return null;
   }
 
-  return <Select {...props} />;
+  return (
+    <Select
+      value={value}
+      onChange={handleChange}
+      options={options}
+      {...props}
+    />
+  );
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Filter);
+export default Filter;
