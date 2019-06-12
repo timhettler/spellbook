@@ -1,6 +1,8 @@
 import { createSelector } from 'reselect';
 import firstBy from 'thenby';
 
+import bothContain from '../../utilities/bothContain';
+
 import { SUBCLASSES } from '../../data';
 
 const selectSpellState = state => state.spells;
@@ -39,7 +41,6 @@ export const selectSortedResults = createSelector(
       delete filtersCopy.classes;
       Object.keys(filtersCopy).forEach(prop => {
         if (SUBCLASSES.includes(prop)) {
-          // TODO assumes only one subclass type can be selected
           subClassFilters = filtersCopy[prop];
           delete filtersCopy[prop];
         }
@@ -47,7 +48,7 @@ export const selectSortedResults = createSelector(
 
       newSpells = newSpells.filter(spell => {
         // If the spell is in the selected class list, add it to the list
-        if (spell.classes.includes(classFilters)) {
+        if (bothContain(spell.classes, classFilters)) {
           return true;
           // If we're filtering by a subclass, continue
         } else if (hasSubClassFilter) {
@@ -60,7 +61,7 @@ export const selectSortedResults = createSelector(
           // Go through each subclass and check if the subclass matches the filter
           return spellsSubClasses.reduce(
             (accumulator, subclass) =>
-              spell[subclass].includes(subClassFilters) || accumulator,
+              bothContain(spell[subclass], subClassFilters) || accumulator,
             false
           );
         }
@@ -86,11 +87,9 @@ export const selectSortedResults = createSelector(
 
             switch (typeof spell[prop]) {
               case 'string':
-                return spell[prop]
-                  .toLowerCase()
-                  .includes(filtersCopy[prop].toLowerCase());
+                return filtersCopy[prop].includes(spell[prop]);
               case 'object': // (Really an array)
-                return spell[prop].includes(filtersCopy[prop]);
+                return bothContain(spell[prop], filtersCopy[prop]);
               default:
                 return spell[prop] === filtersCopy[prop];
             }

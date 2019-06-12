@@ -19,10 +19,39 @@ export function filters(state = {}, action) {
     case TOGGLE_FILTER:
       const newState = Object.assign({}, state);
 
-      if (!action.filter.value) {
+      if (!!action.filter.value === false) {
         delete newState[action.filter.type];
-      } else {
+
+        return newState;
+      }
+
+      if (typeof action.filter.value === 'boolean') {
         newState[action.filter.type] = action.filter.value;
+
+        return newState;
+      }
+
+      // Always create a new array
+      if (newState[action.filter.type]) {
+        newState[action.filter.type] = [...newState[action.filter.type]];
+      } else {
+        newState[action.filter.type] = [];
+      }
+
+      // Check if the value if in the filter...
+      if (newState[action.filter.type].includes(action.filter.value)) {
+        //...remove it if yes
+        newState[action.filter.type] = newState[action.filter.type].filter(
+          i => i !== action.filter.value
+        );
+      } else {
+        // ...add it if no
+        newState[action.filter.type].push(action.filter.value);
+      }
+
+      // if the resulting array is empty, delete it
+      if (newState[action.filter.type].length === 0) {
+        delete newState[action.filter.type];
       }
 
       return newState;
