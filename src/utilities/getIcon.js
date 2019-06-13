@@ -12,6 +12,15 @@ const getIcon = {
   sorcerer: '💫',
   wizard: '🧙‍',
   warlock: '🔗',
+  // schools
+  abjuration: '🛡',
+  conjuration: '🧞',
+  divination: '🔮',
+  enchantment: '💞',
+  evocation: '☄️',
+  illusion: '🎭',
+  necromancy: '⚰️',
+  transmutation: '⚗️',
 };
 
 export default getIcon;

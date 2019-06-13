@@ -1,0 +1,21 @@
+@import '../../utilities/scss/_mixins';
+
+.school-filter {
+  @include ratioHeight();
+  border-radius: 50%;
+  background-color: darkgray;
+  width: 50px;
+  padding: 0.5em;
+
+  &:not(.is-selected) {
+    filter: grayscale(100%);
+  }
+
+  .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: xx-large;
+  }
+}

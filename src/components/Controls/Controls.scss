@@ -1,3 +1,5 @@
+@import '../../utilities/scss/_mixins';
+
 $control-item--border-size: 1px;
 $control-item--border-radius: 0.75em;
 
@@ -15,6 +17,12 @@ $control-item--border-radius: 0.75em;
   &--full {
     margin-right: -0.25em;
     margin-left: -0.25em;
+  }
+
+  &--button {
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5em 0;
   }
 }
 
@@ -38,6 +46,14 @@ $control-item--border-radius: 0.75em;
       border-right: $control-item--border-size solid;
       border-top-right-radius: $control-item--border-radius;
       border-bottom-right-radius: $control-item--border-radius;
+    }
+  }
+
+  &--button {
+    flex: 0 1 50px;
+
+    & + & {
+      margin-left: 0.25em;
     }
   }
 

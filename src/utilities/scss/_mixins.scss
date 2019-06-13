@@ -124,3 +124,14 @@ $size--large-viewport-start: 1100px;
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
 }
+
+@mixin ratioHeight($height-ratio: 1) {
+  overflow: hidden;
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    padding-bottom: percentage($height-ratio);
+  }
+}
