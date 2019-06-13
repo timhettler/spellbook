@@ -67,27 +67,27 @@ const Controls = ({ sorting, showSubClassFilter }) => (
     )}
     <div className="control-section control-section--button">
       <div className="control-item control-item--check">
-        <BinaryFilter type="ritual" label={getIcon['ritual']} title="Ritual" />
+        <BinaryFilter type="ritual" icon={getIcon['ritual']} label="Ritual" />
       </div>
       <div className="control-item control-item--check">
         <BinaryFilter
           type="concentration"
-          label={getIcon['concentration']}
-          title="Concentraton"
+          icon={getIcon['concentration']}
+          label="Concentraton"
         />
       </div>
       <div className="control-item control-item--check">
         <BinaryFilter
           type="cost"
-          label={getIcon['cost']}
-          title="Material Cost"
+          icon={getIcon['cost']}
+          label="Material Cost"
         />
       </div>
       <div className="control-item control-item--check">
         <BinaryFilter
           type="favorites"
-          label={getIcon['favorites']}
-          title="Favorites Only"
+          icon={getIcon['favorites']}
+          label="Favorites"
         />
       </div>
     </div>
