@@ -47,16 +47,20 @@ const Controls = ({ sorting, showSubClassFilter }) => (
       </div>
     </div>
     <div className="control-section">
-      <details className="control-item">
-        <summary>Filters by school</summary>
-        <div className="control-section control-section--button">
-          {SCHOOLS.map(school => (
-            <div className="control-item control-item--button" key={school}>
-              <SchoolFilter school={school} />
-            </div>
-          ))}
-        </div>
-      </details>
+      <div className="control-item">
+        <details className="control-toggle">
+          <summary className="control-toggle__heading">
+            Filters by school
+          </summary>
+          <div className="control-toggle__content">
+            {SCHOOLS.map(school => (
+              <div className="control-toggle__item" key={school}>
+                <SchoolFilter school={school} />
+              </div>
+            ))}
+          </div>
+        </details>
+      </div>
     </div>
     {showSubClassFilter && (
       <div className="control-section">
@@ -65,7 +69,7 @@ const Controls = ({ sorting, showSubClassFilter }) => (
         </div>
       </div>
     )}
-    <div className="control-section control-section--button">
+    {/*<div className="control-section control-section--evenly-spaced">
       <div className="control-item control-item--check">
         <BinaryFilter type="ritual" icon={getIcon['ritual']} label="Ritual" />
       </div>
@@ -90,7 +94,7 @@ const Controls = ({ sorting, showSubClassFilter }) => (
           label="Favorites"
         />
       </div>
-    </div>
+    </div>*/}
     <div className="control-section control-section--full" aria-hidden={true}>
       <div className="control-item control-item--sort">
         <SortingButton

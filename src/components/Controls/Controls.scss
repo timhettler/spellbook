@@ -4,33 +4,52 @@ $control-item--border-size: 1px;
 $control-item--border-radius: 0.75em;
 
 .control-container {
-  padding: 0.5em 0.25em 0;
+  padding: 0.5em 0.5em 0;
+  overflow: hidden;
 }
 
 .control-section {
   display: flex;
+  width: 100%;
 
   & + & {
-    padding-top: 0.25em;
+    margin-top: 0.5em;
   }
 
   &--full {
-    margin-right: -0.25em;
-    margin-left: -0.25em;
+    width: calc(100% + 1em);
+    margin-right: -0.5em;
+    margin-left: -0.5em;
   }
 
-  &--button {
+  &--evenly-spaced {
     align-items: center;
     justify-content: space-between;
-    padding: 0.5em 0;
+  }
+}
+
+.control-toggle {
+  width: 100%;
+
+  &__content {
+    margin: 0.5em -0.5em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: calc(100% + 1em);
+  }
+
+  &__item {
+    margin: 0.5em;
+    display: inline-flex;
+    align-items: center;
   }
 }
 
 .control-item {
-  flex: 1 1 auto;
-  display: flex;
+  flex: 1 1 100%;
+  display: inline-flex;
   align-items: center;
-  width: 100%;
 
   &--input {
     border-top: $control-item--border-size solid;
@@ -46,14 +65,6 @@ $control-item--border-radius: 0.75em;
       border-right: $control-item--border-size solid;
       border-top-right-radius: $control-item--border-radius;
       border-bottom-right-radius: $control-item--border-radius;
-    }
-  }
-
-  &--button {
-    flex: 0 1 50px;
-
-    & + & {
-      margin-left: 0.25em;
     }
   }
 
@@ -73,6 +84,10 @@ $control-item--border-radius: 0.75em;
 
   &--level {
     text-align: right;
+  }
+
+  &--check {
+    flex: 0 0 auto;
   }
 }
 
