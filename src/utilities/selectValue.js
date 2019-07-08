@@ -23,3 +23,16 @@ export function selectBoolValue(filter) {
     }
   );
 }
+
+export function selectStringValue(filter) {
+  return createSelector(
+    [selectFiltersState],
+    selectedFilters => {
+      if (!selectedFilters || !selectedFilters[filter]) {
+        return '';
+      }
+
+      return selectedFilters[filter];
+    }
+  );
+}

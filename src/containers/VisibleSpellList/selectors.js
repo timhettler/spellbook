@@ -87,7 +87,7 @@ export const selectSortedResults = createSelector(
 
             switch (typeof spell[prop]) {
               case 'string':
-                return filtersCopy[prop].includes(spell[prop]);
+                return spell[prop].includes(filtersCopy[prop]);
               case 'object': // (Really an array)
                 return bothContain(spell[prop], filtersCopy[prop]);
               default:

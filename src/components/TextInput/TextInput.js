@@ -12,7 +12,7 @@ function handleChange(callback) {
 }
 
 const TextInput = ({ value, className, onChange, label, ...rest }) => (
-  <label>
+  <label className={classNames('text-label')}>
     <VisuallyHidden>{label}</VisuallyHidden>
     <input
       className={classNames('text-input', className)}

@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 
 import { toggleFilter } from '../../actions';
-import { selectValue } from '../../utilities/selectValue';
+import { selectStringValue } from '../../utilities/selectValue';
 import TextInput from '../../components/TextInput';
 
 const mapStateToProps = (state, ownProps) => ({
-  value: selectValue(ownProps.type)(state)
+  value: selectStringValue(ownProps.type)(state),
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

@@ -1,5 +1,10 @@
 @import '../../utilities/scss/_mixins';
 
+.text-label {
+  display: block;
+  width: 100%;
+}
+
 .text-input {
   @include reset-input;
   padding: 0.25em 0.5em;
