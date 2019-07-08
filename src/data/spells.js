@@ -1271,7 +1271,7 @@ export const SPELLS = [
   {
     name: 'Commune with Nature',
     desc:
-      "<p>You briefly become one with nature and gain knowledge of the surrounding territory. In the outdoors, the spell gives you knowledge of the land within 3 miles of you. In caves and other natural underground settings, the radius is limited to 300 feet. The spell doesn't function where nature has been replaced by construction, such as in dungeons and towns.</p><p>You instantly gain knowledge of up to three facts of your choice about any of the following subjects as they relate to the area:</p><ul><li>terrain and bodies of water</li><li>prevalent plants, minerals, animals, or peoples</li><li>powerful celestials, fey, fiends, elementals, or undead</li><li>influence from other planes of existence<li><li>buildings</li></ul><p>For example, you could determine the location of powerful undead in the area, the location of major sources of safe drinking water, and the location of any nearby towns.</p>",
+      "<p>You briefly become one with nature and gain knowledge of the surrounding territory. In the outdoors, the spell gives you knowledge of the land within 3 miles of you. In caves and other natural underground settings, the radius is limited to 300 feet. The spell doesn't function where nature has been replaced by construction, such as in dungeons and towns.</p><p>You instantly gain knowledge of up to three facts of your choice about any of the following subjects as they relate to the area:</p><ul><li>terrain and bodies of water</li><li>prevalent plants, minerals, animals, or peoples</li><li>powerful celestials, fey, fiends, elementals, or undead</li><li>influence from other planes of existence</li><li>buildings</li></ul><p>For example, you could determine the location of powerful undead in the area, the location of major sources of safe drinking water, and the location of any nearby towns.</p>",
     page: 'phb 224',
     range: 'Self',
     components: ['V', 'S'],
@@ -1580,7 +1580,7 @@ export const SPELLS = [
   {
     name: 'Control Flames',
     desc:
-      '<p>You choose nonmagical flame that you can see within range and that fits within a 5-foot cube. You affect it in one of the following ways:</p><ul>You instantaneously expand the flame 5 feet in one direction, provided that wood or other fuel is present in the new location.<li><li>You instantaneously extinguish the flames within the cube.<li><li>You double or halve the area of bright light and dim light cast by the flame, change its color, or both. The change lasts for 1 hour.<li><li>You cause simple shapes-such as the vague form of a creature, an inanimate object, or a location-to appear within the flames and animate as you like. The shapes last for 1 hour.</li></ul><p>If you cast this spell multiple times, you can have up to three of its non-instantaneous effects active at a time, and you can dismiss such an effect as an action.</p>',
+      '<p>You choose nonmagical flame that you can see within range and that fits within a 5-foot cube. You affect it in one of the following ways:</p><ul><li>You instantaneously expand the flame 5 feet in one direction, provided that wood or other fuel is present in the new location.</li><li>You instantaneously extinguish the flames within the cube.</li><li>You double or halve the area of bright light and dim light cast by the flame, change its color, or both. The change lasts for 1 hour.</li><li>You cause simple shapes-such as the vague form of a creature, an inanimate object, or a location-to appear within the flames and animate as you like. The shapes last for 1 hour.</li></ul><p>If you cast this spell multiple times, you can have up to three of its non-instantaneous effects active at a time, and you can dismiss such an effect as an action.</p>',
     page: 'xte 152',
     range: '60 feet',
     components: ['S'],
@@ -1771,7 +1771,7 @@ export const SPELLS = [
   {
     name: 'Creation',
     desc:
-      "<p>You pull wisps of shadow material from the Shadowfell to create a nonliving object of vegetable matter within range: soft goods, rope, wood, or something similar. You can also use this spell to create mineral objects such as stone, crystal, or metal. The object created must be no larger than a 5-foot cube, and the object must be of a form and material that you have seen before.</p><p>The duration depends on the object's material. If the object is composed of multiple materials, use the shortest duration.</p><ul><li><b>Vegetable matter:</b> 1 day<li><li><b>Stone or crystal:</b> 12 hours<li><li><b>Precious metals:</b> 1 hour</li><li><b>Gems:</b> 10 minutes</li><li><b>Adamantine or mithral:</b> 1 minute</li></ul><p>Using any material created by this spell as another spell's material component causes that spell to fail.</p>",
+      "<p>You pull wisps of shadow material from the Shadowfell to create a nonliving object of vegetable matter within range: soft goods, rope, wood, or something similar. You can also use this spell to create mineral objects such as stone, crystal, or metal. The object created must be no larger than a 5-foot cube, and the object must be of a form and material that you have seen before.</p><p>The duration depends on the object's material. If the object is composed of multiple materials, use the shortest duration.</p><ul><li><b>Vegetable matter:</b> 1 day</li><li><b>Stone or crystal:</b> 12 hours</li><li><b>Precious metals:</b> 1 hour</li><li><b>Gems:</b> 10 minutes</li><li><b>Adamantine or mithral:</b> 1 minute</li></ul><p>Using any material created by this spell as another spell's material component causes that spell to fail.</p>",
     higher_level:
       '<p>When you cast this spell using a spell slot of 6th level or higher, the cube increases by 5 feet for each slot level above 5th.</p>',
     page: 'phb 229',
@@ -2392,7 +2392,7 @@ export const SPELLS = [
   {
     name: 'Druidcraft',
     desc:
-      "<p>Whispering to the spirits of nature, you create one of the following effects within 'range':</p><ul><li>You create a tiny, harmless sensory effect that predicts what the weather will be at your location for the next 24 hours. The effect might manifest as a golden orb for clear skies, a cloud for rain, falling snowflakes for snow, and so on. This effect persists for 1 round.<li><li>You instantly make a flower bloom, a seed pod open, or a leaf bud bloom.<li><li>You create an instantaneous, harmless sensory effect, such as falling leaves, a puff of wind, the sound of a small animal, or the faint order of skunk. The effect must fit in a 5-foot cube.<li><li></ul><p>You instantly light or snuff out a candle, a torch, or a small campfire.</p>",
+      "<p>Whispering to the spirits of nature, you create one of the following effects within 'range':</p><ul><li>You create a tiny, harmless sensory effect that predicts what the weather will be at your location for the next 24 hours. The effect might manifest as a golden orb for clear skies, a cloud for rain, falling snowflakes for snow, and so on. This effect persists for 1 round.</li><li>You instantly make a flower bloom, a seed pod open, or a leaf bud bloom.</li><li>You create an instantaneous, harmless sensory effect, such as falling leaves, a puff of wind, the sound of a small animal, or the faint order of skunk. The effect must fit in a 5-foot cube.</li></ul><p>You instantly light or snuff out a candle, a torch, or a small campfire.</p>",
     page: 'phb 236',
     range: '30 feet',
     components: ['V', 'S'],
@@ -3566,7 +3566,7 @@ export const SPELLS = [
   {
     name: 'Greater Restoration',
     desc:
-      "<p>You imbue a creature you touch with positive energy to undo a debilitating effect. You can reduce the target's <b>exhaustion</b> level by one, or end one of the following effects on the target:</p><ul><li>One effect that charmed or petrified the target<li><li>One curse, including the target's attunement to a cursed magic item<li><li>Any reduction to one of the target's ability scores<li><li>One effect reducing the target's hit point maximum</li></ul>",
+      "<p>You imbue a creature you touch with positive energy to undo a debilitating effect. You can reduce the target's <b>exhaustion</b> level by one, or end one of the following effects on the target:</p><ul><li>One effect that charmed or petrified the target</li><li>One curse, including the target's attunement to a cursed magic item</li><li>Any reduction to one of the target's ability scores</li><li>One effect reducing the target's hit point maximum</li></ul>",
     page: 'phb 246',
     range: 'Touch',
     components: ['V', 'S', 'M'],
@@ -3682,7 +3682,7 @@ export const SPELLS = [
   {
     name: 'Gust',
     desc:
-      "<p>You seize the air and compel it to create one of the following effects at a point you can see within 'range':</p><ul><li><li>One Medium or smaller creature that you choose must succeed on a Strength saving throw or be pushed up to 5 feet away from you.</li><li>You create a small blast of air capable of moving one object that is neither held nor carried and that weighs no more than 5 pounds. The object is pushed up to 10 feet away from you. It isn't pushed with enough force to cause damage.</li><li>You create a harmless sensory affect using air, such as causing leaves to rustle, wind to slam shutters shut, or your clothing to ripple in a breeze.</li></ul>",
+      "<p>You seize the air and compel it to create one of the following effects at a point you can see within 'range':</p><ul><li>One Medium or smaller creature that you choose must succeed on a Strength saving throw or be pushed up to 5 feet away from you.</li><li>You create a small blast of air capable of moving one object that is neither held nor carried and that weighs no more than 5 pounds. The object is pushed up to 10 feet away from you. It isn't pushed with enough force to cause damage.</li><li>You create a harmless sensory affect using air, such as causing leaves to rustle, wind to slam shutters shut, or your clothing to ripple in a breeze.</li></ul>",
     page: 'xge 157',
     range: '30 feet',
     components: ['V', 'S'],
@@ -6226,7 +6226,7 @@ export const SPELLS = [
     concentration: false,
     casting_time: '1 action',
     level: 3,
-    school: 'Conjuration',
+    school: 'Necromancy',
     classes: ['Cleric', 'Paladin'],
     domains: ['Grave', 'Life'],
     patron: ['Celestial'],
