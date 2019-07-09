@@ -88,6 +88,10 @@ $control-item--border-radius: 0.75em;
 
   &--check {
     flex: 0 0 auto;
+
+    & + & {
+      margin-left: 0.5em;
+    }
   }
 }
 

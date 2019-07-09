@@ -46,6 +46,13 @@ const Controls = ({ sorting, showSubClassFilter }) => (
         </ResetButton>
       </div>
     </div>
+    {showSubClassFilter && (
+      <div className="control-section">
+        <div className="control-item control-item--input">
+          <SubClassFilter />
+        </div>
+      </div>
+    )}
     <div className="control-section">
       <div className="control-item">
         <details className="control-toggle">
@@ -62,14 +69,7 @@ const Controls = ({ sorting, showSubClassFilter }) => (
         </details>
       </div>
     </div>
-    {showSubClassFilter && (
-      <div className="control-section">
-        <div className="control-item control-item--input">
-          <SubClassFilter />
-        </div>
-      </div>
-    )}
-    {/*<div className="control-section control-section--evenly-spaced">
+    <div className="control-section control-section--evenly-spaced">
       <div className="control-item control-item--check">
         <BinaryFilter type="ritual" icon={getIcon['ritual']} label="Ritual" />
       </div>
@@ -94,7 +94,7 @@ const Controls = ({ sorting, showSubClassFilter }) => (
           label="Favorites"
         />
       </div>
-    </div>*/}
+    </div>
     <div className="control-section control-section--full" aria-hidden={true}>
       <div className="control-item control-item--sort">
         <SortingButton

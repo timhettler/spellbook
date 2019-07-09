@@ -1,9 +1,21 @@
+@import '../../utilities/scss/_mixins';
+
 .check {
   font-size: smaller;
   display: inline-flex;
   align-items: center;
 
-  > * {
+  @include small() {
+    font-size: inherit;
+  }
+
+  > *:not(:last-child) {
     margin: 0 0.5em 0 0;
+  }
+
+  &__label {
+    @include small() {
+      display: none;
+    }
   }
 }

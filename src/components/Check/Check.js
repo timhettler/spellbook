@@ -10,18 +10,14 @@ function handleChange(callback, type) {
 }
 
 const Check = ({ icon, label, checked, type, onChange, ...rest }) => (
-  <label className="check" {...rest}>
+  <label className="check" aria-label={label} {...rest}>
     <input
       type="checkbox"
       checked={checked}
       onChange={handleChange(onChange, type)}
     />
-    {icon && (
-      <span className="icon" role="presentation">
-        {icon}
-      </span>
-    )}
-    <span className="label">{label}</span>
+    {icon && <span role="presentation">{icon}</span>}
+    <span className="check__label">{label}</span>
   </label>
 );
 
