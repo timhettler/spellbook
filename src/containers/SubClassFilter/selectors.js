@@ -35,12 +35,7 @@ function getSubClassLabels(selectedClass) {
 export const selectSubClassFilter = createSelector(
   [selectClassFiltersState, selectSubclassesState],
   (selectedClass, subClasses) => {
-    // TODO temporarily short-circuit if there's more than one classes selected
-    if (!selectedClass || selectedClass.length > 1) {
-      return null;
-    }
-
-    const firstClass = selectedClass[0];
+    const firstClass = selectedClass;
 
     if (!subClasses[firstClass]) {
       return null;

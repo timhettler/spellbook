@@ -3,11 +3,11 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { toggleFilter } from '../../actions';
 import { selectSortedFilter } from './selectors';
-import { selectValue } from '../../utilities/selectValue';
+import { selectStringValue } from '../../utilities/selectValue';
 import Select from '../../components/Select';
 
 const Filter = props => {
-  const value = useSelector(state => selectValue(props.type)(state));
+  const value = useSelector(state => selectStringValue(props.type)(state));
   const options = useSelector(state => selectSortedFilter(props.type)(state));
   const dispatch = useDispatch();
   const handleChange = useCallback(

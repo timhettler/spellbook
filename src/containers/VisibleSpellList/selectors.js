@@ -78,6 +78,13 @@ export const selectSortedResults = createSelector(
           return (newSpells = newSpells.filter(spell => {
             return favorites.includes(spell.id);
           }));
+          // The name filter allows for partial matches
+        } else if (prop === 'name') {
+          return (newSpells = newSpells.filter(spell => {
+            return spell[prop]
+              .toLowerCase()
+              .includes(filtersCopy[prop].toLowerCase());
+          }));
         } else {
           // All other filters check against props in the spell object
           return (newSpells = newSpells.filter(spell => {
@@ -87,7 +94,7 @@ export const selectSortedResults = createSelector(
 
             switch (typeof spell[prop]) {
               case 'string':
-                return spell[prop].includes(filtersCopy[prop]);
+                return filtersCopy[prop].includes(spell[prop]);
               case 'object': // (Really an array)
                 return bothContain(spell[prop], filtersCopy[prop]);
               default:
