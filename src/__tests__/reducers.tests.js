@@ -6,7 +6,7 @@ describe('filters reducer', () => {
     expect(reducers.filters(undefined, {})).toEqual({});
   });
 
-  it('should handle adding with TOGGLE_FILTER', () => {
+  it('should handle exclusive adding with TOGGLE_FILTER', () => {
     expect(
       reducers.filters(
         {},
@@ -23,7 +23,27 @@ describe('filters reducer', () => {
     });
   });
 
-  it('should handle removing with TOGGLE_FILTER', () => {
+  it('should handle inclusive adding with TOGGLE_FILTER', () => {
+    expect(
+      reducers.filters(
+        {
+          foo: ['bar'],
+        },
+        {
+          type: types.TOGGLE_FILTER,
+          filter: {
+            type: 'foo',
+            value: 'qux',
+          },
+          isInclusive: true,
+        }
+      )
+    ).toEqual({
+      foo: ['bar', 'qux'],
+    });
+  });
+
+  it('should handle falsy removing with TOGGLE_FILTER', () => {
     expect(
       reducers.filters(
         {
@@ -37,6 +57,59 @@ describe('filters reducer', () => {
         }
       )
     ).toEqual({});
+
+    expect(
+      reducers.filters(
+        {
+          foo: ['bar'],
+        },
+        {
+          type: types.TOGGLE_FILTER,
+          filter: {
+            type: 'foo',
+          },
+        }
+      )
+    ).toEqual({});
+  });
+
+  it('should handle exclusive replacement with TOGGLE_FILTER', () => {
+    expect(
+      reducers.filters(
+        {
+          foo: 'bar',
+        },
+        {
+          type: types.TOGGLE_FILTER,
+          filter: {
+            type: 'foo',
+            value: 'qux',
+          },
+        }
+      )
+    ).toEqual({
+      foo: 'qux',
+    });
+  });
+
+  it('should handle inclusive removal with TOGGLE_FILTER', () => {
+    expect(
+      reducers.filters(
+        {
+          foo: ['bar', 'qux'],
+        },
+        {
+          type: types.TOGGLE_FILTER,
+          filter: {
+            type: 'foo',
+            value: 'qux',
+          },
+          isInclusive: true,
+        }
+      )
+    ).toEqual({
+      foo: ['bar'],
+    });
   });
 
   it('should handle RESET_FILTERS', () => {

@@ -16,8 +16,8 @@ export function addSubclass(parent, type, options) {
   return { type: types.ADD_SUBCLASS, payload: { parent, type, options } };
 }
 
-export function toggleFilter(filter) {
-  return { type: types.TOGGLE_FILTER, filter };
+export function toggleFilter(filter, isInclusive) {
+  return { type: types.TOGGLE_FILTER, filter, isInclusive };
 }
 
 export function resetFilters() {

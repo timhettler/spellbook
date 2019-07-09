@@ -17,7 +17,7 @@ const SchoolFilter = props => {
   );
   const dispatch = useDispatch();
   const handleClick = useCallback(
-    value => dispatch(toggleFilter({ type: 'school', value: value })),
+    value => dispatch(toggleFilter({ type: 'school', value: value }, true)),
     [dispatch]
   );
 

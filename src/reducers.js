@@ -25,7 +25,7 @@ export function filters(state = {}, action) {
         return newState;
       }
 
-      if (typeof action.filter.value !== 'object') {
+      if (!action.isInclusive) {
         newState[action.filter.type] = action.filter.value;
 
         return newState;
