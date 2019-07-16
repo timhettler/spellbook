@@ -26,7 +26,7 @@ const SchoolFilter = props => {
       className={classNames('school-filter', { 'is-selected': selected })}
       onClick={() => handleClick(props.school)}
     >
-      <span className="icon" role="presentation">
+      <span title={props.school} className="icon" role="presentation">
         {getIcon[props.school.toLowerCase()]}
       </span>
       <VisuallyHidden>{props.school}</VisuallyHidden>
