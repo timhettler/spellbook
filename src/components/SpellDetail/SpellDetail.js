@@ -165,7 +165,7 @@ class Spell extends Component {
               <div className="spell-header__section">
                 <h1 className="spell__heading">{name}</h1>
                 <div className="spell-category">
-                  <span class="spell-level-school">{`${getSpellLevel(
+                  <span className="spell-level-school">{`${getSpellLevel(
                     level
                   )} ${school}`}</span>{' '}
                   {higher_level && <PropIcon type="higher_level" />}
