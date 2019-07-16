@@ -11,6 +11,7 @@ const label = {
   ritual: 'Can be cast as a ritual',
   concentration: 'Requires concentration',
   cost: 'Has a material cost',
+  higher_level: 'Can be cast at a higher level',
 };
 
 export default class PropIcon extends PureComponent {
@@ -38,5 +39,6 @@ export default class PropIcon extends PureComponent {
 }
 
 PropIcon.propTypes = {
-  type: PropTypes.oneOf(['ritual', 'concentration', 'cost']).isRequired,
+  type: PropTypes.oneOf(['ritual', 'concentration', 'cost', 'higher_level'])
+    .isRequired,
 };

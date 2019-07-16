@@ -92,6 +92,10 @@ export const selectSortedResults = createSelector(
               return false;
             }
 
+            if (typeof filtersCopy[prop] === 'boolean') {
+              return !!spell[prop];
+            }
+
             switch (typeof spell[prop]) {
               case 'string':
                 return filtersCopy[prop].includes(spell[prop]);

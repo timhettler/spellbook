@@ -14,7 +14,7 @@
   }
 
   &__label {
-    @include small() {
+    @include smallAndMedium() {
       display: none;
     }
   }

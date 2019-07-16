@@ -89,6 +89,13 @@ const Controls = ({ sorting, showSubClassFilter }) => (
       </div>
       <div className="control-item control-item--check">
         <BinaryFilter
+          type="higher_level"
+          icon={getIcon['higher_level']}
+          label="Can Upcast"
+        />
+      </div>
+      <div className="control-item control-item--check">
+        <BinaryFilter
           type="favorites"
           icon={getIcon['favorites']}
           label="Favorites"

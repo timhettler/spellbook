@@ -41,6 +41,7 @@ export class Spell extends Component {
       onClick,
       id,
       name,
+      higher_level,
       ritual,
       concentration,
       cost,
@@ -60,11 +61,12 @@ export class Spell extends Component {
         <td>{<FavoriteButton spellId={id} />}</td>
         <th scope="row" className="spell-list-item__name">
           {name}
-          {(ritual || concentration || cost) && (
+          {(ritual || concentration || cost || higher_level) && (
             <div className="spell-icons">
               {ritual && <PropIcon type="ritual" />}
               {concentration && <PropIcon type="concentration" />}
               {cost && <PropIcon type="cost" />}
+              {higher_level && <PropIcon type="higher_level" />}
             </div>
           )}
         </th>

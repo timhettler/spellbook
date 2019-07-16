@@ -1,4 +1,5 @@
 const getIcon = {
+  higher_level: '⬆️',
   ritual: '🕯',
   concentration: '🌀',
   cost: '💰',
