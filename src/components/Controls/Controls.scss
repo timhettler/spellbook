@@ -43,6 +43,10 @@ $control-item--border-radius: 0.75em;
     margin: 0.5em;
     display: inline-flex;
     align-items: center;
+
+    @include smallAndMedium() {
+      margin: 0.25em;
+    }
   }
 }
 

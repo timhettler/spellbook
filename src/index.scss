@@ -167,14 +167,39 @@ body {
     font-weight: bold;
   }
 
-  p:not(:first-child),
-  ul:not(:first-child) {
-    margin-top: 1.2em;
+  p,
+  ul,
+  table {
+    &:not(:first-child) {
+      margin-top: 1.2em;
+    }
   }
 
   ul {
     list-style-type: disc;
     margin-left: 1.2em;
+  }
+
+  table {
+    border: 1px solid #666;
+
+    > thead {
+      font-weight: bold;
+      background-color: #222;
+      color: #fff;
+      text-align: left;
+    }
+
+    th,
+    td {
+      padding: 0.6em;
+    }
+
+    tr:nth-child(even) {
+      td {
+        background: #eee;
+      }
+    }
   }
 }
 
