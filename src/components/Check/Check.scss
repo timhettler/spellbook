@@ -19,3 +19,32 @@
     }
   }
 }
+
+.big-check {
+  @include ratioHeight();
+  border-radius: 50%;
+  background-color: darkgray;
+  width: 50px;
+  padding: 0.5em;
+
+  &:not(.is-checked) {
+    filter: grayscale(100%);
+  }
+
+  @include smallAndMedium() {
+    width: 20px;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: xx-large;
+
+    @include smallAndMedium() {
+      font-size: large;
+      text-indent: 5px; //Magic number needed because emojis aren't centered in their box
+    }
+  }
+}
