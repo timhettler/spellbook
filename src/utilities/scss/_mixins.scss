@@ -135,3 +135,11 @@ $size--large-viewport-start: 1100px;
     padding-bottom: percentage($height-ratio);
   }
 }
+
+@mixin inlineHeading() {
+  float: left;
+
+  &::after {
+    content: '.\00a0';
+  }
+}

@@ -1,3 +1,5 @@
+@import './utilities/scss/_mixins';
+
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -159,6 +161,17 @@ body {
 }
 
 .content-area {
+  a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+
+    &:hover,
+    &:focus {
+      border-bottom-color: inherit;
+    }
+  }
+
   i {
     font-style: italic;
   }
@@ -167,9 +180,12 @@ body {
     font-weight: bold;
   }
 
-  p,
-  ul,
-  table {
+  .keyword {
+    font-style: normal;
+    font-weight: bold;
+  }
+
+  > * {
     &:not(:first-child) {
       margin-top: 1.2em;
     }
@@ -199,6 +215,14 @@ body {
       td {
         background: #eee;
       }
+    }
+  }
+
+  h3 {
+    @include inlineHeading font-weight: bold;
+
+    &::after {
+      content: '.\00a0';
     }
   }
 }

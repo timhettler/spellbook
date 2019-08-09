@@ -14,6 +14,7 @@ import {
 
 import setTabIndex from '../../utilities/setTabIndex';
 import getSpellLevel from '../../utilities/getSpellLevel';
+import getHyperlinkedString from '../../utilities/getHyperlinkedString';
 import PropIcon from '../PropIcon';
 import VisuallyHidden from '../VisuallyHidden';
 
@@ -228,11 +229,11 @@ class Spell extends Component {
             </h2>
             <div
               className="spell__description content-area"
-              dangerouslySetInnerHTML={{ __html: desc }}
+              dangerouslySetInnerHTML={{ __html: getHyperlinkedString(desc) }}
             />
             {higher_level && (
               <div className="spell__description">
-                <h3 className="spell__minor-heading">At Higher Levels.</h3>
+                <h3 className="spell__minor-heading">At Higher Levels</h3>
                 <div
                   className="content-area"
                   dangerouslySetInnerHTML={{ __html: higher_level }}

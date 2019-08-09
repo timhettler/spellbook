@@ -4,7 +4,8 @@
   position: relative;
   height: 100%;
 
-  a {
+  // Footnotes
+  a[href^='#'] {
     color: inherit;
     text-decoration: none;
   }
@@ -39,10 +40,9 @@
   }
 
   &__minor-heading {
+    @include inlineHeading;
     font-weight: bold;
     font-style: italic;
-    float: left;
-    margin-right: 1ex;
   }
 
   &__description {
