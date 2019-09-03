@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { toggleFavorite } from '../../actions';
 import Button from '../../components/Button';
 import VisuallyHidden from '../../components/VisuallyHidden';
-import getIcon from '../../utilities/getIcon';
+import { ICONS } from '../../constants/icons';
 import classNames from 'classnames/bind';
 
 import './FavoriteButton.scss';
@@ -21,7 +21,7 @@ class FavoriteButton extends Component {
         tabIndex="-1"
         {...rest}
       >
-        <span role="presentation">{getIcon['favorites']}</span>
+        <span role="presentation">{ICONS.favorites}</span>
         <VisuallyHidden>{label}</VisuallyHidden>
       </Button>
     );

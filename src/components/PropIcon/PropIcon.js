@@ -1,7 +1,7 @@
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import uuidv4 from '../../utilities/uuidv4';
-import getIcon from '../../utilities/getIcon';
+import { ICONS } from '../../constants/icons';
 
 import VisuallyHidden from '../VisuallyHidden';
 
@@ -14,31 +14,23 @@ const label = {
   higher_level: 'Can be cast at a higher level',
 };
 
-export default class PropIcon extends PureComponent {
-  constructor(props) {
-    super(props);
+const PropIcon = props => {
+  const [id] = useState(uuidv4());
+  const { type } = props;
 
-    this.state = {
-      id: uuidv4(),
-    };
-  }
-
-  render() {
-    const { type } = this.props;
-    const id = uuidv4();
-
-    return (
-      <div className="prop-icon">
-        <span aria-hidden={true}>
-          <span title={label[type]}>{getIcon[type]}</span>
-        </span>
-        <VisuallyHidden id={id}>{label[type]}</VisuallyHidden>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="prop-icon">
+      <span aria-hidden={true}>
+        <span title={label[type]}>{ICONS[type]}</span>
+      </span>
+      <VisuallyHidden id={id}>{label[type]}</VisuallyHidden>
+    </div>
+  );
+};
 
 PropIcon.propTypes = {
   type: PropTypes.oneOf(['ritual', 'concentration', 'cost', 'higher_level'])
     .isRequired,
 };
+
+export default PropIcon;

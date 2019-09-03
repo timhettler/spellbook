@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { toggleFilter } from '../../actions';
 import { selectSchoolFilter } from './selectors';
 import Check from '../../components/Check';
-import getIcon from '../../utilities/getIcon';
+import { ICONS } from '../../constants/icons';
 
 const SchoolFilter = props => {
   const selected = useSelector(state =>
@@ -19,7 +19,7 @@ const SchoolFilter = props => {
 
   return (
     <Check
-      icon={getIcon[props.school.toLowerCase()]}
+      icon={ICONS[props.school.toLowerCase()]}
       label={props.school}
       checked={selected}
       type="school"

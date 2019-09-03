@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import ResetButton from '../../containers/ResetButton';
 import Filter from '../../containers/Filter';
 import SubClassFilter from '../../containers/SubClassFilter';
-import TextFilter from '../../containers/TextFilter';
+import SpellFilter from '../../containers/SpellFilter';
 import BinaryFilter from '../../containers/BinaryFilter';
 import SortingButton from '../../containers/SortingButton';
 import SchoolFilter from '../../containers/SchoolFilter';
 import VisuallyHidden from '../VisuallyHidden';
-import getIcon from '../../utilities/getIcon';
+import { ICONS } from '../../constants/icons';
 import { SCHOOLS } from '../../data';
 
 import './Controls.scss';
@@ -33,7 +33,7 @@ const Controls = ({ sorting, showSubClassFilter }) => (
         <Filter type="classes" label="Class Filter" allLabel="All Classes" />
       </div>
       <div className="control-item control-item--input">
-        <TextFilter
+        <SpellFilter
           type="name"
           label="Search by Spell Name"
           placeholder="Spell Name"
@@ -71,33 +71,29 @@ const Controls = ({ sorting, showSubClassFilter }) => (
     </div>
     <div className="control-section control-section--evenly-spaced">
       <div className="control-item control-item--check">
-        <BinaryFilter type="ritual" icon={getIcon['ritual']} label="Ritual" />
+        <BinaryFilter type="ritual" icon={ICONS.ritual} label="Ritual" />
       </div>
       <div className="control-item control-item--check">
         <BinaryFilter
           type="concentration"
-          icon={getIcon['concentration']}
+          icon={ICONS.concentration}
           label="Concentraton"
         />
       </div>
       <div className="control-item control-item--check">
-        <BinaryFilter
-          type="cost"
-          icon={getIcon['cost']}
-          label="Material Cost"
-        />
+        <BinaryFilter type="cost" icon={ICONS.cost} label="Material Cost" />
       </div>
       <div className="control-item control-item--check">
         <BinaryFilter
           type="higher_level"
-          icon={getIcon['higher_level']}
+          icon={ICONS.higher_level}
           label="Can Upcast"
         />
       </div>
       <div className="control-item control-item--check">
         <BinaryFilter
           type="favorites"
-          icon={getIcon['favorites']}
+          icon={ICONS.favorites}
           label="Favorites"
         />
       </div>

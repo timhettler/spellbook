@@ -25,16 +25,16 @@ const TextInput = ({ value, className, onChange, label, list, ...rest }) => {
         value={value}
         onChange={handleChange(onChange)}
         autoComplete="off"
-        list={list.length && datalistId}
+        list={list.length ? datalistId : null}
         {...rest}
       />
-      {list.length && (
+      {list.length ? (
         <datalist id={datalistId}>
           {list.map(item => (
             <option key={item} value={item} />
           ))}
         </datalist>
-      )}
+      ) : null}
     </label>
   );
 };
