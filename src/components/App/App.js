@@ -12,6 +12,7 @@ import * as data from '../../data';
 import VisibleSpellList from '../../containers/VisibleSpellList';
 import SelectedSpellDetail from '../../containers/SelectedSpellDetail';
 import VisibleControls from '../../containers/VisibleControls';
+import OfflineToast from '../../containers/OfflineToast';
 import history from '../../utilities/history';
 
 import './App.scss';
@@ -88,6 +89,9 @@ class App extends Component {
             </section>
           </div>
         </main>
+        <aside className={classNames('App-toast')}>
+          <OfflineToast />
+        </aside>
       </div>
     );
   }

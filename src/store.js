@@ -6,7 +6,7 @@ import spellbookApp from './reducers';
 const persistConfig = {
   key: 'root',
   storage,
-  blacklist: ['currentSpellId'],
+  blacklist: ['currentSpellId', 'banner'], // currentSpellId is controlled by the Url
 };
 
 const persistedReducer = persistReducer(persistConfig, spellbookApp);

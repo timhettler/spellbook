@@ -5,6 +5,7 @@
   flex-direction: column;
   height: 100%;
   overflow: hidden;
+  position: relative;
 }
 
 .App-header {
@@ -105,4 +106,12 @@
     font-size: larger;
     margin-bottom: 0.5em;
   }
+}
+
+.App-toast {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
 }

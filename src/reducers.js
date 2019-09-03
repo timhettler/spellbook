@@ -10,6 +10,7 @@ import {
   VIEW_SPELL,
   TOGGLE_FAVORITE,
   RESET_FAVORITES,
+  SET_BANNER,
 } from './actionTypes';
 
 import toKebabCase from './utilities/toKebabCase';
@@ -151,6 +152,15 @@ export function favorites(state = [], action) {
   }
 }
 
+export function banner(state = null, action) {
+  switch (action.type) {
+    case SET_BANNER:
+      return action.banner;
+    default:
+      return state;
+  }
+}
+
 const spellbookApp = combineReducers({
   filters,
   sorting,
@@ -160,6 +170,7 @@ const spellbookApp = combineReducers({
   subClasses,
   schools,
   favorites,
+  banner,
 });
 
 export default spellbookApp;

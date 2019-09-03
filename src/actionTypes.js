@@ -8,3 +8,4 @@ export const SET_SORTING = 'SET_SORTING';
 export const VIEW_SPELL = 'VIEW_SPELL';
 export const TOGGLE_FAVORITE = 'TOGGLE_FAVORITE';
 export const RESET_FAVORITES = 'RESET_FAVORITES';
+export const SET_BANNER = 'SET_BANNER';

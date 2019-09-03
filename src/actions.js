@@ -39,3 +39,7 @@ export function toggleFavorite(id) {
 export function resetFavorites() {
   return { type: types.RESET_FAVORITES };
 }
+
+export function setBanner(banner) {
+  return { type: types.SET_BANNER, banner };
+}
