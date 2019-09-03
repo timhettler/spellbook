@@ -1,0 +1,20 @@
+$color--black: #000;
+$color--gray-222: #222;
+$color--gray-666: #666;
+$color--gray-ccc: #ccc;
+$color--gray-eee: #eee;
+$color--white: #fff;
+
+$transition--default: 250ms;
+
+$spacing--full: 1em;
+$spacing--half: $spacing--full * 0.5;
+$spacing--quarter: $spacing--full * 0.25;
+$spacing--full-and-half: $spacing--full * 1.5;
+$spacing--double: $spacing--full * 2;
+
+$spacing--content: 1.2em;
+$spacing--natural: 1ex;
+
+//https://www.smashingmagazine.com/2014/09/balancing-line-length-font-size-responsive-web-design/
+$width--content: 60em;

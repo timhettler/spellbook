@@ -19,7 +19,7 @@ const Toast = ({ label, active, onClick, ...rest }) => (
     onClick={onClick && handleClick(onClick)}
     {...rest}
   >
-    <p dangerouslySetInnerHTML={{ __html: label }} />
+    {label && <p dangerouslySetInnerHTML={{ __html: label }} />}
   </div>
 );
 

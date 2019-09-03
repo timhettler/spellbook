@@ -1,4 +1,7 @@
+@import '../../utilities/scss/_vars';
 @import '../../utilities/scss/_mixins';
+
+$spell-subheading--border-width: 2px;
 
 .spell {
   position: relative;
@@ -21,22 +24,24 @@
 
     @include small {
       // Extra padding to account for iPhone X
-      padding-bottom: 0.75em;
+      padding-bottom: env(safe-area-inset-bottom);
     }
   }
 
   &__heading {
     font-weight: bold;
     text-transform: uppercase;
-    font-size: larger;
+    font-size: large;
   }
 
   &__subheading {
     text-transform: uppercase;
-    color: #666;
-    padding-bottom: 0.1em;
-    border-bottom: 2px solid;
-    margin-bottom: 0.5em;
+    color: $color--gray-666;
+    padding-bottom: calc(
+      #{$spacing--quarter} - #{$spell-subheading--border-width}
+    );
+    border-bottom: $spell-subheading--border-width solid;
+    margin-bottom: $spacing--half;
   }
 
   &__minor-heading {
@@ -46,20 +51,17 @@
   }
 
   &__description {
-    line-height: 1.2;
-
     & + & {
-      margin-top: 1.2em;
+      margin-top: $spacing--content;
     }
   }
 
   &__page {
-    margin-top: 1.2em;
+    margin-top: $spacing--content;
   }
 
   &__minor-info {
-    line-height: 1.2;
-    font-size: smaller;
+    font-size: small;
   }
 }
 
@@ -72,14 +74,14 @@
 
     &--cta {
       flex: 0 0 auto;
-      margin-left: 1.5em;
+      margin-left: $spacing--full-and-half;
     }
   }
 }
 
 .spell-close-button {
   @include reset-button;
-  font-size: 2em;
+  font-size: xx-large;
 }
 
 .spell-section {
@@ -88,22 +90,22 @@
 
   &--content {
     margin: 0 auto;
-    max-width: 60em;
+    max-width: $width--content;
   }
 
   &--with-padding {
     @include small {
-      padding-right: 0.75em;
-      padding-left: 0.75em;
-      margin-top: 0.75em;
-      margin-bottom: 0.75em;
+      padding-right: $spacing--full;
+      padding-left: $spacing--full;
+      margin-top: $spacing--full;
+      margin-bottom: $spacing--full;
     }
 
     @include mediumAndLarge {
-      padding-right: 1.5em;
-      padding-left: 1.5em;
-      margin-top: 1.5em;
-      margin-bottom: 1.5em;
+      padding-right: $spacing--full-and-half;
+      padding-left: $spacing--full-and-half;
+      margin-top: $spacing--full-and-half;
+      margin-bottom: $spacing--full-and-half;
     }
 
     & + & {
@@ -120,7 +122,8 @@
 }
 
 .spell-category {
-  margin-top: 0.5em;
+  margin-top: $spacing--half;
+  font-size: small;
 
   > .spell-level-school {
     font-style: italic;
@@ -131,26 +134,34 @@
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-  border-top: 2px solid #666;
-  background-color: #eee;
+  border-top: 2px solid $color--gray-666;
+  background-color: $color--gray-eee;
+
+  @include small {
+    padding: $spacing--half;
+  }
 
   &__item {
     flex: 0 0 50%;
-    padding: 0.75em;
+    padding: $spacing--full;
+
+    @include small {
+      padding: $spacing--half;
+    }
   }
 
   &__heading {
     text-transform: uppercase;
-    color: #666;
+    color: $color--gray-666;
   }
 
   &__value {
-    margin-top: 0.5em;
+    margin-top: $spacing--half;
   }
 
   &__icon {
     display: inline-flex;
-    margin-left: 1ex;
+    margin-left: $spacing--natural;
   }
 }
 

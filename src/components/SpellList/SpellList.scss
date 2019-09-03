@@ -1,3 +1,5 @@
+@import '../../utilities/scss/_vars';
+
 .spell-list-container {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
@@ -18,12 +20,12 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: #666;
+  color: $color--gray-666;
 
   &__header {
     font-weight: bold;
     text-transform: uppercase;
     font-size: larger;
-    margin-bottom: 0.5em;
+    margin-bottom: $spacing--half;
   }
 }

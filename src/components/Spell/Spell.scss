@@ -1,8 +1,11 @@
+@import '../../utilities/scss/_vars';
 @import '../../utilities/scss/_mixins';
+
+$spell-list--focus-indicator-width: 5px;
 
 .spell-list-item {
   cursor: pointer;
-  border-left: 5px solid transparent;
+  border-left: $spell-list--focus-indicator-width solid transparent;
   line-height: 1.2;
   -webkit-tap-highlight-color: initial;
 
@@ -13,21 +16,32 @@
   }
 
   .no-touch &:hover {
-    background-color: #ccc !important;
+    background-color: $color--gray-ccc !important;
   }
 
   &:nth-child(odd) {
-    background-color: #eee;
+    background-color: $color--gray-eee;
   }
 
   > * {
-    padding-top: 0.75em;
-    padding-bottom: 0.75em;
-    padding-left: 0.75em;
-  }
+    &:not(:first-child) {
+      padding-left: $spacing--full;
+    }
 
-  > *:last-child {
-    padding-right: 0.75em;
+    &:first-child {
+      padding-left: calc(
+        #{$spacing--full} - #{$spell-list--focus-indicator-width}
+      );
+    }
+
+    padding: {
+      top: $spacing--full;
+      bottom: $spacing--full;
+    }
+
+    &:last-child {
+      padding-right: $spacing--full;
+    }
   }
 
   &__name {
@@ -36,17 +50,17 @@
   }
 
   &__level {
-    color: #666;
+    color: $color--gray-666;
     text-align: right;
     white-space: nowrap;
 
     @include small {
-      font-size: smaller;
+      font-size: small;
     }
   }
 }
 
 .spell-icons {
   display: inline-flex;
-  margin-left: 1ex;
+  margin-left: $spacing--natural;
 }

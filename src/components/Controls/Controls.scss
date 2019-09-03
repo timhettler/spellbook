@@ -1,10 +1,12 @@
+@import '../../utilities/scss/_vars';
 @import '../../utilities/scss/_mixins';
 
+$control-container--padding: $spacing--half;
 $control-item--border-size: 1px;
 $control-item--border-radius: 0.75em;
 
 .control-container {
-  padding: 0.5em 0.5em 0;
+  padding: $control-container--padding $control-container--padding 0;
   overflow: hidden;
 }
 
@@ -13,13 +15,13 @@ $control-item--border-radius: 0.75em;
   width: 100%;
 
   & + & {
-    margin-top: 0.5em;
+    margin-top: $spacing--half;
   }
 
   &--full {
-    width: calc(100% + 1em);
-    margin-right: -0.5em;
-    margin-left: -0.5em;
+    width: calc(100% + #{$control-container--padding * 2});
+    margin-right: $control-container--padding * -1;
+    margin-left: $control-container--padding * -1;
   }
 
   &--evenly-spaced {
@@ -32,20 +34,20 @@ $control-item--border-radius: 0.75em;
   width: 100%;
 
   &__content {
-    margin: 0.5em -0.5em;
+    margin: $spacing--half ($spacing--half * -1);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: calc(100% + 1em);
+    width: calc(100% + $spacing--full);
   }
 
   &__item {
-    margin: 0.5em;
+    margin: $spacing--half;
     display: inline-flex;
     align-items: center;
 
     @include smallAndMedium() {
-      margin: 0.25em;
+      margin: $spacing--quarter;
     }
   }
 }
@@ -74,12 +76,12 @@ $control-item--border-radius: 0.75em;
 
   &--reset {
     position: relative;
-    background-color: #000;
+    background-color: $color--black;
     flex: 0 0 50px;
   }
 
   &--sort {
-    color: #fff;
+    color: $color--white;
 
     & + & {
       border-left: 1px solid;
@@ -94,7 +96,7 @@ $control-item--border-radius: 0.75em;
     flex: 0 0 auto;
 
     & + & {
-      margin-left: 0.5em;
+      margin-left: $spacing--half;
     }
   }
 }
@@ -105,7 +107,7 @@ $control-item--border-radius: 0.75em;
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-size: 1.5em;
+  font-size: x-large;
   line-height: 1;
   width: 100%;
   height: 100%;

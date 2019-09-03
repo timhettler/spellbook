@@ -1,7 +1,9 @@
+@import '../../utilities/scss/_vars';
+
 .prop-icon {
   display: inline-flex;
 
   > * + * {
-    margin-left: 1ex;
+    margin-left: $spacing--natural;
   }
 }

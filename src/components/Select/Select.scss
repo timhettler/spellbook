@@ -1,4 +1,7 @@
+@import '../../utilities/scss/_vars';
 @import '../../utilities/scss/_mixins';
+
+$select--icon-width: 10px;
 
 .select-container {
   display: inline-flex;
@@ -9,8 +12,8 @@
 
 .select-icon-container {
   box-sizing: content-box;
-  width: 10px;
-  padding: 0.25em 0.5em;
+  width: $select--icon-width;
+  padding: $spacing--quarter $spacing--half;
   position: absolute;
   right: 0;
   top: 50%;
@@ -20,5 +23,10 @@
 
 .select {
   @include reset-input;
-  padding: 0.25em calc(1em + 10px) 0.25em 0.5em;
+  padding: {
+    top: $spacing--quarter;
+    right: calc(#{$spacing--full} + $select--icon-width);
+    bottom: $spacing--quarter;
+    left: $spacing--half;
+  }
 }

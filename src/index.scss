@@ -1,3 +1,4 @@
+@import './utilities/scss/_vars';
 @import './utilities/scss/_mixins';
 
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -161,6 +162,8 @@ body {
 }
 
 .content-area {
+  line-height: $spacing--content;
+
   a {
     color: inherit;
     text-decoration: none;
@@ -186,39 +189,40 @@ body {
 
   > * {
     &:not(:first-child) {
-      margin-top: 1.2em;
+      margin-top: $spacing--content;
     }
   }
 
   ul {
     list-style-type: disc;
-    margin-left: 1.2em;
+    margin-left: $spacing--content;
   }
 
   table {
-    border: 1px solid #666;
+    border: 1px solid $color--gray-666;
 
     > thead {
       font-weight: bold;
-      background-color: #222;
-      color: #fff;
+      background-color: $color--gray-222;
+      color: $color--white;
       text-align: left;
     }
 
     th,
     td {
-      padding: 0.6em;
+      padding: $spacing--half;
     }
 
     tr:nth-child(even) {
       td {
-        background: #eee;
+        background: $color--gray-eee;
       }
     }
   }
 
   h3 {
-    @include inlineHeading font-weight: bold;
+    @include inlineHeading;
+    font-weight: bold;
 
     &::after {
       content: '.\00a0';

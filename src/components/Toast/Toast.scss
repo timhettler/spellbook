@@ -1,9 +1,11 @@
+@import '../../utilities/scss/_vars';
+
 .toast {
-  background-color: #999;
-  color: #fff;
-  padding: 1.5em;
+  background-color: $color--gray-ccc;
+  color: $color--black;
+  padding: $spacing--full-and-half;
   text-align: center;
-  transition: transform 250ms;
+  transition: transform $transition--default;
   font-size: smaller;
 
   &:not(.is-active) {
