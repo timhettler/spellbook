@@ -21,6 +21,10 @@ const senses = ['blindsight', 'darkvision', 'tremorsense', 'truesight'];
 const monsters = [
   'skeleton',
   'zombie',
+  'ghoul',
+  'gast',
+  'wight',
+  'mummy',
   'homunculus',
   'awakened shrub',
   'awakened tree',
