@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { setSorting } from '../../actions';
@@ -14,7 +15,13 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
 });
 
-const SortingButton = props => <Button className="sorting-button" {...props} />;
+const SortingButton = ({ field, ...rest }) => (
+  <Button className="sorting-button" {...rest} />
+);
+
+SortingButton.propTypes = {
+  field: PropTypes.string.isRequired,
+};
 
 export default connect(
   mapStateToProps,

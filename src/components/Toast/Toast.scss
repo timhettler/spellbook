@@ -1,0 +1,16 @@
+.toast {
+  background-color: #999;
+  color: #fff;
+  padding: 1.5em;
+  text-align: center;
+  transition: transform 250ms;
+  font-size: smaller;
+
+  &:not(.is-active) {
+    transform: translateY(100%);
+  }
+
+  &.is-clickable {
+    cursor: pointer;
+  }
+}
