@@ -1,4 +1,4 @@
-export const SENSES = ['blindsight', 'darkvision', 'tremorsense', 'truesight'];
-
-export const SENSES_URL =
-  'https://www.dndbeyond.com/sources/basic-rules/monsters#';
+export const SENSES = {
+  url: id => `https://www.dndbeyond.com/sources/basic-rules/monsters#${id}`,
+  keywords: ['blindsight', 'darkvision', 'tremorsense', 'truesight'],
+};

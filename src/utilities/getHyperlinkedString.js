@@ -1,54 +1,54 @@
-import { CONDITIONS, CONDITIONS_URL } from '../constants/conditions';
-import { SENSES, SENSES_URL } from '../constants/senses';
-import { MONSTERS, MONSTERS_URL, MONSTER_GROUPS } from '../constants/monsters';
-import { PLANES, PLANES_URL } from '../constants/planes';
+import { CONDITIONS } from '../constants/conditions';
+import { SENSES } from '../constants/senses';
+import { MONSTERS, MONSTER_GROUPS } from '../constants/monsters';
+import { PLANES } from '../constants/planes';
 
 function formatStringForUrl(string) {
   return string.charAt(0).toUpperCase() + string.slice(1).replace(' ', '-');
 }
 
-function getHyperlink(full, before, keyword, after) {
-  let url = '';
+function getHyperlink(keyword, url, p1, p2, otherMatches) {
+  const fullUrl = url(
+    otherMatches.length
+      ? [...otherMatches]
+      : keyword.id || formatStringForUrl(keyword)
+  );
 
-  if (CONDITIONS.includes(keyword)) {
-    url = CONDITIONS_URL;
-  } else if (SENSES.includes(keyword)) {
-    url = SENSES_URL;
-  } else if (MONSTERS.includes(keyword)) {
-    url = MONSTERS_URL;
-  } else if (PLANES.includes(keyword)) {
-    url = PLANES_URL;
-  }
-
-  if (url) {
-    url = `${url}${formatStringForUrl(keyword)}`;
-  } else if (MONSTER_GROUPS.map(i => i.keyword).includes(keyword)) {
-    url = MONSTER_GROUPS.find(i => i.keyword === keyword).url;
-  }
-
-  if (!url) {
-    return full;
-  }
-
-  return `${before}<a href="${url}" target="_blank">${keyword}</a>${after}`;
+  return `${p1}<a href="${fullUrl}" target="_blank">${p2}</a>`;
 }
 
 function getHyperlinkedString(string) {
-  const allKeywords = [].concat(
-    CONDITIONS,
-    SENSES,
-    MONSTERS,
-    MONSTER_GROUPS.map(i => i.keyword),
-    PLANES
-  );
+  let linkedString = string;
 
-  const replacer = (match, p1, p2, p3) => {
-    return `<i class="keyword">${getHyperlink(match, p1, p2, p3)}</i>`;
+  const replacer = (keyword, url) => {
+    return (match, p1, p2, ...otherMatches) => {
+      otherMatches.splice(-2); // remove offset and string arguments
+      return `<i class="keyword">${getHyperlink(keyword, url, p1, p2, [
+        ...otherMatches,
+      ])}</i>`;
+    };
   };
 
-  var re = new RegExp(`(\\s)(${allKeywords.join('|')})(\\s|\\.|,)`, 'gi');
+  const generateLinkedString = url => {
+    return keyword => {
+      let searchTerm = keyword.regex || keyword;
+      // Only Chrome supports look behinds
+      var re = new RegExp(
+        `([^a-zA-Z0-9])(${searchTerm})(?=[^a-zA-Z0-9])`,
+        keyword.flag || 'i'
+      );
 
-  return string.replace(re, replacer);
+      linkedString = linkedString.replace(re, replacer(keyword, url));
+    };
+  };
+
+  const keywordGroups = [CONDITIONS, SENSES, MONSTERS, MONSTER_GROUPS, PLANES];
+
+  keywordGroups.forEach(group =>
+    group.keywords.forEach(generateLinkedString(group.url))
+  );
+
+  return linkedString;
 }
 
 export default getHyperlinkedString;

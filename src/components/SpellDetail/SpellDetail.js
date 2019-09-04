@@ -236,7 +236,9 @@ class Spell extends Component {
                 <h3 className="spell__minor-heading">At Higher Levels</h3>
                 <div
                   className="content-area"
-                  dangerouslySetInnerHTML={{ __html: higher_level }}
+                  dangerouslySetInnerHTML={{
+                    __html: getHyperlinkedString(higher_level),
+                  }}
                 />
               </div>
             )}
