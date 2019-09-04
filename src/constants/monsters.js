@@ -52,6 +52,12 @@ export const MONSTERS = {
     'bearded devil',
     'shadow demon',
     'barlgura',
+    'manes',
+    {
+      regex: 'dretch(?:es)?',
+      id: 'Dretch',
+    },
+    'lich',
   ],
 };
 
