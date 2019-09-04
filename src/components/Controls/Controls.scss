@@ -38,7 +38,7 @@ $control-item--border-radius: 0.75em;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: calc(100% + $spacing--full);
+    width: calc(100% + #{$spacing--full});
   }
 
   &__item {
