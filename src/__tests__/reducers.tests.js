@@ -382,3 +382,18 @@ describe('favorites reducer', () => {
     ).toEqual([]);
   });
 });
+
+describe('banner reducer', () => {
+  it('should return the initial state', () => {
+    expect(reducers.banner(undefined, {})).toEqual(null);
+  });
+
+  it('should handle SET_BANNER', () => {
+    expect(
+      reducers.banner(null, {
+        type: types.SET_BANNER,
+        banner: 'foo',
+      })
+    ).toEqual('foo');
+  });
+});

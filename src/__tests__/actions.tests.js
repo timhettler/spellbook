@@ -93,4 +93,13 @@ describe('actions', () => {
     };
     expect(actions.resetFavorites()).toEqual(expectedAction);
   });
+
+  it('should create an action to set banner', () => {
+    const banner = 'foo';
+    const expectedAction = {
+      type: types.SET_BANNER,
+      banner,
+    };
+    expect(actions.setBanner(banner)).toEqual(expectedAction);
+  });
 });
