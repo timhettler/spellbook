@@ -7,8 +7,6 @@ import VisuallyHidden from '../../components/VisuallyHidden';
 import { ICONS } from '../../constants/icons';
 import classNames from 'classnames/bind';
 
-import './FavoriteButton.scss';
-
 class FavoriteButton extends Component {
   render() {
     const { spellId, isActive, ...rest } = this.props;

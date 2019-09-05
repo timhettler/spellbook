@@ -13,8 +13,8 @@ $size--large-viewport-start: 1100px;
   background-color: transparent;
   border: 0;
   color: inherit;
-  font-size: inherit;
   font-family: inherit;
+  font-size: inherit;
   -webkit-font-smoothing: inherit;
   margin: 0;
   padding: 0;
@@ -32,9 +32,11 @@ $size--large-viewport-start: 1100px;
   background: none transparent;
   border: none;
   box-shadow: none;
+  color: inherit;
   display: block;
   font-family: inherit;
   font-size: inherit;
+  -webkit-font-smoothing: inherit;
   margin: 0;
   //outline: none;
   -webkit-appearance: none;
@@ -54,6 +56,26 @@ $size--large-viewport-start: 1100px;
   }
 
   @media #{$query-list} {
+    @content;
+  }
+}
+
+@mixin lightMode() {
+  @include _breakpoint(
+    (
+      prefers-color-scheme: light,
+    )
+  ) {
+    @content;
+  }
+}
+
+@mixin darkMode() {
+  @include _breakpoint(
+    (
+      prefers-color-scheme: dark,
+    )
+  ) {
     @content;
   }
 }
@@ -117,7 +139,7 @@ $size--large-viewport-start: 1100px;
 
 // https://a11yproject.com/posts/how-to-hide-content/
 // https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
-@mixin visually-hidden {
+@mixin visuallyHidden {
   position: absolute !important;
   height: 1px;
   width: 1px;

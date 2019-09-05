@@ -6,6 +6,11 @@ $spell-subheading--border-width: 2px;
 .spell {
   position: relative;
   height: 100%;
+  background-color: $color--white;
+
+  @include darkMode {
+    background-color: $color--gray-222;
+  }
 
   // Footnotes
   a[href^='#'] {
@@ -42,6 +47,10 @@ $spell-subheading--border-width: 2px;
     );
     border-bottom: $spell-subheading--border-width solid;
     margin-bottom: $spacing--half;
+
+    @include darkMode {
+      color: $color--gray-ccc;
+    }
   }
 
   &__minor-heading {
@@ -137,6 +146,11 @@ $spell-subheading--border-width: 2px;
   border-top: 2px solid $color--gray-666;
   background-color: $color--gray-eee;
 
+  @include darkMode {
+    background-color: $color--gray-444;
+    border-top: none;
+  }
+
   @include small {
     padding: $spacing--half;
   }
@@ -153,6 +167,10 @@ $spell-subheading--border-width: 2px;
   &__heading {
     text-transform: uppercase;
     color: $color--gray-666;
+
+    @include darkMode {
+      color: $color--gray-eee;
+    }
   }
 
   &__value {

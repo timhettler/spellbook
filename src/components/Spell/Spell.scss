@@ -15,12 +15,24 @@ $spell-list--focus-indicator-width: 5px;
     border-left-color: currentColor;
   }
 
-  .no-touch &:hover {
-    background-color: $color--gray-ccc !important;
-  }
-
   &:nth-child(odd) {
     background-color: $color--gray-eee;
+
+    @include darkMode {
+      background-color: $color--gray-222;
+    }
+  }
+
+  &:nth-child(even) {
+    background-color: $color--white;
+
+    @include darkMode {
+      background-color: $color--gray-444;
+    }
+  }
+
+  .no-touch &:hover {
+    background-color: $color--gray-ccc !important;
   }
 
   > * {
@@ -53,6 +65,10 @@ $spell-list--focus-indicator-width: 5px;
     color: $color--gray-666;
     text-align: right;
     white-space: nowrap;
+
+    @include darkMode {
+      color: $color--gray-ccc;
+    }
 
     @include small {
       font-size: small;

@@ -5,8 +5,6 @@ import { connect } from 'react-redux';
 import { setSorting } from '../../actions';
 import Button from '../../components/Button';
 
-import './SortingButton.scss';
-
 const mapStateToProps = (state, ownProps) => ({});
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

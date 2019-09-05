@@ -32,6 +32,11 @@ $control-item--border-radius: 0.75em;
 
 .control-toggle {
   width: 100%;
+  padding: calc(#{$spacing--half} - 1px) 0;
+  border: {
+    top: 1px solid;
+    bottom: 1px solid;
+  }
 
   &__content {
     margin: $spacing--half ($spacing--half * -1);
@@ -85,6 +90,10 @@ $control-item--border-radius: 0.75em;
 
     & + & {
       border-left: 1px solid;
+    }
+
+    @include darkMode {
+      color: $color--black;
     }
   }
 
