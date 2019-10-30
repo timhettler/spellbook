@@ -33,6 +33,10 @@ $spell-list--focus-indicator-width: 5px;
 
   .no-touch &:hover {
     background-color: $color--gray-ccc !important;
+    
+    @include darkMode {
+      background-color: $color--gray-444 !important;
+    }
   }
 
   > * {
