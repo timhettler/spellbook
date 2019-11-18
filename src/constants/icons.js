@@ -1,6 +1,7 @@
 export const ICONS = {
   // UI
   favorites: '⭐️',
+  history: '🕓',
   // Spell Detail
   higher_level: '⬆️',
   ritual: '🕯',

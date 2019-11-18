@@ -9,6 +9,7 @@ const selectSpellState = state => state.spells;
 const selectFiltersState = state => state.filters;
 const selectSortingState = state => state.sorting;
 const selectFavoritesState = state => state.favorites;
+const selectHistoryState = state => state.history;
 
 function checkForSubClassFilter(filters, subClassList) {
   return subClassList.some(subClass => {
@@ -20,17 +21,16 @@ function getSpellsSubClasses(spell, subClassList) {
   return subClassList.filter(subClass => !!spell[subClass]);
 }
 
-export const selectSortedResults = createSelector(
+export const selectFilteredSpells = createSelector(
   [
     selectSpellState,
     selectFiltersState,
-    selectSortingState,
     selectFavoritesState,
+    selectHistoryState,
   ],
-  (spells, filters, sorting, favorites) => {
+  (spells, filters, favorites, history) => {
     let filtersCopy = { ...filters };
     let newSpells = spells.slice();
-    let direction = sorting.reverse === true ? -1 : null;
     const hasSubClassFilter = checkForSubClassFilter(filtersCopy, SUBCLASSES);
 
     // First filter by class & subclass (if any are selected), since they're inclusive
@@ -78,6 +78,11 @@ export const selectSortedResults = createSelector(
           return (newSpells = newSpells.filter(spell => {
             return favorites.includes(spell.id);
           }));
+          // The histroy filter checks if the spell id has been recently viewed
+        } else if (prop === 'history') {
+          return (newSpells = newSpells.filter(spell => {
+            return history.includes(spell.id);
+          }));
           // The name filter allows for partial matches
         } else if (prop === 'name') {
           return (newSpells = newSpells.filter(spell => {
@@ -109,14 +114,23 @@ export const selectSortedResults = createSelector(
       });
     }
 
+    return newSpells;
+  }
+);
+
+export const selectSortedResults = createSelector(
+  [selectFilteredSpells, selectSortingState],
+  (spells, sorting) => {
+    let direction = sorting.reverse === true ? -1 : null;
+
     if (sorting.field === 'name') {
-      return newSpells.sort(
+      return spells.sort(
         firstBy('name', { ignoreCase: true, direction: direction })
       );
     }
 
     if (sorting.field === 'level') {
-      return newSpells.sort(
+      return spells.sort(
         firstBy('level', direction).thenBy('name', { ignoreCase: true })
       );
     }

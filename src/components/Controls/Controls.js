@@ -97,6 +97,9 @@ const Controls = ({ sorting, showSubClassFilter }) => (
           label="Favorites"
         />
       </div>
+      <div className="control-item control-item--check">
+        <BinaryFilter type="history" icon={ICONS.history} label="History" />
+      </div>
     </div>
     <div className="control-section control-section--full" aria-hidden={true}>
       <div className="control-item control-item--sort">

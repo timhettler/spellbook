@@ -161,6 +161,25 @@ export function banner(state = null, action) {
   }
 }
 
+export function history(state = [], action) {
+  switch (action.type) {
+    case VIEW_SPELL:
+      const spellIndex = state.indexOf(action.id);
+
+      // if spell is already in history, remove it from current place and append it to the end
+      if (spellIndex >= 0) {
+        const newState = [...state];
+        newState.splice(spellIndex, 1);
+        newState.push(action.id);
+        return newState;
+      }
+
+      return [...state, action.id];
+    default:
+      return state;
+  }
+}
+
 const spellbookApp = combineReducers({
   filters,
   sorting,
@@ -171,6 +190,7 @@ const spellbookApp = combineReducers({
   schools,
   favorites,
   banner,
+  history,
 });
 
 export default spellbookApp;

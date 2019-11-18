@@ -397,3 +397,32 @@ describe('banner reducer', () => {
     ).toEqual('foo');
   });
 });
+
+describe('history reducer', () => {
+  it('should return the initial state', () => {
+    expect(reducers.history(undefined, {})).toEqual([]);
+  });
+
+  it('should add a spell to the history', () => {
+    expect(
+      reducers.history(undefined, {
+        type: types.VIEW_SPELL,
+        id: 'foo',
+      })
+    ).toEqual(['foo']);
+
+    expect(
+      reducers.history(['foo'], {
+        type: types.VIEW_SPELL,
+        id: 'bar',
+      })
+    ).toEqual(['foo', 'bar']);
+
+    expect(
+      reducers.history(['foo', 'bar'], {
+        type: types.VIEW_SPELL,
+        id: 'foo',
+      })
+    ).toEqual(['bar', 'foo']);
+  });
+});

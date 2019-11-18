@@ -8,11 +8,13 @@ import ConnectedApp from './containers/ConnectedApp';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
-  <Provider store={store}>
-    <PersistGate loading={null} persistor={persistor}>
-      <ConnectedApp />
-    </PersistGate>
-  </Provider>,
+  <React.StrictMode>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <ConnectedApp />
+      </PersistGate>
+    </Provider>
+  </React.StrictMode>,
   document.getElementById('root')
 );
 
