@@ -9,6 +9,7 @@
   text-align: center;
   transition: transform $transition--default;
   font-size: smaller;
+  width: 100%;
 
   &:not([disabled]) {
     transform: translateY(-100%);

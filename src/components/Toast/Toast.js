@@ -10,19 +10,24 @@ function handleClick(callback) {
   };
 }
 
-const Toast = ({ label, active, onClick, ...rest }) => (
-  <button
-    className={classNames('toast', {
-      'is-clickable': onClick,
-    })}
-    onClick={onClick && handleClick(onClick)}
-    aria-live="polite"
-    disabled={!active}
-    {...rest}
-  >
-    {label}
-  </button>
-);
+const Toast = ({ label, active, onClick, ...rest }) => {
+  if (!label) {
+    return null;
+  }
+  return (
+    <button
+      className={classNames('toast', {
+        'is-clickable': onClick,
+      })}
+      onClick={onClick && handleClick(onClick)}
+      aria-live="polite"
+      disabled={!active}
+      {...rest}
+    >
+      {label}
+    </button>
+  );
+};
 
 Toast.propTypes = {
   label: PropTypes.string.isRequired,
