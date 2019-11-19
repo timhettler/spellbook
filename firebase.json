@@ -10,8 +10,13 @@
     ],
     "headers": [
       {
-        "source": "/service-worker.js",
-        "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+        "source": "**/**/*.@(js|css)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=31557600"
+          }
+        ]
       }
     ]
   }
