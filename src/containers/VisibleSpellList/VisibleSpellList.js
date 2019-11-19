@@ -1,21 +1,18 @@
-import { connect } from 'react-redux';
+import React, { useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { viewSpell } from '../../actions';
 import { selectSortedResults } from './selectors';
 import SpellList from '../../components/SpellList';
 
-function mapStateToProps(state) {
-  return {
-    sorting: state.sorting,
-    spells: selectSortedResults(state),
-    currentSpellId: state.currentSpellId,
-  };
-}
+const VisibleSpellList = () => {
+  const sorting = useSelector(state => state.sorting);
+  const spells = useSelector(selectSortedResults);
+  const currentSpellId = useSelector(state => state.currentSpellId);
+  const dispatch = useDispatch();
+  const onSpellClick = useCallback(id => dispatch(viewSpell(id)), [dispatch]);
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  onSpellClick: id => {
-    dispatch(viewSpell(id));
-  },
-});
+  return <SpellList {...{ sorting, spells, currentSpellId, onSpellClick }} />;
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(SpellList);
+export default VisibleSpellList;

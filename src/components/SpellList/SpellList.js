@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import setTabIndex from '../../utilities/setTabIndex';
 import uuidv4 from '../../utilities/uuidv4';
 import SortingButton from '../../containers/SortingButton';
-import Spell from '../Spell';
+import SpellListItem from '../SpellListItem';
 
 import './SpellList.scss';
 
@@ -114,7 +114,7 @@ class SpellList extends Component {
             </thead>
             <tbody>
               {spells.map((spell, index) => (
-                <Spell
+                <SpellListItem
                   key={spell.id}
                   {...spell}
                   isActive={currentSpellId === spell.id}

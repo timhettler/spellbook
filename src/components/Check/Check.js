@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
@@ -12,48 +12,62 @@ function handleChange(callback, type) {
   };
 }
 
-const Check = ({
-  icon,
-  label,
-  checked,
-  type,
-  onChange,
-  checkType,
-  ...rest
-}) => {
-  const CheckInput = () => (
-    <input
-      type="checkbox"
-      checked={checked}
-      onChange={handleChange(onChange, type)}
-    />
-  );
+const InputPropTypes = {
+  checked: PropTypes.bool.isRequired,
+  type: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
+};
+
+const ContainerPropTypes = {
+  icon: PropTypes.string,
+  label: PropTypes.string,
+};
+
+const CheckInput = ({ checked, onChange, type }) => (
+  <input
+    type="checkbox"
+    checked={checked}
+    onChange={handleChange(onChange, type)}
+  />
+);
+
+CheckInput.propTypes = InputPropTypes;
+
+const SmallCheckInput = ({ checked, onChange, type, icon, label }) => (
+  <>
+    <CheckInput checked={checked} onChange={onChange} type={type} />
+    <span aria-hidden={true}>{icon}</span>
+    <span className="check__label">{label}</span>
+  </>
+);
+
+SmallCheckInput.propTypes = ContainerPropTypes;
+
+const LargeCheckInput = ({ checked, onChange, type, icon, label }) => (
+  <>
+    <VisuallyHidden>
+      <CheckInput checked={checked} onChange={onChange} type={type} />
+    </VisuallyHidden>
+    <span title={label} className="big-check__icon" aria-hidden={true}>
+      {icon}
+    </span>
+    <VisuallyHidden>{label}</VisuallyHidden>
+  </>
+);
+
+SmallCheckInput.propTypes = ContainerPropTypes;
+
+const Check = ({ checked, label, checkType, ...rest }) => {
+  const CheckComponent =
+    checkType === 'small' ? SmallCheckInput : LargeCheckInput;
   return (
     <label
       className={classNames(checkType === 'small' ? 'check' : 'big-check', {
         'is-checked': checked,
       })}
       aria-label={label}
-      {...rest}
     >
-      {checkType === 'small' && (
-        <Fragment>
-          <CheckInput />
-          <span role="presentation">{icon}</span>
-          <span className="check__label">{label}</span>
-        </Fragment>
-      )}
-      {checkType === 'large' && (
-        <Fragment>
-          <VisuallyHidden>
-            <CheckInput />
-          </VisuallyHidden>
-          <span title={label} className="big-check__icon" role="presentation">
-            {icon}
-          </span>
-          <VisuallyHidden>{label}</VisuallyHidden>
-        </Fragment>
-      )}
+      <CheckComponent {...{ ...rest, label, checked }} />
     </label>
   );
 };
@@ -63,11 +77,8 @@ Check.defaultProps = {
 };
 
 Check.propTypes = {
-  icon: PropTypes.string,
+  checked: PropTypes.bool,
   label: PropTypes.string.isRequired,
-  checked: PropTypes.bool.isRequired,
-  type: PropTypes.string,
-  onChange: PropTypes.func.isRequired,
   checkType: PropTypes.oneOf(['small', 'large']),
 };
 

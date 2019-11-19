@@ -1,4 +1,5 @@
-import { connect } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 import { selectCurrentSpell } from '../SelectedSpellDetail/selectors';
 import getSpellLevel from '../../utilities/getSpellLevel';
@@ -6,9 +7,7 @@ import SEO from '../../components/SEO';
 
 const CHAR_LIMIT = 70;
 
-function mapStateToProps(state) {
-  const spell = { ...selectCurrentSpell(state) };
-
+const getProps = (spell = {}) => {
   if (!spell.name) {
     return {
       title: undefined,
@@ -31,6 +30,12 @@ function mapStateToProps(state) {
     title: spell.name,
     description: metaDescription,
   };
-}
+};
 
-export default connect(mapStateToProps)(SEO);
+const ConnectedSEO = props => {
+  const spell = useSelector(selectCurrentSpell);
+
+  return <SEO {...getProps(spell)} />;
+};
+
+export default ConnectedSEO;

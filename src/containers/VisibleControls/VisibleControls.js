@@ -1,20 +1,18 @@
-import { connect } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
-import { viewSpell } from '../../actions';
 import { selectSubClassFilter } from '../SubClassFilter/selectors';
 import Controls from '../../components/Controls';
 
-function mapStateToProps(state) {
-  return {
-    sorting: state.sorting,
-    showSubClassFilter: !!selectSubClassFilter(state),
-  };
-}
+const VisibleControls = () => {
+  const sorting = useSelector(state => state.sorting);
+  const showSubClassFilter = !!useSelector(selectSubClassFilter);
+  //const dispatch = useDispatch();
+  // Todo need a selector to get visible spells and return id of first one
+  // this should b ein SpellFilter
+  //const onSpellClick = useCallback(id => dispatch(viewSpell(id)), [dispatch]);
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  onSpellClick: id => {
-    dispatch(viewSpell(id));
-  },
-});
+  return <Controls {...{ showSubClassFilter, sorting }} />;
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Controls);
+export default VisibleControls;

@@ -3,8 +3,8 @@ import { createSelector } from 'reselect';
 const selectClassesState = state => state.classes;
 const selectSchoolsState = state => state.schools;
 
-export function selectSortedFilter(type) {
-  return createSelector(
+export const selectSortedFilter = type =>
+  createSelector(
     [selectClassesState, selectSchoolsState],
     (classes, schools) => {
       const filters = {
@@ -14,4 +14,3 @@ export function selectSortedFilter(type) {
       return filters[type].sort();
     }
   );
-}

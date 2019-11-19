@@ -20,7 +20,7 @@ export function selectBoolValue(filter) {
 
 export function selectStringValue(filter) {
   return createSelector([selectFiltersState], selectedFilters => {
-    if (!selectedFilters || !selectedFilters[filter]) {
+    if (!filter || !selectedFilters || !selectedFilters[filter]) {
       return '';
     }
 

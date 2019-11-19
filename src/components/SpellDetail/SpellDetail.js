@@ -159,7 +159,12 @@ class Spell extends Component {
     const { canScroll } = this.state;
 
     return (
-      <article ref={this.container} className="spell" tabIndex="-1">
+      <article
+        ref={this.container}
+        className="spell"
+        tabIndex="-1"
+        aria-live="polite"
+      >
         <div className="spell__container">
           <header className="spell-section spell-section--with-padding">
             <div className="spell-header">

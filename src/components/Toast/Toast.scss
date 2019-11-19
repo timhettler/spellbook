@@ -1,6 +1,8 @@
+@import '../../utilities/scss/_mixins';
 @import '../../utilities/scss/_vars';
 
 .toast {
+  @include reset-button();
   background-color: $color--gray-ccc;
   color: $color--black;
   padding: $spacing--full-and-half;
@@ -8,11 +10,7 @@
   transition: transform $transition--default;
   font-size: smaller;
 
-  &:not(.is-active) {
-    transform: translateY(100%);
-  }
-
-  &.is-clickable {
-    cursor: pointer;
+  &:not([disabled]) {
+    transform: translateY(-100%);
   }
 }

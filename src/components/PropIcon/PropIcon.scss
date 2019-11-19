@@ -2,8 +2,4 @@
 
 .prop-icon {
   display: inline-flex;
-
-  > * + * {
-    margin-left: $spacing--natural;
-  }
 }

@@ -11,16 +11,17 @@ function handleClick(callback) {
 }
 
 const Toast = ({ label, active, onClick, ...rest }) => (
-  <div
+  <button
     className={classNames('toast', {
-      'is-active': active,
       'is-clickable': onClick,
     })}
     onClick={onClick && handleClick(onClick)}
+    aria-live="polite"
+    disabled={!active}
     {...rest}
   >
-    {label && <p dangerouslySetInnerHTML={{ __html: label }} />}
-  </div>
+    {label}
+  </button>
 );
 
 Toast.propTypes = {

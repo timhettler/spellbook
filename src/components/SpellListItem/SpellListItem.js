@@ -6,18 +6,49 @@ import getSpellLevel from '../../utilities/getSpellLevel';
 import FavoriteButton from '../../containers/FavoriteButton';
 import PropIcon from '../PropIcon';
 
-import './Spell.scss';
+import './SpellListItem.scss';
 
-export class Spell extends Component {
+const SpellIcons = ({ ritual, concentration, cost, higher_level }) => {
+  return ritual || concentration || cost || higher_level ? (
+    <div className="spell-icons">
+      {ritual && <PropIcon type="ritual" />}
+      {concentration && <PropIcon type="concentration" />}
+      {cost && <PropIcon type="cost" />}
+      {higher_level && <PropIcon type="higher_level" />}
+    </div>
+  ) : null;
+};
+
+const SpellIconsPropTypes = {
+  ritual: PropTypes.bool,
+  concentration: PropTypes.bool,
+  cost: PropTypes.bool,
+  higher_level: PropTypes.string,
+};
+
+SpellIcons.propTypes = SpellIconsPropTypes;
+
+export class SpellListItem extends Component {
   constructor(props) {
     super(props);
 
-    this.button = React.createRef();
+    this.interactiveEl = React.createRef();
     this._keyboardEvents = this._keyboardEvents.bind(this);
+    this._handleClick = this._handleClick.bind(this);
   }
 
   componentDidMount() {
-    this.button.current.addEventListener('keydown', this._keyboardEvents);
+    this.interactiveEl.current.addEventListener(
+      'keydown',
+      this._keyboardEvents
+    );
+  }
+
+  componentWillUnmount() {
+    this.interactiveEl.current.removeEventListener(
+      'keydown',
+      this._keyboardEvents
+    );
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -27,13 +58,20 @@ export class Spell extends Component {
   _keyboardEvents(e) {
     switch (e.keyCode) {
       case 13:
-        this.props.onClick();
+        this._handleClick(this.props.onClick)(e);
         break;
       default:
         break;
     }
 
     return;
+  }
+
+  _handleClick(callback) {
+    return e => {
+      callback(e);
+      e.stopPropagation();
+    };
   }
 
   render() {
@@ -51,24 +89,17 @@ export class Spell extends Component {
 
     return (
       <tr
-        ref={this.button}
+        ref={this.interactiveEl}
         className={classNames('spell-list-item', { 'is-active': isActive })}
         role="link"
         tabIndex="0"
         data-id={id}
-        onClick={onClick}
+        onClick={this._handleClick(onClick)}
       >
         <td>{<FavoriteButton spellId={id} />}</td>
         <th scope="row" className="spell-list-item__name">
           {name}
-          {(ritual || concentration || cost || higher_level) && (
-            <div className="spell-icons">
-              {ritual && <PropIcon type="ritual" />}
-              {concentration && <PropIcon type="concentration" />}
-              {cost && <PropIcon type="cost" />}
-              {higher_level && <PropIcon type="higher_level" />}
-            </div>
-          )}
+          <SpellIcons {...{ ritual, concentration, cost, higher_level }} />
         </th>
         <td className="spell-list-item__level">{getSpellLevel(level)}</td>
       </tr>
@@ -76,7 +107,7 @@ export class Spell extends Component {
   }
 }
 
-Spell.propTypes = {
+SpellListItem.propTypes = {
   onClick: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
@@ -87,4 +118,4 @@ Spell.propTypes = {
   isActive: PropTypes.bool,
 };
 
-export default Spell;
+export default SpellListItem;

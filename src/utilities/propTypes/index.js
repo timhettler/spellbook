@@ -1,0 +1,1 @@
+export { classNamePropTypes } from './className';

@@ -13,35 +13,36 @@ function handleChange(callback) {
   };
 }
 
-const TextInput = ({ value, className, onChange, label, list, ...rest }) => {
-  const [datalistId] = useState(uuidv4());
+const TextInput = React.forwardRef(
+  ({ value, className, onChange, label, list = [], ...rest }, ref) => {
+    const [datalistId] = useState(uuidv4());
 
-  return (
-    <label className={classNames('text-label')}>
-      <VisuallyHidden>{label}</VisuallyHidden>
-      <input
-        className={classNames('text-input', className)}
-        type="text"
-        value={value}
-        onChange={handleChange(onChange)}
-        autoComplete="off"
-        list={list.length ? datalistId : null}
-        {...rest}
-      />
-      {list.length ? (
-        <datalist id={datalistId}>
-          {list.map(item => (
-            <option key={item} value={item} />
-          ))}
-        </datalist>
-      ) : null}
-    </label>
-  );
-};
+    return (
+      <label className={classNames('text-label')}>
+        <VisuallyHidden>{label}</VisuallyHidden>
+        <input
+          className={classNames('text-input', className)}
+          type="text"
+          value={value}
+          onChange={handleChange(onChange)}
+          autoComplete="off"
+          list={list.length ? datalistId : null}
+          ref={ref}
+          {...rest}
+        />
+        {list.length ? (
+          <datalist id={datalistId}>
+            {list.map(item => (
+              <option key={item} value={item} />
+            ))}
+          </datalist>
+        ) : null}
+      </label>
+    );
+  }
+);
 
-TextInput.defaultProps = {
-  list: [],
-};
+TextInput.displayName = 'TextInput';
 
 TextInput.propTypes = {
   value: PropTypes.string.isRequired,

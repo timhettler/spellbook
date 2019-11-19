@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { selectBanner } from './selectors';
 import { OUTDATED_CONTENT, OFFLINE_READY } from '../../constants/offline';
@@ -25,38 +25,31 @@ function getOfflineEvent(banner) {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    banner: selectBanner(state),
-  };
-}
-
 const OfflineToast = props => {
   const [active, setActive] = useState(false);
+  const banner = useSelector(selectBanner);
 
   useEffect(() => {
     let timeout;
-    setActive(!!props.banner);
+    setActive(!!banner);
 
-    if (props.banner === OFFLINE_READY) {
+    if (banner === OFFLINE_READY) {
       timeout = setTimeout(() => {
         setActive(false);
-      }, 5000);
+      }, 10000);
     }
 
     return () => clearTimeout(timeout);
-  }, [props.banner]);
-
-  const { banner, dispatch, ...rest } = props;
+  }, [banner]);
 
   return (
     <Toast
       label={getOfflineLabel(banner)}
       active={active}
       onClick={getOfflineEvent(banner)}
-      {...rest}
+      {...props}
     />
   );
 };
 
-export default connect(mapStateToProps, null)(OfflineToast);
+export default OfflineToast;

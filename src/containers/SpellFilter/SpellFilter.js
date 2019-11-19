@@ -1,17 +1,31 @@
-import { connect } from 'react-redux';
+import React, { useCallback } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
-import { toggleFilter } from '../../actions';
+import { toggleFilter, viewSpell } from '../../actions';
+import { selectSortedResults } from '../VisibleSpellList/selectors';
 import { selectStringValue } from '../../utilities/selectValue';
-import TextInput from '../../components/TextInput';
+import SpellSearch from '../../components/SpellSearch';
 
-const mapStateToProps = (state, ownProps) => ({
-  value: selectStringValue(ownProps.type)(state),
-});
+const SpellFilter = props => {
+  const type = 'name';
+  const value = useSelector(selectStringValue(type));
+  const spells = useSelector(selectSortedResults);
+  const dispatch = useDispatch();
+  const onChange = useCallback(
+    value => dispatch(toggleFilter({ type, value })),
+    [dispatch, type]
+  );
+  const onSubmit = useCallback(id => dispatch(viewSpell(id)), [dispatch]);
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  onChange: value => {
-    dispatch(toggleFilter({ type: ownProps.type, value: value }));
-  },
-});
+  const handleSubmit = e => {
+    if (spells.length) {
+      onSubmit(spells[0].id);
+    }
+  };
 
-export default connect(mapStateToProps, mapDispatchToProps)(TextInput);
+  return (
+    <SpellSearch onSubmit={handleSubmit} {...{ value, onChange, ...props }} />
+  );
+};
+
+export default SpellFilter;

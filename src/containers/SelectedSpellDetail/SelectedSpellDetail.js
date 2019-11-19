@@ -1,31 +1,20 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React, { useCallback } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { viewSpell } from '../../actions';
 import { selectCurrentSpell } from './selectors';
 import SpellDetail from '../../components/SpellDetail';
 
-function mapStateToProps(state) {
-  return {
-    ...selectCurrentSpell(state),
-  };
-}
-
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  onClose: () => {
-    dispatch(viewSpell(null));
-  },
-});
-
 const SelectedSpellDetail = props => {
-  if (!props.name) {
+  const spell = useSelector(selectCurrentSpell);
+  const dispatch = useDispatch();
+  const onClose = useCallback(value => dispatch(viewSpell(null)), [dispatch]);
+
+  if (!spell.name) {
     return null;
   }
 
-  return <SpellDetail {...props} />;
+  return <SpellDetail {...{ onClose, ...spell }} />;
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SelectedSpellDetail);
+export default SelectedSpellDetail;

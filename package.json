@@ -20,7 +20,7 @@
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.15.1",
     "eslint-plugin-prettier": "^3.1.1",
-    "firebase-tools": "^7.7.0",
+    "firebase-tools": "^7.8.0",
     "husky": "^3.1.0",
     "lint-staged": "^9.4.3",
     "prettier": "^1.19.1",

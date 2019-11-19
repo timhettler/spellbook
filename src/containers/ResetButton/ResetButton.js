@@ -1,13 +1,14 @@
-import { connect } from 'react-redux';
+import React, { useCallback } from 'react';
+import { useDispatch } from 'react-redux';
+
 import { resetFilters } from '../../actions';
 import Button from '../../components/Button';
 
-const mapStateToProps = (state, ownProps) => ({});
+const ResetButton = props => {
+  const dispatch = useDispatch();
+  const onClick = useCallback(value => dispatch(resetFilters()), [dispatch]);
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  onClick: () => {
-    dispatch(resetFilters());
-  },
-});
+  return <Button {...{ onClick, ...props }} />;
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Button);
+export default ResetButton;

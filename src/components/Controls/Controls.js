@@ -33,11 +33,7 @@ const Controls = ({ sorting, showSubClassFilter }) => (
         <Filter type="classes" label="Class Filter" allLabel="All Classes" />
       </div>
       <div className="control-item control-item--input">
-        <SpellFilter
-          type="name"
-          label="Search by Spell Name"
-          placeholder="Spell Name"
-        />
+        <SpellFilter />
       </div>
       <div className="control-item control-item--input control-item--reset">
         <ResetButton className="reset-button">
@@ -127,6 +123,10 @@ const Controls = ({ sorting, showSubClassFilter }) => (
 );
 
 Controls.propTypes = {
+  sorting: PropTypes.shape({
+    field: PropTypes.string.isRequired,
+    reverse: PropTypes.bool,
+  }),
   showSubClassFilter: PropTypes.bool,
 };
 

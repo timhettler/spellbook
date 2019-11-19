@@ -10,9 +10,3 @@
   background-color: $color--gray-666;
   width: 100%;
 }
-
-.favorite-button {
-  &:not(.is-active) {
-    filter: grayscale(100%);
-  }
-}

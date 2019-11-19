@@ -117,7 +117,7 @@
 .App-toast {
   position: absolute;
   left: 0;
-  bottom: 0;
+  top: 100%;
   width: 100%;
   z-index: 2;
 }

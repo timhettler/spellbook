@@ -1,46 +1,29 @@
-import React, { Component } from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { selectIsSpellFavorited } from './selectors';
 import { toggleFavorite } from '../../actions';
-import Button from '../../components/Button';
-import VisuallyHidden from '../../components/VisuallyHidden';
-import { ICONS } from '../../constants/icons';
-import classNames from 'classnames/bind';
+import FavoriteButton from '../../components/FavoriteButton';
 
-class FavoriteButton extends Component {
-  render() {
-    const { spellId, isActive, ...rest } = this.props;
+const ConnectedFavoriteButton = ({ spellId }) => {
+  const isActive = useSelector(selectIsSpellFavorited(spellId));
+  const dispatch = useDispatch();
+  const onClick = useCallback(
+    e => {
+      e.stopPropagation();
+      dispatch(toggleFavorite(spellId));
+    },
+    [spellId, dispatch]
+  );
 
-    const label = isActive ? 'Remove from favorites' : 'Add to favorites';
+  const label = isActive ? 'Remove from favorites' : 'Add to favorites';
 
-    return (
-      <Button
-        className={classNames('favorite-button', { 'is-active': isActive })}
-        tabIndex="-1"
-        {...rest}
-      >
-        <span role="presentation">{ICONS.favorites}</span>
-        <VisuallyHidden>{label}</VisuallyHidden>
-      </Button>
-    );
-  }
-}
-
-FavoriteButton.propTypes = {
-  spellId: PropTypes.string,
-  isActive: PropTypes.bool,
-  onClick: PropTypes.func.isRequired,
+  return <FavoriteButton {...{ isActive, onClick, label }} />;
 };
 
-const mapStateToProps = (state, ownProps) => ({
-  isActive: state.favorites.includes(ownProps.spellId),
-});
+ConnectedFavoriteButton.propTypes = {
+  spellId: PropTypes.string,
+};
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  onClick: e => {
-    e.stopPropagation();
-    dispatch(toggleFavorite(ownProps.spellId));
-  },
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(FavoriteButton);
+export default ConnectedFavoriteButton;
