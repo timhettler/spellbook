@@ -49,7 +49,4 @@ class SubClassFilter extends Component {
   }
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SubClassFilter);
+export default connect(mapStateToProps, mapDispatchToProps)(SubClassFilter);

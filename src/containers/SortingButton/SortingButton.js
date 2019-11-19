@@ -21,7 +21,4 @@ SortingButton.propTypes = {
   field: PropTypes.string.isRequired,
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SortingButton);
+export default connect(mapStateToProps, mapDispatchToProps)(SortingButton);

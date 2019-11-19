@@ -14,7 +14,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(TextInput);
+export default connect(mapStateToProps, mapDispatchToProps)(TextInput);

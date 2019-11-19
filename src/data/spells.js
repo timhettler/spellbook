@@ -1221,8 +1221,7 @@ export const SPELLS = [
     page: 'phb 222',
     range: 'Self',
     components: ['V', 'S', 'M'],
-    material:
-      'A pinch of powder or sand that is colored red, yellow, and blue',
+    material: 'A pinch of powder or sand that is colored red, yellow, and blue',
     ritual: false,
     duration: '1 round',
     concentration: false,

@@ -59,7 +59,4 @@ const OfflineToast = props => {
   );
 };
 
-export default connect(
-  mapStateToProps,
-  null
-)(OfflineToast);
+export default connect(mapStateToProps, null)(OfflineToast);
