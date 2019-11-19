@@ -5,8 +5,8 @@ import Helmet from 'react-helmet';
 import { SITE } from '../../constants/site';
 
 function SEO({ description, lang, meta, title }) {
-  const metaDescription = description || SITE.description;
-  const titleTemplate = title ? `%s | ${SITE.title}` : null;
+  const metaDescription = description;
+  const titleTemplate = title !== SITE.title ? `%s | ${SITE.title}` : null;
 
   return (
     <Helmet
@@ -52,7 +52,8 @@ function SEO({ description, lang, meta, title }) {
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
-  description: ``,
+  description: SITE.description,
+  title: SITE.title,
 };
 
 export const SEOProps = {
