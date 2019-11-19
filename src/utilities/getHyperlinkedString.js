@@ -14,7 +14,7 @@ function getHyperlink(keyword, url, p1, p2, otherMatches) {
       : keyword.id || formatStringForUrl(keyword)
   );
 
-  return `${p1}<a href="${fullUrl}" target="_blank">${p2}</a>`;
+  return `${p1}<a href="${fullUrl}" target="_blank" rel="noopener noreferrer">${p2}</a>`;
 }
 
 function getHyperlinkedString(string) {
