@@ -14,7 +14,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Check);
+export default connect(mapStateToProps, mapDispatchToProps)(Check);

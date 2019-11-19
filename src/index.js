@@ -5,12 +5,14 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './store';
 import './index.scss';
 import ConnectedApp from './containers/ConnectedApp';
+import ConnectedSEO from './containers/ConnectedSEO';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
+        <ConnectedSEO />
         <ConnectedApp />
       </PersistGate>
     </Provider>
