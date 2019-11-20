@@ -13,7 +13,6 @@ import {
   SUBCLASSES,
 } from 'data';
 
-import setTabIndex from 'utilities/setTabIndex';
 import getSpellLevel from 'utilities/getSpellLevel';
 import getHyperlinkedString from 'utilities/getHyperlinkedString';
 import PropIcon from 'components/PropIcon';
@@ -131,10 +130,10 @@ class Spell extends Component<Props, State> {
     canScroll: null,
   };
   description: ?HTMLElement;
-  setTabIndex = setTabIndex.bind(this);
 
   componentDidMount() {
-    this.setTabIndex(this.description);
+    this.setCanScroll(this.description.current);
+    //this.container.current.focus({ preventScroll: true });
   }
 
   getSnapshotBeforeUpdate(prevProps: Props, prevState: State) {
@@ -150,7 +149,8 @@ class Spell extends Component<Props, State> {
       return;
     }
 
-    this.setTabIndex(this.description);
+    this.setCanScroll(this.description.current);
+    //this.container.current.focus({ preventScroll: true });
   }
 
   render() {

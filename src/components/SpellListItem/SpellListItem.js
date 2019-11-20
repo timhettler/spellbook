@@ -75,8 +75,9 @@ export class SpellListItem extends Component {
   }
 
   render() {
+    const { onClick, spell, isActive, theme, ...rest } = this.props;
+
     const {
-      onClick,
       id,
       name,
       higher_level,
@@ -84,38 +85,42 @@ export class SpellListItem extends Component {
       concentration,
       cost,
       level,
-      isActive,
-    } = this.props;
+    } = spell;
 
     return (
-      <tr
+      <div
         ref={this.interactiveEl}
-        className={classNames('spell-list-item', { 'is-active': isActive })}
+        className={classNames('spell-list-item', `is-${theme}`, {
+          'is-active': isActive,
+        })}
         role="link"
         tabIndex="0"
-        data-id={id}
         onClick={this._handleClick(onClick)}
+        {...rest}
       >
-        <td>{<FavoriteButton spellId={id} />}</td>
-        <th scope="row" className="spell-list-item__name">
+        <span>{<FavoriteButton spellId={id} />}</span>
+        <span className="spell-list-item__name">
           {name}
           <SpellIcons {...{ ritual, concentration, cost, higher_level }} />
-        </th>
-        <td className="spell-list-item__level">{getSpellLevel(level)}</td>
-      </tr>
+        </span>
+        <span className="spell-list-item__level">{getSpellLevel(level)}</span>
+      </div>
     );
   }
 }
 
 SpellListItem.propTypes = {
   onClick: PropTypes.func.isRequired,
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  ritual: PropTypes.bool,
-  concentration: PropTypes.bool,
-  cost: PropTypes.bool,
-  level: PropTypes.number.isRequired,
+  spell: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    ritual: PropTypes.bool,
+    concentration: PropTypes.bool,
+    cost: PropTypes.bool,
+    level: PropTypes.number.isRequired,
+  }).isRequired,
   isActive: PropTypes.bool,
+  theme: PropTypes.oneOf(['odd', 'even']),
 };
 
 export default SpellListItem;
