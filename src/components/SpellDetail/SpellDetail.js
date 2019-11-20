@@ -12,7 +12,7 @@ import {
   SUBCLASSES,
 } from '../../data';
 
-import setTabIndex from '../../utilities/setTabIndex';
+import setCanScroll from '../../utilities/setCanScroll';
 import getSpellLevel from '../../utilities/getSpellLevel';
 import getHyperlinkedString from '../../utilities/getHyperlinkedString';
 import PropIcon from '../PropIcon';
@@ -105,11 +105,11 @@ class Spell extends Component {
 
     //this.container = React.createRef();
     this.description = React.createRef();
-    this.setTabIndex = setTabIndex.bind(this);
+    this.setCanScroll = setCanScroll.bind(this);
   }
 
   componentDidMount() {
-    this.setTabIndex(this.description.current);
+    this.setCanScroll(this.description.current);
     //this.container.current.focus({ preventScroll: true });
   }
 
@@ -126,7 +126,7 @@ class Spell extends Component {
       return;
     }
 
-    this.setTabIndex(this.description.current);
+    this.setCanScroll(this.description.current);
     //this.container.current.focus({ preventScroll: true });
   }
 

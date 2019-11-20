@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { FixedSizeList as List } from 'react-window';
 
-import setTabIndex from '../../utilities/setTabIndex';
+import setCanScroll from '../../utilities/setCanScroll';
 import uuidv4 from '../../utilities/uuidv4';
-import SortingButton from '../../containers/SortingButton';
 import SpellListItem from '../SpellListItem';
 
 import './SpellList.scss';
@@ -14,15 +14,21 @@ class SpellList extends Component {
 
     this.state = {
       canScroll: null,
+      containerHeight: 0,
+      containerWidth: 0,
+      itemHeight: 58,
     };
 
     this.captionId = uuidv4();
     this.container = React.createRef();
-    this.setTabIndex = setTabIndex.bind(this);
+    this.list = React.createRef();
+    this.setCanScroll = setCanScroll.bind(this);
   }
 
   componentDidMount() {
-    this.setTabIndex(this.container.current);
+    window.addEventListener('resize', this._updateDimensions);
+    this._updateDimensions();
+    this.setCanScroll(this.container.current, this.list.current);
   }
 
   getSnapshotBeforeUpdate(prevProps, prevState) {
@@ -35,7 +41,7 @@ class SpellList extends Component {
 
   componentDidUpdate(prevProps, prevState, snapshot) {
     if (snapshot.spellListChanged) {
-      this.setTabIndex(this.container.current);
+      this.setCanScroll(this.container.current, this.list.current);
     }
 
     if (snapshot.focusSpell) {
@@ -44,34 +50,27 @@ class SpellList extends Component {
     }
   }
 
-  _getCurrentItem(id) {
-    return this.container.current.querySelector(`tbody > tr[data-id="${id}"]`);
+  componentWillUnmount() {
+    window.removeEventListener('resize', this._updateDimensions);
   }
 
-  _getAriaSort(field, sorting) {
-    if (field !== sorting.field) {
-      return 'none';
+  _updateDimensions = () => {
+    const {
+      width: containerWidth,
+      height: containerHeight,
+    } = this.container.current.getBoundingClientRect();
+
+    let itemHeight = this.state.itemHeight;
+    const item = this.container.current.querySelector(`[data-id]`);
+    if (item) {
+      itemHeight = item.getBoundingClientRect().height;
     }
 
-    return sorting.reverse ? 'descending' : 'ascending';
-  }
+    this.setState({ containerWidth, containerHeight, itemHeight });
+  };
 
-  _getAriaLabel(label) {
-    return `sort by ${label}`;
-  }
-
-  _renderHeader(field, label, sorting) {
-    return (
-      <th
-        scope="col"
-        aria-sort={this._getAriaSort(field, sorting)}
-        className={`spell-list__header spell-list__header--${field}`}
-      >
-        <SortingButton field={field} aria-label={this._getAriaLabel(label)}>
-          {label}
-        </SortingButton>
-      </th>
-    );
+  _getCurrentItem(id) {
+    return this.container.current.querySelector(`[data-id="${id}"]`);
   }
 
   _renderNoResults() {
@@ -83,8 +82,13 @@ class SpellList extends Component {
   }
 
   render() {
-    const { spells, sorting, currentSpellId, onSpellClick } = this.props;
-    const { canScroll } = this.state;
+    const { spells, currentSpellId, onSpellClick } = this.props;
+    const {
+      canScroll,
+      containerWidth,
+      containerHeight,
+      itemHeight,
+    } = this.state;
 
     return (
       <div
@@ -97,32 +101,37 @@ class SpellList extends Component {
       >
         {!spells.length && this._renderNoResults()}
         {!!spells.length && (
-          <table className="spell-list">
-            <caption id={this.captionId} className="visuallyHidden">
+          <>
+            <div id={this.captionId} className="visuallyHidden">
               <h2>Spells</h2>
               {canScroll && (
                 <div>
                   <small>(scroll to see more)</small>
                 </div>
               )}
-            </caption>
-            <thead className="visuallyHidden">
-              <tr>
-                {this._renderHeader('name', 'Name', sorting)}
-                {this._renderHeader('level', 'Level', sorting)}
-              </tr>
-            </thead>
-            <tbody>
-              {spells.map((spell, index) => (
-                <SpellListItem
-                  key={spell.id}
-                  {...spell}
-                  isActive={currentSpellId === spell.id}
-                  onClick={() => onSpellClick(spell.id)}
-                />
-              ))}
-            </tbody>
-          </table>
+            </div>
+            <List
+              height={containerHeight}
+              itemCount={spells.length}
+              itemSize={itemHeight}
+              width={containerWidth}
+              innerElementType="ol"
+              innerRef={this.list}
+              itemKey={index => spells[index].id}
+              overscanCount={3}
+            >
+              {({ index, style }) => (
+                <li data-id={spells[index].id} style={style}>
+                  <SpellListItem
+                    theme={index % 2 === 0 ? 'even' : 'odd'}
+                    spell={{ ...spells[index] }}
+                    isActive={currentSpellId === spells[index].id}
+                    onClick={() => onSpellClick(spells[index].id)}
+                  />
+                </li>
+              )}
+            </List>
+          </>
         )}
       </div>
     );
@@ -135,10 +144,6 @@ SpellList.propTypes = {
       name: PropTypes.string.isRequired,
     }).isRequired
   ).isRequired,
-  sorting: PropTypes.shape({
-    field: PropTypes.string,
-    reverse: PropTypes.bool,
-  }).isRequired,
   currentSpellId: PropTypes.string,
   onSpellClick: PropTypes.func.isRequired,
 };

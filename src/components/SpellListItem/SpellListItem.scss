@@ -8,14 +8,21 @@ $spell-list--focus-indicator-width: 5px;
   border-left: $spell-list--focus-indicator-width solid transparent;
   line-height: 1.2;
   -webkit-tap-highlight-color: initial;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
 
-  &:focus,
   &.is-active {
-    outline: none;
-    border-left-color: currentColor;
+    border-left-color: currentColor !important;
   }
 
-  &:nth-child(odd) {
+  &:focus {
+    outline: none;
+    border-left-color: $color--gray-666;
+  }
+
+  &.is-odd {
     background-color: $color--gray-eee;
 
     @include darkMode {
@@ -23,7 +30,7 @@ $spell-list--focus-indicator-width: 5px;
     }
   }
 
-  &:nth-child(even) {
+  &.is-even {
     background-color: $color--white;
 
     @include darkMode {
