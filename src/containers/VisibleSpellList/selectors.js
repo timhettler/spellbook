@@ -121,16 +121,17 @@ export const selectFilteredSpells = createSelector(
 export const selectSortedResults = createSelector(
   [selectFilteredSpells, selectSortingState],
   (spells, sorting) => {
-    let direction = sorting.reverse === true ? -1 : null;
+    const direction = sorting.reverse === true ? -1 : null;
+    const sortedSpells = [...spells];
 
     if (sorting.field === 'name') {
-      return spells.sort(
+      return sortedSpells.sort(
         firstBy('name', { ignoreCase: true, direction: direction })
       );
     }
 
     if (sorting.field === 'level') {
-      return spells.sort(
+      return sortedSpells.sort(
         firstBy('level', direction).thenBy('name', { ignoreCase: true })
       );
     }
