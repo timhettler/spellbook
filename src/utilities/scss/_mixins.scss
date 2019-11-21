@@ -28,6 +28,12 @@ $size--large-viewport-start: 1100px;
   }
 }
 
+@mixin touch-overflow() {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
 @mixin reset-input {
   background: none transparent;
   border: none;

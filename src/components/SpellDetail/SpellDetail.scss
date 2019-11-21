@@ -123,10 +123,8 @@ $spell-subheading--border-width: 2px;
   }
 
   &--scroll {
+    @include touch-overflow;
     flex: 1 1;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior: contain;
   }
 }
 
