@@ -1,4 +1,5 @@
 @import '../../utilities/scss/_vars';
+@import '../../utilities/scss/_mixins';
 
 .spell-list-container {
   overflow: auto;
@@ -7,7 +8,8 @@
 }
 
 .spell-list {
-  width: 100%;
+  @include touch-overflow;
+  height: 100%;
 }
 
 .no-results {
