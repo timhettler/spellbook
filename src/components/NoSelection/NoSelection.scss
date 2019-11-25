@@ -1,0 +1,28 @@
+@import '../../utilities/scss/_vars';
+@import '../../utilities/scss/_mixins';
+
+.no-selection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: $color--gray-666;
+  background-color: $color--white;
+
+  @include darkMode {
+    color: $color--gray-ccc;
+    background-color: $color--gray-222;
+  }
+
+  &__header {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: larger;
+    margin-bottom: $spacing--half;
+  }
+}

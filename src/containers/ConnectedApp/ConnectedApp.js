@@ -12,22 +12,14 @@ import * as data from '../../data';
 import history from '../../utilities/history';
 import App from '../../components/App';
 
-import VisibleSpellList from '../../containers/VisibleSpellList';
-import SelectedSpellDetail from '../../containers/SelectedSpellDetail';
-import VisibleControls from '../../containers/VisibleControls';
-import OfflineToast from '../../containers/OfflineToast';
-
-const renderNoSpellSelected = () => (
-  <div className="no-spell-selected">
-    <h2 className="no-spell-selected__header">No Spell Selected</h2>
-    <p className="no-spell-selected__copy">
-      Select a spell from the list to see its details
-    </p>
-  </div>
-);
+import VisibleSpellList from '../VisibleSpellList';
+import SelectedSpellDetail from '../SelectedSpellDetail';
+import VisibleControls from '../VisibleControls';
+import OfflineToast from '../OfflineToast';
+import NoSelection from '../../components/NoSelection';
 
 const renderDetail = currentSpellId =>
-  !!currentSpellId ? <SelectedSpellDetail /> : renderNoSpellSelected();
+  !!currentSpellId ? <SelectedSpellDetail /> : <NoSelection />;
 
 const ConnectedApp = () => {
   const currentSpellId = useSelector(state => state.currentSpellId);

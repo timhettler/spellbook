@@ -94,26 +94,6 @@
   height: 100%;
 }
 
-.no-spell-selected {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: $color--gray-666;
-
-  &__header {
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: larger;
-    margin-bottom: $spacing--half;
-  }
-}
-
 .App-toast {
   position: absolute;
   left: 0;
