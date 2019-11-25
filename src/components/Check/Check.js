@@ -1,29 +1,25 @@
+// @flow
+
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
 import VisuallyHidden from 'components/VisuallyHidden';
 
 import './Check.scss';
 
-function handleChange(callback, type) {
-  return e => {
+const handleChange = (callback: Function, type: string): Function => {
+  return (e: SyntheticInputEvent<HTMLInputElement>): void => {
     callback(e.target.checked, type);
   };
-}
-
-const InputPropTypes = {
-  checked: PropTypes.bool.isRequired,
-  type: PropTypes.string,
-  onChange: PropTypes.func.isRequired,
 };
 
-const ContainerPropTypes = {
-  icon: PropTypes.string,
-  label: PropTypes.string,
+type InputProps = {
+  checked: boolean,
+  type: string,
+  onChange: Function,
 };
 
-const CheckInput = ({ checked, onChange, type }) => (
+const CheckInput = ({ checked, onChange, type }: InputProps) => (
   <input
     type="checkbox"
     checked={checked}
@@ -31,9 +27,18 @@ const CheckInput = ({ checked, onChange, type }) => (
   />
 );
 
-CheckInput.propTypes = InputPropTypes;
+type ContainerProps = InputProps & {
+  icon: string,
+  label: string,
+};
 
-const SmallCheckInput = ({ checked, onChange, type, icon, label }) => (
+const SmallCheckContainer = ({
+  checked,
+  onChange,
+  type,
+  icon,
+  label,
+}: ContainerProps) => (
   <>
     <CheckInput checked={checked} onChange={onChange} type={type} />
     <span aria-hidden={true}>{icon}</span>
@@ -41,9 +46,13 @@ const SmallCheckInput = ({ checked, onChange, type, icon, label }) => (
   </>
 );
 
-SmallCheckInput.propTypes = ContainerPropTypes;
-
-const LargeCheckInput = ({ checked, onChange, type, icon, label }) => (
+const LargeCheckContainer = ({
+  checked,
+  onChange,
+  type,
+  icon,
+  label,
+}: ContainerProps) => (
   <>
     <VisuallyHidden>
       <CheckInput checked={checked} onChange={onChange} type={type} />
@@ -55,31 +64,31 @@ const LargeCheckInput = ({ checked, onChange, type, icon, label }) => (
   </>
 );
 
-SmallCheckInput.propTypes = ContainerPropTypes;
+type CheckType = ContainerProps & {
+  checked: boolean,
+  label: string,
+  theme: 'small' | 'large',
+};
 
-const Check = ({ checked, label, checkType, ...rest }) => {
-  const CheckComponent =
-    checkType === 'small' ? SmallCheckInput : LargeCheckInput;
+const Check = ({
+  checked,
+  label,
+  theme = 'small',
+  icon,
+  ...rest
+}: CheckType) => {
+  const InnerComponent =
+    theme === 'small' ? SmallCheckContainer : LargeCheckContainer;
   return (
     <label
-      className={classNames(checkType === 'small' ? 'check' : 'big-check', {
+      className={classNames(theme === 'small' ? 'check' : 'big-check', {
         'is-checked': checked,
       })}
       aria-label={label}
     >
-      <CheckComponent {...{ ...rest, label, checked }} />
+      <InnerComponent {...{ ...rest, checked, label, icon }} />
     </label>
   );
-};
-
-Check.defaultProps = {
-  checkType: 'small',
-};
-
-Check.propTypes = {
-  checked: PropTypes.bool,
-  label: PropTypes.string.isRequired,
-  checkType: PropTypes.oneOf(['small', 'large']),
 };
 
 export default Check;

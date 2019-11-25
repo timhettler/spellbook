@@ -1,5 +1,6 @@
+// @flow
+
 import React from 'react';
-import PropTypes from 'prop-types';
 import { ICONS } from 'constants/icons';
 
 import VisuallyHidden from 'components/VisuallyHidden';
@@ -14,7 +15,12 @@ const label = {
   favorites: 'A favorite spell',
 };
 
-const PropIcon = ({ type, hideLabel = true }) => {
+type Props = {
+  type: $Keys<typeof label>,
+  hideLabel: boolean,
+};
+
+const PropIcon = ({ type, hideLabel }: Props) => {
   return (
     <div className="prop-icon">
       <span aria-hidden={true}>
@@ -23,11 +29,6 @@ const PropIcon = ({ type, hideLabel = true }) => {
       {hideLabel && <VisuallyHidden>{label[type]}</VisuallyHidden>}
     </div>
   );
-};
-
-PropIcon.propTypes = {
-  type: PropTypes.oneOf(Object.keys(label)).isRequired,
-  hideLabel: PropTypes.bool,
 };
 
 export default PropIcon;

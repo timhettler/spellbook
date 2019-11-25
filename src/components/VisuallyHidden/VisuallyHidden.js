@@ -1,18 +1,20 @@
+// @flow
+
 import React from 'react';
-import PropTypes from 'prop-types';
+import type { Node } from 'react';
 
 import './VisuallyHidden.scss';
 
-const VisuallyHidden = ({ children, ...rest }) => {
+type Props = {
+  children?: Node,
+};
+
+const VisuallyHidden = ({ children, ...rest }: Props) => {
   return (
-    <span className="visuallyHidden" {...rest}>
+    <span {...rest} className="visuallyHidden">
       {children}
     </span>
   );
-};
-
-VisuallyHidden.propTypes = {
-  children: PropTypes.node.isRequired,
 };
 
 export default VisuallyHidden;

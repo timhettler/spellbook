@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import classNames from 'classnames/bind';
 
@@ -6,7 +8,13 @@ import PropIcon from 'components/PropIcon';
 
 import './FavoriteButton.scss';
 
-const FavoriteButton = ({ isActive, onClick, label }) => (
+type Props = {
+  isActive: boolean,
+  onClick: Function,
+  label: string,
+};
+
+const FavoriteButton = ({ isActive, onClick, label }: Props) => (
   <Button
     className={classNames('favorite-button', { 'is-active': isActive })}
     tabIndex="-1"

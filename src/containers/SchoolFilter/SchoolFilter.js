@@ -24,7 +24,7 @@ const SchoolFilter = props => {
       checked={selected}
       type="school"
       onChange={() => handleChange(props.school)}
-      checkType="large"
+      theme="large"
     />
   );
 };

@@ -1,5 +1,6 @@
+// @flow
+
 import React, { Fragment, Component } from 'react';
-import PropTypes from 'prop-types';
 
 import {
   ARCHETYPES,
@@ -95,25 +96,48 @@ function _renderCastingTime(time, modifier) {
   );
 }
 
-class Spell extends Component {
-  constructor(props) {
-    super(props);
+type Props = {
+  id: string,
+  name: string,
+  desc: string,
+  page: string,
+  higher_level: ?string,
+  range: string,
+  components: Array<'V' | 'S' | 'M'>,
+  material: string,
+  cost: boolean,
+  ritual: boolean,
+  duration: string,
+  concentration: boolean,
+  casting_time: string,
+  casting_time_modifier: ?string,
+  level: number,
+  school: $Values<SCHOOLS>,
+  classes: Array<$Values<CLASSES>>,
+  archetypes: Array<$Values<ARCHETYPES>>,
+  domains: Array<$Values<DOMAINS>>,
+  circles: Array<$Values<CIRCLES>>,
+  oaths: Array<$Values<OATHS>>,
+  patrons: Array<$Values<PATRONS>>,
+  onClose: Function,
+};
 
-    this.state = {
-      canScroll: null,
-    };
+type State = {
+  canScroll: ?boolean,
+};
 
-    //this.container = React.createRef();
-    this.description = React.createRef();
-    this.setTabIndex = setTabIndex.bind(this);
-  }
+class Spell extends Component<Props, State> {
+  state = {
+    canScroll: null,
+  };
+  description: ?HTMLElement;
+  setTabIndex = setTabIndex.bind(this);
 
   componentDidMount() {
-    this.setTabIndex(this.description.current);
-    //this.container.current.focus({ preventScroll: true });
+    this.setTabIndex(this.description);
   }
 
-  getSnapshotBeforeUpdate(prevProps, prevState) {
+  getSnapshotBeforeUpdate(prevProps: Props, prevState: State) {
     if (prevProps.id !== this.props.id) {
       return true;
     }
@@ -121,13 +145,12 @@ class Spell extends Component {
     return null;
   }
 
-  componentDidUpdate(prevProps, prevState, snapshot) {
+  componentDidUpdate(prevProps: Props, prevState: State, snapshot: ?boolean) {
     if (snapshot === null) {
       return;
     }
 
-    this.setTabIndex(this.description.current);
-    //this.container.current.focus({ preventScroll: true });
+    this.setTabIndex(this.description);
   }
 
   render() {
@@ -159,12 +182,7 @@ class Spell extends Component {
     const { canScroll } = this.state;
 
     return (
-      <article
-        ref={this.container}
-        className="spell"
-        tabIndex="-1"
-        aria-live="polite"
-      >
+      <article className="spell" tabIndex="-1" aria-live="polite">
         <div className="spell__container">
           <header className="spell-section spell-section--with-padding">
             <div className="spell-header">
@@ -222,7 +240,7 @@ class Spell extends Component {
             </div>
           </section>
           <section
-            ref={this.description}
+            ref={description => (this.description = description)}
             className="spell-section spell-section--content spell-section--with-padding spell-section--scroll"
             role="group"
             aria-labelledby="description"
@@ -296,31 +314,5 @@ class Spell extends Component {
     );
   }
 }
-
-Spell.propTypes = {
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  desc: PropTypes.string.isRequired,
-  page: PropTypes.string.isRequired,
-  higher_level: PropTypes.string,
-  range: PropTypes.string.isRequired,
-  components: PropTypes.arrayOf(PropTypes.oneOf(['V', 'S', 'M'])).isRequired,
-  material: PropTypes.string,
-  cost: PropTypes.bool,
-  ritual: PropTypes.bool.isRequired,
-  duration: PropTypes.string.isRequired,
-  concentration: PropTypes.bool.isRequired,
-  casting_time: PropTypes.string.isRequired,
-  casting_time_modifier: PropTypes.string,
-  level: PropTypes.number.isRequired,
-  school: PropTypes.oneOf(SCHOOLS).isRequired,
-  classes: PropTypes.arrayOf(PropTypes.oneOf(CLASSES)).isRequired,
-  archetypes: PropTypes.arrayOf(PropTypes.oneOf(ARCHETYPES)),
-  domains: PropTypes.arrayOf(PropTypes.oneOf(DOMAINS)),
-  circles: PropTypes.arrayOf(PropTypes.oneOf(CIRCLES)),
-  oaths: PropTypes.arrayOf(PropTypes.oneOf(OATHS)),
-  patrons: PropTypes.arrayOf(PropTypes.oneOf(PATRONS)),
-  onClose: PropTypes.func.isRequired,
-};
 
 export default Spell;

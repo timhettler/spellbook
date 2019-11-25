@@ -1,10 +1,20 @@
+// @flow
+
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import type { Node } from 'react';
 import classNames from 'classnames/bind';
 
 import './App.scss';
 
-const App = ({ currentSpellId, controls, list, detail, toast }) => {
+type Props = {
+  currentSpellId: string,
+  controls: Node,
+  list: Node,
+  detail: Node,
+  toast: Node,
+};
+
+const App = ({ currentSpellId, controls, list, detail, toast }: Props) => {
   const [isSpellSelected, setIsSpellSelected] = useState(false);
 
   useEffect(() => {
@@ -36,14 +46,6 @@ const App = ({ currentSpellId, controls, list, detail, toast }) => {
       <aside className="App-toast">{toast}</aside>
     </div>
   );
-};
-
-App.propTypes = {
-  currentSpellId: PropTypes.string,
-  controls: PropTypes.element,
-  list: PropTypes.element,
-  detail: PropTypes.element,
-  toast: PropTypes.element,
 };
 
 export default App;

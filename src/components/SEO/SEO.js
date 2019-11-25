@@ -1,10 +1,23 @@
+// @flow
+
 import React from 'react';
-import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
 import { SITE } from 'constants/site';
 
-function SEO({ description, lang, meta, title }) {
+type Props = {
+  description: string,
+  lang: string,
+  meta: Array<{ name: string, content: string }>,
+  title: string,
+};
+
+function SEO({
+  lang = 'en',
+  meta = [],
+  description = SITE.description,
+  title = SITE.title,
+}: Props) {
   const metaDescription = description;
   const titleTemplate = title !== SITE.title ? `%s | ${SITE.title}` : null;
 
@@ -48,26 +61,5 @@ function SEO({ description, lang, meta, title }) {
     />
   );
 }
-
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: SITE.description,
-  title: SITE.title,
-};
-
-export const SEOProps = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      content: PropTypes.string.isRequired,
-    })
-  ),
-  title: PropTypes.string,
-};
-
-SEO.propTypes = SEOProps;
 
 export default SEO;

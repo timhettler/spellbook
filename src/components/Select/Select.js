@@ -1,18 +1,36 @@
+// @flow
+
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
-import { classNamePropTypes } from 'utilities/propTypes';
+import { classNameType } from 'utilities/types';
 import Chevron from 'components/Chevron';
 import VisuallyHidden from 'components/VisuallyHidden';
 
 import './Select.scss';
 
-function handleChange(callback, type) {
-  return e => {
-    callback(e.target.value, type);
+const handleChange = (callback: Function, type: string): Function => {
+  return (e: SyntheticInputEvent<HTMLSelectElement>): void => {
+    callback(e.target.checked, type);
   };
-}
+};
+
+type Option =
+  | string
+  | {
+      label: string,
+      value: any,
+    };
+
+type Props = {
+  options: Array<Option>,
+  value: any,
+  type: string,
+  className: classNameType,
+  onChange: Function,
+  label: string,
+  allLabel: string,
+};
 
 const Select = ({
   options,
@@ -22,7 +40,7 @@ const Select = ({
   onChange,
   label,
   allLabel,
-}) => {
+}: Props) => {
   const displayOptions = [{ label: allLabel, value: '' }].concat(options);
   return (
     <label className="select-container">
@@ -48,24 +66,6 @@ const Select = ({
       </span>
     </label>
   );
-};
-
-Select.propTypes = {
-  options: PropTypes.arrayOf(
-    PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.shape({
-        label: PropTypes.string.isRequired,
-        value: PropTypes.any,
-      }),
-    ])
-  ).isRequired,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
-  type: PropTypes.string,
-  className: classNamePropTypes,
-  onChange: PropTypes.func.isRequired,
-  allLabel: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
 };
 
 export default Select;

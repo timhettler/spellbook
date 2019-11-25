@@ -1,20 +1,22 @@
+// @flow
+
 import React from 'react';
-import PropTypes from 'prop-types';
+import type { Node } from 'react';
 import classNames from 'classnames/bind';
 
-import { classNamePropTypes } from 'utilities/propTypes';
+import { classNameType } from 'utilities/types';
 
 import './Button.scss';
 
-const Button = ({ children, className, ...rest }) => (
-  <button className={classNames('button', className)} {...rest}>
+type Props = {
+  children?: Node,
+  className: classNameType,
+};
+
+const Button = ({ children, className, ...rest }: Props) => (
+  <button {...rest} className={classNames('button', className)}>
     {children}
   </button>
 );
-
-Button.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: classNamePropTypes,
-};
 
 export default Button;

@@ -1,5 +1,6 @@
+// @flow
+
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
 import './Toast.scss';
@@ -10,29 +11,30 @@ function handleClick(callback) {
   };
 }
 
-const Toast = ({ label, active, onClick, ...rest }) => {
+type Props = {
+  label: string,
+  active: boolean,
+  onClick: Function,
+};
+
+const Toast = ({ label, active, onClick, ...rest }: Props) => {
   if (!label) {
     return null;
   }
+
+  const Element = !!onClick ? 'button' : 'div';
+
   return (
-    <button
-      className={classNames('toast', {
-        'is-clickable': onClick,
-      })}
-      onClick={onClick && handleClick(onClick)}
+    <Element
+      {...rest}
+      className={classNames('toast')}
+      onClick={!!onClick && handleClick(onClick)}
       aria-live="polite"
       disabled={!active}
-      {...rest}
     >
       {label}
-    </button>
+    </Element>
   );
-};
-
-Toast.propTypes = {
-  label: PropTypes.string.isRequired,
-  active: PropTypes.bool,
-  onClick: PropTypes.func,
 };
 
 export default Toast;
