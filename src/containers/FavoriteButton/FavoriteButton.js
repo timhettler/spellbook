@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { selectIsSpellFavorited } from './selectors';
-import { toggleFavorite } from '../../actions';
-import FavoriteButton from '../../components/FavoriteButton';
+import { toggleFavorite } from 'actions';
+import FavoriteButton from 'components/FavoriteButton';
 
 const ConnectedFavoriteButton = ({ spellId }) => {
   const isActive = useSelector(selectIsSpellFavorited(spellId));

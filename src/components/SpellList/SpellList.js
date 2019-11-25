@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import setTabIndex from '../../utilities/setTabIndex';
-import uuidv4 from '../../utilities/uuidv4';
-import SortingButton from '../../containers/SortingButton';
-import SpellListItem from '../SpellListItem';
+import setTabIndex from 'utilities/setTabIndex';
+import uuidv4 from 'utilities/uuidv4';
+import SortingButton from 'containers/SortingButton';
+import SpellListItem from 'components/SpellListItem';
 
 import './SpellList.scss';
 

@@ -7,16 +7,16 @@ import {
   loadSchools,
   addSubclass,
   viewSpell,
-} from '../../actions';
-import * as data from '../../data';
-import history from '../../utilities/history';
-import App from '../../components/App';
+} from 'actions';
+import * as data from 'data';
+import history from 'utilities/history';
+import App from 'components/App';
 
-import VisibleSpellList from '../VisibleSpellList';
-import SelectedSpellDetail from '../SelectedSpellDetail';
-import VisibleControls from '../VisibleControls';
-import OfflineToast from '../OfflineToast';
-import NoSelection from '../../components/NoSelection';
+import VisibleSpellList from 'containers/VisibleSpellList';
+import SelectedSpellDetail from 'containers/SelectedSpellDetail';
+import VisibleControls from 'containers/VisibleControls';
+import OfflineToast from 'containers/OfflineToast';
+import NoSelection from 'components/NoSelection';
 
 const renderDetail = currentSpellId =>
   !!currentSpellId ? <SelectedSpellDetail /> : <NoSelection />;

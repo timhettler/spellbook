@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
-import VisuallyHidden from '../VisuallyHidden';
+import VisuallyHidden from 'components/VisuallyHidden';
 
 import './Check.scss';
 

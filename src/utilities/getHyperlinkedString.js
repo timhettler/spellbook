@@ -1,7 +1,7 @@
-import { CONDITIONS } from '../constants/conditions';
-import { SENSES } from '../constants/senses';
-import { MONSTERS, MONSTER_GROUPS } from '../constants/monsters';
-import { PLANES } from '../constants/planes';
+import { CONDITIONS } from 'constants/conditions';
+import { SENSES } from 'constants/senses';
+import { MONSTERS, MONSTER_GROUPS } from 'constants/monsters';
+import { PLANES } from 'constants/planes';
 
 function formatStringForUrl(string) {
   return string.charAt(0).toUpperCase() + string.slice(1).replace(' ', '-');

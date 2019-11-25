@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
-import { classNamePropTypes } from '../../utilities/propTypes';
+import { classNamePropTypes } from 'utilities/propTypes';
 
 import './Button.scss';
 

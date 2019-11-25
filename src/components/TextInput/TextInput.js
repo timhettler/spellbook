@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
-import uuidv4 from '../../utilities/uuidv4';
+import uuidv4 from 'utilities/uuidv4';
 
-import VisuallyHidden from '../VisuallyHidden';
+import VisuallyHidden from 'components/VisuallyHidden';
 import './TextInput.scss';
 
 function handleChange(callback) {

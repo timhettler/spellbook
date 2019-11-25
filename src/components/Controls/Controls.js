@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import ResetButton from '../../containers/ResetButton';
-import Filter from '../../containers/Filter';
-import SubClassFilter from '../../containers/SubClassFilter';
-import SpellFilter from '../../containers/SpellFilter';
-import BinaryFilter from '../../containers/BinaryFilter';
-import SortingButton from '../../containers/SortingButton';
-import SchoolFilter from '../../containers/SchoolFilter';
-import VisuallyHidden from '../VisuallyHidden';
-import { ICONS } from '../../constants/icons';
-import { SCHOOLS } from '../../data';
+import ResetButton from 'containers/ResetButton';
+import Filter from 'containers/Filter';
+import SubClassFilter from 'containers/SubClassFilter';
+import SpellFilter from 'containers/SpellFilter';
+import BinaryFilter from 'containers/BinaryFilter';
+import SortingButton from 'containers/SortingButton';
+import SchoolFilter from 'containers/SchoolFilter';
+import VisuallyHidden from 'components/VisuallyHidden';
+import { ICONS } from 'constants/icons';
+import { SCHOOLS } from 'data';
 
 import './Controls.scss';
 

@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
-import { classNamePropTypes } from '../../utilities/propTypes';
-import Chevron from '../Chevron';
-import VisuallyHidden from '../VisuallyHidden';
+import { classNamePropTypes } from 'utilities/propTypes';
+import Chevron from 'components/Chevron';
+import VisuallyHidden from 'components/VisuallyHidden';
 
 import './Select.scss';
 

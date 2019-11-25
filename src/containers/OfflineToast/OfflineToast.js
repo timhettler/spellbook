@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import { selectBanner } from './selectors';
-import { OUTDATED_CONTENT, OFFLINE_READY } from '../../constants/offline';
-import Toast from '../../components/Toast';
+import { OUTDATED_CONTENT, OFFLINE_READY } from 'constants/offline';
+import Toast from 'components/Toast';
 
 function getOfflineLabel(banner) {
   switch (banner) {

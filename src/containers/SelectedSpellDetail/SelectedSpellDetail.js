@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { viewSpell } from '../../actions';
+import { viewSpell } from 'actions';
 import { selectCurrentSpell } from './selectors';
-import SpellDetail from '../../components/SpellDetail';
+import SpellDetail from 'components/SpellDetail';
 
 const SelectedSpellDetail = props => {
   const spell = useSelector(selectCurrentSpell);

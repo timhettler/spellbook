@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { resetFilters } from '../../actions';
-import Button from '../../components/Button';
+import { resetFilters } from 'actions';
+import Button from 'components/Button';
 
 const ResetButton = props => {
   const dispatch = useDispatch();

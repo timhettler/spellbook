@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { viewSpell } from '../../actions';
+import { viewSpell } from 'actions';
 import { selectSortedResults } from './selectors';
-import SpellList from '../../components/SpellList';
+import SpellList from 'components/SpellList';
 
 const VisibleSpellList = () => {
   const sorting = useSelector(state => state.sorting);

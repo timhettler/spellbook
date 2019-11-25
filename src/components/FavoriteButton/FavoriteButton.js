@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 
-import Button from '../../components/Button';
-import PropIcon from '../../components/PropIcon';
+import Button from 'components/Button';
+import PropIcon from 'components/PropIcon';
 
 import './FavoriteButton.scss';
 

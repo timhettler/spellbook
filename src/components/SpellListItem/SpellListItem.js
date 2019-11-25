@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
-import getSpellLevel from '../../utilities/getSpellLevel';
-import FavoriteButton from '../../containers/FavoriteButton';
-import PropIcon from '../PropIcon';
+import getSpellLevel from 'utilities/getSpellLevel';
+import FavoriteButton from 'containers/FavoriteButton';
+import PropIcon from 'components/PropIcon';
 
 import './SpellListItem.scss';
 

@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { toggleFilter } from '../../actions';
+import { toggleFilter } from 'actions';
 import { selectSubClassFilter } from './selectors';
-import { selectStringValue } from '../../utilities/selectValue';
-import Select from '../../components/Select';
+import { selectStringValue } from 'utilities/selectValue';
+import Select from 'components/Select';
 
 const SubClassFilter = () => {
   const [selectProps, setSelectProps] = useState({});

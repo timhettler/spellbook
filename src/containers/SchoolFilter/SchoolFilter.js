@@ -2,10 +2,10 @@ import React, { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { toggleFilter } from '../../actions';
+import { toggleFilter } from 'actions';
 import { selectSchoolFilter } from './selectors';
-import Check from '../../components/Check';
-import { ICONS } from '../../constants/icons';
+import Check from 'components/Check';
+import { ICONS } from 'constants/icons';
 
 const SchoolFilter = props => {
   const selected = useSelector(state =>

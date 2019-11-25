@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ICONS } from '../../constants/icons';
+import { ICONS } from 'constants/icons';
 
-import VisuallyHidden from '../VisuallyHidden';
+import VisuallyHidden from 'components/VisuallyHidden';
 
 import './PropIcon.scss';
 

@@ -1,10 +1,10 @@
 import React, { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { toggleFilter, viewSpell } from '../../actions';
-import { selectSortedResults } from '../VisibleSpellList/selectors';
-import { selectStringValue } from '../../utilities/selectValue';
-import SpellSearch from '../../components/SpellSearch';
+import { toggleFilter, viewSpell } from 'actions';
+import { selectSortedResults } from 'containers/VisibleSpellList/selectors';
+import { selectStringValue } from 'utilities/selectValue';
+import SpellSearch from 'components/SpellSearch';
 
 const SpellFilter = props => {
   const type = 'name';

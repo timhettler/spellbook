@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 
-import TextInput from '../TextInput';
-import VisuallyHidden from '../VisuallyHidden';
+import TextInput from 'components/TextInput';
+import VisuallyHidden from 'components/VisuallyHidden';
 
 import './SpellSearch.scss';
 

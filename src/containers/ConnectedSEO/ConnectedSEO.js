@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import { selectCurrentSpell } from '../SelectedSpellDetail/selectors';
-import getSpellLevel from '../../utilities/getSpellLevel';
-import SEO from '../../components/SEO';
+import { selectCurrentSpell } from 'containers/SelectedSpellDetail/selectors';
+import getSpellLevel from 'utilities/getSpellLevel';
+import SEO from 'components/SEO';
 
 const CHAR_LIMIT = 70;
 

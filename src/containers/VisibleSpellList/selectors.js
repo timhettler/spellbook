@@ -1,9 +1,9 @@
 import { createSelector } from 'reselect';
 import firstBy from 'thenby';
 
-import bothContain from '../../utilities/bothContain';
+import bothContain from 'utilities/bothContain';
 
-import { SUBCLASSES } from '../../data';
+import { SUBCLASSES } from 'data';
 
 const selectSpellState = state => state.spells;
 const selectFiltersState = state => state.filters;

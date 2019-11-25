@@ -1,5 +1,5 @@
-import * as reducers from '../reducers';
-import * as types from '../actionTypes';
+import * as reducers from '__tests__/reducers';
+import * as types from '__tests__/actionTypes';
 
 describe('filters reducer', () => {
   it('should return the initial state', () => {

@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { toggleFilter } from '../../actions';
-import { selectBoolValue } from '../../utilities/selectValue';
-import Check from '../../components/Check';
+import { toggleFilter } from 'actions';
+import { selectBoolValue } from 'utilities/selectValue';
+import Check from 'components/Check';
 
 const BinaryFilter = props => {
   const checked = useSelector(selectBoolValue(props.type));

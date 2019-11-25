@@ -2,8 +2,8 @@ import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 
-import { setSorting } from '../../actions';
-import Button from '../../components/Button';
+import { setSorting } from 'actions';
+import Button from 'components/Button';
 
 const SortingButton = ({ field, ...rest }) => {
   const dispatch = useDispatch();

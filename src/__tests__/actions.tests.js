@@ -1,5 +1,5 @@
-import * as actions from '../actions';
-import * as types from '../actionTypes';
+import * as actions from '__tests__/actions';
+import * as types from '__tests__/actionTypes';
 
 describe('actions', () => {
   it('should create an action to load spells', () => {

@@ -10,13 +10,13 @@ import {
   PATRONS,
   SCHOOLS,
   SUBCLASSES,
-} from '../../data';
+} from 'data';
 
-import setTabIndex from '../../utilities/setTabIndex';
-import getSpellLevel from '../../utilities/getSpellLevel';
-import getHyperlinkedString from '../../utilities/getHyperlinkedString';
-import PropIcon from '../PropIcon';
-import VisuallyHidden from '../VisuallyHidden';
+import setTabIndex from 'utilities/setTabIndex';
+import getSpellLevel from 'utilities/getSpellLevel';
+import getHyperlinkedString from 'utilities/getHyperlinkedString';
+import PropIcon from 'components/PropIcon';
+import VisuallyHidden from 'components/VisuallyHidden';
 
 import './SpellDetail.scss';
 

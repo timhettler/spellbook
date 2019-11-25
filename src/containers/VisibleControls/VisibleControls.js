@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import { selectSubClassFilter } from '../SubClassFilter/selectors';
-import Controls from '../../components/Controls';
+import { selectSubClassFilter } from 'containers/SubClassFilter/selectors';
+import Controls from 'components/Controls';
 
 const VisibleControls = () => {
   const sorting = useSelector(state => state.sorting);
