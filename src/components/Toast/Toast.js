@@ -6,7 +6,7 @@ import classNames from 'classnames/bind';
 import './Toast.scss';
 
 function handleClick(callback) {
-  return e => {
+  return (e) => {
     callback(e.target.value);
   };
 }

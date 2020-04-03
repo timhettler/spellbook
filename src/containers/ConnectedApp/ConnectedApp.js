@@ -18,11 +18,11 @@ import VisibleControls from 'containers/VisibleControls';
 import OfflineToast from 'containers/OfflineToast';
 import NoSelection from 'components/NoSelection';
 
-const renderDetail = currentSpellId =>
+const renderDetail = (currentSpellId) =>
   !!currentSpellId ? <SelectedSpellDetail /> : <NoSelection />;
 
 const ConnectedApp = () => {
-  const currentSpellId = useSelector(state => state.currentSpellId);
+  const currentSpellId = useSelector((state) => state.currentSpellId);
   const dispatch = useDispatch();
 
   // Load in data sources
@@ -40,7 +40,7 @@ const ConnectedApp = () => {
 
   // If url includes a spell id, load that spell
   useEffect(() => {
-    const loc = history.location.pathname.split('/').filter(x => x);
+    const loc = history.location.pathname.split('/').filter((x) => x);
     if (loc[0] === 'spell') {
       dispatch(viewSpell(loc[1]));
     }

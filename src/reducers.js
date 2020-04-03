@@ -43,7 +43,7 @@ export function filters(state = {}, action) {
       if (newState[action.filter.type].includes(action.filter.value)) {
         //...remove it if yes
         newState[action.filter.type] = newState[action.filter.type].filter(
-          i => i !== action.filter.value
+          (i) => i !== action.filter.value
         );
       } else {
         // ...add it if no

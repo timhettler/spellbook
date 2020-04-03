@@ -7,8 +7,8 @@
  * http://www.opensource.org/licenses/mit-license.php
  */
 
-const scrollFix = elem => {
-  return event => {
+const scrollFix = (elem) => {
+  return (event) => {
     const startTopScroll = elem.scrollTop;
 
     if (startTopScroll <= 0) {
@@ -21,12 +21,12 @@ const scrollFix = elem => {
   };
 };
 
-export const addScrollFix = elem => {
+export const addScrollFix = (elem) => {
   if (!elem) return;
   elem.addEventListener('touchstart', scrollFix(elem), false);
 };
 
-export const removeScrollFix = elem => {
+export const removeScrollFix = (elem) => {
   if (!elem) return;
   elem.removeEventListener('touchstart', scrollFix(elem), false);
 };

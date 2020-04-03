@@ -67,7 +67,7 @@ const Controls = ({ sorting, showSubClassFilter }: Props) => (
             Filters by school
           </summary>
           <div className="control-toggle__content">
-            {SCHOOLS.map(school => (
+            {SCHOOLS.map((school) => (
               <div className="control-toggle__item" key={school}>
                 <SchoolFilter school={school} />
               </div>

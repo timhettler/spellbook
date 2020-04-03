@@ -10,7 +10,7 @@ const ConnectedFavoriteButton = ({ spellId }) => {
   const isActive = useSelector(selectIsSpellFavorited(spellId));
   const dispatch = useDispatch();
   const onClick = useCallback(
-    e => {
+    (e) => {
       e.stopPropagation();
       dispatch(toggleFavorite(spellId));
     },

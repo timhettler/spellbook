@@ -23,7 +23,7 @@ ReactDOM.render(
 // https://stackoverflow.com/questions/19909533/disable-rubber-band-in-ios-full-screen-web-app?noredirect=1&lq=1
 document.body.addEventListener(
   'touchmove',
-  function(event) {
+  function (event) {
     var isTouchMoveAllowed = false;
     var p = event.target;
 
@@ -48,7 +48,7 @@ document.body.addEventListener(
 // https://stackoverflow.com/questions/4817029/whats-the-best-way-to-detect-a-touch-screen-device-using-javascript#4819886
 function is_touch_device() {
   var prefixes = ' -webkit- -moz- -o- -ms- '.split(' ');
-  var mq = function(query) {
+  var mq = function (query) {
     return window.matchMedia(query).matches;
   };
 

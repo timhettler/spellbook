@@ -6,18 +6,18 @@ import { selectSortedResults } from 'containers/VisibleSpellList/selectors';
 import { selectStringValue } from 'utilities/selectValue';
 import SpellSearch from 'components/SpellSearch';
 
-const SpellFilter = props => {
+const SpellFilter = (props) => {
   const type = 'name';
   const value = useSelector(selectStringValue(type));
   const spells = useSelector(selectSortedResults);
   const dispatch = useDispatch();
   const onChange = useCallback(
-    value => dispatch(toggleFilter({ type, value })),
+    (value) => dispatch(toggleFilter({ type, value })),
     [dispatch, type]
   );
-  const onSubmit = useCallback(id => dispatch(viewSpell(id)), [dispatch]);
+  const onSubmit = useCallback((id) => dispatch(viewSpell(id)), [dispatch]);
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     if (spells.length) {
       onSubmit(spells[0].id);
     }

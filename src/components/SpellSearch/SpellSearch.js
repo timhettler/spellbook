@@ -16,7 +16,7 @@ type Props = {
 const SpellSearch = ({ value = '', onChange, onSubmit, ...rest }: Props) => {
   const inputEl = useRef(null);
 
-  const handleSubmit = callback => e => {
+  const handleSubmit = (callback) => (e) => {
     callback();
     // TODO only do this on mobile
     if (inputEl.current) {

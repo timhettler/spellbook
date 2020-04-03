@@ -5,7 +5,7 @@ import { selectSubClassFilter } from 'containers/SubClassFilter/selectors';
 import Controls from 'components/Controls';
 
 const VisibleControls = () => {
-  const sorting = useSelector(state => state.sorting);
+  const sorting = useSelector((state) => state.sorting);
   const showSubClassFilter = !!useSelector(selectSubClassFilter);
   //const dispatch = useDispatch();
   // Todo need a selector to get visible spells and return id of first one

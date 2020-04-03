@@ -4,9 +4,9 @@ import { useDispatch } from 'react-redux';
 import { resetFilters } from 'actions';
 import Button from 'components/Button';
 
-const ResetButton = props => {
+const ResetButton = (props) => {
   const dispatch = useDispatch();
-  const onClick = useCallback(value => dispatch(resetFilters()), [dispatch]);
+  const onClick = useCallback((value) => dispatch(resetFilters()), [dispatch]);
 
   return <Button {...{ onClick, ...props }} />;
 };

@@ -25,7 +25,7 @@ function getOfflineEvent(banner) {
   }
 }
 
-const OfflineToast = props => {
+const OfflineToast = (props) => {
   const [active, setActive] = useState(false);
   const banner = useSelector(selectBanner);
 

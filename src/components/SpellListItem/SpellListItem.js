@@ -68,7 +68,7 @@ export class SpellListItem extends Component {
   }
 
   _handleClick(callback) {
-    return e => {
+    return (e) => {
       callback(e);
       e.stopPropagation();
     };

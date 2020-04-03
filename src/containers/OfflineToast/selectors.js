@@ -1,8 +1,8 @@
 import { createSelector } from 'reselect';
 
-const selectBannerState = state => state.banner;
+const selectBannerState = (state) => state.banner;
 
 export const selectBanner = createSelector(
   [selectBannerState],
-  banner => banner
+  (banner) => banner
 );

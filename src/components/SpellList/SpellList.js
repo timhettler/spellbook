@@ -117,7 +117,7 @@ class SpellList extends Component {
               width={containerWidth}
               innerElementType="ol"
               innerRef={this.list}
-              itemKey={index => spells[index].id}
+              itemKey={(index) => spells[index].id}
               overscanCount={3}
             >
               {({ index, style }) => (

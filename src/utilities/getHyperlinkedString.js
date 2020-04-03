@@ -29,8 +29,8 @@ function getHyperlinkedString(string) {
     };
   };
 
-  const generateLinkedString = url => {
-    return keyword => {
+  const generateLinkedString = (url) => {
+    return (keyword) => {
       let searchTerm = keyword.regex || keyword;
       // Only Chrome supports look behinds
       var re = new RegExp(
@@ -44,7 +44,7 @@ function getHyperlinkedString(string) {
 
   const keywordGroups = [CONDITIONS, SENSES, MONSTERS, MONSTER_GROUPS, PLANES];
 
-  keywordGroups.forEach(group =>
+  keywordGroups.forEach((group) =>
     group.keywords.forEach(generateLinkedString(group.url))
   );
 

@@ -5,10 +5,10 @@ import { viewSpell } from 'actions';
 import { selectCurrentSpell } from './selectors';
 import SpellDetail from 'components/SpellDetail';
 
-const SelectedSpellDetail = props => {
+const SelectedSpellDetail = (props) => {
   const spell = useSelector(selectCurrentSpell);
   const dispatch = useDispatch();
-  const onClose = useCallback(value => dispatch(viewSpell(null)), [dispatch]);
+  const onClose = useCallback((value) => dispatch(viewSpell(null)), [dispatch]);
 
   if (!spell.name) {
     return null;

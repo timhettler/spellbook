@@ -6,12 +6,12 @@ import { selectSortedFilter } from './selectors';
 import { selectStringValue } from 'utilities/selectValue';
 import Select from 'components/Select';
 
-const Filter = props => {
-  const value = useSelector(state => selectStringValue(props.type)(state));
-  const options = useSelector(state => selectSortedFilter(props.type)(state));
+const Filter = (props) => {
+  const value = useSelector((state) => selectStringValue(props.type)(state));
+  const options = useSelector((state) => selectSortedFilter(props.type)(state));
   const dispatch = useDispatch();
   const handleChange = useCallback(
-    value => dispatch(toggleFilter({ type: props.type, value: value })),
+    (value) => dispatch(toggleFilter({ type: props.type, value: value })),
     [dispatch, props.type]
   );
 

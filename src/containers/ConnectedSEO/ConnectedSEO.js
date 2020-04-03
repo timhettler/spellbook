@@ -32,7 +32,7 @@ const getProps = (spell = {}) => {
   };
 };
 
-const ConnectedSEO = props => {
+const ConnectedSEO = (props) => {
   const spell = useSelector(selectCurrentSpell);
 
   return <SEO {...getProps(spell)} />;

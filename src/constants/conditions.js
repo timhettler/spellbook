@@ -1,5 +1,5 @@
 export const CONDITIONS = {
-  url: id =>
+  url: (id) =>
     `https://www.dndbeyond.com/sources/basic-rules/appendix-a-conditions#${id}`,
   keywords: [
     'blinded',

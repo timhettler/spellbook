@@ -50,7 +50,7 @@ const Select = ({
         value={value}
         onChange={handleChange(onChange, type)}
       >
-        {displayOptions.map(o => {
+        {displayOptions.map((o) => {
           const oLabel = typeof o === 'string' ? o : o.label;
           const oValue = typeof o === 'string' ? o : o.value;
 

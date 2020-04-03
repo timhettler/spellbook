@@ -7,13 +7,13 @@ import { selectSchoolFilter } from './selectors';
 import Check from 'components/Check';
 import { ICONS } from 'constants/icons';
 
-const SchoolFilter = props => {
-  const selected = useSelector(state =>
+const SchoolFilter = (props) => {
+  const selected = useSelector((state) =>
     selectSchoolFilter(props.school)(state)
   );
   const dispatch = useDispatch();
   const handleChange = useCallback(
-    value => dispatch(toggleFilter({ type: 'school', value: value }, true)),
+    (value) => dispatch(toggleFilter({ type: 'school', value: value }, true)),
     [dispatch]
   );
 

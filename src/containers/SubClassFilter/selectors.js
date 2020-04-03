@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect';
 
-const selectClassFiltersState = state => state.filters.classes;
-const selectSubclassesState = state => state.subClasses;
+const selectClassFiltersState = (state) => state.filters.classes;
+const selectSubclassesState = (state) => state.subClasses;
 
 function getSubClassLabels(selectedClass) {
   let subclass = '';

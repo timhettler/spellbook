@@ -1,5 +1,5 @@
 export const MONSTERS = {
-  url: id => `https://www.dndbeyond.com/monsters/${id}`,
+  url: (id) => `https://www.dndbeyond.com/monsters/${id}`,
   keywords: [
     'skeleton',
     'zombie',

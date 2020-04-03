@@ -1,5 +1,5 @@
 export const PLANES = {
-  url: id =>
+  url: (id) =>
     `https://www.dndbeyond.com/sources/dmg/creating-a-multiverse#${id}`,
   keywords: [
     {

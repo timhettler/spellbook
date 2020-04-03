@@ -1,9 +1,9 @@
 import { createSelector } from 'reselect';
 
-const selectClassesState = state => state.classes;
-const selectSchoolsState = state => state.schools;
+const selectClassesState = (state) => state.classes;
+const selectSchoolsState = (state) => state.schools;
 
-export const selectSortedFilter = type =>
+export const selectSortedFilter = (type) =>
   createSelector(
     [selectClassesState, selectSchoolsState],
     (classes, schools) => {

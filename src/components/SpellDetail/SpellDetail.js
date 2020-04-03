@@ -13,6 +13,7 @@ import {
   SUBCLASSES,
 } from 'data';
 
+import setCanScroll from 'utilities/setCanScroll';
 import getSpellLevel from 'utilities/getSpellLevel';
 import getHyperlinkedString from 'utilities/getHyperlinkedString';
 import PropIcon from 'components/PropIcon';
@@ -31,10 +32,10 @@ const parentClass = {
 function getAvailableClasses(classes, subclasses) {
   let availableClasses = [].concat(classes);
 
-  SUBCLASSES.forEach(subclass => {
+  SUBCLASSES.forEach((subclass) => {
     if (subclasses[subclass]) {
       availableClasses = availableClasses.concat(
-        subclasses[subclass].map(type => `${parentClass[subclass]}: ${type}`)
+        subclasses[subclass].map((type) => `${parentClass[subclass]}: ${type}`)
       );
     }
   });
@@ -46,7 +47,7 @@ function _renderSpellComponents(components, material) {
   return (
     <Fragment>
       <span className="spell-components">
-        {components.map(c => {
+        {components.map((c) => {
           let desc = '';
 
           switch (c.toLowerCase()) {
@@ -130,6 +131,7 @@ class Spell extends Component<Props, State> {
     canScroll: null,
   };
   description: ?HTMLElement;
+  setCanScroll: setCanScroll;
 
   componentDidMount() {
     this.setCanScroll(this.description.current);
@@ -240,7 +242,7 @@ class Spell extends Component<Props, State> {
             </div>
           </section>
           <section
-            ref={description => (this.description = description)}
+            ref={(description) => (this.description = description)}
             className="spell-section spell-section--content spell-section--with-padding spell-section--scroll"
             role="group"
             aria-labelledby="description"
