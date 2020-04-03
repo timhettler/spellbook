@@ -3,8 +3,8 @@
 export const SPELLS = [
   {
     name: "Abi-Dalzim's Horrid Wilting",
-    desc:
-      "<p>You draw the moisture from every creature in a 30-foot cube centered on a point you choose within range. Each creature in that area must make a Constitution saving throw. Constructs and undead aren't affected, and plants and water elementals make this saving throw with disadvantage. A creature takes 12d8 necrotic damage on a failed save, or half as much damage on a successful one.</p><p>Nonmagical plants in the area that aren't creatures, such as trees or shrubs, with and die instantly.</p>",
+    desc: `You draw the moisture from every creature in a 30-foot cube centered on a point you choose within range. Each creature in that area must make a Constitution saving throw. Constructs and undead aren't affected, and plants and water elementals make this saving throw with disadvantage. A creature takes 12d8 necrotic damage on a failed save, or half as much damage on a successful one.
+      Nonmagical plants in the area that aren't creatures, such as trees or shrubs, with and die instantly.`,
     page: 'xge 150',
     range: '150 feet',
     components: ['V', 'S', 'M'],
@@ -20,10 +20,8 @@ export const SPELLS = [
   },
   {
     name: 'Absorb Elements',
-    desc:
-      '<p>The spell captures some of the incoming energy, lessening its effect on you and storing it for your next melee attack. You have resistance to the triggering damage type until the start of your next turn. Also, the first time you hit with a melee attack on your next turn, the target takes an extra 1d6 damage of the triggering type, and the spell ends.</p>',
-    higher_level:
-      '<p>When you cast this spell using a spell slot of 2nd level or higher, the extra damage increases by 1d6 for each slot level above 1st.<p>',
+    desc: `The spell captures some of the incoming energy, lessening its effect on you and storing it for your next melee attack. You have resistance to the triggering damage type until the start of your next turn. Also, the first time you hit with a melee attack on your next turn, the target takes an extra 1d6 damage of the triggering type, and the spell ends.`,
+    higher_level: `When you cast this spell using a spell slot of 2nd level or higher, the extra damage increases by 1d6 for each slot level above 1st.`,
     page: 'xge 150',
     range: 'Self',
     components: ['S'],
@@ -39,10 +37,8 @@ export const SPELLS = [
   },
   {
     name: 'Acid Arrow',
-    desc:
-      '<p>A shimmering green arrow streaks toward a target within range and bursts in a spray of acid. Make a ranged spell attack against the target. On a hit, the target takes 4d4 acid damage immediately and 2d4 acid damage at the end of its next turn. On a miss, the arrow splashes the target with acid for half as much of the initial damage and no damage at the end of its next turn.</p>',
-    higher_level:
-      '<p>When you cast this spell using a spell slot of 3rd level or higher, the damage (both initial and later) increases by 1d4 for each slot level above 2nd.</p>',
+    desc: `A shimmering green arrow streaks toward a target within range and bursts in a spray of acid. Make a ranged spell attack against the target. On a hit, the target takes 4d4 acid damage immediately and 2d4 acid damage at the end of its next turn. On a miss, the arrow splashes the target with acid for half as much of the initial damage and no damage at the end of its next turn.`,
+    higher_level: `When you cast this spell using a spell slot of 3rd level or higher, the damage (both initial and later) increases by 1d4 for each slot level above 2nd.`,
     page: 'basic rules',
     range: '90 feet',
     components: ['V', 'S', 'M'],
@@ -58,8 +54,8 @@ export const SPELLS = [
   },
   {
     name: 'Acid Splash',
-    desc:
-      "<p>You hurl a bubble of acid. Choose one or two creatures you can see within range. If you choose two, they must be within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d6 acid damage.</p><p>This spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).</p>",
+    desc: `You hurl a bubble of acid. Choose one or two creatures you can see within range. If you choose two, they must be within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d6 acid damage.
+      This spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).`,
     page: 'phb 211',
     range: '60 feet',
     components: ['V', 'S'],
@@ -74,10 +70,8 @@ export const SPELLS = [
   },
   {
     name: "Aganazzar's Scorcher",
-    desc:
-      '<p>A line of roaring flame 30 feet long and 5 feet wide emanates from you in a direction you choose. Each creature in the line must make a Dexterity saving throw. A creature takes 3d8 fire damage on a failed save, or half as much damage on a successful one.</p>',
-    higher_level:
-      '<p>When you cast this spell using a spell slot of 3nd level or higher, the damage increases by 1d8 for each slot level above 2st.</p>',
+    desc: `A line of roaring flame 30 feet long and 5 feet wide emanates from you in a direction you choose. Each creature in the line must make a Dexterity saving throw. A creature takes 3d8 fire damage on a failed save, or half as much damage on a successful one.`,
+    higher_level: `When you cast this spell using a spell slot of 3nd level or higher, the damage increases by 1d8 for each slot level above 2st.`,
     page: 'xge 150',
     range: '30 feet',
     components: ['V', 'S', 'M'],
@@ -93,10 +87,8 @@ export const SPELLS = [
   },
   {
     name: 'Aid',
-    desc:
-      "<p>Your spell bolsters your allies with toughness and resolve. Choose up to three creatures within range. Each target's hit point maximum and current hit points increase by 5 for the duration.</p>",
-    higher_level:
-      "<p>When you cast this spell using a spell slot of 3rd level or higher, a target's hit points increase by an additional 5 for each slot level above 2nd.</p>",
+    desc: `Your spell bolsters your allies with toughness and resolve. Choose up to three creatures within range. Each target's hit point maximum and current hit points increase by 5 for the duration.`,
+    higher_level: `When you cast this spell using a spell slot of 3rd level or higher, a target's hit points increase by an additional 5 for each slot level above 2nd.`,
     page: 'phb 211',
     range: '30 feet',
     components: ['V', 'S', 'M'],
@@ -111,8 +103,9 @@ export const SPELLS = [
   },
   {
     name: 'Alarm',
-    desc:
-      "<p>You set an alarm against unwanted intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot cube. Until the spell ends, an alarm alerts you whenever a Tiny or larger creature touches or enters the warded area. When you cast the spell, you can designate creatures that won't set off the alarm. You also choose whether the alarm is mental or audible.</p><p>A mental alarm alerts you with a ping in your mind if you are within 1 mile of the warded area. This ping awakens you if you are sleeping.</p><p>An audible alarm produces the sound of a hand bell for 10 seconds within 60 feet.</p>",
+    desc: `You set an alarm against unwanted intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot cube. Until the spell ends, an alarm alerts you whenever a Tiny or larger creature touches or enters the warded area. When you cast the spell, you can designate creatures that won't set off the alarm. You also choose whether the alarm is mental or audible.
+      A mental alarm alerts you with a ping in your mind if you are within 1 mile of the warded area. This ping awakens you if you are sleeping.
+      An audible alarm produces the sound of a hand bell for 10 seconds within 60 feet.`,
     page: 'phb 211',
     range: '30 feet',
     components: ['V', 'S', 'M'],

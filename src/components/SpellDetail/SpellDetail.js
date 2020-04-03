@@ -1,6 +1,7 @@
 // @flow
 
 import React, { Fragment, Component } from 'react';
+import ReactMarkdown from 'react-markdown/with-html';
 
 import {
   ARCHETYPES,
@@ -131,7 +132,11 @@ class Spell extends Component<Props, State> {
     canScroll: null,
   };
   description: ?HTMLElement;
-  setCanScroll: setCanScroll;
+
+  constructor(props) {
+    super(props);
+    this.setCanScroll = setCanScroll.bind(this);
+  }
 
   componentDidMount() {
     this.setCanScroll(this.description.current);
@@ -252,19 +257,21 @@ class Spell extends Component<Props, State> {
             <h2 className="spell__subheading" id="description">
               Description
             </h2>
-            <div
-              className="spell__description content-area"
-              dangerouslySetInnerHTML={{ __html: getHyperlinkedString(desc) }}
-            />
+            <div className="spell__description content-area">
+              <ReactMarkdown
+                source={getHyperlinkedString(desc)}
+                escapeHtml={false}
+              />
+            </div>
             {higher_level && (
               <div className="spell__description">
                 <h3 className="spell__minor-heading">At Higher Levels</h3>
-                <div
-                  className="content-area"
-                  dangerouslySetInnerHTML={{
-                    __html: getHyperlinkedString(higher_level),
-                  }}
-                />
+                <div className="content-area">
+                  <ReactMarkdown
+                    source={getHyperlinkedString(higher_level)}
+                    escapeHtml={false}
+                  />
+                </div>
               </div>
             )}
             <div className="spell__page spell__minor-info content-area">
