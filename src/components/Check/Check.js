@@ -13,7 +13,7 @@ const handleChange = (callback: Function, type: string): Function => {
   };
 };
 
-type InputProps = {
+export type InputProps = {
   checked: boolean,
   type: string,
   onChange: Function,

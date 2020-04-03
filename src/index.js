@@ -28,7 +28,7 @@ document.body.addEventListener(
     var p = event.target;
 
     while (p != null) {
-      if (p && p.getAttribute && p.getAttribute('data-can-scroll')) {
+      if (p?.getAttribute('data-can-scroll')) {
         isTouchMoveAllowed = p.getAttribute('data-can-scroll');
         break;
       }

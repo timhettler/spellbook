@@ -58,6 +58,8 @@ export const MONSTERS = {
       id: 'Dretch',
     },
     'lich',
+    'minotaur',
+    'goristro',
   ],
 };
 
