@@ -46,11 +46,13 @@ body {
     }
   }
 
-  i {
+  i,
+  em {
     font-style: italic;
   }
 
-  b {
+  b,
+  strong {
     font-weight: bold;
   }
 

@@ -301,7 +301,12 @@ class Spell extends Component<Props, State> {
                     Material {cost && <PropIcon type="cost" />}
                   </h2>
                   <div className="spell__minor-info content-area">
-                    <i>{material}</i>
+                    <div className="content-area">
+                      <ReactMarkdown
+                        source={getHyperlinkedString(material)}
+                        escapeHtml={false}
+                      />
+                    </div>
                   </div>
                 </Fragment>
               )}
