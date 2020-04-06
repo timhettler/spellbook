@@ -132,15 +132,15 @@ class Spell extends Component<Props, State> {
     canScroll: null,
   };
   description: ?HTMLElement;
+  setCanScroll: (arg0: ?HTMLElement, arg1: ?HTMLElement) => void;
 
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
     this.setCanScroll = setCanScroll.bind(this);
   }
 
   componentDidMount() {
-    this.setCanScroll(this.description.current);
-    //this.container.current.focus({ preventScroll: true });
+    this.setCanScroll(this.description);
   }
 
   getSnapshotBeforeUpdate(prevProps: Props, prevState: State) {
@@ -156,8 +156,7 @@ class Spell extends Component<Props, State> {
       return;
     }
 
-    this.setCanScroll(this.description.current);
-    //this.container.current.focus({ preventScroll: true });
+    this.setCanScroll(this.description);
   }
 
   render() {

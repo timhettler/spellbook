@@ -39,12 +39,13 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "firebase deploy",
-    "flow": "flow"
+    "flow": "flow",
+    "format:js": "eslint --ext=js,jsx src",
+    "format:css": "stylelint src"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json}": [
-      "eslint --fix",
-      "prettier --config .prettierrc --write"
+      "eslint --fix"
     ],
     "src/**/*.{scss}": [
       "stylelint --config=.stylelintrc --fix",
