@@ -156,6 +156,7 @@ class Spell extends Component<Props, State> {
       return;
     }
 
+    this.description.scrollTop = 0;
     this.setCanScroll(this.description);
   }
 
