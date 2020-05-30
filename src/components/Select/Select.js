@@ -11,7 +11,7 @@ import './Select.scss';
 
 const handleChange = (callback: Function, type: string): Function => {
   return (e: SyntheticInputEvent<HTMLSelectElement>): void => {
-    callback(e.target.checked, type);
+    callback(e.target.value, type);
   };
 };
 
