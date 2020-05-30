@@ -61,10 +61,19 @@ const Controls = ({ sorting, showSubClassFilter }: Props) => (
       </div>
     )}
     <div className="control-section">
+      <div className="control-item control-item--input">
+        <Filter
+          type="castingTimes"
+          label="Casting Time Filter"
+          allLabel="All Casting Times"
+        />
+      </div>
+    </div>
+    <div className="control-section">
       <div className="control-item">
         <details className="control-toggle">
           <summary className="control-toggle__heading">
-            Filters by school
+            Filter by school
           </summary>
           <div className="control-toggle__content">
             {SCHOOLS.map((school) => (

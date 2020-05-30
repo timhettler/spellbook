@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import {
   loadSpells,
+  loadCastingTimes,
   loadClasses,
   loadSchools,
   addSubclass,
@@ -28,6 +29,7 @@ const ConnectedApp = () => {
   // Load in data sources
   useEffect(() => {
     dispatch(loadSpells(data.SPELLS));
+    dispatch(loadCastingTimes(data.CASTING_TIMES));
     dispatch(loadClasses(data.CLASSES));
     dispatch(loadSchools(data.SCHOOLS));
 

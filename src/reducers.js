@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import {
   LOAD_SPELLS,
+  LOAD_CASTING_TIMES,
   LOAD_CLASSES,
   LOAD_SCHOOLS,
   ADD_SUBCLASS,
@@ -103,6 +104,15 @@ export function currentSpellId(state = '', action) {
   }
 }
 
+export function castingTimes(state = [], action) {
+  switch (action.type) {
+    case LOAD_CASTING_TIMES:
+      return action.castingTimes;
+    default:
+      return state;
+  }
+}
+
 export function classes(state = [], action) {
   switch (action.type) {
     case LOAD_CLASSES:
@@ -184,6 +194,7 @@ const spellbookApp = combineReducers({
   filters,
   sorting,
   spells,
+  castingTimes,
   currentSpellId,
   classes,
   subClasses,

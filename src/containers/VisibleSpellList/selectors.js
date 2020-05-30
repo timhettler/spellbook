@@ -93,6 +93,17 @@ export const selectFilteredSpells = createSelector(
         } else {
           // All other filters check against props in the spell object
           return (newSpells = newSpells.filter((spell) => {
+            if (prop === 'castingTimes') {
+              // Long matches casting times that cannot be used in combat (not reaction, bonus action, or action)
+              if (filtersCopy[prop] === 'Long') {
+                return spell['casting_time'].match(/^((?!action).)*$/gi);
+              }
+
+              return spell['casting_time'].includes(
+                filtersCopy[prop].toLowerCase()
+              );
+            }
+
             if (spell[prop] === undefined) {
               return false;
             }

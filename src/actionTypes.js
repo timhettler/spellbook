@@ -1,4 +1,5 @@
 export const LOAD_SPELLS = 'LOAD_SPELLS';
+export const LOAD_CASTING_TIMES = 'LOAD_CASTING_TIMES';
 export const LOAD_CLASSES = 'LOAD_CLASSES';
 export const LOAD_SCHOOLS = 'LOAD_SCHOOLS';
 export const ADD_SUBCLASS = 'ADD_SUBCLASS';

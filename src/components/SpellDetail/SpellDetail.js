@@ -296,7 +296,7 @@ class Spell extends Component<Props, State> {
           {(material || casting_time_modifier) && (
             <footer className="spell-section spell-section--content spell-section--with-padding">
               {material && (
-                <Fragment>
+                <div className="spell-footer-section">
                   <h2 className="spell__subheading" id="material">
                     Material {cost && <PropIcon type="cost" />}
                   </h2>
@@ -308,17 +308,17 @@ class Spell extends Component<Props, State> {
                       />
                     </div>
                   </div>
-                </Fragment>
+                </div>
               )}
               {casting_time_modifier && (
-                <Fragment>
+                <div className="spell-footer-section">
                   <h2 className="spell__subheading" id="casting_condition">
                     Casting Condition
                   </h2>
                   <div className="spell__minor-info">
                     <i>{casting_time_modifier}</i>
                   </div>
-                </Fragment>
+                </div>
               )}
             </footer>
           )}

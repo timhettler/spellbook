@@ -192,3 +192,13 @@ $spell-subheading--border-width: 2px;
     }
   }
 }
+
+.spell-footer-section {
+  & + & {
+    margin-top: $spacing--full;
+
+    @include mediumAndLarge {
+      margin-top: $spacing--full-and-half;
+    }
+  }
+}

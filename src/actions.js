@@ -4,6 +4,10 @@ export function loadSpells(spells) {
   return { type: types.LOAD_SPELLS, spells };
 }
 
+export function loadCastingTimes(castingTimes) {
+  return { type: types.LOAD_CASTING_TIMES, castingTimes };
+}
+
 export function loadClasses(classes) {
   return { type: types.LOAD_CLASSES, classes };
 }

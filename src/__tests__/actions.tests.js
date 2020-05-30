@@ -1,5 +1,5 @@
-import * as actions from '__tests__/actions';
-import * as types from '__tests__/actionTypes';
+import * as actions from 'actions';
+import * as types from 'actionTypes';
 
 describe('actions', () => {
   it('should create an action to load spells', () => {
@@ -9,6 +9,15 @@ describe('actions', () => {
       spells,
     };
     expect(actions.loadSpells(spells)).toEqual(expectedAction);
+  });
+
+  it('should create an action to load casting times', () => {
+    const casting_times = { foo: 'foo', bar: 'bar' };
+    const expectedAction = {
+      type: types.LOAD_CASTING_TIMES,
+      castingTimes: casting_times,
+    };
+    expect(actions.loadCastingTimes(casting_times)).toEqual(expectedAction);
   });
 
   it('should create an action to load classes', () => {

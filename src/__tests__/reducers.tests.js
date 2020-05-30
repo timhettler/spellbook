@@ -294,6 +294,21 @@ describe('currentSpellId reducer', () => {
   });
 });
 
+describe('casting times reducer', () => {
+  it('should return the initial state', () => {
+    expect(reducers.castingTimes(undefined, {})).toEqual([]);
+  });
+
+  it('should handle LOAD_CASTING_TIMES', () => {
+    expect(
+      reducers.castingTimes('', {
+        type: types.LOAD_CASTING_TIMES,
+        castingTimes: ['foo'],
+      })
+    ).toEqual(['foo']);
+  });
+});
+
 describe('classes reducer', () => {
   it('should return the initial state', () => {
     expect(reducers.classes(undefined, {})).toEqual([]);
