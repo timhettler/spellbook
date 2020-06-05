@@ -8,27 +8,27 @@ function getSubClassLabels(selectedClass) {
 
   switch (selectedClass) {
     case 'Ranger':
-      subclass = 'Archetypes';
+      subclass = 'Archetype';
       break;
     case 'Druid':
-      subclass = 'Circles';
+      subclass = 'Circle';
       break;
     case 'Cleric':
-      subclass = 'Domains';
+      subclass = 'Domain';
       break;
     case 'Paladin':
-      subclass = 'Oaths';
+      subclass = 'Oath';
       break;
     case 'Warlock':
-      subclass = 'Patrons';
+      subclass = 'Patron';
       break;
     default:
       break;
   }
 
   return {
-    label: `Select ${subclass}`,
-    allLabel: `All ${subclass}`,
+    label: `Add ${subclass} Spells`,
+    allLabel: `No ${subclass}`,
   };
 }
 
