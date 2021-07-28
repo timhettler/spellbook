@@ -1,6 +1,6 @@
 import { CONDITIONS } from 'constants/conditions';
 import { SENSES } from 'constants/senses';
-import { MONSTERS, MONSTER_GROUPS } from 'constants/monsters';
+import { MONSTERS, MONSTER_GROUPS, MONSTER_SPIRITS } from 'constants/monsters';
 import { PLANES } from 'constants/planes';
 
 function formatStringForUrl(string) {
@@ -42,7 +42,14 @@ function getHyperlinkedString(string) {
     };
   };
 
-  const keywordGroups = [CONDITIONS, SENSES, MONSTERS, MONSTER_GROUPS, PLANES];
+  const keywordGroups = [
+    CONDITIONS,
+    SENSES,
+    MONSTERS,
+    MONSTER_GROUPS,
+    MONSTER_SPIRITS,
+    PLANES,
+  ];
 
   keywordGroups.forEach((group) =>
     group.keywords.forEach(generateLinkedString(group.url))

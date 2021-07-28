@@ -220,7 +220,7 @@ class Spell extends Component {
             <div className="spell__description content-area">
               <ReactMarkdown
                 remarkPlugins={[gfm]}
-                source={desc}
+                source={getHyperlinkedString(desc)}
                 escapeHtml={false}
               />
             </div>
