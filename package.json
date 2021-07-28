@@ -31,7 +31,7 @@
     "react-test-renderer": "^16.13.1",
     "stylelint": "^13.13.1",
     "stylelint-config-recommended-scss": "^4.3.0",
-    "stylelint-scss": "^3.18.0"
+    "stylelint-scss": "^3.20.1"
   },
   "scripts": {
     "start": "react-scripts start",
