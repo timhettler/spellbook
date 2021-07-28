@@ -16,7 +16,7 @@ Nonmagical plants in the area that aren't creatures, such as trees or shrubs, wi
     casting_time: '1 action',
     level: 8,
     school: 'Necromancy',
-    classes: ['Sorcerer', 'Wizard'],
+
     saving_throw: 'Constitution',
   },
   {
@@ -34,7 +34,6 @@ Nonmagical plants in the area that aren't creatures, such as trees or shrubs, wi
       'you take acid, cold, fire, lightning, or thunder damage',
     level: 1,
     school: 'Abjuration',
-    classes: ['Druid', 'Ranger', 'Wizard'],
   },
   {
     name: 'Acid Arrow',
@@ -50,7 +49,7 @@ Nonmagical plants in the area that aren't creatures, such as trees or shrubs, wi
     casting_time: '1 action',
     level: 2,
     school: 'Evocation',
-    classes: ['Wizard'],
+
     circles: ['Swamp'],
   },
   {
@@ -66,7 +65,7 @@ Nonmagical plants in the area that aren't creatures, such as trees or shrubs, wi
     casting_time: '1 action',
     level: 0,
     school: 'Conjuration',
-    classes: ['Sorcerer', 'Wizard'],
+
     saving_throw: 'Dexterity',
   },
   {
@@ -83,7 +82,7 @@ Nonmagical plants in the area that aren't creatures, such as trees or shrubs, wi
     casting_time: '1 action',
     level: 2,
     school: 'Evocation',
-    classes: ['Sorcerer', 'Wizard'],
+
     saving_throw: 'Dexterity',
   },
   {
@@ -100,7 +99,6 @@ Nonmagical plants in the area that aren't creatures, such as trees or shrubs, wi
     casting_time: '1 action',
     level: 2,
     school: 'Abjuration',
-    classes: ['Cleric', 'Paladin'],
   },
   {
     name: 'Alarm',
@@ -119,7 +117,6 @@ An audible alarm produces the sound of a hand bell for 10 seconds within 60 feet
     casting_time: '1 minute',
     level: 1,
     school: 'Abjuration',
-    classes: ['Ranger', 'Wizard'],
   },
   {
     name: 'Alter Self',
@@ -145,7 +142,6 @@ You grow claws, fangs, spines, horns, or a different natural weapon of your choi
     casting_time: '1 action',
     level: 2,
     school: 'Transmutation',
-    classes: ['Sorcerer', 'Wizard'],
   },
   {
     name: 'Animal Friendship',
@@ -161,7 +157,7 @@ You grow claws, fangs, spines, horns, or a different natural weapon of your choi
     casting_time: '1 action',
     level: 1,
     school: 'Enchantment',
-    classes: ['Bard', 'Druid', 'Ranger'],
+
     domains: ['Nature'],
     saving_throw: 'Wisdom',
   },
@@ -181,7 +177,6 @@ When the messenger arrives, it delivers your message to the creature that you de
     casting_time: '1 action',
     level: 2,
     school: 'Enchantment',
-    classes: ['Bard', 'Druid', 'Ranger'],
   },
   {
     name: 'Animal Shapes',
@@ -199,7 +194,6 @@ The target's gear melds into the new form. The target can't activate, wield, or 
     casting_time: '1 action',
     level: 8,
     school: 'Transmutation',
-    classes: ['Druid'],
   },
   {
     name: 'Animate Dead',
@@ -219,7 +213,7 @@ The creature is under your control for 24 hours, after which it stops obeying an
     casting_time: '1 minute',
     level: 3,
     school: 'Necromancy',
-    classes: ['Cleric', 'Wizard'],
+
     domains: ['Death'],
     oaths: ['Oathbreaker'],
   },
@@ -252,7 +246,7 @@ If you command an object to attack, it can make a single melee attack against a 
     casting_time: '1 action',
     level: 5,
     school: 'Transmutation',
-    classes: ['Bard', 'Sorcerer', 'Wizard'],
+
     domains: ['Forge'],
   },
   {
@@ -271,7 +265,7 @@ If you move so that an affected creature is forced to pass through the barrier, 
     casting_time: '1 action',
     level: 5,
     school: 'Abjuration',
-    classes: ['Druid'],
+
     domains: ['Death', 'Grave'],
   },
   {
@@ -319,7 +313,6 @@ Spells and magical effects such as _dispel magic_ have no effect on the sphere. 
     casting_time: '1 action',
     level: 8,
     school: 'Abjuration',
-    classes: ['Cleric', 'Wizard'],
   },
   {
     name: 'Antipathy/Sympathy',
@@ -348,7 +341,6 @@ A creature that successfully saves against this effect is immune to it for 1 min
     casting_time: '1 hour',
     level: 8,
     school: 'Enchantment',
-    classes: ['Druid', 'Wizard'],
   },
   {
     name: 'Arcane Eye',
@@ -367,7 +359,7 @@ As an action, you can move the eye up to 30 feet in any direction. There is no l
     casting_time: '1 action',
     level: 4,
     school: 'Divination',
-    classes: ['Wizard'],
+
     domains: ['Arcana', 'Knowledge'],
   },
   {
@@ -386,7 +378,6 @@ Any creature or object entering the portal exits from the other portal as if the
     casting_time: '1 action',
     level: 6,
     school: 'Conjuration',
-    classes: ['Sorcerer', 'Warlock', 'Wizard'],
   },
   {
     name: 'Arcane Hand',
@@ -422,7 +413,6 @@ The hand interposes itself between you and a creature you choose until you give 
     casting_time: '1 action',
     level: 5,
     school: 'Evocation',
-    classes: ['Wizard'],
   },
   {
     name: 'Arcane Lock',
@@ -440,7 +430,6 @@ While affected by this spell, the object is more difficult to break or force ope
     casting_time: '1 action',
     level: 2,
     school: 'Abjuration',
-    classes: ['Wizard'],
   },
   {
     name: "Arcanist's Magic Aura",
@@ -465,7 +454,7 @@ You change the way the target appears to spells and magical effects that detect 
     casting_time: '1 action',
     level: 2,
     school: 'Illusion',
-    classes: ['Wizard'],
+
     domains: ['Arcana'],
   },
   {
@@ -482,7 +471,7 @@ You change the way the target appears to spells and magical effects that detect 
     casting_time: '1 action',
     level: 1,
     school: 'Abjuration',
-    classes: ['Warlock'],
+
     oaths: ['Conquest'],
   },
   {
@@ -498,7 +487,7 @@ You change the way the target appears to spells and magical effects that detect 
     casting_time: '1 action',
     level: 1,
     school: 'Conjuration',
-    classes: ['Warlock'],
+
     saving_throw: 'Strength',
   },
   {
@@ -526,7 +515,6 @@ If you are returned to your body prematurely, your companions remain in their as
     casting_time: '1 hour',
     level: 9,
     school: 'Necromancy',
-    classes: ['Cleric', 'Warlock', 'Wizard'],
   },
   {
     name: 'Augury',
@@ -552,7 +540,7 @@ If you cast the spell two or more times before completing your next long rest, t
     casting_time: '1 minute',
     level: 2,
     school: 'Divination',
-    classes: ['Cleric'],
+
     domains: ['Knowledge'],
   },
   {
@@ -567,7 +555,6 @@ If you cast the spell two or more times before completing your next long rest, t
     casting_time: '1 action',
     level: 4,
     school: 'Abjuration',
-    classes: ['Paladin'],
   },
   {
     name: 'Aura of Purity',
@@ -581,7 +568,6 @@ If you cast the spell two or more times before completing your next long rest, t
     casting_time: '1 action',
     level: 4,
     school: 'Abjuration',
-    classes: ['Paladin'],
   },
   {
     name: 'Aura of Vitality',
@@ -595,7 +581,6 @@ If you cast the spell two or more times before completing your next long rest, t
     casting_time: '1 action',
     level: 3,
     school: 'Evocation',
-    classes: ['Paladin'],
   },
   {
     name: 'Awaken',
@@ -613,7 +598,6 @@ The awakened beast or plant is charmed by you for 30 days or until you or your c
     casting_time: '8 hours',
     level: 5,
     school: 'Transmutation',
-    classes: ['Bard', 'Druid'],
   },
   {
     name: 'Bane',
@@ -629,7 +613,7 @@ The awakened beast or plant is charmed by you for 30 days or until you or your c
     casting_time: '1 action',
     level: 1,
     school: 'Enchantment',
-    classes: ['Bard', 'Cleric'],
+
     domains: ['Grave'],
     oaths: ['Vengeance'],
     saving_throw: 'Charisma',
@@ -648,7 +632,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 bonus action',
     level: 5,
     school: 'Abjuration',
-    classes: ['Paladin'],
+
     patrons: ['Hexblade'],
   },
   {
@@ -667,7 +651,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 4,
     school: 'Abjuration',
-    classes: ['Cleric', 'Paladin', 'Sorcerer', 'Warlock', 'Wizard'],
+
     archetypes: ['Horizon Walker', 'Monster Slayer'],
     oaths: ['Vengeance'],
     saving_throw: 'Charisma',
@@ -686,7 +670,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 2,
     school: 'Transmutation',
-    classes: ['Druid', 'Ranger'],
+
     domains: ['Nature'],
     circles: ['Forest'],
   },
@@ -703,7 +687,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 3,
     school: 'Abjuration',
-    classes: ['Cleric'],
+
     domains: ['Life'],
     oaths: ['Devotion'],
   },
@@ -721,7 +705,6 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 1,
     school: 'Divination',
-    classes: ['Druid', 'Ranger', 'Wizard'],
   },
   {
     name: 'Beast Sense',
@@ -736,7 +719,6 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 2,
     school: 'Divination',
-    classes: ['Druid', 'Ranger'],
   },
   {
     name: 'Bestow Curse',
@@ -753,7 +735,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 3,
     school: 'Necromancy',
-    classes: ['Bard', 'Cleric', 'Wizard'],
+
     oaths: ['Conquest', 'Oathbreaker'],
   },
   {
@@ -772,7 +754,6 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 5,
     school: 'Evocation',
-    classes: ['Wizard'],
   },
   {
     name: 'Black Tentacles',
@@ -788,7 +769,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 4,
     school: 'Conjuration',
-    classes: ['Wizard'],
+
     patrons: ['Great Old One'],
   },
   {
@@ -804,7 +785,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 6,
     school: 'Evocation',
-    classes: ['Cleric'],
+
     saving_throw: 'Dexterity',
   },
   {
@@ -820,7 +801,6 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 0,
     school: 'Abjuration',
-    classes: ['Bard', 'Sorcerer', 'Warlock', 'Wizard'],
   },
   {
     name: 'Bless',
@@ -838,7 +818,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 1,
     school: 'Enchantment',
-    classes: ['Cleric', 'Paladin'],
+
     domains: ['Life'],
   },
   {
@@ -856,7 +836,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 4,
     school: 'Necromancy',
-    classes: ['Druid', 'Sorcerer', 'Warlock', 'Wizard'],
+
     circles: ['Desert'],
     domains: ['Death', 'Grave'],
     oaths: ['Oathbreaker'],
@@ -875,7 +855,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 bonus action',
     level: 3,
     school: 'Evocation',
-    classes: ['Paladin'],
+
     saving_throw: 'Constitution',
   },
   {
@@ -893,7 +873,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 2,
     school: 'Necromancy',
-    classes: ['Bard', 'Cleric', 'Sorcerer', 'Warlock', 'Wizard'],
+
     domains: ['Death'],
     patrons: ['Fiend'],
     saving_throw: 'Constitution',
@@ -911,7 +891,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 3,
     school: 'Transmutation',
-    classes: ['Sorcerer', 'Wizard'],
+
     domains: ['Trickery'],
     patrons: ['Archfey', 'Hexblade'],
   },
@@ -928,7 +908,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 2,
     school: 'Illusion',
-    classes: ['Druid', 'Sorcerer', 'Wizard'],
+
     circles: ['Desert'],
     patrons: ['Hexblade'],
   },
@@ -947,7 +927,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 6,
     school: 'Transmutation',
-    classes: ['Druid'],
+
     saving_throw: 'Dexterity',
   },
   {
@@ -964,7 +944,6 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 0,
     school: 'Evocation',
-    classes: ['Sorcerer', 'Warlock', 'Wizard'],
   },
   {
     name: 'Branding Smite',
@@ -981,7 +960,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 bonus action',
     level: 2,
     school: 'Evocation',
-    classes: ['Paladin'],
+
     patrons: ['Hexblade'],
   },
   {
@@ -999,7 +978,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 1,
     school: 'Evocation',
-    classes: ['Sorcerer', 'Wizard'],
+
     domains: ['Light'],
     patrons: ['Fiend'],
     saving_throw: 'Dexterity',
@@ -1019,7 +998,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 3,
     school: 'Conjuration',
-    classes: ['Druid'],
+
     domains: ['Tempest'],
     circles: ['Forest'],
     saving_throw: 'Dexterity',
@@ -1037,7 +1016,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 2,
     school: 'Enchantment',
-    classes: ['Bard', 'Cleric'],
+
     oaths: ['Redemption'],
     patrons: ['Archfey'],
     saving_throw: 'Charisma',
@@ -1057,7 +1036,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 1,
     school: 'Transmutation',
-    classes: ['Sorcerer', 'Wizard'],
+
     saving_throw: 'Dexterity',
   },
   {
@@ -1076,7 +1055,6 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 3,
     school: 'Enchantment',
-    classes: ['Bard', 'Sorcerer', 'Wizard'],
   },
   {
     name: 'Cause Fear',
@@ -1093,7 +1071,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 1,
     school: 'Necromancy',
-    classes: ['Warclock', 'Wizard'],
+
     saving_throw: 'Wisdom',
   },
   {
@@ -1110,7 +1088,6 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 hour',
     level: 1,
     school: 'Abjuration',
-    classes: ['Cleric', 'Paladin'],
   },
   {
     name: 'Chain Lightning',
@@ -1129,7 +1106,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 6,
     school: 'Evocation',
-    classes: ['Sorcerer', 'Wizard'],
+
     saving_throw: 'Dexterity',
   },
   {
@@ -1147,7 +1124,6 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 1,
     school: 'Evocation',
-    classes: ['Sorcerer'],
   },
   {
     name: 'Charm Monster',
@@ -1164,7 +1140,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 4,
     school: 'Enchantment',
-    classes: ['Bard', 'Druid', 'Sorcerer', 'Warlock', 'Wizard'],
+
     saving_throw: 'Wisdom',
   },
   {
@@ -1182,7 +1158,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 1,
     school: 'Enchantment',
-    classes: ['Bard', 'Druid', 'Sorcerer', 'Warlock', 'Wizard'],
+
     domains: ['Trickery'],
     saving_throw: 'Wisdom',
   },
@@ -1199,7 +1175,6 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 0,
     school: 'Necromancy',
-    classes: ['Sorcerer', 'Warlock', 'Wizard'],
   },
   {
     name: 'Chromatic Orb',
@@ -1218,7 +1193,6 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 1,
     school: 'Evocation',
-    classes: ['Sorcerer', 'Wizard'],
   },
   {
     name: 'Circle of Death',
@@ -1236,7 +1210,6 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 6,
     school: 'Necromancy',
-    classes: ['Sorcerer', 'Warlock', 'Wizard'],
   },
   {
     name: 'Circle of Power',
@@ -1251,7 +1224,6 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 5,
     school: 'Abjuration',
-    classes: ['Paladin'],
   },
   {
     name: 'Clairvoyance',
@@ -1268,7 +1240,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '10 minutes',
     level: 3,
     school: 'Divination',
-    classes: ['Bard', 'Cleric', 'Sorcerer', 'Wizard'],
+
     patrons: ['Great Old One'],
   },
   {
@@ -1286,7 +1258,6 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 hour',
     level: 8,
     school: 'Necromancy',
-    classes: ['Wizard'],
   },
   {
     name: 'Cloud of Daggers',
@@ -1304,7 +1275,6 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 2,
     school: 'Conjuration',
-    classes: ['Bard', 'Sorcerer', 'Warlock', 'Wizard'],
   },
   {
     name: 'Cloudkill',
@@ -1321,7 +1291,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 5,
     school: 'Conjuration',
-    classes: ['Sorcerer', 'Wizard'],
+
     circles: ['Underdark'],
     domains: ['Death'],
     oaths: ['Conquest'],
@@ -1342,7 +1312,6 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 1,
     school: 'Illusion',
-    classes: ['Sorcerer', 'Wizard'],
   },
   {
     name: 'Command',
@@ -1359,7 +1328,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 1,
     school: 'Enchantment',
-    classes: ['Cleric', 'Paladin', 'Warlock'],
+
     domains: ['Knowledge'],
     oaths: ['Conquest'],
     patrons: ['Fiend'],
@@ -1378,7 +1347,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 minute',
     level: 5,
     school: 'Divination',
-    classes: ['Cleric'],
+
     oaths: ['Devotion'],
   },
   {
@@ -1394,7 +1363,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 minute',
     level: 5,
     school: 'Divination',
-    classes: ['Druid', 'Ranger'],
+
     circles: ['Arctic', 'Forest'],
     oaths: ['Ancients'],
   },
@@ -1411,7 +1380,6 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 bonus action',
     level: 1,
     school: 'Enchantment',
-    classes: ['Paladin'],
   },
   {
     name: 'Comprehend Languages',
@@ -1427,7 +1395,6 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 1,
     school: 'Divination',
-    classes: ['Bard', 'Sorcerer', 'Warlock', 'Wizard'],
   },
   {
     name: 'Compulsion',
@@ -1442,7 +1409,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 4,
     school: 'Enchantment',
-    classes: ['Bard'],
+
     saving_throw: 'Wisdom',
   },
   {
@@ -1461,7 +1428,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 5,
     school: 'Evocation',
-    classes: ['Sorcerer', 'Wizard'],
+
     circles: ['Arctic'],
     patrons: ['Hexblade'],
     saving_throw: 'Constitution',
@@ -1482,7 +1449,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 4,
     school: 'Enchantment',
-    classes: ['Bard', 'Druid', 'Sorcerer', 'Wizard'],
+
     domains: ['Knowledge'],
     oaths: ['Oathbreaker'],
     saving_throw: 'Wisdom',
@@ -1502,7 +1469,6 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 3,
     school: 'Conjuration',
-    classes: ['Druid', 'Ranger'],
   },
   {
     name: 'Conjure Barrage',
@@ -1518,7 +1484,6 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 3,
     school: 'Conjuration',
-    classes: ['Ranger'],
   },
   {
     name: 'Conjure Celestial',
@@ -1535,7 +1500,6 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 minute',
     level: 7,
     school: 'Conjuration',
-    classes: ['Cleric'],
   },
   {
     name: 'Conjure Elemental',
@@ -1554,7 +1518,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 minute',
     level: 5,
     school: 'Conjuration',
-    classes: ['Druid', 'Wizard'],
+
     circles: ['Coast'],
   },
   {
@@ -1572,7 +1536,6 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 minute',
     level: 6,
     school: 'Conjuration',
-    classes: ['Druid', 'Warlock'],
   },
   {
     name: 'Conjure Minor Elementals',
@@ -1589,7 +1552,6 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 minute',
     level: 4,
     school: 'Conjuration',
-    classes: ['Druid', 'Wizard'],
   },
   {
     name: 'Conjure Volley',
@@ -1605,7 +1567,6 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 5,
     school: 'Conjuration',
-    classes: ['Ranger'],
   },
   {
     name: 'Conjure Woodland Beings',
@@ -1623,7 +1584,6 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 4,
     school: 'Conjuration',
-    classes: ['Druid', 'Ranger'],
   },
   {
     name: 'Contact Other Plane',
@@ -1638,7 +1598,6 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 minute',
     level: 5,
     school: 'Divination',
-    classes: ['Warlock', 'Wizard'],
   },
   {
     name: 'Contagion',
@@ -1653,7 +1612,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 5,
     school: 'Necromancy',
-    classes: ['Cleric', 'Druid'],
+
     oaths: ['Oathbreaker'],
     saving_throw: 'Constitution',
   },
@@ -1672,7 +1631,6 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '10 minutes',
     level: 6,
     school: 'Evocation',
-    classes: ['Wizard'],
   },
   {
     name: 'Continual Flame',
@@ -1688,7 +1646,6 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 2,
     school: 'Evocation',
-    classes: ['Cleric', 'Wizard'],
   },
   {
     name: 'Control Flames',
@@ -1703,7 +1660,6 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 0,
     school: 'Transmutation',
-    classes: ['Druid', 'Sorcerer', 'Wizard'],
   },
   {
     name: 'Control Water',
@@ -1719,7 +1675,7 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     casting_time: '1 action',
     level: 4,
     school: 'Transmutation',
-    classes: ['Cleric', 'Druid', 'Wizard'],
+
     circles: ['Coast'],
     domains: ['Tempest'],
     saving_throw: 'Strength',
@@ -1773,7 +1729,7 @@ Stage | Condition
     casting_time: '10 minutes',
     level: 8,
     school: 'Transmutation',
-    classes: ['Cleric', 'Druid', 'Wizard'],
+
     domains: ['Tempest'],
     circles: ['Coast'],
   },
@@ -1790,7 +1746,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 5,
     school: 'Transmutation',
-    classes: ['Druid', 'Sorcerer', 'Wizard'],
   },
   {
     name: 'Cordon of Arrows',
@@ -1808,7 +1763,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 2,
     school: 'Transmutation',
-    classes: ['Ranger'],
   },
   {
     name: 'Counterspell',
@@ -1827,7 +1781,7 @@ Stage | Condition
       'you see a creature within 60 feet of you casting a spell',
     level: 3,
     school: 'Abjuration',
-    classes: ['Sorcerer', 'Warlock', 'Wizard'],
+
     oaths: ['Redemption'],
   },
   {
@@ -1843,7 +1797,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 0,
     school: 'Conjuration',
-    classes: ['Druid', 'Sorcerer', 'Warlock', 'Wizard'],
   },
   {
     name: 'Create Food and Water',
@@ -1858,7 +1811,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 3,
     school: 'Conjuration',
-    classes: ['Cleric', 'Paladin'],
+
     circles: ['Desert'],
   },
   {
@@ -1876,7 +1829,6 @@ Stage | Condition
     casting_time: '1 hour',
     level: 6,
     school: 'Transmutation',
-    classes: ['Wizard'],
   },
   {
     name: 'Create or Destroy Water',
@@ -1895,7 +1847,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 1,
     school: 'Transmutation',
-    classes: ['Cleric', 'Druid'],
   },
   {
     name: 'Create Undead',
@@ -1914,7 +1865,6 @@ Stage | Condition
     casting_time: '1 minute',
     level: 6,
     school: 'Necromancy',
-    classes: ['Cleric', 'Warlock', 'Wizard'],
   },
   {
     name: 'Creation',
@@ -1933,7 +1883,7 @@ Stage | Condition
     casting_time: '1 minute',
     level: 5,
     school: 'Illusion',
-    classes: ['Sorcerer', 'Wizard'],
+
     domains: ['Forge'],
   },
   {
@@ -1949,7 +1899,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 2,
     school: 'Enchantment',
-    classes: ['Bard', 'Sorcerer', 'Warlock', 'Wizard'],
+
     oaths: ['Oathbreaker'],
   },
   {
@@ -1967,7 +1917,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 7,
     school: 'Evocation',
-    classes: ['Sorcerer', 'Warlock', 'Wizard'],
   },
   {
     name: "Crusader's Mantle",
@@ -1982,7 +1931,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 3,
     school: 'Evocation',
-    classes: ['Paladin'],
+
     domains: ['War'],
   },
   {
@@ -2000,7 +1949,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 1,
     school: 'Evocation',
-    classes: ['Bard', 'Cleric', 'Druid', 'Paladin', 'Ranger'],
+
     domains: ['Life'],
     patron: ['Celestial'],
   },
@@ -2018,7 +1967,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 0,
     school: 'Evocation',
-    classes: ['Bard', 'Sorcerer', 'Wizard'],
   },
   {
     name: 'Dancing Macabre',
@@ -2035,7 +1983,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 5,
     school: 'Necromancy',
-    classes: ['Warlock', 'Wizard'],
   },
   {
     name: 'Darkness',
@@ -2051,7 +1998,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 2,
     school: 'Evocation',
-    classes: ['Druid', 'Sorcerer', 'Warlock', 'Wizard'],
+
     circles: ['Swamp'],
     oaths: ['Oathbreaker'],
   },
@@ -2069,7 +2016,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 2,
     school: 'Transmutation',
-    classes: ['Druid', 'Ranger', 'Sorcerer', 'Wizard'],
   },
   {
     name: 'Daylight',
@@ -2084,7 +2030,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 3,
     school: 'Evocation',
-    classes: ['Cleric', 'Druid', 'Paladin', 'Ranger', 'Sorcerer'],
+
     circles: ['Grassland'],
     domains: ['Light'],
     patron: ['Celestial'],
@@ -2103,7 +2049,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 5,
     school: 'Evocation',
-    classes: ['Cleric', 'Wizard'],
+
     saving_throw: 'Constitution',
   },
   {
@@ -2119,7 +2065,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 4,
     school: 'Abjuration',
-    classes: ['Cleric', 'Paladin'],
+
     domains: ['Death', 'Grave', 'Life'],
   },
   {
@@ -2138,7 +2084,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 7,
     school: 'Evocation',
-    classes: ['Sorcerer', 'Wizard'],
   },
   {
     name: 'Demiplane',
@@ -2153,7 +2098,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 8,
     school: 'Conjuration',
-    classes: ['Warlock', 'Wizard'],
   },
   {
     name: 'Destructive Wave',
@@ -2168,7 +2112,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 5,
     school: 'Evocation',
-    classes: ['Paladin'],
+
     domains: ['Tempest'],
     saving_throw: 'Constitution',
   },
@@ -2185,7 +2129,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 1,
     school: 'Divination',
-    classes: ['Cleric', 'Paladin'],
   },
   {
     name: 'Detect Magic',
@@ -2200,15 +2143,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 1,
     school: 'Divination',
-    classes: [
-      'Bard',
-      'Cleric',
-      'Druid',
-      'Paladin',
-      'Ranger',
-      'Sorcerer',
-      'Wizard',
-    ],
     domains: ['Arcana'],
   },
   {
@@ -2225,7 +2159,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 1,
     school: 'Divination',
-    classes: ['Cleric', 'Druid', 'Paladin', 'Ranger'],
   },
   {
     name: 'Detect Thoughts',
@@ -2241,7 +2174,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 2,
     school: 'Divination',
-    classes: ['Bard', 'Sorcerer', 'Wizard'],
+
     patrons: ['Great Old One'],
   },
   {
@@ -2257,7 +2190,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 4,
     school: 'Conjuration',
-    classes: ['Bard', 'Sorcerer', 'Warlock', 'Wizard'],
+
     domains: ['Trickery'],
     oaths: ['Vengeance'],
   },
@@ -2274,7 +2207,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 1,
     school: 'Illusion',
-    classes: ['Bard', 'Sorcerer', 'Wizard'],
+
     archetypes: ['Gloom Stalker'],
     domains: ['Trickery'],
   },
@@ -2294,7 +2227,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 6,
     school: 'Transmutation',
-    classes: ['Sorcerer', 'Wizard'],
   },
   {
     name: 'Dispel Evil and Good',
@@ -2310,7 +2242,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 5,
     school: 'Abjuration',
-    classes: ['Cleric', 'Paladin'],
   },
   {
     name: 'Dispel Magic',
@@ -2327,15 +2258,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 3,
     school: 'Abjuration',
-    classes: [
-      'Bard',
-      'Cleric',
-      'Druid',
-      'Paladin',
-      'Sorcerer',
-      'Warlock',
-      'Wizard',
-    ],
     domains: ['Arcana', 'Trickery'],
     oaths: ['Devotion'],
   },
@@ -2354,7 +2276,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 1,
     school: 'Enchantment',
-    classes: ['Bard'],
+
     patrons: ['Great Old One'],
     saving_throw: 'Wisdom',
   },
@@ -2373,7 +2295,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 4,
     school: 'Divination',
-    classes: ['Cleric'],
+
     circles: ['Forest', 'Grassland'],
   },
   {
@@ -2389,7 +2311,7 @@ Stage | Condition
     casting_time: '1 bonus action',
     level: 1,
     school: 'Evocation',
-    classes: ['Paladin'],
+
     domains: ['War'],
   },
   {
@@ -2405,7 +2327,6 @@ Stage | Condition
     casting_time: '1 bonus action',
     level: 7,
     school: 'Evocation',
-    classes: ['Cleric'],
   },
   {
     name: 'Dominate Beast',
@@ -2422,7 +2343,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 4,
     school: 'Enchantment',
-    classes: ['Druid', 'Sorcerer'],
+
     domains: ['Nature'],
     oaths: ['Conquest'],
     patrons: ['Archfey', 'Great Old One'],
@@ -2443,7 +2364,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 8,
     school: 'Enchantment',
-    classes: ['Bard', 'Sorcerer', 'Warlock', 'Wizard'],
+
     saving_throw: 'Wisdom',
   },
   {
@@ -2461,7 +2382,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 5,
     school: 'Enchantment',
-    classes: ['Bard', 'Sorcerer', 'Wizard'],
+
     domains: ['Trickery'],
     patrons: ['Archfey', 'Great Old One'],
     oaths: ['Conquest', 'Oathbreaker'],
@@ -2483,7 +2404,7 @@ Stage | Condition
     casting_time: '1 bonus action',
     level: 2,
     school: 'Transmutation',
-    classes: ['Sorcerer', 'Wizard'],
+
     saving_throw: 'Dexterity',
   },
   {
@@ -2500,7 +2421,6 @@ Stage | Condition
     casting_time: '1 minute',
     level: 6,
     school: 'Conjuration',
-    classes: ['Wizard'],
   },
   {
     name: 'Dream',
@@ -2517,7 +2437,7 @@ Stage | Condition
     casting_time: '1 minute',
     level: 5,
     school: 'Illusion',
-    classes: ['Bard', 'Warlock', 'Wizard'],
+
     circles: ['Grassland'],
   },
   {
@@ -2535,7 +2455,6 @@ Stage | Condition
     casting_time: '10 minutes',
     level: 6,
     school: 'Abjuration',
-    classes: ['Druid'],
   },
   {
     name: 'Druidcraft',
@@ -2550,7 +2469,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 0,
     school: 'Transmutation',
-    classes: ['Druid'],
   },
   {
     name: 'Dust Devil',
@@ -2568,7 +2486,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 2,
     school: 'Conjuration',
-    classes: ['Druid', 'Sorcerer', 'Wizard'],
   },
   {
     name: 'Earth Tremor',
@@ -2585,7 +2502,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 1,
     school: 'Evocation',
-    classes: ['Bard', 'Druid', 'Sorcerer', 'Wizard'],
+
     saving_throw: 'Dexterity',
   },
   {
@@ -2601,7 +2518,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 2,
     school: 'Transmutation',
-    classes: ['Druid', 'Sorcerer', 'Warlock', 'Wizard'],
+
     saving_throw: 'Strength',
   },
   {
@@ -2618,7 +2535,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 8,
     school: 'Evocation',
-    classes: ['Cleric', 'Druid', 'Sorcerer'],
+
     saving_throw: ['Constitution', 'Dexterity'],
   },
   {
@@ -2634,7 +2551,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 0,
     school: 'Evocation',
-    classes: ['Warlock'],
   },
   {
     name: 'Elemental Bane',
@@ -2651,7 +2567,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 4,
     school: 'Transmutation',
-    classes: ['Druid', 'Warlock', 'Wizard'],
   },
   {
     name: 'Elemental Weapon',
@@ -2668,7 +2583,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 3,
     school: 'Transmutation',
-    classes: ['Paladin'],
+
     domains: ['Forge'],
     patrons: ['Hexblade'],
   },
@@ -2685,7 +2600,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 3,
     school: 'Enchantment',
-    classes: ['Bard', 'Sorcerer', 'Warlock', 'Wizard'],
+
     saving_throw: 'Intelligence',
   },
   {
@@ -2703,7 +2618,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 3,
     school: 'Necromancy',
-    classes: ['Sorcerer', 'Warlock', 'Wizard'],
+
     saving_throw: 'Dexterity',
   },
   {
@@ -2722,7 +2637,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 2,
     school: 'Transmutation',
-    classes: ['Bard', 'Cleric', 'Druid', 'Sorcerer'],
   },
   {
     name: 'Enlarge/Reduce',
@@ -2738,7 +2652,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 2,
     school: 'Transmutation',
-    classes: ['Sorcerer', 'Wizard'],
   },
   {
     name: 'Ensnaring Strike',
@@ -2755,7 +2668,7 @@ Stage | Condition
     casting_time: '1 bonus action',
     level: 1,
     school: 'Conjuration',
-    classes: ['Ranger'],
+
     oaths: ['Ancients'],
     saving_throw: 'Strength',
   },
@@ -2772,7 +2685,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 1,
     school: 'Conjuration',
-    classes: ['Druid'],
+
     saving_throw: 'Strength',
   },
   {
@@ -2788,7 +2701,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 2,
     school: 'Enchantment',
-    classes: ['Bard', 'Warlock'],
+
     saving_throw: 'Wisdom',
   },
   {
@@ -2807,7 +2720,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 3,
     school: 'Transmutation',
-    classes: ['Druid', 'Sorcerer', 'Wizard'],
   },
   {
     name: 'Etherealness',
@@ -2824,7 +2736,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 7,
     school: 'Transmutation',
-    classes: ['Bard', 'Cleric', 'Sorcerer', 'Warlock', 'Wizard'],
   },
   {
     name: "Evard's Black Tentacles",
@@ -2840,7 +2751,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 4,
     school: 'Conjuration',
-    classes: ['Wizard'],
+
     patrons: ['Great Old One'],
     saving_throw: 'Dexterity',
   },
@@ -2857,7 +2768,6 @@ Stage | Condition
     casting_time: '1 bonus action',
     level: 1,
     school: 'Transmutation',
-    classes: ['Sorcerer', 'Warlock', 'Wizard'],
   },
   {
     name: 'Eyebite',
@@ -2872,7 +2782,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 6,
     school: 'Necromancy',
-    classes: ['Bard', 'Sorcerer', 'Warlock', 'Wizard'],
+
     saving_throw: 'Wisdom',
   },
   {
@@ -2888,7 +2798,7 @@ Stage | Condition
     casting_time: '10 minutes',
     level: 4,
     school: 'Transmutation',
-    classes: ['Wizard'],
+
     domains: ['Forge'],
   },
   {
@@ -2904,7 +2814,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 1,
     school: 'Evocation',
-    classes: ['Bard', 'Druid'],
+
     domains: ['Light'],
     patrons: ['Archfey'],
     saving_throw: 'Dexterity',
@@ -2923,7 +2833,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 4,
     school: 'Conjuration',
-    classes: ['Wizard'],
   },
   {
     name: 'False Life',
@@ -2941,7 +2850,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 1,
     school: 'Necromancy',
-    classes: ['Sorcerer', 'Wizard'],
+
     domains: ['Death', 'Grave'],
   },
   {
@@ -2955,9 +2864,8 @@ Stage | Condition
     duration: '1 minute',
     concentration: true,
     casting_time: '1 bonus action',
-    level: 1,
+    level: 5,
     school: 'Conjuration',
-    classes: ['Sorcerer', 'Warlock', 'Wizard'],
   },
   {
     name: 'Fear',
@@ -2973,7 +2881,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 3,
     school: 'Illusion',
-    classes: ['Bard', 'Sorcerer', 'Warlock', 'Wizard'],
+
     archetypes: ['Gloom Stalker'],
     oaths: ['Conquest'],
   },
@@ -2992,7 +2900,6 @@ Stage | Condition
     casting_time_modifier: 'you or a creature within 60 feet of you falls',
     level: 1,
     school: 'Transmutation',
-    classes: ['Bard', 'Sorcerer', 'Wizard'],
   },
   {
     name: 'Feeblemind',
@@ -3008,7 +2915,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 8,
     school: 'Enchantment',
-    classes: ['Bard', 'Druid', 'Warlock', 'Wizard'],
   },
   {
     name: 'Feign Death',
@@ -3024,7 +2930,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 3,
     school: 'Necromancy',
-    classes: ['Bard', 'Cleric', 'Druid', 'Wizard'],
   },
   {
     name: 'Find Familiar',
@@ -3041,7 +2946,6 @@ Stage | Condition
     casting_time: '1 hour',
     level: 1,
     school: 'Conjuration',
-    classes: ['Wizard'],
   },
   {
     name: 'Find Greater Steed',
@@ -3056,7 +2960,6 @@ Stage | Condition
     casting_time: '10 minutes',
     level: 4,
     school: 'Conjuration',
-    classes: ['Paladin'],
   },
   {
     name: 'Find Steed',
@@ -3071,7 +2974,6 @@ Stage | Condition
     casting_time: '10 minutes',
     level: 2,
     school: 'Conjuration',
-    classes: ['Paladin'],
   },
   {
     name: 'Find the Path',
@@ -3088,7 +2990,6 @@ Stage | Condition
     casting_time: '1 minute',
     level: 6,
     school: 'Divination',
-    classes: ['Bard', 'Cleric', 'Druid'],
   },
   {
     name: 'Find Traps',
@@ -3103,7 +3004,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 2,
     school: 'Divination',
-    classes: ['Cleric', 'Druid', 'Ranger'],
   },
   {
     name: 'Finger of Death',
@@ -3118,7 +3018,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 7,
     school: 'Necromancy',
-    classes: ['Sorcerer', 'Warlock', 'Wizard'],
   },
   {
     name: 'Fire Bolt',
@@ -3133,7 +3032,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 0,
     school: 'Evocation',
-    classes: ['Sorcerer', 'Wizard'],
   },
   {
     name: 'Fire Shield',
@@ -3149,7 +3047,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 4,
     school: 'Evocation',
-    classes: ['Wizard'],
+
     patrons: ['Fiend'],
   },
   {
@@ -3165,7 +3063,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 7,
     school: 'Evocation',
-    classes: ['Cleric', 'Druid', 'Sorcerer'],
   },
   {
     name: 'Fireball',
@@ -3183,7 +3080,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 3,
     school: 'Evocation',
-    classes: ['Sorcerer', 'Warlock', 'Wizard'],
+
     domains: ['Light'],
     patrons: ['Fiend'],
     saving_throw: 'Dexterity',
@@ -3203,7 +3100,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 3,
     school: 'Transmutation',
-    classes: ['Druid', 'Ranger', 'Sorcerer', 'Wizard'],
   },
   {
     name: 'Flame Blade',
@@ -3221,7 +3117,6 @@ Stage | Condition
     casting_time: '1 bonus action',
     level: 2,
     school: 'Evocation',
-    classes: ['Druid'],
   },
   {
     name: 'Flame Strike',
@@ -3239,7 +3134,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 5,
     school: 'Evocation',
-    classes: ['Cleric'],
+
     domains: ['Light', 'War'],
     oaths: ['Devotion'],
     patrons: ['Celestial', 'Fiend'],
@@ -3262,7 +3157,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 2,
     school: 'Conjuration',
-    classes: ['Druid', 'Wizard'],
+
     domains: ['Light'],
     patron: ['Celestial'],
   },
@@ -3280,7 +3175,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 6,
     school: 'Transmutation',
-    classes: ['Warlock', 'Wizard'],
   },
   {
     name: 'Floating Disk',
@@ -3296,7 +3190,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 1,
     school: 'Conjuration',
-    classes: ['Wizard'],
   },
   {
     name: 'Flock of Familiars',
@@ -3313,7 +3206,6 @@ Stage | Condition
     casting_time: '1 minute',
     level: 2,
     school: 'Conjuration',
-    classes: ['Warlock', 'Wizard'],
   },
   {
     name: 'Fly',
@@ -3331,7 +3223,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 3,
     school: 'Transmutation',
-    classes: ['Sorcerer', 'Warlock', 'Wizard'],
   },
   {
     name: 'Fog Cloud',
@@ -3348,7 +3239,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 1,
     school: 'Conjuration',
-    classes: ['Druid', 'Ranger', 'Sorcerer', 'Wizard'],
+
     domains: ['Tempest'],
   },
   {
@@ -3366,7 +3257,6 @@ Stage | Condition
     casting_time: '10 minutes',
     level: 6,
     school: 'Abjuration',
-    classes: ['Cleric'],
   },
   {
     name: 'Forcecage',
@@ -3382,7 +3272,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 7,
     school: 'Evocation',
-    classes: ['Bard', 'Warlock', 'Wizard'],
   },
   {
     name: 'Foresight',
@@ -3398,7 +3287,6 @@ Stage | Condition
     casting_time: '1 minute',
     level: 9,
     school: 'Divination',
-    classes: ['Bard', 'Druid', 'Warlock', 'Wizard'],
   },
   {
     name: 'Freedom of Movement',
@@ -3414,7 +3302,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 4,
     school: 'Abjuration',
-    classes: ['Bard', 'Cleric', 'Druid', 'Ranger'],
+
     domains: ['War'],
     circles: ['Arctic', 'Coast', 'Forest', 'Grassland', 'Swamp'],
     oaths: ['Devotion'],
@@ -3435,7 +3323,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 6,
     school: 'Evocation',
-    classes: ['Wizard'],
   },
   {
     name: 'Friends',
@@ -3452,7 +3339,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 0,
     school: 'Enchantment',
-    classes: ['Bard', 'Sorcerer', 'Warlock', 'Wizard'],
   },
   {
     name: 'Frostbite',
@@ -3467,7 +3353,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 0,
     school: 'Evocation',
-    classes: ['Druid', 'Sorcerer', 'Warlock', 'Wizard'],
   },
   {
     name: "Galder's Speedy Courier",
@@ -3486,7 +3371,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 4,
     school: 'Conjuration',
-    classes: ['Warlock', 'Wizard'],
   },
   {
     name: "Galder's Tower",
@@ -3504,7 +3388,6 @@ Stage | Condition
     casting_time: '10 minutes',
     level: 3,
     school: 'Conjuration',
-    classes: ['Wizard'],
   },
   {
     name: 'Gaseous Form',
@@ -3520,7 +3403,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 3,
     school: 'Transmutation',
-    classes: ['Sorcerer', 'Warlock', 'Wizard'],
+
     circles: ['Underdark'],
   },
   {
@@ -3537,7 +3420,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 9,
     school: 'Conjuration',
-    classes: ['Cleric', 'Sorcerer', 'Wizard'],
   },
   {
     name: 'Geas',
@@ -3554,7 +3436,7 @@ Stage | Condition
     casting_time: '1 minute',
     level: 5,
     school: 'Enchantment',
-    classes: ['Bard', 'Cleric', 'Druid', 'Paladin', 'Wizard'],
+
     saving_throw: 'Wisdom',
   },
   {
@@ -3572,7 +3454,7 @@ Stage | Condition
     casting_time: '1 action',
     level: 2,
     school: 'Necromancy',
-    classes: ['Cleric', 'Wizard'],
+
     domains: ['Grave'],
   },
   {
@@ -3588,7 +3470,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 4,
     school: 'Transmutation',
-    classes: ['Druid'],
   },
   {
     name: 'Glibness',
@@ -3603,7 +3484,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 8,
     school: 'Transmutation',
-    classes: ['Bard', 'Warlock'],
   },
   {
     name: 'Globe of Invulnerability',
@@ -3621,7 +3501,6 @@ Stage | Condition
     casting_time: '1 action',
     level: 6,
     school: 'Abjuration',
-    classes: ['Sorcerer', 'Wizard'],
   },
   {
     name: 'Glyph of Warding',
@@ -3655,7 +3534,6 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
     casting_time: '1 hour',
     level: 3,
     school: 'Abjuration',
-    classes: ['Bard', 'Cleric', 'Wizard'],
   },
   {
     name: 'Goodberry',
@@ -3671,7 +3549,6 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
     casting_time: '1 action',
     level: 1,
     school: 'Transmutation',
-    classes: ['Druid', 'Ranger'],
   },
   {
     name: 'Grasping Vine',
@@ -3686,7 +3563,7 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
     casting_time: '1 bonus action',
     level: 4,
     school: 'Conjuration',
-    classes: ['Druid', 'Ranger'],
+
     domains: ['Nature'],
     saving_throw: 'Dexterity',
   },
@@ -3704,7 +3581,7 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
     casting_time: '1 action',
     level: 1,
     school: 'Conjuration',
-    classes: ['Wizard'],
+
     saving_throw: 'Dexterity',
   },
   {
@@ -3720,7 +3597,7 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
     casting_time: '1 action',
     level: 4,
     school: 'Illusion',
-    classes: ['Bard', 'Sorcerer', 'Wizard'],
+
     archetypes: ['Gloom Stalker'],
     circles: ['Underdark'],
     patrons: ['Archfey'],
@@ -3739,7 +3616,7 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
     casting_time: '1 action',
     level: 5,
     school: 'Abjuration',
-    classes: ['Bard', 'Cleric', 'Druid'],
+
     patron: ['Celestial'],
   },
   {
@@ -3756,7 +3633,6 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
     casting_time: '1 action',
     level: 0,
     school: 'Evocation',
-    classes: ['Sorcerer', 'Warlock', 'Wizard'],
   },
   {
     name: 'Guardian of Faith',
@@ -3771,7 +3647,7 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
     casting_time: '1 action',
     level: 4,
     school: 'Conjuration',
-    classes: ['Cleric'],
+
     domains: ['Life', 'Light'],
     oaths: ['Devotion'],
     patron: ['Celestial'],
@@ -3789,7 +3665,6 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
     casting_time: '1 bonus action',
     level: 4,
     school: 'Transmutation',
-    classes: ['Druid', 'Ranger'],
   },
   {
     name: 'Guards and Wards',
@@ -3806,7 +3681,6 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
     casting_time: '10 minutes',
     level: 6,
     school: 'Abjuration',
-    classes: ['Bard', 'Wizard'],
   },
   {
     name: 'Guidance',
@@ -3821,7 +3695,6 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
     casting_time: '1 action',
     level: 0,
     school: 'Divination',
-    classes: ['Cleric', 'Druid'],
   },
   {
     name: 'Guiding Bolt',
@@ -3838,7 +3711,7 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
     casting_time: '1 action',
     level: 1,
     school: 'Evocation',
-    classes: ['Cleric'],
+
     patron: ['Celestial'],
   },
   {
@@ -3854,7 +3727,6 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
     casting_time: '1 action',
     level: 0,
     school: 'Transmutation',
-    classes: ['Druid', 'Sorcerer', 'Wizard'],
   },
   {
     name: 'Gust of Wind',
@@ -3870,7 +3742,7 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
     casting_time: '1 action',
     level: 2,
     school: 'Evocation',
-    classes: ['Druid', 'Sorcerer', 'Wizard'],
+
     domains: ['Tempest'],
   },
   {
@@ -3888,7 +3760,6 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
     casting_time: '1 bonus action',
     level: 1,
     school: 'Conjuration',
-    classes: ['Ranger'],
   },
   {
     name: 'Hallow',
@@ -3905,7 +3776,7 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
     casting_time: '24 hours',
     level: 5,
     school: 'Evocation',
-    classes: ['Cleric'],
+
     patrons: ['Fiend'],
   },
   {
@@ -3922,7 +3793,7 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
     casting_time: '10 minutes',
     level: 4,
     school: 'Illusion',
-    classes: ['Bard', 'Druid', 'Warlock', 'Wizard'],
+
     circles: ['Desert'],
   },
   {
@@ -3938,7 +3809,7 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
     casting_time: '1 action',
     level: 6,
     school: 'Necromancy',
-    classes: ['Cleric'],
+
     saving_throw: 'Constitution',
   },
   {
@@ -3955,7 +3826,7 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
     casting_time: '1 action',
     level: 3,
     school: 'Transmutation',
-    classes: ['Sorcerer', 'Wizard'],
+
     archetypes: ['Horizon Walker'],
     circles: ['Grassland'],
     oaths: ['Vengeance'],
@@ -3975,7 +3846,6 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
     casting_time: '1 action',
     level: 6,
     school: 'Evocation',
-    classes: ['Cleric', 'Druid'],
   },
   {
     name: 'Healing Spirit',
@@ -3992,7 +3862,6 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
     casting_time: '1 action',
     level: 6,
     school: 'Conjuration',
-    classes: ['Druid', 'Ranger'],
   },
   {
     name: 'Healing Word',
@@ -4009,7 +3878,6 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
     casting_time: '1 bonus action',
     level: 1,
     school: 'Evocation',
-    classes: ['Bard', 'Cleric', 'Druid'],
   },
   {
     name: 'Heat Metal',
@@ -4027,7 +3895,7 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
     casting_time: '1 action',
     level: 2,
     school: 'Transmutation',
-    classes: ['Bard', 'Druid'],
+
     domains: ['Forge'],
   },
   {
@@ -4047,7 +3915,7 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
       'your damaged by a creature within 60 feet of you that you can see',
     level: 1,
     school: 'Evocation',
-    classes: ['Warlock'],
+
     oaths: ['Oathbreaker'],
   },
   {
@@ -4065,7 +3933,6 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
     casting_time: '10 minutes',
     level: 6,
     school: 'Conjuration',
-    classes: ['Cleric', 'Druid'],
   },
   {
     name: 'Heroism',
@@ -4080,7 +3947,6 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
     casting_time: '1 action',
     level: 1,
     school: 'Enchantment',
-    classes: ['Bard', 'Paladin'],
   },
   {
     name: 'Hex',
@@ -4098,7 +3964,6 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
     casting_time: '1 bonus action',
     level: 1,
     school: 'Enchantment',
-    classes: ['Warlock'],
   },
   {
     name: 'Hideous Laughter',
@@ -4114,7 +3979,7 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
     casting_time: '1 action',
     level: 1,
     school: 'Enchantment',
-    classes: ['Bard', 'Wizard'],
+
     patrons: ['Great Old One'],
     saving_throw: 'Wisdom',
   },
@@ -4134,7 +3999,7 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
     casting_time: '1 action',
     level: 5,
     school: 'Enchantment',
-    classes: ['Bard', 'Sorcerer', 'Warlock', 'Wizard'],
+
     archetypes: ['Monster Slayer'],
     domains: ['War'],
     oaths: ['Redemption', 'Vengeance'],
@@ -4156,7 +4021,7 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
     casting_time: '1 action',
     level: 2,
     school: 'Enchantment',
-    classes: ['Bard', 'Cleric', 'Druid', 'Sorcerer', 'Warlock', 'Wizard'],
+
     circles: ['Arctic'],
     oaths: ['Conquest', 'Redemption', 'Vengeance'],
     saving_throw: 'Wisdom',
@@ -4176,7 +4041,6 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
     casting_time: '1 action',
     level: 8,
     school: 'Abjuration',
-    classes: ['Cleric'],
   },
   {
     name: 'Holy Weapon',
@@ -4192,7 +4056,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 bonus action',
     level: 5,
     school: 'Evocation',
-    classes: ['Cleric', 'Paladin'],
+
     saving_throw: 'Constitution',
   },
   {
@@ -4209,7 +4073,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 3,
     school: 'Conjuration',
-    classes: ['Warlock'],
+
     saving_throw: 'Dexterity',
   },
   {
@@ -4227,7 +4091,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 bonus action',
     level: 1,
     school: 'Divination',
-    classes: ['Ranger'],
+
     oaths: ['Vengeance'],
   },
   {
@@ -4245,7 +4109,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 3,
     school: 'Illusion',
-    classes: ['Bard', 'Sorcerer', 'Warlock', 'Wizard'],
+
     oaths: ['Redemption'],
     saving_throw: 'Wisdom',
   },
@@ -4265,7 +4129,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 1,
     school: 'Conjuration',
-    classes: ['Druid', 'Sorcerer', 'Wizard'],
+
     saving_throw: 'Dexterity',
   },
   {
@@ -4284,7 +4148,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 4,
     school: 'Evocation',
-    classes: ['Druid', 'Sorcerer', 'Wizard'],
+
     domains: ['Tempest'],
     circles: ['Arctic'],
     oaths: ['Ancients'],
@@ -4303,7 +4167,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 minute',
     level: 1,
     school: 'Divination',
-    classes: ['Bard', 'Wizard'],
+
     domains: ['Forge', 'Knowledge'],
   },
   {
@@ -4319,7 +4183,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 8,
     school: 'Illusion',
-    classes: ['Wizard'],
+
     saving_throw: 'Wisdom',
   },
   {
@@ -4337,7 +4201,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 minute',
     level: 1,
     school: 'Illusion',
-    classes: ['Bard', 'Warlock', 'Wizard'],
   },
   {
     name: 'Immolation',
@@ -4352,7 +4215,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 5,
     school: 'Evocation',
-    classes: ['Sorcerer', 'Wizard'],
+
     saving_throw: 'Dexterity',
   },
   {
@@ -4370,7 +4233,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 minute',
     level: 9,
     school: 'Abjuration',
-    classes: ['Warlock', 'Wizard'],
+
     saving_throw: 'Wisdom',
   },
   {
@@ -4386,7 +4249,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 8,
     school: 'Conjuration',
-    classes: ['Sorcerer', 'Wizard'],
+
     saving_throw: 'Dexterity',
   },
   {
@@ -4405,7 +4268,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 minute',
     level: 5,
     school: 'Conjuration',
-    classes: ['Warlock', 'Wizard'],
   },
   {
     name: 'Infestation',
@@ -4420,7 +4282,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 0,
     school: 'Conjuration',
-    classes: ['Druid', 'Sorcerer', 'Warlock', 'Wizard'],
+
     saving_throw: 'Constitution',
   },
   {
@@ -4438,7 +4300,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 1,
     school: 'Necromancy',
-    classes: ['Cleric'],
+
     oaths: ['Oathbreaker'],
   },
   {
@@ -4458,7 +4320,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 5,
     school: 'Conjuration',
-    classes: ['Cleric', 'Druid', 'Sorcerer'],
+
     circles: ['Desert', 'Grassland', 'Swamp', 'Underdark'],
     domains: ['Nature', 'Tempest'],
   },
@@ -4476,7 +4338,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 minute',
     level: 6,
     school: 'Conjuration',
-    classes: ['Wizard'],
   },
   {
     name: 'Investiture of Flame',
@@ -4491,7 +4352,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 6,
     school: 'Transmutation',
-    classes: ['Druid', 'Sorcerer', 'Warlock', 'Wizard'],
+
     saving_throw: 'Dexterity',
   },
   {
@@ -4507,7 +4368,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 6,
     school: 'Transmutation',
-    classes: ['Druid', 'Sorcerer', 'Warlock', 'Wizard'],
+
     saving_throw: 'Constitution',
   },
   {
@@ -4523,7 +4384,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 6,
     school: 'Transmutation',
-    classes: ['Druid', 'Sorcerer', 'Warlock', 'Wizard'],
+
     saving_throw: 'Constitution',
   },
   {
@@ -4539,7 +4400,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 6,
     school: 'Transmutation',
-    classes: ['Druid', 'Sorcerer', 'Warlock', 'Wizard'],
+
     saving_throw: 'Constitution',
   },
   {
@@ -4558,7 +4419,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 2,
     school: 'Illusion',
-    classes: ['Bard', 'Sorcerer', 'Warlock', 'Wizard'],
+
     circles: ['Grassland'],
   },
   {
@@ -4575,7 +4436,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 9,
     school: 'Abjuration',
-    classes: ['Wizard'],
   },
   {
     name: 'Jump',
@@ -4591,7 +4451,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 1,
     school: 'Transmutation',
-    classes: ['Druid', 'Ranger', 'Sorcerer', 'Wizard'],
   },
   {
     name: 'Knock',
@@ -4606,7 +4465,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 2,
     school: 'Transmutation',
-    classes: ['Bard', 'Sorcerer', 'Wizard'],
   },
   {
     name: 'Legend Lore',
@@ -4623,7 +4481,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '10 minutes',
     level: 5,
     school: 'Divination',
-    classes: ['Bard', 'Cleric', 'Wizard'],
+
     domains: ['Knowledge'],
   },
   {
@@ -4641,7 +4499,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 4,
     school: 'Conjuration',
-    classes: ['Wizard'],
+
     domains: ['Arcana'],
   },
   {
@@ -4658,7 +4516,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 minute',
     level: 3,
     school: 'Evocation',
-    classes: ['Bard', 'Wizard'],
   },
   {
     name: 'Lesser Restoration',
@@ -4673,7 +4530,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 2,
     school: 'Abjuration',
-    classes: ['Bard', 'Cleric', 'Druid', 'Paladin', 'Ranger'],
+
     domains: ['Life'],
     oaths: ['Devotion'],
     patron: ['Celestial'],
@@ -4693,7 +4550,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 2,
     school: 'Transmutation',
-    classes: ['Sorcerer', 'Wizard'],
   },
   {
     name: 'Life Transference',
@@ -4710,7 +4566,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 3,
     school: 'Necromancy',
-    classes: ['Cleric', 'Wizard'],
   },
   {
     name: 'Light',
@@ -4726,7 +4581,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 0,
     school: 'Evocation',
-    classes: ['Bard', 'Cleric', 'Sorcerer', 'Wizard'],
   },
   {
     name: 'Lightning Arrow',
@@ -4743,7 +4597,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 bonus action',
     level: 3,
     school: 'Transmutation',
-    classes: ['Ranger'],
   },
   {
     name: 'Lightning Bolt',
@@ -4761,7 +4614,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 3,
     school: 'Evocation',
-    classes: ['Sorcerer', 'Wizard'],
+
     circles: ['Mountain'],
   },
   {
@@ -4777,7 +4630,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 0,
     school: 'Evocation',
-    classes: ['Sorcerer', 'Warlock', 'Wizard'],
   },
   {
     name: 'Locate Animals or Plants',
@@ -4793,7 +4645,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 2,
     school: 'Divination',
-    classes: ['Bard', 'Druid', 'Ranger'],
   },
   {
     name: 'Locate Creature',
@@ -4809,7 +4660,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 4,
     school: 'Divination',
-    classes: ['Bard', 'Cleric', 'Druid', 'Paladin', 'Ranger', 'Wizard'],
+
     circles: ['Swamp'],
   },
   {
@@ -4826,7 +4677,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 2,
     school: 'Divination',
-    classes: ['Bard', 'Cleric', 'Druid', 'Paladin', 'Ranger', 'Wizard'],
   },
   {
     name: 'Longstrider',
@@ -4844,7 +4694,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 1,
     school: 'Transmutation',
-    classes: ['Bard', 'Druid', 'Ranger', 'Wizard'],
   },
   {
     name: 'Maddening Darkness',
@@ -4860,7 +4709,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 8,
     school: 'Evocation',
-    classes: ['Warlock', 'Wizard'],
+
     saving_throw: 'Wisdom',
   },
   {
@@ -4877,7 +4726,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 5,
     school: 'Evocation',
-    classes: ['Druid'],
+
     saving_throw: 'Strength',
   },
   {
@@ -4894,7 +4743,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 1,
     school: 'Abjuration',
-    classes: ['Sorcerer', 'Wizard'],
   },
   {
     name: 'Mage Hand',
@@ -4909,7 +4757,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 0,
     school: 'Conjuration',
-    classes: ['Bard', 'Sorcerer', 'Warlock', 'Wizard'],
   },
   {
     name: 'Magic Circle',
@@ -4928,7 +4775,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 minute',
     level: 3,
     school: 'Abjuration',
-    classes: ['Cleric', 'Paladin', 'Warlock', 'Wizard'],
+
     archetypes: ['Monster Slayer'],
     domains: ['Arcana'],
     saving_throw: 'Charisma',
@@ -4948,7 +4795,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 minute',
     level: 6,
     school: 'Necromancy',
-    classes: ['Wizard'],
+
     saving_throw: 'Charisma',
   },
   {
@@ -4966,7 +4813,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 1,
     school: 'Evocation',
-    classes: ['Sorcerer', 'Wizard'],
+
     domains: ['Arcana'],
   },
   {
@@ -4984,7 +4831,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 minute',
     level: 2,
     school: 'Illusion',
-    classes: ['Bard', 'Wizard'],
   },
   {
     name: 'Magic Stone',
@@ -4999,7 +4845,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 bonus action',
     level: 0,
     school: 'Transmutation',
-    classes: ['Druid', 'Warlock'],
   },
   {
     name: 'Magic Weapon',
@@ -5016,7 +4861,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 bonus action',
     level: 2,
     school: 'Transmutation',
-    classes: ['Paladin', 'Wizard'],
+
     domains: ['Arcana', 'Forge', 'War'],
   },
   {
@@ -5034,7 +4879,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 minute',
     level: 7,
     school: 'Conjuration',
-    classes: ['Bard', 'Wizard'],
   },
   {
     name: 'Major Image',
@@ -5052,7 +4896,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 3,
     school: 'Illusion',
-    classes: ['Bard', 'Sorcerer', 'Warlock', 'Wizard'],
   },
   {
     name: 'Mass Cure Wounds',
@@ -5069,7 +4912,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 5,
     school: 'Conjuration',
-    classes: ['Bard', 'Cleric', 'Druid'],
+
     domains: ['Life'],
   },
   {
@@ -5085,7 +4928,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 9,
     school: 'Evocation',
-    classes: ['Cleric'],
   },
   {
     name: 'Mass Healing Word',
@@ -5102,7 +4944,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 bonus action',
     level: 3,
     school: 'Evocation',
-    classes: ['Cleric'],
   },
   {
     name: 'Mass Polymorph',
@@ -5118,7 +4959,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 9,
     school: 'Transmutation',
-    classes: ['Bard', 'Sorcerer', 'Wizard'],
+
     saving_throw: 'Wisdom',
   },
   {
@@ -5138,7 +4979,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 6,
     school: 'Enchantment',
-    classes: ['Bard', 'Sorcerer', 'Warlock', 'Wizard'],
+
     saving_throw: 'Wisdom',
   },
   {
@@ -5155,7 +4996,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 2,
     school: 'Transmutation',
-    classes: ['Sorcerer', 'Wizard'],
+
     saving_throw: 'Strength',
   },
   {
@@ -5171,7 +5012,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 8,
     school: 'Conjuration',
-    classes: ['Wizard'],
   },
   {
     name: 'Meld into Stone',
@@ -5186,7 +5026,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 3,
     school: 'Transmutation',
-    classes: ['Cleric', 'Druid'],
+
     circles: ['Mountain'],
   },
   {
@@ -5205,7 +5045,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 2,
     school: 'Evocation',
-    classes: ['Wizard'],
+
     circles: ['Swamp'],
   },
   {
@@ -5224,7 +5064,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 3,
     school: 'Transmutation',
-    classes: ['Sorcerer', 'Wizard'],
+
     saving_throw: 'Dexterity',
   },
   {
@@ -5241,7 +5081,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 minute',
     level: 0,
     school: 'Transmutation',
-    classes: ['Cleric', 'Bard', 'Druid', 'Sorcerer', 'Wizard'],
   },
   {
     name: 'Mental Prison',
@@ -5256,7 +5095,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 6,
     school: 'Illusion',
-    classes: ['Sorcerer', 'Warlock', 'Wizard'],
+
     saving_throw: 'Intelligence',
   },
   {
@@ -5273,7 +5112,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 0,
     school: 'Transmutation',
-    classes: ['Bard', 'Sorcerer', 'Wizard'],
   },
   {
     name: 'Meteor Swarm',
@@ -5288,7 +5126,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 9,
     school: 'Evocation',
-    classes: ['Sorcerer', 'Wizard'],
+
     saving_throw: 'Dexterity',
   },
   {
@@ -5305,7 +5143,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 minute',
     level: 8,
     school: 'Conjuration',
-    classes: ['Wizard'],
   },
   {
     name: 'Mind Blank',
@@ -5320,7 +5157,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 8,
     school: 'Abjuration',
-    classes: ['Bard', 'Wizard'],
   },
   {
     name: 'Mind Spike',
@@ -5337,7 +5173,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 2,
     school: 'Divination',
-    classes: ['Sorcerer', 'Warlock', 'Wizard'],
+
     saving_throw: 'Wisdom',
   },
   {
@@ -5354,7 +5190,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 0,
     school: 'Illusion',
-    classes: ['Bard', 'Sorcerer', 'Warlock', 'Wizard'],
   },
   {
     name: 'Mirage Arcane',
@@ -5369,7 +5204,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '10 minutes',
     level: 7,
     school: 'Illusion',
-    classes: ['Bard', 'Druid', 'Wizard'],
   },
   {
     name: 'Mirror Image',
@@ -5384,7 +5218,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 2,
     school: 'Illusion',
-    classes: ['Sorcerer', 'Warlock', 'Wizard'],
+
     domains: ['Trickery'],
     circles: ['Coast'],
   },
@@ -5401,7 +5235,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 5,
     school: 'Illusion',
-    classes: ['Bard', 'Wizard'],
   },
   {
     name: 'Misty Step',
@@ -5416,7 +5249,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 bonus action',
     level: 2,
     school: 'Conjuration',
-    classes: ['Sorcerer', 'Warlock', 'Wizard'],
+
     archetypes: ['Horizon Walker'],
     circles: ['Coast'],
     oaths: ['Ancients, Vengeance'],
@@ -5436,7 +5269,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 5,
     school: 'Enchantment',
-    classes: ['Bard', 'Wizard'],
+
     domains: ['Trickery'],
     saving_throw: 'Wisdom',
   },
@@ -5453,7 +5286,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 0,
     school: 'Transmutation',
-    classes: ['Druid', 'Sorcerer', 'Wizard'],
   },
   {
     name: 'Moonbeam',
@@ -5472,7 +5304,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 2,
     school: 'Evocation',
-    classes: ['Druid'],
+
     oaths: ['Ancients'],
     saving_throw: 'Constitution',
   },
@@ -5490,7 +5322,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 4,
     school: 'Conjuration',
-    classes: ['Wizard'],
   },
   {
     name: "Mordenkainen's Magnificent Mansion",
@@ -5507,7 +5338,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 minute',
     level: 7,
     school: 'Conjuration',
-    classes: ['Bard', 'Wizard'],
   },
   {
     name: "Mordenkainen's Private Sanctum",
@@ -5526,7 +5356,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '10 minutes',
     level: 4,
     school: 'Abjuration',
-    classes: ['Wizard'],
   },
   {
     name: "Mordenkainen's Sword",
@@ -5543,7 +5372,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 7,
     school: 'Evocation',
-    classes: ['Bard', 'Wizard'],
   },
   {
     name: 'Move Earth',
@@ -5560,7 +5388,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 6,
     school: 'Transmutation',
-    classes: ['Druid', 'Sorcerer', 'Wizard'],
   },
   {
     name: 'Negative Energy Flood',
@@ -5576,7 +5403,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 5,
     school: 'Necromancy',
-    classes: ['Warlock', 'Wizard'],
+
     saving_throw: 'Constitution',
   },
   {
@@ -5594,7 +5421,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 3,
     school: 'Abjuration',
-    classes: ['Bard', 'Ranger', 'Wizard'],
+
     domains: ['Knowledge'],
   },
   {
@@ -5611,7 +5438,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 2,
     school: 'Illusion',
-    classes: ['Wizard'],
+
     domains: ['Arcana'],
   },
   {
@@ -5630,7 +5457,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 6,
     school: 'Evocation',
-    classes: ['Wizard'],
+
     saving_throw: 'Constitution',
   },
   {
@@ -5648,7 +5475,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 4,
     school: 'Evocation',
-    classes: ['Wizard'],
+
     oaths: ['Redemption'],
     saving_throw: 'Dexterity',
   },
@@ -5665,7 +5492,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 6,
     school: 'Enchantment',
-    classes: ['Bard', 'Wizard'],
+
     saving_throw: 'Wisdom',
   },
   {
@@ -5682,7 +5509,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 2,
     school: 'Abjuration',
-    classes: ['Druid', 'Ranger'],
+
     domains: ['Trickery'],
     circles: ['Grassland'],
   },
@@ -5700,7 +5527,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 5,
     school: 'Transmutation',
-    classes: ['Wizard'],
+
     circles: ['Mountain'],
   },
   {
@@ -5717,7 +5544,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 2,
     school: 'Illusion',
-    classes: ['Bard', 'Sorcerer', 'Wizard'],
+
     patrons: ['Archfey', 'Great Old One'],
   },
   {
@@ -5735,7 +5562,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 4,
     school: 'Illusion',
-    classes: ['Wizard'],
+
     patrons: ['Hexblade'],
     saving_throw: 'Wisdom',
   },
@@ -5752,7 +5579,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 minute',
     level: 3,
     school: 'Illusion',
-    classes: ['Wizard'],
   },
   {
     name: 'Planar Ally',
@@ -5767,7 +5593,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '10 minutes',
     level: 6,
     school: 'Conjuration',
-    classes: ['Cleric'],
   },
   {
     name: 'Planar Binding',
@@ -5785,7 +5610,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 hour',
     level: 5,
     school: 'Abjuration',
-    classes: ['Bard', 'Cleric', 'Druid', 'Wizard'],
+
     domains: ['Arcana'],
     saving_throw: 'Charisma',
   },
@@ -5804,7 +5629,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 7,
     school: 'Conjuration',
-    classes: ['Cleric', 'Sorcerer', 'Warlock', 'Wizard'],
   },
   {
     name: 'Plant Growth',
@@ -5819,7 +5643,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 3,
     school: 'Transmutation',
-    classes: ['Bard', 'Druid', 'Ranger'],
+
     domains: ['Nature'],
     circles: ['Forest'],
     oaths: ['Ancients'],
@@ -5838,7 +5662,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 0,
     school: 'Conjuration',
-    classes: ['Druid', 'Sorcerer', 'Warlock', 'Wizard'],
   },
   {
     name: 'Polymorph',
@@ -5854,7 +5677,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 4,
     school: 'Transmutation',
-    classes: ['Bard', 'Druid', 'Sorcerer', 'Wizard'],
+
     domains: ['Trickery'],
   },
   {
@@ -5870,7 +5693,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 9,
     school: 'Evocation',
-    classes: ['Bard'],
   },
   {
     name: 'Power Word Kill',
@@ -5885,7 +5707,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 9,
     school: 'Enchantment',
-    classes: ['Bard', 'Sorcerer', 'Warlock', 'Wizard'],
   },
   {
     name: 'Power Word Pain',
@@ -5900,7 +5721,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 7,
     school: 'Enchantment',
-    classes: ['Sorcerer', 'Warlock', 'Wizard'],
+
     saving_throw: 'Constitution',
   },
   {
@@ -5916,7 +5737,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 8,
     school: 'Enchantment',
-    classes: ['Bard', 'Sorcerer', 'Warlock', 'Wizard'],
+
     saving_throw: 'Constitution',
   },
   {
@@ -5934,7 +5755,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '10 minutes',
     level: 2,
     school: 'Evocation',
-    classes: ['Cleric'],
   },
   {
     name: 'Prestidigitation',
@@ -5949,7 +5769,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 0,
     school: 'Transmutation',
-    classes: ['Bard', 'Sorcerer', 'Warlock', 'Wizard'],
   },
   {
     name: 'Primal Savagery',
@@ -5964,7 +5783,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 0,
     school: 'Transmutation',
-    classes: ['Druid'],
   },
   {
     name: 'Primordial Ward',
@@ -5979,7 +5797,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 6,
     school: 'Abjuration',
-    classes: ['Druid'],
   },
   {
     name: 'Prismatic Spray',
@@ -5994,7 +5811,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 7,
     school: 'Evocation',
-    classes: ['Sorcerer', 'Wizard'],
+
     saving_throw: 'Dexterity',
   },
   {
@@ -6010,7 +5827,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 9,
     school: 'Abjuration',
-    classes: ['Wizard'],
+
     saving_throw: 'Constitution',
   },
   {
@@ -6030,7 +5847,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '10 minutes',
     level: 4,
     school: 'Abjuration',
-    classes: ['Wizard'],
   },
   {
     name: 'Produce Flame',
@@ -6045,7 +5861,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 0,
     school: 'Conjuration',
-    classes: ['Druid'],
   },
   {
     name: 'Programmed Illusion',
@@ -6061,7 +5876,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 6,
     school: 'Illusion',
-    classes: ['Bard', 'Wizard'],
   },
   {
     name: 'Project Image',
@@ -6077,7 +5891,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 7,
     school: 'Illusion',
-    classes: ['Bard', 'Wizard'],
   },
   {
     name: 'Protection from Energy',
@@ -6092,7 +5905,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 3,
     school: 'Abjuration',
-    classes: ['Cleric', 'Druid', 'Ranger', 'Sorcerer', 'Wizard'],
+
     circles: ['Desert'],
     domains: ['Forge'],
     oaths: ['Ancients, Vengeance'],
@@ -6112,7 +5925,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 1,
     school: 'Abjuration',
-    classes: ['Cleric', 'Paladin', 'Warlock', 'Wizard'],
+
     archetypes: ['Horizon Walker', 'Monster Slayer'],
     oaths: ['Devotion'],
   },
@@ -6129,7 +5942,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 2,
     school: 'Abjuration',
-    classes: ['Cleric', 'Druid', 'Paladin', 'Ranger'],
   },
   {
     name: 'Psychic Scream',
@@ -6144,7 +5956,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 9,
     school: 'Enchantment',
-    classes: ['Bard', 'Sorcerer', 'Warlock', 'Wizard'],
   },
   {
     name: 'Purify Food and Drink',
@@ -6159,7 +5970,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 1,
     school: 'Transmutation',
-    classes: ['Cleric', 'Druid', 'Paladin'],
   },
   {
     name: 'Pyrotechnics',
@@ -6174,7 +5984,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 2,
     school: 'Transmutation',
-    classes: ['Bard', 'Sorcerer', 'Wizard'],
+
     saving_throw: 'Constitution',
   },
   {
@@ -6191,7 +6001,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 hour',
     level: 5,
     school: 'Necromancy',
-    classes: ['Bard', 'Cleric', 'Paladin'],
+
     domains: ['Grave', 'Life'],
   },
   {
@@ -6208,7 +6018,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 5,
     school: 'Divination',
-    classes: ['Wizard'],
   },
   {
     name: 'Ray of Enfeeblement',
@@ -6223,7 +6032,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 2,
     school: 'Necromancy',
-    classes: ['Warlock', 'Wizard'],
+
     domains: ['Death', 'Grave'],
     saving_throw: 'Constitution',
   },
@@ -6240,7 +6049,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 0,
     school: 'Evocation',
-    classes: ['Sorcerer', 'Wizard'],
   },
   {
     name: 'Ray of Sickness',
@@ -6257,7 +6065,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 1,
     school: 'Necromancy',
-    classes: ['Sorcerer', 'Wizard'],
+
     domains: ['Death'],
   },
   {
@@ -6274,7 +6082,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 minute',
     level: 7,
     school: 'Transmutation',
-    classes: ['Bard', 'Cleric', 'Druid'],
   },
   {
     name: 'Reincarnate',
@@ -6291,7 +6098,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 hour',
     level: 5,
     school: 'Transmutation',
-    classes: ['Druid'],
   },
   {
     name: 'Remove Curse',
@@ -6306,7 +6112,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 3,
     school: 'Abjuration',
-    classes: ['Cleric', 'Paladin', 'Warlock', 'Wizard'],
   },
   {
     name: 'Resilient Sphere',
@@ -6323,7 +6128,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 4,
     school: 'Evocation',
-    classes: ['Wizard'],
+
     oaths: ['Redemption'],
     saving_throw: 'Dexterity',
   },
@@ -6341,7 +6146,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 0,
     school: 'Abjuration',
-    classes: ['Cleric', 'Druid'],
   },
   {
     name: 'Resurrection',
@@ -6357,7 +6161,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 hour',
     level: 7,
     school: 'Necromancy',
-    classes: ['Bard', 'Cleric'],
   },
   {
     name: 'Reverse Gravity',
@@ -6373,7 +6176,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 7,
     school: 'Transmutation',
-    classes: ['Druid', 'Sorcerer', 'Wizard'],
+
     saving_throw: 'Dexterity',
   },
   {
@@ -6390,7 +6193,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 3,
     school: 'Necromancy',
-    classes: ['Cleric', 'Paladin'],
+
     domains: ['Grave', 'Life'],
     patron: ['Celestial'],
   },
@@ -6408,7 +6211,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 2,
     school: 'Transmutation',
-    classes: ['Wizard'],
+
     archetypes: ['Gloom Stalker'],
   },
   {
@@ -6424,7 +6227,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 0,
     school: 'Evocation',
-    classes: ['Cleric'],
   },
   {
     name: 'Sanctuary',
@@ -6440,7 +6242,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 bonus action',
     level: 1,
     school: 'Abjuration',
-    classes: ['Cleric'],
+
     oaths: ['Devotion', 'Redemption'],
   },
   {
@@ -6456,7 +6258,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 6,
     school: 'Conjuration',
-    classes: ['Sorcerer', 'Warlock', 'Wizard'],
+
     saving_throw: 'Wisdom',
   },
   {
@@ -6474,7 +6276,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 2,
     school: 'Evocation',
-    classes: ['Sorcerer', 'Wizard'],
+
     domains: ['Light'],
     patrons: ['Fiend'],
   },
@@ -6493,7 +6295,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '10 minutes',
     level: 5,
     school: 'Divination',
-    classes: ['Bard', 'Cleric', 'Druid', 'Warlock', 'Wizard'],
+
     domains: ['Knowledge', 'Light'],
     circles: ['Coast', 'Swamp'],
     oaths: ['Vengeance'],
@@ -6513,7 +6315,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 bonus action',
     level: 1,
     school: 'Evocation',
-    classes: ['Paladin'],
+
     domains: ['Forge'],
   },
   {
@@ -6531,7 +6333,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 4,
     school: 'Conjuration',
-    classes: ['Wizard'],
+
     domains: ['Arcana'],
   },
   {
@@ -6548,7 +6350,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 2,
     school: 'Divination',
-    classes: ['Bard', 'Sorcerer', 'Wizard'],
   },
   {
     name: 'Seeming',
@@ -6563,7 +6364,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 5,
     school: 'Illusion',
-    classes: ['Bard', 'Sorcerer', 'Wizard'],
+
     archetypes: ['Gloom Stalker'],
     patrons: ['Archfey'],
   },
@@ -6581,7 +6382,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 3,
     school: 'Evocation',
-    classes: ['Bard', 'Cleric', 'Wizard'],
+
     patrons: ['Great Old One'],
   },
   {
@@ -6599,7 +6400,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 7,
     school: 'Transmutation',
-    classes: ['Wizard'],
   },
   {
     name: 'Shadow Blade',
@@ -6616,7 +6416,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 bonus action',
     level: 2,
     school: 'Illusion',
-    classes: ['Sorcerer', 'Warlock', 'Wizard'],
   },
   {
     name: 'Shadow of Moil',
@@ -6632,7 +6431,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 4,
     school: 'Necromancy',
-    classes: ['Warlock'],
   },
   {
     name: 'Shape Water',
@@ -6647,7 +6445,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 0,
     school: 'Transmutation',
-    classes: ['Druid', 'Sorcerer', 'Wizard'],
   },
   {
     name: 'Shapechange',
@@ -6664,7 +6461,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 9,
     school: 'Transmutation',
-    classes: ['Druid', 'Wizard'],
   },
   {
     name: 'Shatter',
@@ -6682,7 +6478,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 2,
     school: 'Evocation',
-    classes: ['Bard', 'Sorcerer', 'Warlock', 'Wizard'],
+
     domains: ['Tempest'],
     saving_throw: 'Constitution',
   },
@@ -6701,7 +6497,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
       'you are hit by an attack or targeted by the magic missile spell',
     level: 1,
     school: 'Abjuration',
-    classes: ['Sorcerer', 'Wizard'],
+
     patrons: ['Hexblade'],
   },
   {
@@ -6718,7 +6514,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 bonus action',
     level: 1,
     school: 'Abjuration',
-    classes: ['Cleric', 'Paladin'],
+
     domains: ['War'],
   },
   {
@@ -6735,7 +6531,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 bonus action',
     level: 0,
     school: 'Transmutation',
-    classes: ['Druid'],
   },
   {
     name: 'Shocking Grasp',
@@ -6750,7 +6545,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 0,
     school: 'Evocation',
-    classes: ['Sorcerer', 'Wizard'],
   },
   {
     name: 'Sickening Radiance',
@@ -6765,7 +6559,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 4,
     school: 'Evocation',
-    classes: ['Sorcerer', 'Warlock', 'Wizard'],
+
     saving_throw: 'Constitution',
   },
   {
@@ -6781,7 +6575,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 2,
     school: 'Illusion',
-    classes: ['Bard', 'Cleric', 'Ranger'],
+
     circles: ['Desert'],
   },
   {
@@ -6798,7 +6592,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 1,
     school: 'Illusion',
-    classes: ['Bard', 'Sorcerer', 'Wizard'],
   },
   {
     name: 'Simulacrum',
@@ -6815,7 +6608,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '12 hours',
     level: 7,
     school: 'Illusion',
-    classes: ['Wizard'],
   },
   {
     name: 'Skill Empowerment',
@@ -6830,7 +6622,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 5,
     school: 'Transmutation',
-    classes: ['Bard', 'Sorcerer', 'Wizard'],
   },
   {
     name: 'Skywrite',
@@ -6845,7 +6636,6 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 2,
     school: 'Transmutation',
-    classes: ['Bard', 'Druid', 'Wizard'],
   },
   {
     name: 'Sleep',
@@ -6863,7 +6653,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 1,
     school: 'Enchantment',
-    classes: ['Bard', 'Sorcerer', 'Wizard'],
+
     oaths: ['Redemption'],
     patrons: ['Archfey'],
   },
@@ -6881,7 +6671,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 3,
     school: 'Conjuration',
-    classes: ['Druid', 'Sorcerer', 'Wizard'],
+
     domains: ['Tempest'],
     circles: ['Arctic'],
     saving_throw: 'Constitution',
@@ -6900,7 +6690,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 3,
     school: 'Transmutation',
-    classes: ['Sorcerer', 'Wizard'],
+
     circles: ['Arctic'],
     saving_throw: 'Wisdom',
   },
@@ -6918,7 +6708,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 minute',
     level: 1,
     school: 'Abjuration',
-    classes: ['Druid', 'Ranger', 'Wizard'],
+
     saving_throw: 'Dexterity',
   },
   {
@@ -6937,7 +6727,7 @@ As a bonus action on your turn, you can dismiss this spell and cause the weapon 
     casting_time: '1 action',
     level: 2,
     school: 'Evocation',
-    classes: ['Sorcerer', 'Wizard'],
+
     saving_throw: 'Dexterity',
   },
   {
@@ -6972,7 +6762,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time_modifier: 'a humanoid you can see within 60 feet of you dies',
     level: 6,
     school: 'Necromancy',
-    classes: ['Warlock', 'Wizard'],
   },
   {
     name: 'Spare the Dying',
@@ -6987,7 +6776,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 0,
     school: 'Necromancy',
-    classes: ['Cleric'],
   },
   {
     name: 'Speak with Animals',
@@ -7002,7 +6790,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 1,
     school: 'Divination',
-    classes: ['Bard', 'Druid', 'Ranger'],
+
     domains: ['Nature'],
     oaths: ['Ancients'],
   },
@@ -7020,7 +6808,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 3,
     school: 'Necromancy',
-    classes: ['Bard', 'Cleric'],
+
     domains: ['Knowledge'],
   },
   {
@@ -7036,7 +6824,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 3,
     school: 'Transmutation',
-    classes: ['Bard', 'Druid', 'Ranger'],
   },
   {
     name: 'Spider Climb',
@@ -7052,7 +6839,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 2,
     school: 'Transmutation',
-    classes: ['Sorcerer', 'Warlock', 'Wizard'],
+
     circles: ['Forest', 'Mountain', 'Underdark'],
   },
   {
@@ -7070,7 +6857,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 2,
     school: 'Transmutation',
-    classes: ['Druid', 'Ranger'],
+
     domains: ['Nature'],
     circles: ['Arctic', 'Mountain'],
   },
@@ -7090,7 +6877,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 3,
     school: 'Conjuration',
-    classes: ['Cleric'],
+
     domains: ['War'],
     saving_throw: 'Wisdom',
   },
@@ -7109,7 +6896,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 bonus action',
     level: 2,
     school: 'Evocation',
-    classes: ['Cleric'],
+
     domains: ['Life', 'War'],
     oaths: ['Conquest'],
   },
@@ -7126,7 +6913,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 bonus action',
     level: 4,
     school: 'Evocation',
-    classes: ['Paladin'],
+
     patrons: ['Hexblade'],
   },
   {
@@ -7143,7 +6930,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 bonus action',
     level: 5,
     school: 'Conjuration',
-    classes: ['Ranger', 'Wizard'],
   },
   {
     name: 'Stinking Cloud',
@@ -7159,7 +6945,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 3,
     school: 'Conjuration',
-    classes: ['Bard', 'Sorcerer', 'Wizard'],
+
     circles: ['Swamp', 'Underdark'],
     patrons: ['Fiend'],
     saving_throw: 'Constitution',
@@ -7179,7 +6965,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 4,
     school: 'Transmutation',
-    classes: ['Cleric', 'Druid', 'Wizard'],
+
     circles: ['Mountain', 'Underdark'],
   },
   {
@@ -7196,7 +6982,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 4,
     school: 'Abjuration',
-    classes: ['Druid', 'Ranger', 'Sorcerer', 'Wizard'],
+
     domains: ['War'],
     circles: ['Mountain'],
     oaths: ['Ancients', 'Conquest', 'Redemption'],
@@ -7214,7 +7000,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 9,
     school: 'Conjuration',
-    classes: ['Druid'],
+
     saving_throw: 'Constitution',
   },
   {
@@ -7232,7 +7018,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 4,
     school: 'Evocation',
-    classes: ['Sorcerer', 'Wizard'],
+
     saving_throw: 'Strength',
   },
   {
@@ -7250,7 +7036,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 2,
     school: 'Enchantment',
-    classes: ['Bard', 'Sorcerer', 'Warlock', 'Wizard'],
+
     domains: ['Knowledge'],
   },
   {
@@ -7269,7 +7055,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 4,
     school: 'Conjuration',
-    classes: ['Warlock', 'Wizard'],
+
     saving_throw: 'Charisma',
   },
   {
@@ -7288,7 +7074,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 3,
     school: 'Conjuration',
-    classes: ['Warlock', 'Wizard'],
+
     saving_throw: 'Charisma',
   },
   {
@@ -7305,7 +7091,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 6,
     school: 'Evocation',
-    classes: ['Druid', 'Sorcerer', 'Wizard'],
+
     saving_throw: 'Constitution',
   },
   {
@@ -7322,7 +7108,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 8,
     school: 'Evocation',
-    classes: ['Druid', 'Sorcerer', 'Wizard'],
+
     saving_throw: 'Constitution',
   },
   {
@@ -7339,7 +7125,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 bonus action',
     level: 5,
     school: 'Transmutation',
-    classes: ['Ranger'],
   },
   {
     name: 'Sword Burst',
@@ -7354,7 +7139,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 0,
     school: 'Conjuration',
-    classes: ['Sorcerer', 'Warlock', 'Wizard'],
+
     saving_throw: 'Dexterity',
   },
   {
@@ -7372,7 +7157,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 minute',
     level: 7,
     school: 'Abjuration',
-    classes: ['Bard', 'Cleric', 'Wizard'],
   },
   {
     name: 'Synaptic Static',
@@ -7387,7 +7171,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 5,
     school: 'Enchantment',
-    classes: ['Bard', 'Sorcerer', 'Warlock', 'Wizard'],
+
     saving_throw: 'Intelligence',
   },
   {
@@ -7404,7 +7188,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 1,
     school: 'Enchantment',
-    classes: ['Bard', 'Wizard'],
+
     patrons: ['Great Old One'],
     saving_throw: 'Wisdom',
   },
@@ -7421,7 +7205,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 5,
     school: 'Transmutation',
-    classes: ['Sorcerer', 'Wizard'],
+
     patrons: ['Great Old One'],
   },
   {
@@ -7438,7 +7222,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 5,
     school: 'Divination',
-    classes: ['Wizard'],
   },
   {
     name: 'Telepathy',
@@ -7454,7 +7237,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 8,
     school: 'Evocation',
-    classes: ['Wizard'],
   },
   {
     name: 'Teleport',
@@ -7469,7 +7251,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 7,
     school: 'Conjuration',
-    classes: ['Bard', 'Sorcerer', 'Wizard'],
   },
   {
     name: 'Teleportation Circle',
@@ -7486,7 +7267,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 minute',
     level: 5,
     school: 'Conjuration',
-    classes: ['Bard', 'Sorcerer', 'Wizard'],
+
     archetypes: ['Horizon Walker'],
     domains: ['Arcana'],
   },
@@ -7504,7 +7285,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 hour',
     level: 7,
     school: 'Conjuration',
-    classes: ['Cleric'],
+
     saving_throw: 'Charisma',
   },
   {
@@ -7521,7 +7302,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 1,
     school: 'Conjuration',
-    classes: ['Wizard'],
   },
   {
     name: "Tenser's Transformation",
@@ -7537,7 +7317,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 6,
     school: 'Transmutation',
-    classes: ['Wizard'],
   },
   {
     name: 'Thaumaturgy',
@@ -7552,7 +7331,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 0,
     school: 'Transmutation',
-    classes: ['Cleric'],
   },
   {
     name: 'Thorn Whip',
@@ -7568,7 +7346,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 0,
     school: 'Transmutation',
-    classes: ['Druid'],
   },
   {
     name: 'Thunder Step',
@@ -7585,7 +7362,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 3,
     school: 'Conjuration',
-    classes: ['Sorcerer', 'Warlock', 'Wizard'],
+
     saving_throw: 'Constitution',
   },
   {
@@ -7601,7 +7378,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 0,
     school: 'Evocation',
-    classes: ['Bard', 'Druid', 'Sorcerer', 'Warlock', 'Wizard'],
+
     saving_throw: 'Constitution',
   },
   {
@@ -7617,7 +7394,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 bonus action',
     level: 1,
     school: 'Evocation',
-    classes: ['Paladin'],
+
     saving_throw: 'Strength',
   },
   {
@@ -7635,7 +7412,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 1,
     school: 'Evocation',
-    classes: ['Bard', 'Druid', 'Sorcerer', 'Wizard'],
+
     domains: ['Tempest'],
     saving_throw: 'Constitution',
   },
@@ -7653,7 +7430,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 3,
     school: 'Conjuration',
-    classes: ['Druid', 'Sorcerer', 'Wizard'],
+
     saving_throw: 'Dexterity',
   },
   {
@@ -7669,7 +7446,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 9,
     school: 'Transmutation',
-    classes: ['Sorcerer', 'Wizard'],
   },
   {
     name: 'Tiny Hut',
@@ -7685,7 +7461,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 minute',
     level: 3,
     school: 'Evocation',
-    classes: ['Bard', 'Wizard'],
   },
   {
     name: 'Tiny Servant',
@@ -7702,7 +7477,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 minute',
     level: 3,
     school: 'Transmutation',
-    classes: ['Wizard'],
   },
   {
     name: 'Toll the Dead',
@@ -7717,7 +7491,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 0,
     school: 'Necromancy',
-    classes: ['Cleric', 'Warlock', 'Wizard'],
+
     saving_throw: 'Wisdom',
   },
   {
@@ -7734,7 +7508,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 3,
     school: 'Divination',
-    classes: ['Bard', 'Cleric', 'Sorcerer', 'Warlock', 'Wizard'],
   },
   {
     name: 'Transmute Rock',
@@ -7750,7 +7523,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 5,
     school: 'Transmutation',
-    classes: ['Druid', 'Wizard'],
+
     saving_throw: 'Dexterity',
   },
   {
@@ -7766,7 +7539,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 6,
     school: 'Conjuration',
-    classes: ['Druid'],
   },
   {
     name: 'Tree Stride',
@@ -7781,7 +7553,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 5,
     school: 'Conjuration',
-    classes: ['Druid', 'Ranger'],
+
     domains: ['Nature'],
     circles: ['Forest'],
     oaths: ['Ancients'],
@@ -7800,7 +7572,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 9,
     school: 'Transmutation',
-    classes: ['Bard', 'Warlock', 'Wizard'],
+
     saving_throw: 'Wisdom',
   },
   {
@@ -7818,7 +7590,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 hour',
     level: 9,
     school: 'Necromancy',
-    classes: ['Cleric', 'Druid'],
   },
   {
     name: 'True Seeing',
@@ -7835,7 +7606,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 6,
     school: 'Divination',
-    classes: ['Bard', 'Cleric', 'Sorcerer', 'Warlock', 'Wizard'],
   },
   {
     name: 'True Strike',
@@ -7850,7 +7620,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 0,
     school: 'Divination',
-    classes: ['Bard', 'Sorcerer', 'Warlock', 'Wizard'],
   },
   {
     name: 'Tsunami',
@@ -7865,7 +7634,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 minute',
     level: 8,
     school: 'Conjuration',
-    classes: ['Druid'],
+
     saving_throw: 'Strength',
   },
   {
@@ -7882,7 +7651,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 1,
     school: 'Conjuration',
-    classes: ['Bard', 'Warlock', 'Wizard'],
   },
   {
     name: 'Vampiric Touch',
@@ -7899,7 +7667,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 3,
     school: 'Necromancy',
-    classes: ['Warlock', 'Wizard'],
+
     domains: ['Death', 'Grave'],
   },
   {
@@ -7915,7 +7683,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 0,
     school: 'Enchantment',
-    classes: ['Bard'],
+
     saving_throw: 'Wisdom',
   },
   {
@@ -7934,7 +7702,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 4,
     school: 'Evocation',
-    classes: ['Sorcerer', 'Wizard'],
+
     saving_throw: 'Dexterity',
   },
   {
@@ -7953,7 +7721,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 4,
     school: 'Evocation',
-    classes: ['Druid', 'Sorcerer', 'Wizard'],
+
     domains: ['Forge', 'Light'],
     patrons: ['Celestial', 'Fiend'],
     saving_throw: 'Dexterity',
@@ -7972,7 +7740,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 5,
     school: 'Evocation',
-    classes: ['Wizard'],
+
     oaths: ['Redemption'],
   },
   {
@@ -7991,7 +7759,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 6,
     school: 'Evocation',
-    classes: ['Wizard'],
+
     saving_throw: 'Dexterity',
   },
   {
@@ -8010,7 +7778,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 5,
     school: 'Evocation',
-    classes: ['Sorcerer', 'Warlock', 'Wizard'],
+
     saving_throw: 'Constitution',
   },
   {
@@ -8027,7 +7795,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 3,
     school: 'Evocation',
-    classes: ['Wizard'],
   },
   {
     name: 'Wall of Stone',
@@ -8043,7 +7810,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 5,
     school: 'Evocation',
-    classes: ['Druid', 'Sorcerer', 'Wizard'],
+
     circles: ['Desert', 'Mountain'],
   },
   {
@@ -8062,7 +7829,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 6,
     school: 'Conjuration',
-    classes: ['Druid'],
+
     saving_throw: 'Dexterity',
   },
   {
@@ -8079,7 +7846,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 3,
     school: 'Evocation',
-    classes: ['Druid', 'Sorcerer', 'Wizard'],
   },
   {
     name: 'Warding Bond',
@@ -8096,7 +7862,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 2,
     school: 'Abjuration',
-    classes: ['Cleric'],
   },
   {
     name: 'Warding Wind',
@@ -8111,7 +7876,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 2,
     school: 'Evocation',
-    classes: ['Bard', 'Druid', 'Sorcerer', 'Wizard'],
   },
   {
     name: 'Water Breathing',
@@ -8127,7 +7891,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 3,
     school: 'Transmutation',
-    classes: ['Druid', 'Ranger', 'Sorcerer', 'Wizard'],
+
     circles: ['Coast'],
   },
   {
@@ -8144,7 +7908,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 3,
     school: 'Transmutation',
-    classes: ['Cleric', 'Druid', 'Ranger', 'Sorcerer'],
+
     circles: ['Coast', 'Swamp'],
   },
   {
@@ -8161,7 +7925,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 4,
     school: 'Conjuration',
-    classes: ['Druid', 'Sorcerer', 'Wizard'],
+
     saving_throw: 'Strength',
   },
   {
@@ -8178,7 +7942,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 2,
     school: 'Conjuration',
-    classes: ['Sorcerer', 'Wizard'],
+
     circles: ['Underdark'],
     saving_throw: 'Dexterity',
   },
@@ -8195,7 +7959,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 9,
     school: 'Illusion',
-    classes: ['Wizard'],
+
     saving_throw: 'Wisdom',
   },
   {
@@ -8212,7 +7976,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 7,
     school: 'Evocation',
-    classes: ['Druid', 'Sorcerer', 'Wizard'],
+
     saving_throw: 'Dexterity',
   },
   {
@@ -8229,7 +7993,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 minute',
     level: 6,
     school: 'Transmutation',
-    classes: ['Druid'],
   },
 
   {
@@ -8246,7 +8009,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 3,
     school: 'Evocation',
-    classes: ['Druid', 'Ranger'],
+
     domains: ['Nature'],
     saving_throw: 'Strength',
   },
@@ -8263,7 +8026,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 9,
     school: 'Conjuration',
-    classes: ['Sorcerer', 'Wizard'],
   },
   {
     name: 'Witch Bolt',
@@ -8281,7 +8043,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 1,
     school: 'Evocation',
-    classes: ['Sorcerer', 'Warlock', 'Wizard'],
   },
   {
     name: 'Word of Radiance',
@@ -8297,7 +8058,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 0,
     school: 'Evocation',
-    classes: ['Cleric'],
   },
   {
     name: 'Word of Recall',
@@ -8312,7 +8072,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 6,
     school: 'Conjuration',
-    classes: ['Cleric'],
   },
   {
     name: 'Wrath of Nature',
@@ -8327,7 +8086,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 5,
     school: 'Evocation',
-    classes: ['Druid', 'Ranger'],
+
     saving_throw: ['Dexterity', 'Strength'],
   },
   {
@@ -8343,7 +8102,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 bonus action',
     level: 1,
     school: 'Evocation',
-    classes: ['Paladin'],
+
     patrons: ['Hexblade'],
     saving_throw: 'Wisdom',
   },
@@ -8360,7 +8119,6 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 bonus action',
     level: 1,
     school: 'Transmutation',
-    classes: ['Ranger'],
   },
   {
     name: 'Zone of Truth',
@@ -8375,7 +8133,7 @@ A creature that can see the sensor (such as one using _see invisibility_ or true
     casting_time: '1 action',
     level: 2,
     school: 'Enchantment',
-    classes: ['Bard', 'Cleric', 'Paladin'],
+
     archetypes: ['Monster Slayer'],
     oaths: ['Devotion'],
   },

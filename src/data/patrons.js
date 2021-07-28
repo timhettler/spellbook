@@ -4,4 +4,5 @@ export const PATRONS = [
   'Fiend',
   'Great Old One',
   'Hexblade',
+  'The Fathomless',
 ];

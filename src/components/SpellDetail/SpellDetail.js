@@ -1,18 +1,8 @@
-// @flow
-
 import React, { Fragment, Component } from 'react';
 import ReactMarkdown from 'react-markdown/with-html';
+import gfm from 'remark-gfm';
 
-import {
-  ARCHETYPES,
-  CIRCLES,
-  CLASSES,
-  DOMAINS,
-  OATHS,
-  PATRONS,
-  SCHOOLS,
-  SUBCLASSES,
-} from 'data';
+import { SUBCLASSES } from 'data';
 
 import setCanScroll from 'utilities/setCanScroll';
 import getSpellLevel from 'utilities/getSpellLevel';
@@ -23,6 +13,7 @@ import VisuallyHidden from 'components/VisuallyHidden';
 import './SpellDetail.scss';
 
 const parentClass = {
+  Specialty: 'Artificer',
   archetypes: 'Ranger',
   domains: 'Cleric',
   circles: 'Druid',
@@ -97,44 +88,8 @@ function _renderCastingTime(time, modifier) {
   );
 }
 
-type Props = {
-  id: string,
-  name: string,
-  desc: string,
-  page: string,
-  higher_level: ?string,
-  range: string,
-  components: Array<'V' | 'S' | 'M'>,
-  material: string,
-  cost: boolean,
-  ritual: boolean,
-  duration: string,
-  concentration: boolean,
-  casting_time: string,
-  casting_time_modifier: ?string,
-  level: number,
-  school: $Values<SCHOOLS>,
-  classes: Array<$Values<CLASSES>>,
-  archetypes: Array<$Values<ARCHETYPES>>,
-  domains: Array<$Values<DOMAINS>>,
-  circles: Array<$Values<CIRCLES>>,
-  oaths: Array<$Values<OATHS>>,
-  patrons: Array<$Values<PATRONS>>,
-  onClose: Function,
-};
-
-type State = {
-  canScroll: ?boolean,
-};
-
-class Spell extends Component<Props, State> {
-  state = {
-    canScroll: null,
-  };
-  description: ?HTMLElement;
-  setCanScroll: (arg0: ?HTMLElement, arg1: ?HTMLElement) => void;
-
-  constructor(props: Props) {
+class Spell extends Component {
+  constructor(props) {
     super(props);
     this.setCanScroll = setCanScroll.bind(this);
   }
@@ -143,7 +98,7 @@ class Spell extends Component<Props, State> {
     this.setCanScroll(this.description);
   }
 
-  getSnapshotBeforeUpdate(prevProps: Props, prevState: State) {
+  getSnapshotBeforeUpdate(prevProps, prevState) {
     if (prevProps.id !== this.props.id) {
       return true;
     }
@@ -151,7 +106,7 @@ class Spell extends Component<Props, State> {
     return null;
   }
 
-  componentDidUpdate(prevProps: Props, prevState: State, snapshot: ?boolean) {
+  componentDidUpdate(prevProps, prevState, snapshot) {
     if (snapshot === null) {
       return;
     }
@@ -182,6 +137,7 @@ class Spell extends Component<Props, State> {
       domains,
       circles,
       oaths,
+      Specialty,
       patrons,
       onClose,
     } = this.props;
@@ -259,7 +215,8 @@ class Spell extends Component<Props, State> {
             </h2>
             <div className="spell__description content-area">
               <ReactMarkdown
-                source={getHyperlinkedString(desc)}
+                remarkPlugins={[gfm]}
+                source={desc}
                 escapeHtml={false}
               />
             </div>
@@ -268,17 +225,20 @@ class Spell extends Component<Props, State> {
                 <h3 className="spell__minor-heading">At Higher Levels</h3>
                 <div className="content-area">
                   <ReactMarkdown
+                    remarkPlugins={[gfm]}
                     source={getHyperlinkedString(higher_level)}
                     escapeHtml={false}
                   />
                 </div>
               </div>
             )}
-            <div className="spell__page spell__minor-info content-area">
-              <small>
-                <i>({page})</i>
-              </small>
-            </div>
+            {page && (
+              <div className="spell__page spell__minor-info content-area">
+                <small>
+                  <i>({page})</i>
+                </small>
+              </div>
+            )}
           </section>
           <section className="spell-section spell-section--content spell-section--with-padding">
             <h2 className="spell__subheading">Available To</h2>
@@ -290,6 +250,7 @@ class Spell extends Component<Props, State> {
                   circles,
                   oaths,
                   patrons,
+                  Specialty,
                 })}
               </p>
             </div>
@@ -304,6 +265,7 @@ class Spell extends Component<Props, State> {
                   <div className="spell__minor-info content-area">
                     <div className="content-area">
                       <ReactMarkdown
+                        remarkPlugins={[gfm]}
                         source={getHyperlinkedString(material)}
                         escapeHtml={false}
                       />

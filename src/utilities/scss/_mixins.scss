@@ -151,6 +151,7 @@ $size--large-viewport-start: 1100px;
   width: 1px;
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
 }
 
 @mixin ratioHeight($height-ratio: 1) {

@@ -143,7 +143,7 @@ export const selectSortedResults = createSelector(
 
     if (sorting.field === 'level') {
       return sortedSpells.sort(
-        firstBy('level', direction).thenBy('name', { ignoreCase: true })
+        firstBy('level', { direction }).thenBy('name', { ignoreCase: true })
       );
     }
   }

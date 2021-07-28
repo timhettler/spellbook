@@ -10,6 +10,17 @@ import {
   viewSpell,
 } from 'actions';
 import * as data from 'data';
+import TCOE from 'data/spells/tcoe';
+import XGTE from 'data/spells/xgte';
+import Artificer from 'data/classes/artificer';
+import Bard from 'data/classes/bard';
+import Cleric from 'data/classes/cleric';
+import Druid from 'data/classes/druid';
+import Paladin from 'data/classes/paladin';
+import Ranger from 'data/classes/ranger';
+import Sorcerer from 'data/classes/sorcerer';
+import Warlock from 'data/classes/warlock';
+import Wizard from 'data/classes/wizard';
 import history from 'utilities/history';
 import App from 'components/App';
 
@@ -18,6 +29,79 @@ import SelectedSpellDetail from 'containers/SelectedSpellDetail';
 import VisibleControls from 'containers/VisibleControls';
 import OfflineToast from 'containers/OfflineToast';
 import NoSelection from 'components/NoSelection';
+
+import toKebabCase from 'utilities/toKebabCase';
+
+const classData = [
+  Artificer,
+  Bard,
+  Cleric,
+  Druid,
+  Paladin,
+  Ranger,
+  Sorcerer,
+  Warlock,
+  Wizard,
+];
+
+function transformSpell(spell) {
+  return {
+    ...spell,
+    id: toKebabCase(spell.name),
+    cost:
+      spell.material &&
+      spell.material.search(/[\d\s][csegp]p(?![a-zA-Z])/g) > -1,
+  };
+}
+
+function mergeSpells() {
+  const TashaSpells = TCOE.spells;
+  const XanatharSpells = XGTE.spells;
+
+  // Filter out repeated spells
+  const filteredCoreSpells = data.SPELLS.filter((spell) => {
+    const isInTashas = TashaSpells.find((tSpell) => tSpell.name === spell.name);
+    const isInXanathars = XanatharSpells.find(
+      (tSpell) => tSpell.name === spell.name
+    );
+    return !isInTashas && !isInXanathars;
+  });
+
+  const allSpells = filteredCoreSpells.concat(TashaSpells, XanatharSpells);
+
+  // Add additional props to spells
+  const transformedSpells = allSpells.map(transformSpell);
+
+  const transformedSpellsWithClassInfo = transformedSpells.map((spell) => {
+    const newSpell = { ...spell, classes: [] };
+
+    classData.forEach((data) => {
+      // Add to class list
+      const isClassSpell = data.spell_list.find(
+        (dSpell) => spell.id === dSpell
+      );
+      if (isClassSpell) {
+        newSpell.classes.push(data.name);
+      }
+
+      // Add subclass list
+      if (data.subclasses?.length) {
+        console.log(data.subclasses);
+        const subclassesWithSpell = data.subclasses.filter((subclass) =>
+          subclass.spell_list.find((sSpell) => spell.id === sSpell)
+        );
+
+        newSpell[data.subclass_label] = subclassesWithSpell.map(
+          (subclass) => subclass.name
+        );
+      }
+    });
+
+    return newSpell;
+  });
+
+  return transformedSpellsWithClassInfo;
+}
 
 const renderDetail = (currentSpellId) =>
   !!currentSpellId ? <SelectedSpellDetail /> : <NoSelection />;
@@ -28,16 +112,22 @@ const ConnectedApp = () => {
 
   // Load in data sources
   useEffect(() => {
-    dispatch(loadSpells(data.SPELLS));
+    dispatch(loadSpells(mergeSpells()));
     dispatch(loadCastingTimes(data.CASTING_TIMES));
-    dispatch(loadClasses(data.CLASSES));
     dispatch(loadSchools(data.SCHOOLS));
+    dispatch(loadClasses(classData.map((cData) => cData.name)));
 
-    dispatch(addSubclass('Ranger', 'archetypes', data.ARCHETYPES));
-    dispatch(addSubclass('Druid', 'circles', data.CIRCLES));
-    dispatch(addSubclass('Cleric', 'domains', data.DOMAINS));
-    dispatch(addSubclass('Paladin', 'oaths', data.OATHS));
-    dispatch(addSubclass('Warlock', 'patrons', data.PATRONS));
+    classData.forEach((cData) => {
+      if (cData.subclasses?.length) {
+        dispatch(
+          addSubclass(
+            cData.name,
+            cData.subclass_label,
+            cData.subclasses.map((sc) => sc.name)
+          )
+        );
+      }
+    });
   }, [dispatch]);
 
   // If url includes a spell id, load that spell

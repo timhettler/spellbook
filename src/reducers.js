@@ -89,7 +89,7 @@ export function transformSpell(spell) {
 export function spells(state = [], action) {
   switch (action.type) {
     case LOAD_SPELLS:
-      return action.spells.map(transformSpell);
+      return action.spells;
     default:
       return state;
   }

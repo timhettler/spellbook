@@ -22,6 +22,9 @@ function getSubClassLabels(selectedClass) {
     case 'Warlock':
       subclass = 'Patron';
       break;
+    case 'Artificer':
+      subclass = 'Specialty';
+      break;
     default:
       break;
   }
