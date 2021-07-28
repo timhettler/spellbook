@@ -89,6 +89,10 @@ function _renderCastingTime(time, modifier) {
 }
 
 class Spell extends Component {
+  state = {
+    canScroll: null,
+  };
+
   constructor(props) {
     super(props);
     this.setCanScroll = setCanScroll.bind(this);

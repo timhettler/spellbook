@@ -12,6 +12,7 @@ import {
 import * as data from 'data';
 import TCOE from 'data/spells/tcoe';
 import XGTE from 'data/spells/xgte';
+import LLOK from 'data/spells/llok';
 import Artificer from 'data/classes/artificer';
 import Bard from 'data/classes/bard';
 import Cleric from 'data/classes/cleric';
@@ -57,17 +58,13 @@ function transformSpell(spell) {
 function mergeSpells() {
   const TashaSpells = TCOE.spells;
   const XanatharSpells = XGTE.spells;
+  const KwalishSpells = LLOK.spells;
 
-  // Filter out repeated spells
-  const filteredCoreSpells = data.SPELLS.filter((spell) => {
-    const isInTashas = TashaSpells.find((tSpell) => tSpell.name === spell.name);
-    const isInXanathars = XanatharSpells.find(
-      (tSpell) => tSpell.name === spell.name
-    );
-    return !isInTashas && !isInXanathars;
-  });
-
-  const allSpells = filteredCoreSpells.concat(TashaSpells, XanatharSpells);
+  const allSpells = data.SPELLS.concat(
+    TashaSpells,
+    XanatharSpells,
+    KwalishSpells
+  );
 
   // Add additional props to spells
   const transformedSpells = allSpells.map(transformSpell);
