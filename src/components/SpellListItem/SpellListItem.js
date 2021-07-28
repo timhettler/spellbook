@@ -77,15 +77,8 @@ export class SpellListItem extends Component {
   render() {
     const { onClick, spell, isActive, theme, ...rest } = this.props;
 
-    const {
-      id,
-      name,
-      higher_level,
-      ritual,
-      concentration,
-      cost,
-      level,
-    } = spell;
+    const { id, name, higher_level, ritual, concentration, cost, level } =
+      spell;
 
     return (
       <div

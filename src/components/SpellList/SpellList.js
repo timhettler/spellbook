@@ -55,10 +55,8 @@ class SpellList extends Component {
   }
 
   _updateDimensions = () => {
-    const {
-      width: containerWidth,
-      height: containerHeight,
-    } = this.container.current.getBoundingClientRect();
+    const { width: containerWidth, height: containerHeight } =
+      this.container.current.getBoundingClientRect();
 
     let itemHeight = this.state.itemHeight;
     const item = this.container.current.querySelector(`[data-id]`);
@@ -83,12 +81,8 @@ class SpellList extends Component {
 
   render() {
     const { spells, currentSpellId, onSpellClick } = this.props;
-    const {
-      canScroll,
-      containerWidth,
-      containerHeight,
-      itemHeight,
-    } = this.state;
+    const { canScroll, containerWidth, containerHeight, itemHeight } =
+      this.state;
 
     return (
       <div

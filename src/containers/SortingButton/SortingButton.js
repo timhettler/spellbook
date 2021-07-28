@@ -7,10 +7,10 @@ import Button from 'components/Button';
 
 const SortingButton = ({ field, ...rest }) => {
   const dispatch = useDispatch();
-  const onClick = useCallback(() => dispatch(setSorting({ field })), [
-    dispatch,
-    field,
-  ]);
+  const onClick = useCallback(
+    () => dispatch(setSorting({ field })),
+    [dispatch, field]
+  );
   return <Button className="sorting-button" {...{ onClick, ...rest }} />;
 };
 
