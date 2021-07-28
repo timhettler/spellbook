@@ -37,18 +37,6 @@ import NoSelection from 'components/NoSelection';
 
 import toKebabCase from 'utilities/toKebabCase';
 
-const classData = [
-  Artificer,
-  Bard,
-  Cleric,
-  Druid,
-  Paladin,
-  Ranger,
-  Sorcerer,
-  Warlock,
-  Wizard,
-];
-
 function transformSpell(spell) {
   return {
     ...spell,
@@ -59,20 +47,26 @@ function transformSpell(spell) {
   };
 }
 
-function mergeSpells(spellbooks) {
-  const allSpells = spellbooks.map((book) => book.spells).flat();
-
-  // Add additional props to spells
-  const transformedSpells = allSpells.map(transformSpell);
-
-  // Check for duplicate spells
-  transformedSpells.reduce((acc, spell) => {
+function checkForDuplicateSpells(spells) {
+  spells.reduce((acc, spell) => {
     const isDup = acc.find((aSpell) => spell.id === aSpell.id);
     if (isDup) {
       console.warn(`Duplicate spell found: ${spell.name}`, spell);
     }
     return [...acc, spell];
   }, []);
+
+  return void 0;
+}
+
+function mergeSpellbooks(spellbooks, classData) {
+  const allSpells = spellbooks.map((book) => book.spells).flat();
+
+  // Add additional props to spells
+  const transformedSpells = allSpells.map(transformSpell);
+
+  // Check for duplicate spells
+  checkForDuplicateSpells(transformedSpells);
 
   const transformedSpellsWithClassInfo = transformedSpells.map((spell) => {
     const newSpell = { ...spell, classes: [] };
@@ -111,9 +105,21 @@ const ConnectedApp = () => {
   const currentSpellId = useSelector((state) => state.currentSpellId);
   const dispatch = useDispatch();
 
+  const classData = [
+    Artificer,
+    Bard,
+    Cleric,
+    Druid,
+    Paladin,
+    Ranger,
+    Sorcerer,
+    Warlock,
+    Wizard,
+  ];
+
   // Load in data sources
   useEffect(() => {
-    dispatch(loadSpells(mergeSpells([PHB, TCOE, XGTE, LLOK])));
+    dispatch(loadSpells(mergeSpellbooks([PHB, TCOE, XGTE, LLOK], classData)));
     dispatch(loadCastingTimes(data.CASTING_TIMES));
     dispatch(loadSchools(data.SCHOOLS));
     dispatch(loadClasses(classData.map((cData) => cData.name)));
@@ -129,7 +135,7 @@ const ConnectedApp = () => {
         );
       }
     });
-  }, [dispatch]);
+  }, [classData, dispatch]);
 
   // If url includes a spell id, load that spell
   useEffect(() => {
