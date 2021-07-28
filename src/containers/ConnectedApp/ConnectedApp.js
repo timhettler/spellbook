@@ -10,9 +10,12 @@ import {
   viewSpell,
 } from 'actions';
 import * as data from 'data';
-import TCOE from 'data/spells/tcoe';
+
+import PHB from 'data/spells/phb';
 import XGTE from 'data/spells/xgte';
 import LLOK from 'data/spells/llok';
+import TCOE from 'data/spells/tcoe';
+
 import Artificer from 'data/classes/artificer';
 import Bard from 'data/classes/bard';
 import Cleric from 'data/classes/cleric';
@@ -22,6 +25,7 @@ import Ranger from 'data/classes/ranger';
 import Sorcerer from 'data/classes/sorcerer';
 import Warlock from 'data/classes/warlock';
 import Wizard from 'data/classes/wizard';
+
 import history from 'utilities/history';
 import App from 'components/App';
 
@@ -55,19 +59,20 @@ function transformSpell(spell) {
   };
 }
 
-function mergeSpells() {
-  const TashaSpells = TCOE.spells;
-  const XanatharSpells = XGTE.spells;
-  const KwalishSpells = LLOK.spells;
-
-  const allSpells = data.SPELLS.concat(
-    TashaSpells,
-    XanatharSpells,
-    KwalishSpells
-  );
+function mergeSpells(spellbooks) {
+  const allSpells = spellbooks.map((book) => book.spells).flat();
 
   // Add additional props to spells
   const transformedSpells = allSpells.map(transformSpell);
+
+  // Check for duplicate spells
+  transformedSpells.reduce((acc, spell) => {
+    const isDup = acc.find((aSpell) => spell.id === aSpell.id);
+    if (isDup) {
+      console.warn(`Duplicate spell found: ${spell.name}`, spell);
+    }
+    return [...acc, spell];
+  }, []);
 
   const transformedSpellsWithClassInfo = transformedSpells.map((spell) => {
     const newSpell = { ...spell, classes: [] };
@@ -83,7 +88,6 @@ function mergeSpells() {
 
       // Add subclass list
       if (data.subclasses?.length) {
-        console.log(data.subclasses);
         const subclassesWithSpell = data.subclasses.filter((subclass) =>
           subclass.spell_list.find((sSpell) => spell.id === sSpell)
         );
@@ -109,7 +113,7 @@ const ConnectedApp = () => {
 
   // Load in data sources
   useEffect(() => {
-    dispatch(loadSpells(mergeSpells()));
+    dispatch(loadSpells(mergeSpells([PHB, TCOE, XGTE, LLOK])));
     dispatch(loadCastingTimes(data.CASTING_TIMES));
     dispatch(loadSchools(data.SCHOOLS));
     dispatch(loadClasses(classData.map((cData) => cData.name)));
