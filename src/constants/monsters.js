@@ -110,14 +110,14 @@ export const MONSTER_GROUPS = {
 export const MONSTER_SPIRITS = {
   url: (id) => `https://www.dndbeyond.com/spells/summon-${id}`,
   keywords: [
-    { id: 'abberation', regex: 'Aberrant Spirit stat block', flag: 'g' },
-    { id: 'beast', regex: 'Bestial Spirit stat block', flag: 'g' },
-    { id: 'celestial', regex: 'Celestial Spirit stat block', flag: 'g' },
-    { id: 'construct', regex: 'Construct Spirit stat block', flag: 'g' },
-    { id: 'elemental', regex: 'Elemental Spirit stat block', flag: 'g' },
-    { id: 'fey', regex: 'Fey Spirit stat block', flag: 'g' },
-    { id: 'fiendish', regex: 'Fiendish Spirit stat block', flag: 'g' },
-    { id: 'shadow', regex: 'Shadow Spirit stat block', flag: 'g' },
-    { id: 'undead', regex: 'Undead Spirit stat block', flag: 'g' },
+    { id: 'abberation', regex: 'Aberrant Spirit stat block', flag: '' },
+    { id: 'beast', regex: 'Bestial Spirit stat block', flag: '' },
+    { id: 'celestial', regex: 'Celestial Spirit stat block', flag: '' },
+    { id: 'construct', regex: 'Construct Spirit stat block', flag: '' },
+    { id: 'elemental', regex: 'Elemental Spirit stat block', flag: '' },
+    { id: 'fey', regex: 'Fey Spirit stat block', flag: '' },
+    { id: 'fiendish', regex: 'Fiendish Spirit stat block', flag: '' },
+    { id: 'shadow', regex: 'Shadow Spirit stat block', flag: '' },
+    { id: 'undead', regex: 'Undead Spirit stat block', flag: '' },
   ],
 };

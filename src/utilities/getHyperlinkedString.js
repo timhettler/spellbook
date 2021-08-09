@@ -35,7 +35,7 @@ function getHyperlinkedString(string) {
       // Only Chrome supports look behinds
       var re = new RegExp(
         `([^a-zA-Z0-9])(${searchTerm})(?=[^a-zA-Z0-9])`,
-        keyword.flag || 'i'
+        keyword.flag ?? 'i'
       );
 
       linkedString = linkedString.replace(re, replacer(keyword, url));
