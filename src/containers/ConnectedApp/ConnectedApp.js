@@ -73,9 +73,9 @@ function mergeSpellbooks(spellbooks, CLASS_DATA) {
 
     CLASS_DATA.forEach((data) => {
       // Add to class list
-      const isClassSpell = data.spell_list.find(
-        (dSpell) => spell.id === dSpell
-      );
+      const isClassSpell = data.spell_list
+        .concat(data.additional_spells)
+        .find((dSpell) => spell.id === dSpell);
       if (isClassSpell) {
         newSpell.classes.push(data.name);
       }

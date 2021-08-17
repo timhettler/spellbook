@@ -16,14 +16,15 @@ import './SpellDetail.scss';
 
 const parentClass = {
   Specialty: 'Artificer',
-  archetypes: 'Ranger',
-  domains: 'Cleric',
-  circles: 'Druid',
-  oaths: 'Paladin',
-  patrons: 'Warlock',
+  Archetype: 'Ranger',
+  Domain: 'Cleric',
+  Circle: 'Druid',
+  Oath: 'Paladin',
+  Patron: 'Warlock',
 };
 
 function getAvailableClasses(classes, subclasses) {
+  console.log(subclasses);
   let availableClasses = [].concat(classes);
 
   SUBCLASSES.forEach((subclass) => {
@@ -139,12 +140,12 @@ class Spell extends Component {
       level,
       school,
       classes,
-      archetypes,
-      domains,
-      circles,
-      oaths,
+      Archetype,
+      Domain,
+      Circle,
+      Oath,
       Specialty,
-      patrons,
+      Patron,
       onClose,
     } = this.props;
 
@@ -253,12 +254,12 @@ class Spell extends Component {
             <div className="spell__minor-info content-area">
               <p>
                 {getAvailableClasses(classes, {
-                  archetypes,
-                  domains,
-                  circles,
-                  oaths,
-                  patrons,
+                  Archetype,
+                  Domain,
+                  Circle,
+                  Oath,
                   Specialty,
+                  Patron,
                 })}
               </p>
             </div>
