@@ -8,13 +8,20 @@ import PropIcon from 'components/PropIcon';
 
 import './SpellListItem.scss';
 
-const SpellIcons = ({ ritual, concentration, cost, higher_level }) => {
-  return ritual || concentration || cost || higher_level ? (
+const SpellIcons = ({
+  ritual,
+  concentration,
+  cost,
+  higher_level,
+  isSubClassSpell,
+}) => {
+  return ritual || concentration || cost || higher_level || isSubClassSpell ? (
     <div className="spell-icons">
       {ritual && <PropIcon type="ritual" />}
       {concentration && <PropIcon type="concentration" />}
       {cost && <PropIcon type="cost" />}
       {higher_level && <PropIcon type="higher_level" />}
+      {isSubClassSpell && <PropIcon type="subclass_spell" />}
     </div>
   ) : null;
 };
@@ -77,8 +84,16 @@ export class SpellListItem extends Component {
   render() {
     const { onClick, spell, isActive, theme, ...rest } = this.props;
 
-    const { id, name, higher_level, ritual, concentration, cost, level } =
-      spell;
+    const {
+      id,
+      name,
+      higher_level,
+      ritual,
+      concentration,
+      cost,
+      level,
+      isSubClassSpell,
+    } = spell;
 
     return (
       <div
@@ -94,7 +109,9 @@ export class SpellListItem extends Component {
         <span>{<FavoriteButton spellId={id} />}</span>
         <span className="spell-list-item__name">
           {name}
-          <SpellIcons {...{ ritual, concentration, cost, higher_level }} />
+          <SpellIcons
+            {...{ ritual, concentration, cost, higher_level, isSubClassSpell }}
+          />
         </span>
         <span className="spell-list-item__level">{getSpellLevel(level)}</span>
       </div>

@@ -59,11 +59,13 @@ export const selectFilteredSpells = createSelector(
             return false;
           }
           // Go through each subclass and check if the subclass matches the filter
-          return spellsSubClasses.reduce(
-            (accumulator, subclass) =>
-              bothContain(spell[subclass], subClassFilters) || accumulator,
-            false
-          );
+          return spellsSubClasses.reduce((accumulator, subclass) => {
+            if (bothContain(spell[subclass], subClassFilters)) {
+              spell.isSubClassSpell = true;
+              return true;
+            }
+            return accumulator;
+          }, false);
         }
 
         return false;

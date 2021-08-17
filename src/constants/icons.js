@@ -2,12 +2,14 @@ export const ICONS = {
   // UI
   favorites: '⭐️',
   history: '🕓',
+  subclass_spell: '🔶',
   // Spell Detail
   higher_level: '⬆️',
   ritual: '🕯',
   concentration: '🌀',
   cost: '💰',
   // Classes
+  artificer: '🛠️',
   bard: '🎵',
   cleric: '📿',
   druid: '🌳',

@@ -24,7 +24,6 @@ const parentClass = {
 };
 
 function getAvailableClasses(classes, subclasses) {
-  console.log(subclasses);
   let availableClasses = [].concat(classes);
 
   SUBCLASSES.forEach((subclass) => {
@@ -225,7 +224,6 @@ class Spell extends Component {
                 remarkPlugins={[gfm]}
                 rehypePlugins={[rehypeRaw, rehypeSanitize]}
                 children={getHyperlinkedString(desc)}
-                escapeHtml={false}
               />
             </div>
             {higher_level && (
@@ -236,7 +234,6 @@ class Spell extends Component {
                     remarkPlugins={[gfm]}
                     rehypePlugins={[rehypeRaw, rehypeSanitize]}
                     children={getHyperlinkedString(higher_level)}
-                    escapeHtml={false}
                   />
                 </div>
               </div>
@@ -277,7 +274,6 @@ class Spell extends Component {
                         remarkPlugins={[gfm]}
                         rehypePlugins={[rehypeRaw, rehypeSanitize]}
                         children={material}
-                        escapeHtml={false}
                       />
                     </div>
                   </div>

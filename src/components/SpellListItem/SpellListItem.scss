@@ -89,5 +89,8 @@ $spell-list--focus-indicator-width: 5px;
 
 .spell-icons {
   display: inline-flex;
-  margin-left: $spacing--natural;
+
+  > * {
+    margin-left: $spacing--natural;
+  }
 }
