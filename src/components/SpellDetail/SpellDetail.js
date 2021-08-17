@@ -1,5 +1,7 @@
 import React, { Fragment, Component } from 'react';
-import ReactMarkdown from 'react-markdown/with-html';
+import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
+import rehypeSanitize from 'rehype-sanitize';
 import gfm from 'remark-gfm';
 
 import { SUBCLASSES } from 'data';
@@ -220,7 +222,8 @@ class Spell extends Component {
             <div className="spell__description content-area">
               <ReactMarkdown
                 remarkPlugins={[gfm]}
-                source={getHyperlinkedString(desc)}
+                rehypePlugins={[rehypeRaw, rehypeSanitize]}
+                children={getHyperlinkedString(desc)}
                 escapeHtml={false}
               />
             </div>
@@ -230,7 +233,8 @@ class Spell extends Component {
                 <div className="content-area">
                   <ReactMarkdown
                     remarkPlugins={[gfm]}
-                    source={getHyperlinkedString(higher_level)}
+                    rehypePlugins={[rehypeRaw, rehypeSanitize]}
+                    children={getHyperlinkedString(higher_level)}
                     escapeHtml={false}
                   />
                 </div>
@@ -270,7 +274,8 @@ class Spell extends Component {
                     <div className="content-area">
                       <ReactMarkdown
                         remarkPlugins={[gfm]}
-                        source={getHyperlinkedString(material)}
+                        rehypePlugins={[rehypeRaw, rehypeSanitize]}
+                        children={material}
                         escapeHtml={false}
                       />
                     </div>

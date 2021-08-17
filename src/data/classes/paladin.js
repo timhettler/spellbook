@@ -1,6 +1,6 @@
 import toKebabCase from '../../utilities/toKebabCase';
 
-export default {
+const data = {
   name: 'Paladin',
   subclass_label: 'Oath',
   subclasses: [
@@ -198,3 +198,5 @@ export default {
     toKebabCase('Summon celestial'),
   ],
 };
+
+export default data;

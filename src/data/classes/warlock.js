@@ -1,6 +1,6 @@
 import toKebabCase from '../../utilities/toKebabCase';
 
-export default {
+const data = {
   name: 'Warlock',
   subclass_label: 'Patron',
   subclasses: [
@@ -291,3 +291,5 @@ export default {
     toKebabCase('Weird'),
   ],
 };
+
+export default data;

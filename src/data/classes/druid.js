@@ -1,6 +1,6 @@
 import toKebabCase from '../../utilities/toKebabCase';
 
-export default {
+const data = {
   name: 'Druid',
   subclass_label: 'Circle',
   subclasses: [
@@ -293,3 +293,5 @@ export default {
     toKebabCase('Incendiary cloud'),
   ],
 };
+
+export default data;

@@ -1,4 +1,4 @@
-export default {
+const data = {
   meta: {
     name: "Player's Handbook",
     abbreviation: 'phb',
@@ -5784,3 +5784,5 @@ Instead of targeting a creature, you can choose a location you have seen before 
     },
   ],
 };
+
+export default data;

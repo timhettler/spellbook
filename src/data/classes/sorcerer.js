@@ -1,6 +1,6 @@
 import toKebabCase from '../../utilities/toKebabCase';
 
-export default {
+const data = {
   name: 'Sorcerer',
   subclass_label: 'Origin',
   subclasses: [
@@ -256,3 +256,5 @@ export default {
     toKebabCase('Blade of disaster'),
   ],
 };
+
+export default data;

@@ -59,7 +59,7 @@ function checkForDuplicateSpells(spells) {
   return void 0;
 }
 
-function mergeSpellbooks(spellbooks, classData) {
+function mergeSpellbooks(spellbooks, CLASS_DATA) {
   const allSpells = spellbooks.map((book) => book.spells).flat();
 
   // Add additional props to spells
@@ -71,7 +71,7 @@ function mergeSpellbooks(spellbooks, classData) {
   const transformedSpellsWithClassInfo = transformedSpells.map((spell) => {
     const newSpell = { ...spell, classes: [] };
 
-    classData.forEach((data) => {
+    CLASS_DATA.forEach((data) => {
       // Add to class list
       const isClassSpell = data.spell_list.find(
         (dSpell) => spell.id === dSpell
@@ -98,6 +98,18 @@ function mergeSpellbooks(spellbooks, classData) {
   return transformedSpellsWithClassInfo;
 }
 
+const CLASS_DATA = [
+  Artificer,
+  Bard,
+  Cleric,
+  Druid,
+  Paladin,
+  Ranger,
+  Sorcerer,
+  Warlock,
+  Wizard,
+];
+
 const renderDetail = (currentSpellId) =>
   !!currentSpellId ? <SelectedSpellDetail /> : <NoSelection />;
 
@@ -105,26 +117,14 @@ const ConnectedApp = () => {
   const currentSpellId = useSelector((state) => state.currentSpellId);
   const dispatch = useDispatch();
 
-  const classData = [
-    Artificer,
-    Bard,
-    Cleric,
-    Druid,
-    Paladin,
-    Ranger,
-    Sorcerer,
-    Warlock,
-    Wizard,
-  ];
-
   // Load in data sources
   useEffect(() => {
-    dispatch(loadSpells(mergeSpellbooks([PHB, TCOE, XGTE, LLOK], classData)));
+    dispatch(loadSpells(mergeSpellbooks([PHB, TCOE, XGTE, LLOK], CLASS_DATA)));
     dispatch(loadCastingTimes(data.CASTING_TIMES));
     dispatch(loadSchools(data.SCHOOLS));
-    dispatch(loadClasses(classData.map((cData) => cData.name)));
+    dispatch(loadClasses(CLASS_DATA.map((cData) => cData.name)));
 
-    classData.forEach((cData) => {
+    CLASS_DATA.forEach((cData) => {
       if (cData.subclasses?.length) {
         dispatch(
           addSubclass(
@@ -135,7 +135,7 @@ const ConnectedApp = () => {
         );
       }
     });
-  }, [classData, dispatch]);
+  }, [dispatch]);
 
   // If url includes a spell id, load that spell
   useEffect(() => {

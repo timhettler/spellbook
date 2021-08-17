@@ -1,4 +1,4 @@
-export default function (string) {
+export default function toKebabCase(string) {
   return string
     .toLowerCase()
     .replace(/[^a-zA-Z\s-]/g, '')

@@ -1,6 +1,6 @@
 import toKebabCase from '../../utilities/toKebabCase';
 
-export default {
+const data = {
   name: 'Artificer',
   subclass_label: 'Specialty',
   subclasses: [
@@ -163,3 +163,5 @@ export default {
     toKebabCase('Wall of stone'),
   ],
 };
+
+export default data;

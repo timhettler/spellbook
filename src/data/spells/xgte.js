@@ -1,6 +1,6 @@
 import { ATTACK_SAVE, DAMAGE_EFFECT, SCHOOL } from 'data/const';
 
-export default {
+const data = {
   meta: {
     name: "Xanathar's Guide to Everything",
     abbreviation: 'xgte',
@@ -2085,3 +2085,5 @@ A stunned target can make an Intelligence saving throw at the end of each of its
     },
   ],
 };
+
+export default data;

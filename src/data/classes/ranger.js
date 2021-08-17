@@ -1,6 +1,6 @@
 import toKebabCase from '../../utilities/toKebabCase';
 
-export default {
+const data = {
   name: 'Ranger',
   subclass_label: 'Archetype',
   subclasses: [
@@ -130,3 +130,5 @@ export default {
     toKebabCase('Greater restoration'),
   ],
 };
+
+export default data;

@@ -1,6 +1,6 @@
 import toKebabCase from '../../utilities/toKebabCase';
 
-export default {
+const data = {
   name: 'Bard',
   subclass_label: 'College',
   subclasses: [],
@@ -156,3 +156,5 @@ export default {
     toKebabCase('Prismatic wall'),
   ],
 };
+
+export default data;

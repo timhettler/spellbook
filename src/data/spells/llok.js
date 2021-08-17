@@ -1,6 +1,6 @@
 import { DAMAGE_EFFECT, SCHOOL } from 'data/const';
 
-export default {
+const data = {
   meta: {
     name: 'Lost Labratory of Kwalish',
     abbreviation: 'llok',
@@ -82,3 +82,5 @@ The target creature is made aware of the chest's contents before it chooses whet
     },
   ],
 };
+
+export default data;

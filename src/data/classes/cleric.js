@@ -1,6 +1,6 @@
 import toKebabCase from '../../utilities/toKebabCase';
 
-export default {
+const data = {
   name: 'Cleric',
   subclass_label: 'Domain',
   subclasses: [
@@ -341,3 +341,5 @@ export default {
     toKebabCase('Power word heal'),
   ],
 };
+
+export default data;
