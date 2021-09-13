@@ -27,7 +27,7 @@
     "flow-bin": "^0.157.0",
     "husky": "^7.0.1",
     "lint-staged": "^11.1.2",
-    "prettier": "^2.3.2",
+    "prettier": "^2.4.0",
     "react-test-renderer": "^16.13.1",
     "stylelint": "^13.13.1",
     "stylelint-config-recommended-scss": "^4.3.0",
