@@ -60,6 +60,7 @@ export const MONSTERS = {
     'lich',
     'minotaur',
     'goristro',
+    'tiny servant',
   ],
 };
 
