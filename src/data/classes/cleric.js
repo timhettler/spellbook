@@ -329,6 +329,7 @@ const data = {
     toKebabCase('Dawn'),
     toKebabCase('Holy weapon'),
     toKebabCase('Temple of the gods'),
+    toKebabCase('Borrowed Knowledge'),
   ],
   additional_spells: [
     toKebabCase('Aura of vitality'),

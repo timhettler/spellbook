@@ -161,6 +161,9 @@ const data = {
     toKebabCase('Skill empowerment'),
     toKebabCase('Transmute rock'),
     toKebabCase('Wall of stone'),
+    toKebabCase('Wall of stone'),
+    toKebabCase('Kinetic Jaunt'),
+    toKebabCase('vortex warp'),
   ],
 };
 

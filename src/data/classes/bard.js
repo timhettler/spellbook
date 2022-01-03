@@ -137,6 +137,9 @@ const data = {
     toKebabCase('Synaptic static'),
     toKebabCase('Mass polymorph'),
     toKebabCase('Psychic scream'),
+    toKebabCase('Silvery Barbs'),
+    toKebabCase('Borrowed Knowledge'),
+    toKebabCase('Kinetic Jaunt'),
   ],
   additional_spells: [
     toKebabCase('Color spray'),

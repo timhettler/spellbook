@@ -26,6 +26,7 @@ export const DAMAGE_EFFECT = {
   HEALING: 'Healing',
   LIGHTNING: 'Lightning',
   NECROTIC: 'Necrotic',
+  MOVEMENT: 'Movement',
   POISON: 'Poison',
   PIERCING: 'Piercing',
   PRONE: 'Prone',

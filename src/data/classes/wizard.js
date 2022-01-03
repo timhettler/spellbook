@@ -297,6 +297,11 @@ const data = {
     toKebabCase('Invulnerability'),
     toKebabCase('Mass polymorph'),
     toKebabCase('Psychic scream'),
+    toKebabCase('Silvery Barbs'),
+    toKebabCase('Borrowed Knowledge'),
+    toKebabCase('Kinetic Jaunt'),
+    toKebabCase('Vortex Warp'),
+    toKebabCase('Wither and Bloom'),
   ],
   additional_spells: [
     toKebabCase('Booming blade'),

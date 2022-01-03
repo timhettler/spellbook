@@ -15,6 +15,7 @@ import PHB from 'data/spells/phb';
 import XGTE from 'data/spells/xgte';
 import LLOK from 'data/spells/llok';
 import TCOE from 'data/spells/tcoe';
+import SACOC from 'data/spells/sacoc';
 
 import Artificer from 'data/classes/artificer';
 import Bard from 'data/classes/bard';
@@ -119,7 +120,9 @@ const ConnectedApp = () => {
 
   // Load in data sources
   useEffect(() => {
-    dispatch(loadSpells(mergeSpellbooks([PHB, TCOE, XGTE, LLOK], CLASS_DATA)));
+    dispatch(
+      loadSpells(mergeSpellbooks([PHB, TCOE, XGTE, LLOK, SACOC], CLASS_DATA))
+    );
     dispatch(loadCastingTimes(data.CASTING_TIMES));
     dispatch(loadSchools(data.SCHOOLS));
     dispatch(loadClasses(CLASS_DATA.map((cData) => cData.name)));

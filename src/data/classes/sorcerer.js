@@ -231,6 +231,9 @@ const data = {
     toKebabCase("Abi-Dalzim's horrid wilting"),
     toKebabCase('Mass polymorph'),
     toKebabCase('Psychic scream'),
+    toKebabCase('Kinetic Jaunt'),
+    toKebabCase('Vortex Warp'),
+    toKebabCase('Wither and Bloom'),
   ],
   additional_spells: [
     toKebabCase('Booming blade'),
