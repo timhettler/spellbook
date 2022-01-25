@@ -1,9 +1,10 @@
-import { ATTACK_SAVE, DAMAGE_EFFECT, SCHOOL } from 'data/const';
+import { ATTACK_SAVE, DAMAGE_EFFECT, SCHOOL, SOURCE_TYPE } from 'data/const';
 
 const data = {
   meta: {
     name: 'Strixhaven: A Curriculum of Chaos',
     abbreviation: 'sacoc',
+    type: SOURCE_TYPE.ADVENTURE,
   },
   spells: [
     {

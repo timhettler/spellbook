@@ -125,7 +125,7 @@ class Spell extends Component {
     const {
       name,
       desc,
-      page,
+      source,
       higher_level,
       range,
       components,
@@ -238,10 +238,10 @@ class Spell extends Component {
                 </div>
               </div>
             )}
-            {page && (
-              <div className="spell__page spell__minor-info content-area">
+            {source && (
+              <div className="spell__source spell__minor-info content-area">
                 <small>
-                  <i>({page})</i>
+                  <i>({source})</i>
                 </small>
               </div>
             )}

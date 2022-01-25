@@ -1,9 +1,10 @@
-import { ATTACK_SAVE, DAMAGE_EFFECT, SCHOOL } from 'data/const';
+import { ATTACK_SAVE, DAMAGE_EFFECT, SCHOOL, SOURCE_TYPE } from 'data/const';
 
 const data = {
   meta: {
     name: "Tasha's Cauldron of Everything",
     abbreviation: 'tcoe',
+    type: SOURCE_TYPE.SOURCEBOOK,
   },
   spells: [
     {
@@ -423,8 +424,7 @@ The blade can harmlessly pass through any barrier, including a wall of force.`,
       casting_time: '1 bonus action',
       level: 9,
       school: SCHOOL.CONJURATION,
-
-      attack_save: ATTACK_SAVE.MELEE,
+      attack_save: [ATTACK_SAVE.MELEE],
       damage_effect: [DAMAGE_EFFECT.FORCE],
     },
   ],

@@ -50,3 +50,8 @@ export const SCHOOL = {
   NECROMANCY: 'Necromancy',
   TRANSMUTATION: 'Transmutation',
 };
+
+export const SOURCE_TYPE = {
+  SOURCEBOOK: 'Sourcebook',
+  ADVENTURE: 'Adventure',
+};

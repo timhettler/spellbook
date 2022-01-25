@@ -16,6 +16,7 @@ import XGTE from 'data/spells/xgte';
 import LLOK from 'data/spells/llok';
 import TCOE from 'data/spells/tcoe';
 import SACOC from 'data/spells/sacoc';
+import IDROTFM from 'data/spells/idrotfm';
 
 import Artificer from 'data/classes/artificer';
 import Bard from 'data/classes/bard';
@@ -38,13 +39,14 @@ import NoSelection from 'components/NoSelection';
 
 import toKebabCase from 'utilities/toKebabCase';
 
-function transformSpell(spell) {
+function transformSpell(spell, meta) {
   return {
     ...spell,
     id: toKebabCase(spell.name),
     cost:
       spell.material &&
       spell.material.search(/[\d\s][csegp]p(?![a-zA-Z])/g) > -1,
+    source: meta.name,
   };
 }
 
@@ -61,15 +63,16 @@ function checkForDuplicateSpells(spells) {
 }
 
 function mergeSpellbooks(spellbooks, CLASS_DATA) {
-  const allSpells = spellbooks.map((book) => book.spells).flat();
-
   // Add additional props to spells
-  const transformedSpells = allSpells.map(transformSpell);
+  const allSpells = spellbooks
+    .map((book) => book.spells.map((spell) => transformSpell(spell, book.meta)))
+    .flat();
 
   // Check for duplicate spells
-  checkForDuplicateSpells(transformedSpells);
+  // TODO prefer SOURCEBOOK over ADVENTURE spells when there's a duplicate
+  checkForDuplicateSpells(allSpells);
 
-  const transformedSpellsWithClassInfo = transformedSpells.map((spell) => {
+  const spellsWithClassInfo = allSpells.map((spell) => {
     const newSpell = { ...spell, classes: [] };
 
     CLASS_DATA.forEach((data) => {
@@ -96,7 +99,7 @@ function mergeSpellbooks(spellbooks, CLASS_DATA) {
     return newSpell;
   });
 
-  return transformedSpellsWithClassInfo;
+  return spellsWithClassInfo;
 }
 
 const CLASS_DATA = [
@@ -121,7 +124,9 @@ const ConnectedApp = () => {
   // Load in data sources
   useEffect(() => {
     dispatch(
-      loadSpells(mergeSpellbooks([PHB, TCOE, XGTE, LLOK, SACOC], CLASS_DATA))
+      loadSpells(
+        mergeSpellbooks([PHB, TCOE, XGTE, LLOK, SACOC, IDROTFM], CLASS_DATA)
+      )
     );
     dispatch(loadCastingTimes(data.CASTING_TIMES));
     dispatch(loadSchools(data.SCHOOLS));

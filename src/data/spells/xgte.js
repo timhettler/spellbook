@@ -1,9 +1,10 @@
-import { ATTACK_SAVE, DAMAGE_EFFECT, SCHOOL } from 'data/const';
+import { ATTACK_SAVE, DAMAGE_EFFECT, SCHOOL, SOURCE_TYPE } from 'data/const';
 
 const data = {
   meta: {
     name: "Xanathar's Guide to Everything",
     abbreviation: 'xgte',
+    type: SOURCE_TYPE.SOURCEBOOK,
   },
   spells: [
     {

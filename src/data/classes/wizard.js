@@ -302,6 +302,8 @@ const data = {
     toKebabCase('Kinetic Jaunt'),
     toKebabCase('Vortex Warp'),
     toKebabCase('Wither and Bloom'),
+    toKebabCase('Create Magen'),
+    toKebabCase('Frost Fingers'),
   ],
   additional_spells: [
     toKebabCase('Booming blade'),

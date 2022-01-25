@@ -61,6 +61,9 @@ export const MONSTERS = {
     'minotaur',
     'goristro',
     'tiny servant',
+    'demos magen',
+    'galvan magen',
+    'hypnos magen',
   ],
 };
 
@@ -117,7 +120,7 @@ export const MONSTER_SPIRITS = {
     { id: 'construct', regex: 'Construct Spirit stat block', flag: '' },
     { id: 'elemental', regex: 'Elemental Spirit stat block', flag: '' },
     { id: 'fey', regex: 'Fey Spirit stat block', flag: '' },
-    { id: 'fiendish', regex: 'Fiendish Spirit stat block', flag: '' },
+    { id: 'fiend', regex: 'Fiendish Spirit stat block', flag: '' },
     { id: 'shadow', regex: 'Shadow Spirit stat block', flag: '' },
     { id: 'undead', regex: 'Undead Spirit stat block', flag: '' },
   ],

@@ -1,7 +1,10 @@
+import { SOURCE_TYPE } from 'data/const';
+
 const data = {
   meta: {
     name: "Player's Handbook",
     abbreviation: 'phb',
+    type: SOURCE_TYPE.SOURCEBOOK,
   },
   spells: [
     {

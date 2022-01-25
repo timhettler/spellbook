@@ -1,9 +1,10 @@
-import { DAMAGE_EFFECT, SCHOOL } from 'data/const';
+import { DAMAGE_EFFECT, SCHOOL, SOURCE_TYPE } from 'data/const';
 
 const data = {
   meta: {
     name: 'Lost Labratory of Kwalish',
     abbreviation: 'llok',
+    type: SOURCE_TYPE.ADVENTURE,
   },
   spells: [
     {
