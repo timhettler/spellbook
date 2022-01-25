@@ -1,15 +1,8 @@
-// @flow
-
 import React from 'react';
-import type { Node } from 'react';
 
 import './VisuallyHidden.scss';
 
-type Props = {
-  children?: Node,
-};
-
-const VisuallyHidden = ({ children, ...rest }: Props) => {
+const VisuallyHidden = ({ children, ...rest }) => {
   return (
     <span {...rest} className="visuallyHidden">
       {children}

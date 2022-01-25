@@ -1,5 +1,3 @@
-// @flow
-
 import React from 'react';
 import classNames from 'classnames/bind';
 
@@ -11,13 +9,7 @@ function handleClick(callback) {
   };
 }
 
-type Props = {
-  label: string,
-  active: boolean,
-  onClick: Function,
-};
-
-const Toast = ({ label, active, onClick, ...rest }: Props) => {
+const Toast = ({ label, active, onClick, ...rest }) => {
   if (!label) {
     return null;
   }

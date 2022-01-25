@@ -1,5 +1,3 @@
-// @flow
-
 import React from 'react';
 import { ICONS } from 'constants/icons';
 
@@ -15,12 +13,7 @@ const label = {
   favorites: 'A favorite spell',
 };
 
-type Props = {
-  type: $Keys<typeof label>,
-  hideLabel: boolean,
-};
-
-const PropIcon = ({ type, hideLabel }: Props) => {
+const PropIcon = ({ type, hideLabel }) => {
   return (
     <div className="prop-icon">
       <span aria-hidden={true}>

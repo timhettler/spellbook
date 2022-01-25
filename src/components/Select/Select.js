@@ -1,35 +1,15 @@
-// @flow
-
 import React from 'react';
 import classNames from 'classnames/bind';
 
-import { classNameType } from 'utilities/types';
 import Chevron from 'components/Chevron';
 import VisuallyHidden from 'components/VisuallyHidden';
 
 import './Select.scss';
 
-const handleChange = (callback: Function, type: string): Function => {
-  return (e: SyntheticInputEvent<HTMLSelectElement>): void => {
+const handleChange = (callback, type) => {
+  return (e) => {
     callback(e.target.value, type);
   };
-};
-
-type Option =
-  | string
-  | {
-      label: string,
-      value: any,
-    };
-
-type Props = {
-  options: Array<Option>,
-  value: any,
-  type: string,
-  className: classNameType,
-  onChange: Function,
-  label: string,
-  allLabel: string,
 };
 
 const Select = ({
@@ -40,7 +20,7 @@ const Select = ({
   onChange,
   label,
   allLabel,
-}: Props) => {
+}) => {
   const displayOptions = [{ label: allLabel, value: '' }].concat(options);
   return (
     <label className="select-container">

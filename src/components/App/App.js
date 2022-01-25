@@ -1,20 +1,9 @@
-// @flow
-
 import React, { useState, useEffect } from 'react';
-import type { Node } from 'react';
 import classNames from 'classnames/bind';
 
 import './App.scss';
 
-type Props = {
-  currentSpellId: string,
-  controls: Node,
-  list: Node,
-  detail: Node,
-  toast: Node,
-};
-
-const App = ({ currentSpellId, controls, list, detail, toast }: Props) => {
+const App = ({ currentSpellId, controls, list, detail, toast }) => {
   const [isSpellSelected, setIsSpellSelected] = useState(false);
 
   useEffect(() => {

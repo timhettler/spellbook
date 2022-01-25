@@ -1,5 +1,3 @@
-// @flow
-
 import React from 'react';
 
 import ResetButton from 'containers/ResetButton';
@@ -15,7 +13,7 @@ import { SCHOOLS } from 'data';
 
 import './Controls.scss';
 
-function _getSortIcon(field: string, sorting: Sorting): ?string {
+function _getSortIcon(field, sorting) {
   if (field !== sorting.field) {
     return null;
   }
@@ -23,21 +21,11 @@ function _getSortIcon(field: string, sorting: Sorting): ?string {
   return sorting.reverse ? '↓' : '↑';
 }
 
-function _getAriaLabel(label: string): string {
+function _getAriaLabel(label) {
   return `sort by ${label}`;
 }
 
-type Sorting = {
-  field: string,
-  reverse: boolean,
-};
-
-type Props = {
-  sorting: Sorting,
-  showSubClassFilter: boolean,
-};
-
-const Controls = ({ sorting, showSubClassFilter }: Props) => (
+const Controls = ({ sorting, showSubClassFilter }) => (
   <div className="control-container">
     <div className="control-section">
       <div className="control-item control-item--input">

@@ -1,23 +1,14 @@
-// @flow
-
 import React from 'react';
 import Helmet from 'react-helmet';
 
 import { SITE } from 'constants/site';
-
-type Props = {
-  description: string,
-  lang: string,
-  meta: Array<{ name: string, content: string }>,
-  title: string,
-};
 
 function SEO({
   lang = 'en',
   meta = [],
   description = SITE.description,
   title = SITE.title,
-}: Props) {
+}) {
   const metaDescription = description;
   const titleTemplate = title !== SITE.title ? `%s | ${SITE.title}` : null;
 

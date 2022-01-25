@@ -1,5 +1,3 @@
-// @flow
-
 import React, { useRef } from 'react';
 
 import TextInput from 'components/TextInput';
@@ -7,13 +5,7 @@ import VisuallyHidden from 'components/VisuallyHidden';
 
 import './SpellSearch.scss';
 
-type Props = {
-  value: string,
-  onChange: Function,
-  onSubmit: Function,
-};
-
-const SpellSearch = ({ value = '', onChange, onSubmit, ...rest }: Props) => {
+const SpellSearch = ({ value = '', onChange, onSubmit, ...rest }) => {
   const inputEl = useRef(null);
 
   const handleSubmit = (callback) => (e) => {

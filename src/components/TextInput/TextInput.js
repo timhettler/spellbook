@@ -1,26 +1,16 @@
-// @flow
-
 import React from 'react';
 import classNames from 'classnames/bind';
-import { classNameType } from 'utilities/types';
 
 import VisuallyHidden from 'components/VisuallyHidden';
 import './TextInput.scss';
 
-function handleChange(callback: Function): Function {
-  return (e: SyntheticInputEvent<HTMLInputElement>): void => {
+function handleChange(callback) {
+  return (e) => {
     callback(e.target.value);
   };
 }
 
-type Props = {
-  value: string,
-  className: classNameType,
-  onChange: Function,
-  label: string,
-};
-
-const TextInput = React.forwardRef<Props, HTMLInputElement>(
+const TextInput = React.forwardRef(
   ({ value, className, onChange, label, ...rest }, ref) => {
     return (
       <label className={classNames('text-label')}>
