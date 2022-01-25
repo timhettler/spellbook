@@ -1,5 +1,6 @@
 {
   "projects": {
-    "spellbook": "spellbook-17259"
+    "spellbook": "spellbook-17259",
+    "default": "spellbook-17259"
   }
 }
