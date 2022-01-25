@@ -6,7 +6,7 @@
   display: inline-flex;
   align-items: center;
 
-  @include small() {
+  @include small {
     font-size: inherit;
   }
 
@@ -15,14 +15,15 @@
   }
 
   &__label {
-    @include smallAndMedium() {
+    @include smallAndMedium {
       display: none;
     }
   }
 }
 
 .big-check {
-  @include ratioHeight();
+  @include ratioHeight;
+
   border-radius: 50%;
   background-color: darkgray;
   width: 50px;
@@ -32,7 +33,7 @@
     filter: grayscale(100%);
   }
 
-  @include smallAndMedium() {
+  @include smallAndMedium {
     width: 20px;
   }
 
@@ -43,7 +44,7 @@
     transform: translate(-50%, -50%);
     font-size: xx-large;
 
-    @include smallAndMedium() {
+    @include smallAndMedium {
       font-size: large;
       text-indent: 5px; //Magic number needed because emojis aren't centered in their box
     }

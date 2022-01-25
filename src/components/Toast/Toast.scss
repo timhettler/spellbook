@@ -2,7 +2,8 @@
 @use 'utilities/scss/mixins' as *;
 
 .toast {
-  @include reset-button();
+  @include reset-button;
+
   background-color: $color--gray-ccc;
   color: $color--black;
   padding: $spacing--full-and-half;

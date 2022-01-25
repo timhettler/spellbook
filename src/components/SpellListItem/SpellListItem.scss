@@ -22,7 +22,7 @@ $spell-list--focus-indicator-width: 5px;
   justify-content: space-between;
 
   &.is-active {
-    border-left-color: currentColor !important;
+    border-left-color: currentcolor !important;
   }
 
   &:focus {

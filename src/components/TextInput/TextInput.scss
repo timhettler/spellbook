@@ -8,5 +8,6 @@
 
 .text-input {
   @include reset-input;
+
   padding: $spacing--quarter $spacing--half;
 }

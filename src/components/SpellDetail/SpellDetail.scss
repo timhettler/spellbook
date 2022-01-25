@@ -55,6 +55,7 @@ $spell-subheading--border-width: 2px;
 
   &__minor-heading {
     @include inlineHeading;
+
     font-weight: bold;
     font-style: italic;
   }
@@ -90,6 +91,7 @@ $spell-subheading--border-width: 2px;
 
 .spell-close-button {
   @include reset-button;
+
   font-size: xx-large;
 }
 
@@ -124,6 +126,7 @@ $spell-subheading--border-width: 2px;
 
   &--scroll {
     @include touch-overflow;
+
     flex: 1 1;
   }
 }

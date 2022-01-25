@@ -51,7 +51,7 @@ $control-item--border-radius: 0.75em;
     display: inline-flex;
     align-items: center;
 
-    @include smallAndMedium() {
+    @include smallAndMedium {
       margin: $spacing--quarter;
     }
   }

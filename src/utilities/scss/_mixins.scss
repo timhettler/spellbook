@@ -1,24 +1,20 @@
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:math';
+@use 'sass:string';
+
 $size--medium-viewport-start: 768px;
 $size--large-viewport-start: 1100px;
 
 @mixin disable-callout() {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: rgb(0 0 0 / 0%);
   -webkit-touch-callout: none;
   user-select: none;
 }
 
 @mixin reset-button() {
-  @include disable-callout();
-
-  background-color: transparent;
-  border: 0;
-  color: inherit;
-  font-family: inherit;
-  font-size: inherit;
-  -webkit-font-smoothing: inherit;
-  margin: 0;
-  padding: 0;
-  //outline: none;
+  @include disable-callout;
+  all: unset;
   display: block;
   text-align: inherit;
   overflow: hidden;
@@ -44,21 +40,25 @@ $size--large-viewport-start: 1100px;
   font-size: inherit;
   -webkit-font-smoothing: inherit;
   margin: 0;
+
   //outline: none;
-  -webkit-appearance: none;
+  appearance: none;
   width: 100%;
 }
 
 @mixin _breakpoint($media-queries) {
   $query-list: ();
-  $keys: map-keys($media-queries);
-  $values: map-values($media-queries);
+  $keys: map.keys($media-queries);
+  $values: map.values($media-queries);
+
   @for $i from 1 through length($keys) {
-    $string: '(' + nth($keys, $i) + ':' + nth($values, $i) + ')';
-    @if (length($query-list) != 0) {
+    $string: '(' + list.nth($keys, $i) + ':' + list.nth($values, $i) + ')';
+
+    @if length($query-list) != 0 {
       $string: 'and ' + $string;
     }
-    $query-list: append($query-list, unquote($string));
+
+    $query-list: list.append($query-list, string.unquote($string));
   }
 
   @media #{$query-list} {
@@ -158,10 +158,10 @@ $size--large-viewport-start: 1100px;
   overflow: hidden;
   position: relative;
 
-  &:before {
+  &::before {
     content: '';
     display: block;
-    padding-bottom: percentage($height-ratio);
+    padding-bottom: math.percentage($height-ratio);
   }
 }
 
