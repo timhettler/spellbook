@@ -12,7 +12,7 @@ $spell-list--focus-indicator-width: 5px;
 }
 
 .spell-list-item {
-  cursor: pointer;
+  @include reset-button;
   border-left: $spell-list--focus-indicator-width solid transparent;
   line-height: 1.2;
   -webkit-tap-highlight-color: initial;

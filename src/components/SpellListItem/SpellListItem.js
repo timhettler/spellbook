@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
@@ -35,89 +35,46 @@ const SpellIconsPropTypes = {
 
 SpellIcons.propTypes = SpellIconsPropTypes;
 
-export class SpellListItem extends Component {
-  constructor(props) {
-    super(props);
+const SpellListItem = ({ onClick, spell, isActive, theme, ...rest }) => {
+  const {
+    id,
+    name,
+    higher_level,
+    ritual,
+    concentration,
+    cost,
+    level,
+    isSubClassSpell,
+  } = spell;
 
-    this.interactiveEl = React.createRef();
-    this._keyboardEvents = this._keyboardEvents.bind(this);
-    this._handleClick = this._handleClick.bind(this);
-  }
-
-  componentDidMount() {
-    this.interactiveEl.current.addEventListener(
-      'keydown',
-      this._keyboardEvents
-    );
-  }
-
-  componentWillUnmount() {
-    this.interactiveEl.current.removeEventListener(
-      'keydown',
-      this._keyboardEvents
-    );
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    return this.props.isActive !== nextProps.isActive;
-  }
-
-  _keyboardEvents(e) {
-    switch (e.keyCode) {
-      case 13:
-        this._handleClick(this.props.onClick)(e);
-        break;
-      default:
-        break;
-    }
-
-    return;
-  }
-
-  _handleClick(callback) {
+  const handleClick = (callback) => {
     return (e) => {
       callback(e);
       e.stopPropagation();
     };
-  }
+  };
 
-  render() {
-    const { onClick, spell, isActive, theme, ...rest } = this.props;
-
-    const {
-      id,
-      name,
-      higher_level,
-      ritual,
-      concentration,
-      cost,
-      level,
-      isSubClassSpell,
-    } = spell;
-
-    return (
-      <div
-        ref={this.interactiveEl}
-        className={classNames('spell-list-item', `is-${theme}`, {
-          'is-active': isActive,
-        })}
-        role="link"
-        tabIndex="0"
-        onClick={this._handleClick(onClick)}
-        {...rest}
-      >
-        <span>{<FavoriteButton spellId={id} />}</span>
-        <span className="spell-list-item__name">
-          {name}
-          <SpellIcons
-            {...{ ritual, concentration, cost, higher_level, isSubClassSpell }}
-          />
-        </span>
-        <span className="spell-list-item__level">{getSpellLevel(level)}</span>
-      </div>
-    );
-  }
-}
+  return (
+    <div
+      className={classNames('spell-list-item', `is-${theme}`, {
+        'is-active': isActive,
+      })}
+      role="link"
+      tabIndex="0"
+      onClick={handleClick(onClick)}
+      {...rest}
+    >
+      <span>{<FavoriteButton spellId={id} />}</span>
+      <span className="spell-list-item__name">
+        {name}
+        <SpellIcons
+          {...{ ritual, concentration, cost, higher_level, isSubClassSpell }}
+        />
+      </span>
+      <span className="spell-list-item__level">{getSpellLevel(level)}</span>
+    </div>
+  );
+};
 
 SpellListItem.propTypes = {
   onClick: PropTypes.func.isRequired,
