@@ -1,7 +1,15 @@
-@import 'utilities/scss/_vars';
-@import 'utilities/scss/_mixins';
+@use 'utilities/scss/vars' as *;
+@use 'utilities/scss/mixins' as *;
 
 $spell-list--focus-indicator-width: 5px;
+
+.spell-icons {
+  display: inline-flex;
+
+  > * {
+    margin-left: $spacing--natural;
+  }
+}
 
 .spell-list-item {
   cursor: pointer;
@@ -84,13 +92,5 @@ $spell-list--focus-indicator-width: 5px;
     @include small {
       font-size: small;
     }
-  }
-}
-
-.spell-icons {
-  display: inline-flex;
-
-  > * {
-    margin-left: $spacing--natural;
   }
 }

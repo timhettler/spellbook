@@ -1,5 +1,5 @@
-@import 'utilities/scss/_vars';
-@import 'utilities/scss/_mixins';
+@use 'utilities/scss/vars' as *;
+@use 'utilities/scss/mixins' as *;
 
 $spell-subheading--border-width: 2px;
 

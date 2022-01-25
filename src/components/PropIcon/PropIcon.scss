@@ -1,4 +1,4 @@
-@import 'utilities/scss/_vars';
+@use 'utilities/scss/vars' as *;
 
 .prop-icon {
   display: inline-flex;

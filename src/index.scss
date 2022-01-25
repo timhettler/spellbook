@@ -1,7 +1,7 @@
-@import './utilities/scss/_vars';
-@import './utilities/scss/_mixins';
+@use './utilities/scss/vars' as *;
+@use './utilities/scss/mixins' as *;
 
-@import './utilities/scss/_reset';
+@use './utilities/scss/reset';
 
 // global styles
 

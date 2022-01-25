@@ -1,4 +1,4 @@
-@import 'utilities/scss/_mixins';
+@use 'utilities/scss/mixins' as *;
 
 .visuallyHidden {
   @include visuallyHidden;

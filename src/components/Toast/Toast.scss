@@ -1,5 +1,5 @@
-@import 'utilities/scss/_mixins';
-@import 'utilities/scss/_vars';
+@use 'utilities/scss/vars' as *;
+@use 'utilities/scss/mixins' as *;
 
 .toast {
   @include reset-button();
