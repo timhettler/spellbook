@@ -124,6 +124,17 @@ const SpellDetail = ({
     setCanScroll(modifyScrollContainer(description.current));
   }, [id, prevId]);
 
+  const handleShare = async () => {
+    try {
+      await navigator.share({
+        text: `${name}: ${getSpellLevel(level)} ${school.toLowerCase()} spell`,
+        url: `/spell/${id}`,
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   return (
     <article className="spell" tabIndex="-1" aria-live="polite">
       <div className="spell__container">
@@ -139,6 +150,9 @@ const SpellDetail = ({
               </div>
             </div>
             <div className="spell-header__section spell-header__section--cta">
+              <button className="spell-close-button" onClick={handleShare}>
+                ⤴️
+              </button>
               <button className="spell-close-button" onClick={onClose}>
                 <span role="presentation">×</span>
                 <VisuallyHidden>Return to Spell List</VisuallyHidden>

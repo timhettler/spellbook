@@ -77,13 +77,14 @@ $spell-subheading--border-width: 2px;
 
 .spell-header {
   display: flex;
+  justify-content: space-between;
   width: 100%;
 
   &__section {
-    flex: 1 1 auto;
-
     &--cta {
-      flex: 0 0 auto;
+      display: flex;
+      gap: $spacing--full;
+      flex-direction: row;
       margin-left: $spacing--full-and-half;
     }
   }
