@@ -126,7 +126,7 @@ const SpellDetail = ({
 
   const handleShare = async () => {
     try {
-      await navigator.share({
+      await window.navigator.share({
         text: `${name}: ${getSpellLevel(level)} ${school.toLowerCase()} spell`,
         url: `/spell/${id}`,
       });
@@ -150,9 +150,11 @@ const SpellDetail = ({
               </div>
             </div>
             <div className="spell-header__section spell-header__section--cta">
-              <button className="spell-close-button" onClick={handleShare}>
-                ⤴️
-              </button>
+              {window.navigator.share && (
+                <button className="spell-close-button" onClick={handleShare}>
+                  ⤴️
+                </button>
+              )}
               <button className="spell-close-button" onClick={onClose}>
                 <span role="presentation">×</span>
                 <VisuallyHidden>Return to Spell List</VisuallyHidden>
