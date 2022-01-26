@@ -17,7 +17,7 @@ const NoResults = () => {
   );
 };
 
-const SpellList = ({ spells, currentSpellId, onSpellClick }) => {
+const SpellList = ({ spells, currentSpellId }) => {
   const [canScroll, setCanScroll] = useState(null);
   const [dimensions, setDimensions] = useState({
     containerHeight: 0,
@@ -97,7 +97,6 @@ const SpellList = ({ spells, currentSpellId, onSpellClick }) => {
                   theme={index % 2 === 0 ? 'even' : 'odd'}
                   spell={{ ...spells[index] }}
                   isActive={currentSpellId === spells[index].id}
-                  onClick={() => onSpellClick(spells[index].id)}
                 />
               </li>
             )}
@@ -114,7 +113,6 @@ SpellList.propTypes = {
     }).isRequired
   ).isRequired,
   currentSpellId: PropTypes.string,
-  onSpellClick: PropTypes.func.isRequired,
 };
 
 export default SpellList;

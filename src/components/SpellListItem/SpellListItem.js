@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
@@ -47,21 +48,12 @@ const SpellListItem = ({ onClick, spell, isActive, theme, ...rest }) => {
     isSubClassSpell,
   } = spell;
 
-  const handleClick = (callback) => {
-    return (e) => {
-      callback(e);
-      e.stopPropagation();
-    };
-  };
-
   return (
-    <div
+    <Link
       className={classNames('spell-list-item', `is-${theme}`, {
         'is-active': isActive,
       })}
-      role="link"
-      tabIndex="0"
-      onClick={handleClick(onClick)}
+      to={`/spell/${id}`}
       {...rest}
     >
       <span>{<FavoriteButton spellId={id} />}</span>
@@ -72,12 +64,11 @@ const SpellListItem = ({ onClick, spell, isActive, theme, ...rest }) => {
         />
       </span>
       <span className="spell-list-item__level">{getSpellLevel(level)}</span>
-    </div>
+    </Link>
   );
 };
 
 SpellListItem.propTypes = {
-  onClick: PropTypes.func.isRequired,
   spell: PropTypes.shape({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,

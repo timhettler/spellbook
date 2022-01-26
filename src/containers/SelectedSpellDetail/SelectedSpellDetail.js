@@ -1,16 +1,16 @@
 import React, { useCallback } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
-import { viewSpell } from 'actions';
 import { selectCurrentSpell } from './selectors';
 import SpellDetail from 'components/SpellDetail';
 
-const SelectedSpellDetail = (props) => {
+const SelectedSpellDetail = () => {
   const spell = useSelector(selectCurrentSpell);
-  const dispatch = useDispatch();
-  const onClose = useCallback((value) => dispatch(viewSpell(null)), [dispatch]);
+  const navigate = useNavigate();
+  const onClose = useCallback(() => navigate('/'), [navigate]);
 
-  if (!spell.name) {
+  if (!spell) {
     return null;
   }
 

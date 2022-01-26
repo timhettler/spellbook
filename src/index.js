@@ -3,9 +3,12 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './store';
+
 import './index.scss';
-import ConnectedApp from './containers/ConnectedApp';
+
 import ConnectedSEO from './containers/ConnectedSEO';
+import { AppRoutes } from './AppRoutes';
+
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
@@ -13,7 +16,7 @@ ReactDOM.render(
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <ConnectedSEO />
-        <ConnectedApp />
+        <AppRoutes />
       </PersistGate>
     </Provider>
   </React.StrictMode>,

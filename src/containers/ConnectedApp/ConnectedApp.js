@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Outlet, useParams } from 'react-router-dom';
 
 import {
   loadSpells,
@@ -28,14 +29,11 @@ import Sorcerer from 'data/classes/sorcerer';
 import Warlock from 'data/classes/warlock';
 import Wizard from 'data/classes/wizard';
 
-import history from 'utilities/history';
 import App from 'components/App';
 
 import VisibleSpellList from 'containers/VisibleSpellList';
-import SelectedSpellDetail from 'containers/SelectedSpellDetail';
 import VisibleControls from 'containers/VisibleControls';
 import OfflineToast from 'containers/OfflineToast';
-import NoSelection from 'components/NoSelection';
 
 import toKebabCase from 'utilities/toKebabCase';
 
@@ -114,12 +112,10 @@ const CLASS_DATA = [
   Wizard,
 ];
 
-const renderDetail = (currentSpellId) =>
-  !!currentSpellId ? <SelectedSpellDetail /> : <NoSelection />;
-
 const ConnectedApp = () => {
   const currentSpellId = useSelector((state) => state.currentSpellId);
   const dispatch = useDispatch();
+  const { spellId } = useParams();
 
   // Load in data sources
   useEffect(() => {
@@ -145,30 +141,18 @@ const ConnectedApp = () => {
     });
   }, [dispatch]);
 
-  // If url includes a spell id, load that spell
   useEffect(() => {
-    const loc = history.location.pathname.split('/').filter((x) => x);
-    if (loc[0] === 'spell') {
-      dispatch(viewSpell(loc[1]));
+    if (spellId !== currentSpellId) {
+      dispatch(viewSpell(spellId || null));
     }
-  }, [dispatch]);
-
-  // When spell id changes, update the URL
-  useEffect(() => {
-    if (!currentSpellId) {
-      history.push('');
-      return;
-    }
-
-    history.push(`/spell/${currentSpellId}`);
-  }, [currentSpellId]);
+  }, [currentSpellId, spellId, dispatch]);
 
   return (
     <App
       currentSpellId={currentSpellId}
       controls={<VisibleControls />}
       list={<VisibleSpellList />}
-      detail={renderDetail(currentSpellId)}
+      detail={<Outlet />}
       toast={<OfflineToast />}
     />
   );
