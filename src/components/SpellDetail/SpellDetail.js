@@ -152,12 +152,13 @@ const SpellDetail = ({
             <div className="spell-header__section spell-header__section--cta">
               {window.navigator.share && (
                 <button className="spell-close-button" onClick={handleShare}>
-                  ⤴️
+                  <span role="presentation">⤴️</span>
+                  <VisuallyHidden>Share this spell</VisuallyHidden>
                 </button>
               )}
               <button className="spell-close-button" onClick={onClose}>
                 <span role="presentation">×</span>
-                <VisuallyHidden>Return to Spell List</VisuallyHidden>
+                <VisuallyHidden>Return to spell list</VisuallyHidden>
               </button>
             </div>
           </div>
