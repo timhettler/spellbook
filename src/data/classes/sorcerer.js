@@ -265,6 +265,8 @@ const data = {
     toKebabCase('Summon Draconic Spirit'),
     toKebabCase("Fizban's Platinum Shield"),
     toKebabCase('Draconic Transformation'),
+    // SAIS
+    toKebabCase('Air Bubble'),
   ],
 };
 

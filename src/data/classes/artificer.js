@@ -168,6 +168,9 @@ const data = {
   additional_spells: [
     // FTOD
     toKebabCase("Ashardalon's Stride"),
+    // SAIS
+    toKebabCase('Air Bubble'),
+    toKebabCase('Create Spelljamming Helm'),
   ],
 };
 

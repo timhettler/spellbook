@@ -294,6 +294,8 @@ const data = {
     // FTOD
     toKebabCase('Summon Draconic Spirit'),
     toKebabCase('Draconic Transformation'),
+    // SAIS
+    toKebabCase('Air Bubble'),
   ],
 };
 

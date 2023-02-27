@@ -130,6 +130,8 @@ const data = {
     toKebabCase('Greater restoration'),
     //FTOD
     toKebabCase("Ashardalon's Stride"),
+    // SAIS
+    toKebabCase('Air Bubble'),
   ],
 };
 
