@@ -291,6 +291,11 @@ const data = {
     toKebabCase('Flesh to stone'),
     toKebabCase('Symbol'),
     toKebabCase('Incendiary cloud'),
+    // FTOD
+    toKebabCase('Summon Draconic Spirit'),
+    toKebabCase('Draconic Transformation'),
+    // SAIS
+    toKebabCase('Air Bubble'),
   ],
 };
 

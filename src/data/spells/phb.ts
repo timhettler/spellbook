@@ -1,6 +1,7 @@
-import { SOURCE_TYPE } from 'data/const';
+import { SOURCE_TYPE } from '../const';
+import { SourceType } from '../types';
 
-const data = {
+const data: SourceType = {
   meta: {
     name: "Player's Handbook",
     abbreviation: 'phb',
@@ -366,7 +367,6 @@ While affected by this spell, the object is more difficult to break or force ope
       range: 'Touch',
       components: ['V', 'S', 'M'],
       material: 'Gold dust worth at least 25gp, which the spell consumes',
-      cost: true,
       ritual: false,
       duration: 'Until dispelled',
       concentration: false,
@@ -447,7 +447,6 @@ If you are returned to your body prematurely, your companions remain in their as
       components: ['V', 'S', 'M'],
       material:
         'for each creature you affect with this spell, you must provide one jacinth worth at least 1,000 gp and one ornately carved bar of silver worth at least 100 gp, all of which the spell consumes',
-      cost: true,
       ritual: false,
       duration: 'Special',
       concentration: false,
@@ -472,7 +471,6 @@ If you cast the spell two or more times before completing your next long rest, t
       components: ['V', 'S', 'M'],
       material:
         'Specially marked sticks, bones, or similar tokens worth at least 25 gp',
-      cost: true,
       ritual: true,
       duration: 'Instantaneous',
       concentration: false,
@@ -528,7 +526,6 @@ The awakened beast or plant is charmed by you for 30 days or until you or your c
       range: 'Touch',
       components: ['V', 'S', 'M'],
       material: 'An agate worth at least 1,000 gp, which the spell consumes',
-      cost: true,
       ritual: false,
       duration: 'Instantaneous',
       concentration: false,
@@ -912,7 +909,6 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
       range: '90 feet',
       components: ['V', 'S', 'M'],
       material: 'A diamond worth at least 50 gp',
-      cost: true,
       ritual: false,
       duration: 'Instantaneous',
       concentration: false,
@@ -1528,8 +1524,6 @@ Stage | Condition
       casting_time: '1 action',
       level: 1,
       school: 'Evocation',
-
-      patron: ['Celestial'],
     },
     {
       name: 'Dancing Lights',
@@ -1585,8 +1579,6 @@ Stage | Condition
       casting_time: '1 action',
       level: 3,
       school: 'Evocation',
-
-      patron: ['Celestial'],
     },
     {
       name: 'Death Ward',
@@ -1934,8 +1926,6 @@ Stage | Condition
       casting_time: '1 action',
       level: 8,
       school: 'Evocation',
-
-      saving_throw: ['Constitution', 'Dexterity'],
     },
     {
       name: 'Eldritch Blast',
@@ -2393,8 +2383,6 @@ Stage | Condition
       casting_time: '1 action',
       level: 2,
       school: 'Conjuration',
-
-      patron: ['Celestial'],
     },
     {
       name: 'Flesh to Stone',
@@ -2749,8 +2737,6 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
       casting_time: '1 action',
       level: 5,
       school: 'Abjuration',
-
-      patron: ['Celestial'],
     },
     {
       name: 'Guardian of Faith',
@@ -2764,8 +2750,6 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
       casting_time: '1 action',
       level: 4,
       school: 'Conjuration',
-
-      patron: ['Celestial'],
     },
     {
       name: 'Guards and Wards',
@@ -2809,8 +2793,6 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
       casting_time: '1 action',
       level: 1,
       school: 'Evocation',
-
-      patron: ['Celestial'],
     },
     {
       name: 'Gust of Wind',
@@ -3343,8 +3325,6 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
       casting_time: '1 action',
       level: 2,
       school: 'Abjuration',
-
-      patron: ['Celestial'],
     },
     {
       name: 'Levitate',
@@ -4577,8 +4557,6 @@ You can store a prepared spell of 3rd level or lower in the glyph by casting it 
       casting_time: '1 action',
       level: 3,
       school: 'Necromancy',
-
-      patron: ['Celestial'],
     },
     {
       name: 'Rope Trick',

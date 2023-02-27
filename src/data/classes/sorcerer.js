@@ -257,6 +257,16 @@ const data = {
     toKebabCase('Dream of the blue veil'),
     toKebabCase('Demiplane'),
     toKebabCase('Blade of disaster'),
+    //FTOD
+    toKebabCase("Nathair's Mischief"),
+    toKebabCase("Rime's Binding Ice"),
+    toKebabCase("Ashardalon's Stride"),
+    toKebabCase("Raulothim's Psychic Lance"),
+    toKebabCase('Summon Draconic Spirit'),
+    toKebabCase("Fizban's Platinum Shield"),
+    toKebabCase('Draconic Transformation'),
+    // SAIS
+    toKebabCase('Air Bubble'),
   ],
 };
 

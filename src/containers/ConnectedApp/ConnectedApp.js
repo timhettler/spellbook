@@ -18,6 +18,8 @@ import LLOK from 'data/spells/llok';
 import TCOE from 'data/spells/tcoe';
 import SACOC from 'data/spells/sacoc';
 import IDROTFM from 'data/spells/idrotfm';
+import FTOD from 'data/spells/ftod';
+import SAIS from 'data/spells/sais';
 
 import Artificer from 'data/classes/artificer';
 import Bard from 'data/classes/bard';
@@ -121,7 +123,10 @@ const ConnectedApp = () => {
   useEffect(() => {
     dispatch(
       loadSpells(
-        mergeSpellbooks([PHB, TCOE, XGTE, LLOK, SACOC, IDROTFM], CLASS_DATA)
+        mergeSpellbooks(
+          [PHB, TCOE, XGTE, LLOK, SACOC, IDROTFM, FTOD, SAIS],
+          CLASS_DATA
+        )
       )
     );
     dispatch(loadCastingTimes(data.CASTING_TIMES));

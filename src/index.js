@@ -55,10 +55,7 @@ function is_touch_device() {
     return window.matchMedia(query).matches;
   };
 
-  if (
-    'ontouchstart' in window ||
-    (window.DocumentTouch && document instanceof window.DocumentTouch)
-  ) {
+  if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
     return true;
   }
 

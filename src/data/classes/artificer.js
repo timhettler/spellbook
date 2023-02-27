@@ -165,6 +165,13 @@ const data = {
     toKebabCase('Kinetic Jaunt'),
     toKebabCase('vortex warp'),
   ],
+  additional_spells: [
+    // FTOD
+    toKebabCase("Ashardalon's Stride"),
+    // SAIS
+    toKebabCase('Air Bubble'),
+    toKebabCase('Create Spelljamming Helm'),
+  ],
 };
 
 export default data;

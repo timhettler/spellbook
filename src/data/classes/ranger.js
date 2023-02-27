@@ -128,6 +128,10 @@ const data = {
     toKebabCase('Dominate beast'),
     toKebabCase('Summon elemental'),
     toKebabCase('Greater restoration'),
+    //FTOD
+    toKebabCase("Ashardalon's Stride"),
+    // SAIS
+    toKebabCase('Air Bubble'),
   ],
 };
 
