@@ -165,6 +165,10 @@ const data = {
     toKebabCase('Kinetic Jaunt'),
     toKebabCase('vortex warp'),
   ],
+  additional_spells: [
+    // FTOD
+    toKebabCase("Ashardalon's Stride"),
+  ],
 };
 
 export default data;

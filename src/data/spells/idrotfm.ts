@@ -1,6 +1,7 @@
+import { SourceType } from '../types';
 import { ATTACK_SAVE, DAMAGE_EFFECT, SCHOOL, SOURCE_TYPE } from '../const';
 
-const data = {
+const data: SourceType = {
   meta: {
     name: 'Icewind Dale: Rime of the Frost Maiden',
     abbreviation: 'idrotfm',

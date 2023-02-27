@@ -1,6 +1,7 @@
-import { ATTACK_SAVE, DAMAGE_EFFECT, SCHOOL, SOURCE_TYPE } from 'data/const';
+import { ATTACK_SAVE, DAMAGE_EFFECT, SCHOOL, SOURCE_TYPE } from '../const';
+import { SourceType } from '../types';
 
-const data = {
+const data: SourceType = {
   meta: {
     name: "Tasha's Cauldron of Everything",
     abbreviation: 'tcoe',

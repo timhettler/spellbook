@@ -157,6 +157,9 @@ const data = {
     toKebabCase('Prismatic spray'),
     toKebabCase('Antipathy/sympathy'),
     toKebabCase('Prismatic wall'),
+    // FTOD
+    toKebabCase("Nathair's Mischief"),
+    toKebabCase("Raulothim's Psychic Lance"),
   ],
 };
 

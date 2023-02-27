@@ -1,6 +1,7 @@
-import { DAMAGE_EFFECT, SCHOOL, SOURCE_TYPE } from 'data/const';
+import { DAMAGE_EFFECT, SCHOOL, SOURCE_TYPE } from '../const';
+import { SourceType } from '../types';
 
-const data = {
+const data: SourceType = {
   meta: {
     name: 'Lost Labratory of Kwalish',
     abbreviation: 'llok',
@@ -43,7 +44,7 @@ When you cast a spell with a range of touch, one of the familiars conjured by th
 The interior of the tower is warm and dry, regardless of conditions outside. Any equipment or furnishings conjured with the tower dissipate into smoke if removed from it. At the end of the spell's duration, all creatures and objects within the tower that were not created by the spell appear safely outside on the ground, and all traces of the tower and its furnishings disappear.
 
 You can cast this spell again while it is active to maintain the tower's existence for another 24 hours. You can create a permanent tower by casting this spell in the same location and with the same configuration every day for one year.`,
-      higher_levels:
+      higher_level:
         'When you cast this spell using a spell slot of 4th level or higher, the tower can have one additional story for each slot level beyond 3rd.',
       page: null,
       range: '30 feet',

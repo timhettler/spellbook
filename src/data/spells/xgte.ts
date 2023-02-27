@@ -1,6 +1,7 @@
-import { ATTACK_SAVE, DAMAGE_EFFECT, SCHOOL, SOURCE_TYPE } from 'data/const';
+import { ATTACK_SAVE, DAMAGE_EFFECT, SCHOOL, SOURCE_TYPE } from '../const';
+import { SourceType } from '../types';
 
-const data = {
+const data: SourceType = {
   meta: {
     name: "Xanathar's Guide to Everything",
     abbreviation: 'xgte',
@@ -200,8 +201,6 @@ The spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (
       casting_time: '1 action',
       level: 0,
       school: 'Evocation',
-
-      saving_throw: 'Constitution',
       attack_save: ATTACK_SAVE.CONSTITUTION,
       damage_effect: [DAMAGE_EFFECT.THUNDER],
     },
@@ -316,8 +315,6 @@ The spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (
       casting_time: '1 action',
       level: 1,
       school: 'Necromancy',
-
-      saving_throw: 'Wisdom',
       attack_save: ATTACK_SAVE.WISDOM,
       damage_effect: [DAMAGE_EFFECT.FRIGHTENED],
     },
@@ -437,8 +434,6 @@ A creature can be targeted only once by each casting of this spell.`,
       casting_time: '1 action',
       level: 1,
       school: 'Conjuration',
-
-      saving_throw: 'Dexterity',
       attack_save: [ATTACK_SAVE.RANGED, ATTACK_SAVE.DEXTERITY],
       damage_effect: [DAMAGE_EFFECT.PIERCING, DAMAGE_EFFECT.COLD],
     },
@@ -463,8 +458,6 @@ After the trap is triggered, the spell ends when no creature is restrained by it
       casting_time: '1 minute',
       level: 1,
       school: 'Abjuration',
-
-      saving_throw: 'Dexterity',
       attack_save: ATTACK_SAVE.DEXTERITY,
       damage_effect: [DAMAGE_EFFECT.RESTRAINED],
     },
@@ -507,7 +500,7 @@ Once before the spell ends, you can give yourself advantage on one weapon attack
     {
       name: "Dragon's Breath",
       desc: 'You touch one willing creature and imbue it with the power to spew magical energy from its mouth, provided it has one. Choose acid, cold, fire, lightning, or poison. Until the spell ends, the creature can use an action to exhale energy of the chosen type in a 15-foot cone. Each creature in that area must make a Dexterity saving throw, taking 3d6 damage of the chosen type on a failed save, or half as much damage on a successful one.',
-      higher_levels:
+      higher_level:
         'When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 2nd.',
       page: 'xge 154',
       range: 'Touch/15 feet',
@@ -607,15 +600,13 @@ As an action, you can cause the hand to reach for a different creature or to mov
       casting_time: '1 action',
       level: 2,
       school: 'Transmutation',
-
-      saving_throw: 'Strength',
       attack_save: ATTACK_SAVE.STRENGTH,
       damage_effect: [DAMAGE_EFFECT.BLUDGEONING],
     },
     {
       name: 'Mind Spike',
       desc: "You reach into the mind of one creature you can see within range. The target must make a Wisdom saving throw, taking 3d8 psychic damage on a failed save, or half as much damage on a successful one. On a failed save, you also always know the target's location until the spell ends, but only while the two of you are on the same plane of existence. While you have this knowledge, the target can't become hidden from you, and if it's invisible, it gains no benefit from that condition against you.",
-      higher_levels:
+      higher_level:
         'When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd.',
       page: 'xge 162',
       range: '60 feet',
@@ -1079,7 +1070,7 @@ Until the spell ends, you have resistance to radiant damage. In addition, whenev
       page: 'xge 164',
       range: 'Self',
       components: ['V', 'S', 'M'],
-      maaterial: 'an undead eyeball encased in a gem worth at least 150 gp',
+      material: 'an undead eyeball encased in a gem worth at least 150 gp',
       ritual: false,
       duration: '1 minute',
       concentration: true,
@@ -1229,7 +1220,7 @@ When the spell ends, the sphere falls to the ground and extinguishes all normal 
 You can use a bonus action to mentally command the creatures you make with this spell, issuing the same command to all of them. To receive the command, a creature must be within 60 feet of you. You decide what action the creatures will take and where they will move during their next turn, or you can issue a general command, such as to guard a chamber or passageway against your foes. If you issue no commands, the creatures do nothing except defend themselves against hostile creatures. Once given an order, the creatures continue to follow it until their task is complete.
 
 The creatures are under your control until the spell ends, after which they become inanimate once more.`,
-      higher_levels:
+      higher_level:
         'When you cast this spell using a spell slot of 6th level or higher, you animate up to two additional corpses for each slot level above 5th.',
       page: 'xge 153',
       range: '60 feet',
@@ -1281,8 +1272,6 @@ Whenever the spell deals damage to a target, you regain hit points equal to half
       casting_time: '1 action',
       level: 3,
       school: 'Necromancy',
-
-      saving_throw: 'Dexterity',
       attack_save: ATTACK_SAVE.DEXTERITY,
       damage_effect: [DAMAGE_EFFECT.NECROTIC],
     },

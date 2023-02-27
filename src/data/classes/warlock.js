@@ -289,6 +289,8 @@ const data = {
     toKebabCase('Blade of disaster'),
     toKebabCase('Gate'),
     toKebabCase('Weird'),
+    //FTOD
+    toKebabCase("Raulothim's Psychic Lance"),
   ],
 };
 

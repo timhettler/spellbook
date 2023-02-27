@@ -123,5 +123,6 @@ export const MONSTER_SPIRITS = {
     { id: 'fiend', regex: 'Fiendish Spirit stat block', flag: '' },
     { id: 'shadow', regex: 'Shadow Spirit stat block', flag: '' },
     { id: 'undead', regex: 'Undead Spirit stat block', flag: '' },
+    { id: 'draconic-spirit', regex: 'Draconic Spirit stat block', flag: '' },
   ],
 };
