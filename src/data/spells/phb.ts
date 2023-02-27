@@ -1,4 +1,4 @@
-import { SOURCE_TYPE } from '../const';
+import { ATTACK_SAVE, DAMAGE_EFFECT, SCHOOL, SOURCE_TYPE } from '../const';
 import { SourceType } from '../types';
 
 const data: SourceType = {
@@ -1127,9 +1127,20 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
     },
     {
       name: 'Confusion',
-      desc: '<p>This spell assails and distorts the minds of creatures, generating illusions and causing uncontrolled actions. Each creature in a sphere of 10-foot-radius centered on a point chosen in the range of the spell must make a Wisdom saving throw otherwise it will be affected by the spell.</p><p>An affected target can react and it must start at the beginning of 1d10 each of his game rounds to determine its behavior for that round.</p><p>At the end of each turn, an affected creature can make a saving throw of Wisdom. If successful, the effect of the spell ends for this target.</p>',
+      desc: `This spell assaults and twists creatures' minds, spawning delusions and provoking uncontrolled action. Each creature in a 10-foot-radius sphere centered on a point you choose within range must succeed on a Wisdom saving throw when you cast this spell or be affected by it.
+
+An affected target can't take reactions and must roll a d10 at the start of each of its turns to determine its behavior for that turn.
+
+| d10 | Behavior |
+|-----|----------|
+| 1 | The creature uses all its movement to move in a random direction. To determine the direction, roll a d8 and assign a direction to each die face. The creature doesn't take an action this turn. |
+| 2-6 | The creature doesn't move or take actions this turn. |
+| 7-8 | The creature uses its action to make a melee attack against a randomly determined creature within its reach. If there is no creature within its reach, the creature does nothing this turn. |
+| 9-10 | The creature can act and move normally. |
+
+At the end of each of its turns, an affected target can make a Wisdom saving throw. If it succeeds, this effect ends for that target.`,
       higher_level:
-        '<p>When you cast this spell using a level spell slot 5 or more, the radius of the sphere increases by 5 feet for each level of higher spell slot to 4.</p>',
+        ' When you cast this spell using a spell slot of 5th level or higher, the radius of the sphere increases by 5 feet for each slot level above 4th.',
       page: 'phb 224',
       range: '90 feet',
       components: ['V', 'S', 'M'],
@@ -1139,9 +1150,9 @@ Additionally, if this attack reduces the target to 50 hit points of fewer, you b
       concentration: true,
       casting_time: '1 action',
       level: 4,
-      school: 'Enchantment',
-
-      saving_throw: 'Wisdom',
+      school: SCHOOL.ENCHANTMENT,
+      attack_save: ATTACK_SAVE.WISDOM,
+      damage_effect: [DAMAGE_EFFECT.CONTROL],
     },
     {
       name: 'Conjure Animals',
