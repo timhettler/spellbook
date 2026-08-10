@@ -257,7 +257,9 @@ describe('spells reducer', () => {
   });
 
   it('should handle LOAD_SPELLS', () => {
-    // TODO this is brittle; we shouldn't be testing the output of transformSpell, but I can't get the spy to work
+    // The spells reducer stores the payload as-is. Spell transformation
+    // (adding `id`, `cost`, etc.) moved upstream to ConnectedApp before
+    // dispatch in commit 22e66ff, so the reducer is a passthrough.
     expect(
       reducers.spells([], {
         type: types.LOAD_SPELLS,
@@ -272,8 +274,6 @@ describe('spells reducer', () => {
       {
         name: "Foo's Magnificent Mock",
         material: '1 bar',
-        id: 'foos-magnificent-mock',
-        cost: false,
       },
     ]);
   });

@@ -1,1 +1,1 @@
-export { default } from './SpellSearch.js';
+export { default } from './SpellSearch';
