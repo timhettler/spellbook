@@ -24,8 +24,10 @@ export default defineConfig({
       scss: {
         // CRA added `src` to Sass's load path via tsconfig `baseUrl`, which is
         // why `@use 'utilities/scss/vars'` (no `./` or `~`) resolves. Replicate
-        // that here so the SCSS keeps working untouched.
-        includePaths: [srcDir],
+        // that here so the SCSS keeps working untouched. Vite 6 defaults to the
+        // modern Sass API, so this uses `loadPaths` (the modern equivalent of
+        // the legacy `includePaths`).
+        loadPaths: [srcDir],
       },
     },
     modules: {
