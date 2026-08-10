@@ -1,7 +1,59 @@
 {
-  "extends": "react-app",
-  "plugins": ["prettier"],
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:prettier/recommended"
+  ],
   "rules": {
-    "prettier/prettier": "warn"
-  }
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/no-unescaped-entities": "warn",
+    "react/display-name": "warn",
+    "no-unused-vars": "warn",
+    "prettier/prettier": "warn",
+    "react/no-children-prop": "warn",
+    "no-useless-escape": "warn",
+    "no-case-declarations": "warn",
+    "no-extra-boolean-cast": "warn"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.{ts,tsx}"],
+      "parser": "@typescript-eslint/parser",
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
+      ],
+      "rules": {
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": "warn",
+        "@typescript-eslint/no-explicit-any": "off"
+      }
+    },
+    {
+      "files": ["**/*.{test,tests,spec}.{js,jsx,ts,tsx}", "src/setupTests.js"],
+      "env": {
+        "jest": true
+      }
+    }
+  ]
 }
