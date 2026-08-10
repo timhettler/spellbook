@@ -1,5 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
+import { HelmetProvider } from 'react-helmet-async';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './store';
@@ -11,16 +12,18 @@ import { AppRoutes } from './AppRoutes';
 
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(
+const root = createRoot(document.getElementById('root'));
+root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <ConnectedSEO />
-        <AppRoutes />
-      </PersistGate>
-    </Provider>
-  </React.StrictMode>,
-  document.getElementById('root')
+    <HelmetProvider>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <ConnectedSEO />
+          <AppRoutes />
+        </PersistGate>
+      </Provider>
+    </HelmetProvider>
+  </React.StrictMode>
 );
 
 // https://stackoverflow.com/questions/19909533/disable-rubber-band-in-ios-full-screen-web-app?noredirect=1&lq=1
