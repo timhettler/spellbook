@@ -41,10 +41,10 @@ $size--large-viewport-start: 1100px;
   $keys: map.keys($media-queries);
   $values: map.values($media-queries);
 
-  @for $i from 1 through length($keys) {
+  @for $i from 1 through list.length($keys) {
     $string: '(' + list.nth($keys, $i) + ':' + list.nth($values, $i) + ')';
 
-    @if length($query-list) != 0 {
+    @if list.length($query-list) != 0 {
       $string: 'and ' + $string;
     }
 
