@@ -18,6 +18,23 @@ export default defineConfig({
   build: {
     // Firebase Hosting serves from this directory (see firebase.json).
     outDir: 'dist',
+    // The `spell-data` and `vendor` chunks below are intentionally large: the
+    // full spell list needs all data up front, so it can't be sub-split without
+    // an app-level refactor. Raise the warning threshold above them rather than
+    // flag an architecture we've chosen deliberately.
+    chunkSizeWarningLimit: 650,
+    rollupOptions: {
+      output: {
+        // Split the single ~1.2 MB bundle so that a change to app code no longer
+        // invalidates the (rarely-changing) third-party libs or the bundled spell
+        // data. Three chunks: app entry, `spell-data` (src/data/*), and `vendor`
+        // (node_modules) — all still loaded eagerly, but cached independently.
+        manualChunks(id) {
+          if (id.includes('/src/data/')) return 'spell-data';
+          if (id.includes('node_modules')) return 'vendor';
+        },
+      },
+    },
   },
   css: {
     preprocessorOptions: {
