@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { selectBanner } from './selectors';
 import { OUTDATED_CONTENT, OFFLINE_READY } from 'constants/offline';
+import { applyUpdate } from 'registerServiceWorker';
 import Toast from 'components/Toast';
 
 function getOfflineLabel(banner) {
@@ -19,7 +20,8 @@ function getOfflineLabel(banner) {
 function getOfflineEvent(banner) {
   switch (banner) {
     case OUTDATED_CONTENT:
-      return () => window.location.reload(true);
+      // Activate the waiting service worker, then reload into the new version.
+      return applyUpdate;
     default:
       return null;
   }
