@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 import tsconfigPaths from 'vite-tsconfig-paths';
+import { VitePWA } from 'vite-plugin-pwa';
 
 // Absolute path to `src`, used to replicate CRA's Sass resolution.
 const srcDir = fileURLToPath(new URL('./src', import.meta.url));
@@ -14,9 +15,33 @@ export default defineConfig({
     // Resolves the `baseUrl: "src"` bare imports from tsconfig.json
     // (e.g. `import Button from 'components/Button'`).
     tsconfigPaths(),
+    // Generates a Workbox service worker (precache + SPA navigation fallback)
+    // and exposes registration via `virtual:pwa-register`. We register it
+    // manually in src/registerServiceWorker.js (wired to the OfflineToast
+    // banners) and keep the existing public/manifest.json, so `injectRegister`
+    // and `manifest` are disabled here.
+    //
+    // NOTE: the SW build minifies in a worker thread that needs the Web Crypto
+    // global, which Node only exposes to workers from v20 on — hence the
+    // "engines" >= 20 requirement in package.json.
+    VitePWA({
+      registerType: 'prompt',
+      injectRegister: false,
+      manifest: false,
+      workbox: {
+        // Inline the Workbox runtime into a single sw.js rather than loading it
+        // from a separate chunk via the off-main-thread AMD loader, which some
+        // browsers refuse to register ("unknown error occurred when fetching
+        // the script").
+        inlineWorkboxRuntime: true,
+        globPatterns: ['**/*.{js,css,html,svg}'],
+        navigateFallback: 'index.html',
+      },
+      devOptions: { enabled: false },
+    }),
   ],
   build: {
-    // Firebase Hosting serves from this directory (see firebase.json).
+    // Static host (Vercel) serves this directory (see vercel.json).
     outDir: 'dist',
     // The `spell-data` and `vendor` chunks below are intentionally large: the
     // full spell list needs all data up front, so it can't be sub-split without
