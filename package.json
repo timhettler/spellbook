@@ -14,7 +14,7 @@
     "react-helmet-async": "^3.0.0",
     "react-markdown": "^10.1.0",
     "react-redux": "^9.3.0",
-    "react-router-dom": "^6.30.0",
+    "react-router-dom": "^6.30.6",
     "react-window": "^1.8.5",
     "redux": "^4.0.5",
     "redux-persist": "^6.0.0",
